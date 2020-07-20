@@ -1,7 +1,7 @@
 package apiforce
 
 import (
-	"encoding/xml"
+	"encoding/json"
 	"github.com/tzmfreedom/go-soapforce"
 	"io"
 	"net"
@@ -4279,8608 +4279,8607 @@ const (
 )
 
 type AllOrNoneHeader struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AllOrNoneHeader"`
+	Name string `json:"http://soap.sforce.com/2006/04/metadata AllOrNoneHeader"`
 
-	AllOrNone bool `xml:"allOrNone,omitempty"`
+	AllOrNone bool `json:"allOrNone,omitempty"`
 }
 
 type CallOptions struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CallOptions"`
-
-	Client string `xml:"client,omitempty"`
+	Name string `json:"http://soap.sforce.com/2006/04/metadata CallOptions"`
+	Client string `json:"client,omitempty"`
 }
 
 type DebuggingHeader struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DebuggingHeader"`
+	Name string `json:"http://soap.sforce.com/2006/04/metadata DebuggingHeader"`
 
-	Categories []*LogInfo `xml:"categories,omitempty"`
+	Categories []*LogInfo `json:"categories,omitempty"`
 
-	DebugLevel *LogType `xml:"debugLevel,omitempty"`
+	DebugLevel *LogType `json:"debugLevel,omitempty"`
 }
 
 type DebuggingInfo struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DebuggingInfo"`
+	Name string `json:"http://soap.sforce.com/2006/04/metadata DebuggingInfo"`
 
-	DebugLog string `xml:"debugLog,omitempty"`
+	DebugLog string `json:"debugLog,omitempty"`
 }
 
 type SessionHeader struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SessionHeader"`
+	Name string `json:"http://soap.sforce.com/2006/04/metadata SessionHeader"`
 
-	SessionId string `xml:"sessionId,omitempty"`
+	SessionId string `json:"sessionId,omitempty"`
 }
 
 type CancelDeploy struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata cancelDeploy"`
+	Name string `json:"http://soap.sforce.com/2006/04/metadata cancelDeploy"`
 
-	AsyncProcessId ID `xml:"String,omitempty"`
+	AsyncProcessId ID `json:"String,omitempty"`
 }
 
 type CancelDeployResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata cancelDeployResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata cancelDeployResponse"`
 
-	Result *CancelDeployResult `xml:"result,omitempty"`
+	Result *CancelDeployResult `json:"result,omitempty"`
 }
 
 type CheckDeployStatus struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata checkDeployStatus"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata checkDeployStatus"`
 
-	AsyncProcessId ID `xml:"asyncProcessId,omitempty"`
+	AsyncProcessId ID `json:"asyncProcessId,omitempty"`
 
-	IncludeDetails bool `xml:"includeDetails,omitempty"`
+	IncludeDetails bool `json:"includeDetails,omitempty"`
 }
 
 type CheckDeployStatusResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata checkDeployStatusResponse"`
+	Name string `json:"http://soap.sforce.com/2006/04/metadata checkDeployStatusResponse"`
 
-	Result *DeployResult `xml:"result,omitempty"`
+	Result *DeployResult `json:"result,omitempty"`
 }
 
 type CheckRetrieveStatus struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata checkRetrieveStatus"`
+	Name string `json:"http://soap.sforce.com/2006/04/metadata checkRetrieveStatus"`
 
-	AsyncProcessId ID `xml:"asyncProcessId,omitempty"`
+	AsyncProcessId ID `json:"asyncProcessId,omitempty"`
 
-	IncludeZip bool `xml:"includeZip,omitempty"`
+	IncludeZip bool `json:"includeZip,omitempty"`
 }
 
 type CheckRetrieveStatusResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata checkRetrieveStatusResponse"`
+	Name string `json:"http://soap.sforce.com/2006/04/metadata checkRetrieveStatusResponse"`
 
-	Result *RetrieveResult `xml:"result,omitempty"`
+	Result *RetrieveResult `json:"result,omitempty"`
 }
 
 type CreateMetadata struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata createMetadata"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata createMetadata"`
 
-	Metadata []MetadataInterface `xml:"metadata,omitempty"`
+	Metadata []MetadataInterface `json:"metadata,omitempty"`
 }
 
 type CreateMetadataResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata createMetadataResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata createMetadataResponse"`
 
-	Result []*SaveResult `xml:"result,omitempty"`
+	Result []*SaveResult `json:"result,omitempty"`
 }
 
 type DeleteMetadata struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata deleteMetadata"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata deleteMetadata"`
 
-	Type string `xml:"type,omitempty"`
+	Type string `json:"type,omitempty"`
 
-	FullNames []string `xml:"fullNames,omitempty"`
+	FullNames []string `json:"fullNames,omitempty"`
 }
 
 type DeleteMetadataResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata deleteMetadataResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata deleteMetadataResponse"`
 
-	Result []*DeleteResult `xml:"result,omitempty"`
+	Result []*DeleteResult `json:"result,omitempty"`
 }
 
 type Deploy struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata deploy"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata deploy"`
 
-	ZipFile string `xml:"ZipFile,omitempty"`
+	ZipFile string `json:"ZipFile,omitempty"`
 
-	DeployOptions *DeployOptions `xml:"DeployOptions,omitempty"`
+	DeployOptions *DeployOptions `json:"DeployOptions,omitempty"`
 }
 
 type DeployResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata deployResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata deployResponse"`
 
-	Result *AsyncResult `xml:"result,omitempty"`
+	Result *AsyncResult `json:"result,omitempty"`
 }
 
 type DeployRecentValidation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata deployRecentValidation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata deployRecentValidation"`
 
-	ValidationId ID `xml:"validationId,omitempty"`
+	ValidationId ID `json:"validationId,omitempty"`
 }
 
 type DeployRecentValidationResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata deployRecentValidationResponse"`
+	Name string `json:"http://soap.sforce.com/2006/04/metadata deployRecentValidationResponse"`
 
-	Result string `xml:"result,omitempty"`
+	Result string `json:"result,omitempty"`
 }
 
 type DescribeMetadata struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata describeMetadata"`
+	Name string `json:"http://soap.sforce.com/2006/04/metadata describeMetadata"`
 
-	AsOfVersion float64 `xml:"asOfVersion,omitempty"`
+	AsOfVersion float64 `json:"asOfVersion,omitempty"`
 }
 
 type DescribeMetadataResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata describeMetadataResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata describeMetadataResponse"`
 
-	Result *DescribeMetadataResult `xml:"result,omitempty"`
+	Result *DescribeMetadataResult `json:"result,omitempty"`
 }
 
 type DescribeValueType struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata describeValueType"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata describeValueType"`
 
-	Type string `xml:"type,omitempty"`
+	Type string `json:"type,omitempty"`
 }
 
 type DescribeValueTypeResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata describeValueTypeResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata describeValueTypeResponse"`
 
-	Result *DescribeValueTypeResult `xml:"result,omitempty"`
+	Result *DescribeValueTypeResult `json:"result,omitempty"`
 }
 
 type ListMetadata struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata listMetadata"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata listMetadata"`
 
-	Queries []*ListMetadataQuery `xml:"queries,omitempty"`
+	Queries []*ListMetadataQuery `json:"queries,omitempty"`
 
-	AsOfVersion float64 `xml:"asOfVersion,omitempty"`
+	AsOfVersion float64 `json:"asOfVersion,omitempty"`
 }
 
 type ListMetadataResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata listMetadataResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata listMetadataResponse"`
 
-	Result []*FileProperties `xml:"result,omitempty"`
+	Result []*FileProperties `json:"result,omitempty"`
 }
 
 type ReadMetadata struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata readMetadata"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata readMetadata"`
 
-	Type string `xml:"type,omitempty"`
+	Type string `json:"type,omitempty"`
 
-	FullNames []string `xml:"fullNames,omitempty"`
+	FullNames []string `json:"fullNames,omitempty"`
 }
 
 type ReadMetadataResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata readMetadataResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata readMetadataResponse"`
 
-	Result *ReadResult `xml:"result,omitempty"`
+	Result *ReadResult `json:"result,omitempty"`
 }
 
 type RenameMetadata struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata renameMetadata"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata renameMetadata"`
 
-	Type string `xml:"type,omitempty"`
+	Type string `json:"type,omitempty"`
 
-	OldFullName string `xml:"oldFullName,omitempty"`
+	OldFullName string `json:"oldFullName,omitempty"`
 
-	NewFullName string `xml:"newFullName,omitempty"`
+	NewFullName string `json:"newFullName,omitempty"`
 }
 
 type RenameMetadataResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata renameMetadataResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata renameMetadataResponse"`
 
-	Result *SaveResult `xml:"result,omitempty"`
+	Result *SaveResult `json:"result,omitempty"`
 }
 
 type Retrieve struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata retrieve"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata retrieve"`
 
-	RetrieveRequest *RetrieveRequest `xml:"retrieveRequest,omitempty"`
+	RetrieveRequest *RetrieveRequest `json:"retrieveRequest,omitempty"`
 }
 
 type RetrieveResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata retrieveResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata retrieveResponse"`
 
-	Result *AsyncResult `xml:"result,omitempty"`
+	Result *AsyncResult `json:"result,omitempty"`
 }
 
 type UpdateMetadata struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata updateMetadata"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata updateMetadata"`
 
-	Metadata []MetadataInterface `xml:"metadata,omitempty"`
+	Metadata []MetadataInterface `json:"metadata,omitempty"`
 }
 
 type UpdateMetadataResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata updateMetadataResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata updateMetadataResponse"`
 
-	Result []*SaveResult `xml:"result,omitempty"`
+	Result []*SaveResult `json:"result,omitempty"`
 }
 
 type UpsertMetadata struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata upsertMetadata"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata upsertMetadata"`
 
-	Metadata []MetadataInterface `xml:"metadata,omitempty"`
+	Metadata []MetadataInterface `json:"metadata,omitempty"`
 }
 
 type UpsertMetadataResponse struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata upsertMetadataResponse"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata upsertMetadataResponse"`
 
-	Result []*UpsertResult `xml:"result,omitempty"`
+	Result []*UpsertResult `json:"result,omitempty"`
 }
 
 type CancelDeployResult struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CancelDeployResult"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CancelDeployResult"`
 
-	Done bool `xml:"done,omitempty"`
+	Done bool `json:"done,omitempty"`
 
-	Id ID `xml:"id,omitempty"`
+	Id ID `json:"id,omitempty"`
 }
 
 type DeployResult struct {
-	//XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DeployResult"`
+	//XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DeployResult"`
 
-	CanceledBy string `xml:"canceledBy,omitempty"`
+	CanceledBy string `json:"canceledBy,omitempty"`
 
-	CanceledByName string `xml:"canceledByName,omitempty"`
+	CanceledByName string `json:"canceledByName,omitempty"`
 
-	CheckOnly bool `xml:"checkOnly,omitempty"`
+	CheckOnly bool `json:"checkOnly,omitempty"`
 
-	CompletedDate time.Time `xml:"completedDate,omitempty"`
+	CompletedDate time.Time `json:"completedDate,omitempty"`
 
-	CreatedBy string `xml:"createdBy,omitempty"`
+	CreatedBy string `json:"createdBy,omitempty"`
 
-	CreatedByName string `xml:"createdByName,omitempty"`
+	CreatedByName string `json:"createdByName,omitempty"`
 
-	CreatedDate time.Time `xml:"createdDate,omitempty"`
+	CreatedDate time.Time `json:"createdDate,omitempty"`
 
-	Details *DeployDetails `xml:"details,omitempty"`
+	Details *DeployDetails `json:"details,omitempty"`
 
-	Done bool `xml:"done,omitempty"`
+	Done bool `json:"done,omitempty"`
 
-	ErrorMessage string `xml:"errorMessage,omitempty"`
+	ErrorMessage string `json:"errorMessage,omitempty"`
 
-	ErrorStatusCode StatusCode `xml:"errorStatusCode,omitempty"`
+	ErrorStatusCode StatusCode `json:"errorStatusCode,omitempty"`
 
-	Id ID `xml:"id,omitempty"`
+	Id ID `json:"id,omitempty"`
 
-	IgnoreWarnings bool `xml:"ignoreWarnings,omitempty"`
+	IgnoreWarnings bool `json:"ignoreWarnings,omitempty"`
 
-	LastModifiedDate time.Time `xml:"lastModifiedDate,omitempty"`
+	LastModifiedDate time.Time `json:"lastModifiedDate,omitempty"`
 
-	NumberComponentErrors int32 `xml:"numberComponentErrors,omitempty"`
+	NumberComponentErrors int32 `json:"numberComponentErrors,omitempty"`
 
-	NumberComponentsDeployed int32 `xml:"numberComponentsDeployed,omitempty"`
+	NumberComponentsDeployed int32 `json:"numberComponentsDeployed,omitempty"`
 
-	NumberComponentsTotal int32 `xml:"numberComponentsTotal,omitempty"`
+	NumberComponentsTotal int32 `json:"numberComponentsTotal,omitempty"`
 
-	NumberTestErrors int32 `xml:"numberTestErrors,omitempty"`
+	NumberTestErrors int32 `json:"numberTestErrors,omitempty"`
 
-	NumberTestsCompleted int32 `xml:"numberTestsCompleted,omitempty"`
+	NumberTestsCompleted int32 `json:"numberTestsCompleted,omitempty"`
 
-	NumberTestsTotal int32 `xml:"numberTestsTotal,omitempty"`
+	NumberTestsTotal int32 `json:"numberTestsTotal,omitempty"`
 
-	RollbackOnError bool `xml:"rollbackOnError,omitempty"`
+	RollbackOnError bool `json:"rollbackOnError,omitempty"`
 
-	RunTestsEnabled bool `xml:"runTestsEnabled,omitempty"`
+	RunTestsEnabled bool `json:"runTestsEnabled,omitempty"`
 
-	StartDate time.Time `xml:"startDate,omitempty"`
+	StartDate time.Time `json:"startDate,omitempty"`
 
-	StateDetail string `xml:"stateDetail,omitempty"`
+	StateDetail string `json:"stateDetail,omitempty"`
 
-	Status *DeployStatus `xml:"status,omitempty"`
+	Status *DeployStatus `json:"status,omitempty"`
 
-	Success bool `xml:"success,omitempty"`
+	Success bool `json:"success,omitempty"`
 }
 
 type DeployDetails struct {
-	//XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DeployDetails"`
+	//XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DeployDetails"`
 
-	ComponentFailures []*DeployMessage `xml:"componentFailures,omitempty"`
+	ComponentFailures []*DeployMessage `json:"componentFailures,omitempty"`
 
-	ComponentSuccesses []*DeployMessage `xml:"componentSuccesses,omitempty"`
+	ComponentSuccesses []*DeployMessage `json:"componentSuccesses,omitempty"`
 
-	RetrieveResult *RetrieveResult `xml:"retrieveResult,omitempty"`
+	RetrieveResult *RetrieveResult `json:"retrieveResult,omitempty"`
 
-	RunTestResult *RunTestsResult `xml:"runTestResult,omitempty"`
+	RunTestResult *RunTestsResult `json:"runTestResult,omitempty"`
 }
 
 type DeployMessage struct {
-	//XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DeployMessage"`
+	//XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DeployMessage"`
 
-	Changed bool `xml:"changed,omitempty"`
+	Changed bool `json:"changed,omitempty"`
 
-	ColumnNumber int32 `xml:"columnNumber,omitempty"`
+	ColumnNumber int32 `json:"columnNumber,omitempty"`
 
-	ComponentType string `xml:"componentType,omitempty"`
+	ComponentType string `json:"componentType,omitempty"`
 
-	Created bool `xml:"created,omitempty"`
+	Created bool `json:"created,omitempty"`
 
-	CreatedDate time.Time `xml:"createdDate,omitempty"`
+	CreatedDate time.Time `json:"createdDate,omitempty"`
 
-	Deleted bool `xml:"deleted,omitempty"`
+	Deleted bool `json:"deleted,omitempty"`
 
-	FileName string `xml:"fileName,omitempty"`
+	FileName string `json:"fileName,omitempty"`
 
-	FullName string `xml:"fullName,omitempty"`
+	FullName string `json:"fullName,omitempty"`
 
-	Id string `xml:"id,omitempty"`
+	Id string `json:"id,omitempty"`
 
-	LineNumber int32 `xml:"lineNumber,omitempty"`
+	LineNumber int32 `json:"lineNumber,omitempty"`
 
-	Problem string `xml:"problem,omitempty"`
+	Problem string `json:"problem,omitempty"`
 
-	ProblemType *DeployProblemType `xml:"problemType,omitempty"`
+	ProblemType *DeployProblemType `json:"problemType,omitempty"`
 
-	Success bool `xml:"success,omitempty"`
+	Success bool `json:"success,omitempty"`
 }
 
 type RetrieveResult struct {
-	//XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RetrieveResult"`
+	//XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RetrieveResult"`
 
-	Done bool `xml:"done,omitempty"`
+	Done bool `json:"done,omitempty"`
 
-	ErrorMessage string `xml:"errorMessage,omitempty"`
+	ErrorMessage string `json:"errorMessage,omitempty"`
 
-	ErrorStatusCode StatusCode `xml:"errorStatusCode,omitempty"`
+	ErrorStatusCode StatusCode `json:"errorStatusCode,omitempty"`
 
-	FileProperties []*FileProperties `xml:"fileProperties,omitempty"`
+	FileProperties []*FileProperties `json:"fileProperties,omitempty"`
 
-	Id string `xml:"id,omitempty"`
+	Id string `json:"id,omitempty"`
 
-	Messages []*RetrieveMessage `xml:"messages,omitempty"`
+	Messages []*RetrieveMessage `json:"messages,omitempty"`
 
-	Status *RetrieveStatus `xml:"status,omitempty"`
+	Status *RetrieveStatus `json:"status,omitempty"`
 
-	Success bool `xml:"success,omitempty"`
+	Success bool `json:"success,omitempty"`
 
-	ZipFile []byte `xml:"zipFile,omitempty"`
+	ZipFile []byte `json:"zipFile,omitempty"`
 }
 
 type FileProperties struct {
-	CreatedById string `xml:"createdById,omitempty"`
+	CreatedById string `json:"createdById,omitempty"`
 
-	CreatedByName string `xml:"createdByName,omitempty"`
+	CreatedByName string `json:"createdByName,omitempty"`
 
-	CreatedDate time.Time `xml:"createdDate,omitempty"`
+	CreatedDate time.Time `json:"createdDate,omitempty"`
 
-	FileName string `xml:"fileName,omitempty"`
+	FileName string `json:"fileName,omitempty"`
 
-	FullName string `xml:"fullName,omitempty"`
+	FullName string `json:"fullName,omitempty"`
 
-	Id string `xml:"id,omitempty"`
+	Id string `json:"id,omitempty"`
 
-	LastModifiedById string `xml:"lastModifiedById,omitempty"`
+	LastModifiedById string `json:"lastModifiedById,omitempty"`
 
-	LastModifiedByName string `xml:"lastModifiedByName,omitempty"`
+	LastModifiedByName string `json:"lastModifiedByName,omitempty"`
 
-	LastModifiedDate time.Time `xml:"lastModifiedDate,omitempty"`
+	LastModifiedDate time.Time `json:"lastModifiedDate,omitempty"`
 
-	ManageableState ManageableState `xml:"manageableState,omitempty"`
+	ManageableState ManageableState `json:"manageableState,omitempty"`
 
-	NamespacePrefix string `xml:"namespacePrefix,omitempty"`
+	NamespacePrefix string `json:"namespacePrefix,omitempty"`
 
-	Type_ string `xml:"type,omitempty"`
+	Type_ string `json:"type,omitempty"`
 }
 
 type RetrieveMessage struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RetrieveMessage"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RetrieveMessage"`
 
-	FileName string `xml:"fileName,omitempty"`
+	FileName string `json:"fileName,omitempty"`
 
-	Problem string `xml:"problem,omitempty"`
+	Problem string `json:"problem,omitempty"`
 }
 
 type RunTestsResult struct {
-	//XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RunTestsResult"`
+	//XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RunTestsResult"`
 
-	ApexLogId string `xml:"apexLogId,omitempty"`
+	ApexLogId string `json:"apexLogId,omitempty"`
 
-	CodeCoverage []*CodeCoverageResult `xml:"codeCoverage,omitempty"`
+	CodeCoverage []*CodeCoverageResult `json:"codeCoverage,omitempty"`
 
-	CodeCoverageWarnings []*CodeCoverageWarning `xml:"codeCoverageWarnings,omitempty"`
+	CodeCoverageWarnings []*CodeCoverageWarning `json:"codeCoverageWarnings,omitempty"`
 
-	Failures []*RunTestFailure `xml:"failures,omitempty"`
+	Failures []*RunTestFailure `json:"failures,omitempty"`
 
-	NumFailures int32 `xml:"numFailures,omitempty"`
+	NumFailures int32 `json:"numFailures,omitempty"`
 
-	NumTestsRun int32 `xml:"numTestsRun,omitempty"`
+	NumTestsRun int32 `json:"numTestsRun,omitempty"`
 
-	Successes []*RunTestSuccess `xml:"successes,omitempty"`
+	Successes []*RunTestSuccess `json:"successes,omitempty"`
 
-	TotalTime float64 `xml:"totalTime,omitempty"`
+	TotalTime float64 `json:"totalTime,omitempty"`
 }
 
 type CodeCoverageResult struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CodeCoverageResult"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CodeCoverageResult"`
 
-	DmlInfo []*CodeLocation `xml:"dmlInfo,omitempty"`
+	DmlInfo []*CodeLocation `json:"dmlInfo,omitempty"`
 
-	Id ID `xml:"id,omitempty"`
+	Id ID `json:"id,omitempty"`
 
-	LocationsNotCovered []*CodeLocation `xml:"locationsNotCovered,omitempty"`
+	LocationsNotCovered []*CodeLocation `json:"locationsNotCovered,omitempty"`
 
-	MethodInfo []*CodeLocation `xml:"methodInfo,omitempty"`
+	MethodInfo []*CodeLocation `json:"methodInfo,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Namespace string `xml:"namespace,omitempty"`
+	Namespace string `json:"namespace,omitempty"`
 
-	NumLocations int32 `xml:"numLocations,omitempty"`
+	NumLocations int32 `json:"numLocations,omitempty"`
 
-	NumLocationsNotCovered int32 `xml:"numLocationsNotCovered,omitempty"`
+	NumLocationsNotCovered int32 `json:"numLocationsNotCovered,omitempty"`
 
-	SoqlInfo []*CodeLocation `xml:"soqlInfo,omitempty"`
+	SoqlInfo []*CodeLocation `json:"soqlInfo,omitempty"`
 
-	SoslInfo []*CodeLocation `xml:"soslInfo,omitempty"`
+	SoslInfo []*CodeLocation `json:"soslInfo,omitempty"`
 
-	Type_ string `xml:"type,omitempty"`
+	Type_ string `json:"type,omitempty"`
 }
 
 type CodeLocation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CodeLocation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CodeLocation"`
 
-	Column int32 `xml:"column,omitempty"`
+	Column int32 `json:"column,omitempty"`
 
-	Line int32 `xml:"line,omitempty"`
+	Line int32 `json:"line,omitempty"`
 
-	NumExecutions int32 `xml:"numExecutions,omitempty"`
+	NumExecutions int32 `json:"numExecutions,omitempty"`
 
-	Time float64 `xml:"time,omitempty"`
+	Time float64 `json:"time,omitempty"`
 }
 
 type CodeCoverageWarning struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CodeCoverageWarning"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CodeCoverageWarning"`
 
-	Id ID `xml:"id,omitempty"`
+	Id ID `json:"id,omitempty"`
 
-	Message string `xml:"message,omitempty"`
+	Message string `json:"message,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Namespace string `xml:"namespace,omitempty"`
+	Namespace string `json:"namespace,omitempty"`
 }
 
 type RunTestFailure struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RunTestFailure"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RunTestFailure"`
 
-	Id ID `xml:"id,omitempty"`
+	Id ID `json:"id,omitempty"`
 
-	Message string `xml:"message,omitempty"`
+	Message string `json:"message,omitempty"`
 
-	MethodName string `xml:"methodName,omitempty"`
+	MethodName string `json:"methodName,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Namespace string `xml:"namespace,omitempty"`
+	Namespace string `json:"namespace,omitempty"`
 
-	PackageName string `xml:"packageName,omitempty"`
+	PackageName string `json:"packageName,omitempty"`
 
-	SeeAllData bool `xml:"seeAllData,omitempty"`
+	SeeAllData bool `json:"seeAllData,omitempty"`
 
-	StackTrace string `xml:"stackTrace,omitempty"`
+	StackTrace string `json:"stackTrace,omitempty"`
 
-	Time float64 `xml:"time,omitempty"`
+	Time float64 `json:"time,omitempty"`
 
-	Type_ string `xml:"type,omitempty"`
+	Type_ string `json:"type,omitempty"`
 }
 
 type RunTestSuccess struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RunTestSuccess"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RunTestSuccess"`
 
-	Id ID `xml:"id,omitempty"`
+	Id ID `json:"id,omitempty"`
 
-	MethodName string `xml:"methodName,omitempty"`
+	MethodName string `json:"methodName,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Namespace string `xml:"namespace,omitempty"`
+	Namespace string `json:"namespace,omitempty"`
 
-	SeeAllData bool `xml:"seeAllData,omitempty"`
+	SeeAllData bool `json:"seeAllData,omitempty"`
 
-	Time float64 `xml:"time,omitempty"`
+	Time float64 `json:"time,omitempty"`
 }
 
 type MetadataInterface interface {}
 
 type Metadata struct {
-	FullName string `xml:"fullName,omitempty"`
+	FullName string `json:"fullName,omitempty"`
 }
 
 type AccountSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AccountSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AccountSettings"`
 
 	*Metadata
 
-	EnableAccountOwnerReport bool `xml:"enableAccountOwnerReport,omitempty"`
+	EnableAccountOwnerReport bool `json:"enableAccountOwnerReport,omitempty"`
 
-	EnableAccountTeams bool `xml:"enableAccountTeams,omitempty"`
+	EnableAccountTeams bool `json:"enableAccountTeams,omitempty"`
 
-	ShowViewHierarchyLink bool `xml:"showViewHierarchyLink,omitempty"`
+	ShowViewHierarchyLink bool `json:"showViewHierarchyLink,omitempty"`
 }
 
 type ActionLinkGroupTemplate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ActionLinkGroupTemplate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ActionLinkGroupTemplate"`
 
 	*Metadata
 
-	ActionLinkTemplates []*ActionLinkTemplate `xml:"actionLinkTemplates,omitempty"`
+	ActionLinkTemplates []*ActionLinkTemplate `json:"actionLinkTemplates,omitempty"`
 
-	Category *PlatformActionGroupCategory `xml:"category,omitempty"`
+	Category *PlatformActionGroupCategory `json:"category,omitempty"`
 
-	ExecutionsAllowed *ActionLinkExecutionsAllowed `xml:"executionsAllowed,omitempty"`
+	ExecutionsAllowed *ActionLinkExecutionsAllowed `json:"executionsAllowed,omitempty"`
 
-	HoursUntilExpiration int32 `xml:"hoursUntilExpiration,omitempty"`
+	HoursUntilExpiration int32 `json:"hoursUntilExpiration,omitempty"`
 
-	IsPublished bool `xml:"isPublished,omitempty"`
+	IsPublished bool `json:"isPublished,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type ActionLinkTemplate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ActionLinkTemplate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ActionLinkTemplate"`
 
-	ActionUrl string `xml:"actionUrl,omitempty"`
+	ActionUrl string `json:"actionUrl,omitempty"`
 
-	Headers string `xml:"headers,omitempty"`
+	Headers string `json:"headers,omitempty"`
 
-	IsConfirmationRequired bool `xml:"isConfirmationRequired,omitempty"`
+	IsConfirmationRequired bool `json:"isConfirmationRequired,omitempty"`
 
-	IsGroupDefault bool `xml:"isGroupDefault,omitempty"`
+	IsGroupDefault bool `json:"isGroupDefault,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	LabelKey string `xml:"labelKey,omitempty"`
+	LabelKey string `json:"labelKey,omitempty"`
 
-	LinkType *ActionLinkType `xml:"linkType,omitempty"`
+	LinkType *ActionLinkType `json:"linkType,omitempty"`
 
-	Method *ActionLinkHttpMethod `xml:"method,omitempty"`
+	Method *ActionLinkHttpMethod `json:"method,omitempty"`
 
-	Position int32 `xml:"position,omitempty"`
+	Position int32 `json:"position,omitempty"`
 
-	RequestBody string `xml:"requestBody,omitempty"`
+	RequestBody string `json:"requestBody,omitempty"`
 
-	UserAlias string `xml:"userAlias,omitempty"`
+	UserAlias string `json:"userAlias,omitempty"`
 
-	UserVisibility *ActionLinkUserVisibility `xml:"userVisibility,omitempty"`
+	UserVisibility *ActionLinkUserVisibility `json:"userVisibility,omitempty"`
 }
 
 type ActivitiesSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ActivitiesSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ActivitiesSettings"`
 
 	*Metadata
 
-	AllowUsersToRelateMultipleContactsToTasksAndEvents bool `xml:"allowUsersToRelateMultipleContactsToTasksAndEvents,omitempty"`
+	AllowUsersToRelateMultipleContactsToTasksAndEvents bool `json:"allowUsersToRelateMultipleContactsToTasksAndEvents,omitempty"`
 
-	EnableActivityReminders bool `xml:"enableActivityReminders,omitempty"`
+	EnableActivityReminders bool `json:"enableActivityReminders,omitempty"`
 
-	EnableClickCreateEvents bool `xml:"enableClickCreateEvents,omitempty"`
+	EnableClickCreateEvents bool `json:"enableClickCreateEvents,omitempty"`
 
-	EnableDragAndDropScheduling bool `xml:"enableDragAndDropScheduling,omitempty"`
+	EnableDragAndDropScheduling bool `json:"enableDragAndDropScheduling,omitempty"`
 
-	EnableEmailTracking bool `xml:"enableEmailTracking,omitempty"`
+	EnableEmailTracking bool `json:"enableEmailTracking,omitempty"`
 
-	EnableGroupTasks bool `xml:"enableGroupTasks,omitempty"`
+	EnableGroupTasks bool `json:"enableGroupTasks,omitempty"`
 
-	EnableListViewScheduling bool `xml:"enableListViewScheduling,omitempty"`
+	EnableListViewScheduling bool `json:"enableListViewScheduling,omitempty"`
 
-	EnableLogNote bool `xml:"enableLogNote,omitempty"`
+	EnableLogNote bool `json:"enableLogNote,omitempty"`
 
-	EnableMultidayEvents bool `xml:"enableMultidayEvents,omitempty"`
+	EnableMultidayEvents bool `json:"enableMultidayEvents,omitempty"`
 
-	EnableRecurringEvents bool `xml:"enableRecurringEvents,omitempty"`
+	EnableRecurringEvents bool `json:"enableRecurringEvents,omitempty"`
 
-	EnableRecurringTasks bool `xml:"enableRecurringTasks,omitempty"`
+	EnableRecurringTasks bool `json:"enableRecurringTasks,omitempty"`
 
-	EnableSidebarCalendarShortcut bool `xml:"enableSidebarCalendarShortcut,omitempty"`
+	EnableSidebarCalendarShortcut bool `json:"enableSidebarCalendarShortcut,omitempty"`
 
-	EnableSimpleTaskCreateUI bool `xml:"enableSimpleTaskCreateUI,omitempty"`
+	EnableSimpleTaskCreateUI bool `json:"enableSimpleTaskCreateUI,omitempty"`
 
-	EnableUNSTaskDelegatedToNotifications bool `xml:"enableUNSTaskDelegatedToNotifications,omitempty"`
+	EnableUNSTaskDelegatedToNotifications bool `json:"enableUNSTaskDelegatedToNotifications,omitempty"`
 
-	MeetingRequestsLogo string `xml:"meetingRequestsLogo,omitempty"`
+	MeetingRequestsLogo string `json:"meetingRequestsLogo,omitempty"`
 
-	ShowCustomLogoMeetingRequests bool `xml:"showCustomLogoMeetingRequests,omitempty"`
+	ShowCustomLogoMeetingRequests bool `json:"showCustomLogoMeetingRequests,omitempty"`
 
-	ShowEventDetailsMultiUserCalendar bool `xml:"showEventDetailsMultiUserCalendar,omitempty"`
+	ShowEventDetailsMultiUserCalendar bool `json:"showEventDetailsMultiUserCalendar,omitempty"`
 
-	ShowHomePageHoverLinksForEvents bool `xml:"showHomePageHoverLinksForEvents,omitempty"`
+	ShowHomePageHoverLinksForEvents bool `json:"showHomePageHoverLinksForEvents,omitempty"`
 
-	ShowMyTasksHoverLinks bool `xml:"showMyTasksHoverLinks,omitempty"`
+	ShowMyTasksHoverLinks bool `json:"showMyTasksHoverLinks,omitempty"`
 
-	ShowRequestedMeetingsOnHomePage bool `xml:"showRequestedMeetingsOnHomePage,omitempty"`
+	ShowRequestedMeetingsOnHomePage bool `json:"showRequestedMeetingsOnHomePage,omitempty"`
 }
 
 type AddressSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AddressSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AddressSettings"`
 
 	*Metadata
 
-	CountriesAndStates *CountriesAndStates `xml:"countriesAndStates,omitempty"`
+	CountriesAndStates *CountriesAndStates `json:"countriesAndStates,omitempty"`
 }
 
 type CountriesAndStates struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CountriesAndStates"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CountriesAndStates"`
 
-	Countries []*Country `xml:"countries,omitempty"`
+	Countries []*Country `json:"countries,omitempty"`
 }
 
 type Country struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Country"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Country"`
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	IntegrationValue string `xml:"integrationValue,omitempty"`
+	IntegrationValue string `json:"integrationValue,omitempty"`
 
-	IsoCode string `xml:"isoCode,omitempty"`
+	IsoCode string `json:"isoCode,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	OrgDefault bool `xml:"orgDefault,omitempty"`
+	OrgDefault bool `json:"orgDefault,omitempty"`
 
-	Standard bool `xml:"standard,omitempty"`
+	Standard bool `json:"standard,omitempty"`
 
-	States []*State `xml:"states,omitempty"`
+	States []*State `json:"states,omitempty"`
 
-	Visible bool `xml:"visible,omitempty"`
+	Visible bool `json:"visible,omitempty"`
 }
 
 type State struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata State"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata State"`
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	IntegrationValue string `xml:"integrationValue,omitempty"`
+	IntegrationValue string `json:"integrationValue,omitempty"`
 
-	IsoCode string `xml:"isoCode,omitempty"`
+	IsoCode string `json:"isoCode,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Standard bool `xml:"standard,omitempty"`
+	Standard bool `json:"standard,omitempty"`
 
-	Visible bool `xml:"visible,omitempty"`
+	Visible bool `json:"visible,omitempty"`
 }
 
 type AnalyticSnapshot struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AnalyticSnapshot"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AnalyticSnapshot"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	GroupColumn string `xml:"groupColumn,omitempty"`
+	GroupColumn string `json:"groupColumn,omitempty"`
 
-	Mappings []*AnalyticSnapshotMapping `xml:"mappings,omitempty"`
+	Mappings []*AnalyticSnapshotMapping `json:"mappings,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	RunningUser string `xml:"runningUser,omitempty"`
+	RunningUser string `json:"runningUser,omitempty"`
 
-	SourceReport string `xml:"sourceReport,omitempty"`
+	SourceReport string `json:"sourceReport,omitempty"`
 
-	TargetObject string `xml:"targetObject,omitempty"`
+	TargetObject string `json:"targetObject,omitempty"`
 }
 
 type AnalyticSnapshotMapping struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AnalyticSnapshotMapping"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AnalyticSnapshotMapping"`
 
-	AggregateType *ReportSummaryType `xml:"aggregateType,omitempty"`
+	AggregateType *ReportSummaryType `json:"aggregateType,omitempty"`
 
-	SourceField string `xml:"sourceField,omitempty"`
+	SourceField string `json:"sourceField,omitempty"`
 
-	SourceType *ReportJobSourceTypes `xml:"sourceType,omitempty"`
+	SourceType *ReportJobSourceTypes `json:"sourceType,omitempty"`
 
-	TargetField string `xml:"targetField,omitempty"`
+	TargetField string `json:"targetField,omitempty"`
 }
 
 type ApexTestSuite struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApexTestSuite"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApexTestSuite"`
 
 	*Metadata
 
-	TestClassName []string `xml:"testClassName,omitempty"`
+	TestClassName []string `json:"testClassName,omitempty"`
 }
 
 type AppMenu struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AppMenu"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AppMenu"`
 
 	*Metadata
 
-	AppMenuItems []*AppMenuItem `xml:"appMenuItems,omitempty"`
+	AppMenuItems []*AppMenuItem `json:"appMenuItems,omitempty"`
 }
 
 type AppMenuItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AppMenuItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AppMenuItem"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Type_ string `xml:"type,omitempty"`
+	Type_ string `json:"type,omitempty"`
 }
 
 type ApprovalProcess struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApprovalProcess"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalProcess"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	AllowRecall bool `xml:"allowRecall,omitempty"`
+	AllowRecall bool `json:"allowRecall,omitempty"`
 
-	AllowedSubmitters []*ApprovalSubmitter `xml:"allowedSubmitters,omitempty"`
+	AllowedSubmitters []*ApprovalSubmitter `json:"allowedSubmitters,omitempty"`
 
-	ApprovalPageFields *ApprovalPageField `xml:"approvalPageFields,omitempty"`
+	ApprovalPageFields *ApprovalPageField `json:"approvalPageFields,omitempty"`
 
-	ApprovalStep []*ApprovalStep `xml:"approvalStep,omitempty"`
+	ApprovalStep []*ApprovalStep `json:"approvalStep,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EmailTemplate string `xml:"emailTemplate,omitempty"`
+	EmailTemplate string `json:"emailTemplate,omitempty"`
 
-	EnableMobileDeviceAccess bool `xml:"enableMobileDeviceAccess,omitempty"`
+	EnableMobileDeviceAccess bool `json:"enableMobileDeviceAccess,omitempty"`
 
-	EntryCriteria *ApprovalEntryCriteria `xml:"entryCriteria,omitempty"`
+	EntryCriteria *ApprovalEntryCriteria `json:"entryCriteria,omitempty"`
 
-	FinalApprovalActions *ApprovalAction `xml:"finalApprovalActions,omitempty"`
+	FinalApprovalActions *ApprovalAction `json:"finalApprovalActions,omitempty"`
 
-	FinalApprovalRecordLock bool `xml:"finalApprovalRecordLock,omitempty"`
+	FinalApprovalRecordLock bool `json:"finalApprovalRecordLock,omitempty"`
 
-	FinalRejectionActions *ApprovalAction `xml:"finalRejectionActions,omitempty"`
+	FinalRejectionActions *ApprovalAction `json:"finalRejectionActions,omitempty"`
 
-	FinalRejectionRecordLock bool `xml:"finalRejectionRecordLock,omitempty"`
+	FinalRejectionRecordLock bool `json:"finalRejectionRecordLock,omitempty"`
 
-	InitialSubmissionActions *ApprovalAction `xml:"initialSubmissionActions,omitempty"`
+	InitialSubmissionActions *ApprovalAction `json:"initialSubmissionActions,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	NextAutomatedApprover *NextAutomatedApprover `xml:"nextAutomatedApprover,omitempty"`
+	NextAutomatedApprover *NextAutomatedApprover `json:"nextAutomatedApprover,omitempty"`
 
-	PostTemplate string `xml:"postTemplate,omitempty"`
+	PostTemplate string `json:"postTemplate,omitempty"`
 
-	RecallActions *ApprovalAction `xml:"recallActions,omitempty"`
+	RecallActions *ApprovalAction `json:"recallActions,omitempty"`
 
-	RecordEditability *RecordEditabilityType `xml:"recordEditability,omitempty"`
+	RecordEditability *RecordEditabilityType `json:"recordEditability,omitempty"`
 
-	ShowApprovalHistory bool `xml:"showApprovalHistory,omitempty"`
+	ShowApprovalHistory bool `json:"showApprovalHistory,omitempty"`
 }
 
 type ApprovalSubmitter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApprovalSubmitter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalSubmitter"`
 
-	Submitter string `xml:"submitter,omitempty"`
+	Submitter string `json:"submitter,omitempty"`
 
-	Type_ *ProcessSubmitterType `xml:"type,omitempty"`
+	Type_ *ProcessSubmitterType `json:"type,omitempty"`
 }
 
 type ApprovalPageField struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApprovalPageField"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalPageField"`
 
-	Field []string `xml:"field,omitempty"`
+	Field []string `json:"field,omitempty"`
 }
 
 type ApprovalStep struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApprovalStep"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalStep"`
 
-	AllowDelegate bool `xml:"allowDelegate,omitempty"`
+	AllowDelegate bool `json:"allowDelegate,omitempty"`
 
-	ApprovalActions *ApprovalAction `xml:"approvalActions,omitempty"`
+	ApprovalActions *ApprovalAction `json:"approvalActions,omitempty"`
 
-	AssignedApprover *ApprovalStepApprover `xml:"assignedApprover,omitempty"`
+	AssignedApprover *ApprovalStepApprover `json:"assignedApprover,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EntryCriteria *ApprovalEntryCriteria `xml:"entryCriteria,omitempty"`
+	EntryCriteria *ApprovalEntryCriteria `json:"entryCriteria,omitempty"`
 
-	IfCriteriaNotMet *StepCriteriaNotMetType `xml:"ifCriteriaNotMet,omitempty"`
+	IfCriteriaNotMet *StepCriteriaNotMetType `json:"ifCriteriaNotMet,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	RejectBehavior *ApprovalStepRejectBehavior `xml:"rejectBehavior,omitempty"`
+	RejectBehavior *ApprovalStepRejectBehavior `json:"rejectBehavior,omitempty"`
 
-	RejectionActions *ApprovalAction `xml:"rejectionActions,omitempty"`
+	RejectionActions *ApprovalAction `json:"rejectionActions,omitempty"`
 }
 
 type ApprovalAction struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApprovalAction"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalAction"`
 
-	Action []*WorkflowActionReference `xml:"action,omitempty"`
+	Action []*WorkflowActionReference `json:"action,omitempty"`
 }
 
 type WorkflowActionReference struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowActionReference"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowActionReference"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Type_ *WorkflowActionType `xml:"type,omitempty"`
+	Type_ *WorkflowActionType `json:"type,omitempty"`
 }
 
 type ApprovalStepApprover struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApprovalStepApprover"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalStepApprover"`
 
-	Approver []*Approver `xml:"approver,omitempty"`
+	Approver []*Approver `json:"approver,omitempty"`
 
-	WhenMultipleApprovers *RoutingType `xml:"whenMultipleApprovers,omitempty"`
+	WhenMultipleApprovers *RoutingType `json:"whenMultipleApprovers,omitempty"`
 }
 
 type Approver struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Approver"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Approver"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Type_ *NextOwnerType `xml:"type,omitempty"`
+	Type_ *NextOwnerType `json:"type,omitempty"`
 }
 
 type ApprovalEntryCriteria struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApprovalEntryCriteria"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalEntryCriteria"`
 
-	BooleanFilter string `xml:"booleanFilter,omitempty"`
+	BooleanFilter string `json:"booleanFilter,omitempty"`
 
-	CriteriaItems []*FilterItem `xml:"criteriaItems,omitempty"`
+	CriteriaItems []*FilterItem `json:"criteriaItems,omitempty"`
 
-	Formula string `xml:"formula,omitempty"`
+	Formula string `json:"formula,omitempty"`
 }
 
 type FilterItem struct {
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Operation *FilterOperation `xml:"operation,omitempty"`
+	Operation *FilterOperation `json:"operation,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 
-	ValueField string `xml:"valueField,omitempty"`
+	ValueField string `json:"valueField,omitempty"`
 }
 
 type DuplicateRuleFilterItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DuplicateRuleFilterItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DuplicateRuleFilterItem"`
 
 	*FilterItem
 
-	SortOrder int32 `xml:"sortOrder,omitempty"`
+	SortOrder int32 `json:"sortOrder,omitempty"`
 
-	Table string `xml:"table,omitempty"`
+	Table string `json:"table,omitempty"`
 }
 
 type ApprovalStepRejectBehavior struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApprovalStepRejectBehavior"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalStepRejectBehavior"`
 
-	Type_ *StepRejectBehaviorType `xml:"type,omitempty"`
+	Type_ *StepRejectBehaviorType `json:"type,omitempty"`
 }
 
 type NextAutomatedApprover struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata NextAutomatedApprover"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NextAutomatedApprover"`
 
-	UseApproverFieldOfRecordOwner bool `xml:"useApproverFieldOfRecordOwner,omitempty"`
+	UseApproverFieldOfRecordOwner bool `json:"useApproverFieldOfRecordOwner,omitempty"`
 
-	UserHierarchyField string `xml:"userHierarchyField,omitempty"`
+	UserHierarchyField string `json:"userHierarchyField,omitempty"`
 }
 
 type AssignmentRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AssignmentRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AssignmentRule"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	RuleEntry []*RuleEntry `xml:"ruleEntry,omitempty"`
+	RuleEntry []*RuleEntry `json:"ruleEntry,omitempty"`
 }
 
 type RuleEntry struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RuleEntry"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RuleEntry"`
 
-	AssignedTo string `xml:"assignedTo,omitempty"`
+	AssignedTo string `json:"assignedTo,omitempty"`
 
-	AssignedToType *AssignToLookupValueType `xml:"assignedToType,omitempty"`
+	AssignedToType *AssignToLookupValueType `json:"assignedToType,omitempty"`
 
-	BooleanFilter string `xml:"booleanFilter,omitempty"`
+	BooleanFilter string `json:"booleanFilter,omitempty"`
 
-	BusinessHours string `xml:"businessHours,omitempty"`
+	BusinessHours string `json:"businessHours,omitempty"`
 
-	BusinessHoursSource *BusinessHoursSourceType `xml:"businessHoursSource,omitempty"`
+	BusinessHoursSource *BusinessHoursSourceType `json:"businessHoursSource,omitempty"`
 
-	CriteriaItems []*FilterItem `xml:"criteriaItems,omitempty"`
+	CriteriaItems []*FilterItem `json:"criteriaItems,omitempty"`
 
-	DisableEscalationWhenModified bool `xml:"disableEscalationWhenModified,omitempty"`
+	DisableEscalationWhenModified bool `json:"disableEscalationWhenModified,omitempty"`
 
-	EscalationAction []*EscalationAction `xml:"escalationAction,omitempty"`
+	EscalationAction []*EscalationAction `json:"escalationAction,omitempty"`
 
-	EscalationStartTime *EscalationStartTimeType `xml:"escalationStartTime,omitempty"`
+	EscalationStartTime *EscalationStartTimeType `json:"escalationStartTime,omitempty"`
 
-	Formula string `xml:"formula,omitempty"`
+	Formula string `json:"formula,omitempty"`
 
-	NotifyCcRecipients bool `xml:"notifyCcRecipients,omitempty"`
+	NotifyCcRecipients bool `json:"notifyCcRecipients,omitempty"`
 
-	OverrideExistingTeams bool `xml:"overrideExistingTeams,omitempty"`
+	OverrideExistingTeams bool `json:"overrideExistingTeams,omitempty"`
 
-	ReplyToEmail string `xml:"replyToEmail,omitempty"`
+	ReplyToEmail string `json:"replyToEmail,omitempty"`
 
-	SenderEmail string `xml:"senderEmail,omitempty"`
+	SenderEmail string `json:"senderEmail,omitempty"`
 
-	SenderName string `xml:"senderName,omitempty"`
+	SenderName string `json:"senderName,omitempty"`
 
-	Team []string `xml:"team,omitempty"`
+	Team []string `json:"team,omitempty"`
 
-	Template string `xml:"template,omitempty"`
+	Template string `json:"template,omitempty"`
 }
 
 type EscalationAction struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EscalationAction"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EscalationAction"`
 
-	AssignedTo string `xml:"assignedTo,omitempty"`
+	AssignedTo string `json:"assignedTo,omitempty"`
 
-	AssignedToTemplate string `xml:"assignedToTemplate,omitempty"`
+	AssignedToTemplate string `json:"assignedToTemplate,omitempty"`
 
-	AssignedToType *AssignToLookupValueType `xml:"assignedToType,omitempty"`
+	AssignedToType *AssignToLookupValueType `json:"assignedToType,omitempty"`
 
-	MinutesToEscalation int32 `xml:"minutesToEscalation,omitempty"`
+	MinutesToEscalation int32 `json:"minutesToEscalation,omitempty"`
 
-	NotifyCaseOwner bool `xml:"notifyCaseOwner,omitempty"`
+	NotifyCaseOwner bool `json:"notifyCaseOwner,omitempty"`
 
-	NotifyEmail []string `xml:"notifyEmail,omitempty"`
+	NotifyEmail []string `json:"notifyEmail,omitempty"`
 
-	NotifyTo string `xml:"notifyTo,omitempty"`
+	NotifyTo string `json:"notifyTo,omitempty"`
 
-	NotifyToTemplate string `xml:"notifyToTemplate,omitempty"`
+	NotifyToTemplate string `json:"notifyToTemplate,omitempty"`
 }
 
 type AssignmentRules struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AssignmentRules"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AssignmentRules"`
 
 	*Metadata
 
-	AssignmentRule []*AssignmentRule `xml:"assignmentRule,omitempty"`
+	AssignmentRule []*AssignmentRule `json:"assignmentRule,omitempty"`
 }
 
 type AssistantRecommendationType struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AssistantRecommendationType"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AssistantRecommendationType"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	PlatformActionlist *PlatformActionList `xml:"platformActionlist,omitempty"`
+	PlatformActionlist *PlatformActionList `json:"platformActionlist,omitempty"`
 
-	SobjectType string `xml:"sobjectType,omitempty"`
+	SobjectType string `json:"sobjectType,omitempty"`
 
-	Title string `xml:"title,omitempty"`
+	Title string `json:"title,omitempty"`
 }
 
 type PlatformActionList struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PlatformActionList"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PlatformActionList"`
 
 	*Metadata
 
-	ActionListContext *PlatformActionListContext `xml:"actionListContext,omitempty"`
+	ActionListContext *PlatformActionListContext `json:"actionListContext,omitempty"`
 
-	PlatformActionListItems []*PlatformActionListItem `xml:"platformActionListItems,omitempty"`
+	PlatformActionListItems []*PlatformActionListItem `json:"platformActionListItems,omitempty"`
 
-	RelatedSourceEntity string `xml:"relatedSourceEntity,omitempty"`
+	RelatedSourceEntity string `json:"relatedSourceEntity,omitempty"`
 }
 
 type PlatformActionListItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PlatformActionListItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PlatformActionListItem"`
 
-	ActionName string `xml:"actionName,omitempty"`
+	ActionName string `json:"actionName,omitempty"`
 
-	ActionType *PlatformActionType `xml:"actionType,omitempty"`
+	ActionType *PlatformActionType `json:"actionType,omitempty"`
 
-	SortOrder int32 `xml:"sortOrder,omitempty"`
+	SortOrder int32 `json:"sortOrder,omitempty"`
 
-	Subtype string `xml:"subtype,omitempty"`
+	Subtype string `json:"subtype,omitempty"`
 }
 
 type AuraDefinitionBundle struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AuraDefinitionBundle"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AuraDefinitionBundle"`
 
 	*Metadata
 
-	SVGContent []byte `xml:"SVGContent,omitempty"`
+	SVGContent []byte `json:"SVGContent,omitempty"`
 
-	ApiVersion float64 `xml:"apiVersion,omitempty"`
+	ApiVersion float64 `json:"apiVersion,omitempty"`
 
-	ControllerContent []byte `xml:"controllerContent,omitempty"`
+	ControllerContent []byte `json:"controllerContent,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DesignContent []byte `xml:"designContent,omitempty"`
+	DesignContent []byte `json:"designContent,omitempty"`
 
-	DocumentationContent []byte `xml:"documentationContent,omitempty"`
+	DocumentationContent []byte `json:"documentationContent,omitempty"`
 
-	HelperContent []byte `xml:"helperContent,omitempty"`
+	HelperContent []byte `json:"helperContent,omitempty"`
 
-	Markup []byte `xml:"markup,omitempty"`
+	Markup []byte `json:"markup,omitempty"`
 
-	ModelContent []byte `xml:"modelContent,omitempty"`
+	ModelContent []byte `json:"modelContent,omitempty"`
 
-	PackageVersions []*PackageVersion `xml:"packageVersions,omitempty"`
+	PackageVersions []*PackageVersion `json:"packageVersions,omitempty"`
 
-	RendererContent []byte `xml:"rendererContent,omitempty"`
+	RendererContent []byte `json:"rendererContent,omitempty"`
 
-	StyleContent []byte `xml:"styleContent,omitempty"`
+	StyleContent []byte `json:"styleContent,omitempty"`
 
-	TestsuiteContent []byte `xml:"testsuiteContent,omitempty"`
+	TestsuiteContent []byte `json:"testsuiteContent,omitempty"`
 
-	Type_ *AuraBundleType `xml:"type,omitempty"`
+	Type_ *AuraBundleType `json:"type,omitempty"`
 }
 
 type PackageVersion struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PackageVersion"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PackageVersion"`
 
-	MajorNumber int32 `xml:"majorNumber,omitempty"`
+	MajorNumber int32 `json:"majorNumber,omitempty"`
 
-	MinorNumber int32 `xml:"minorNumber,omitempty"`
+	MinorNumber int32 `json:"minorNumber,omitempty"`
 
-	Namespace string `xml:"namespace,omitempty"`
+	Namespace string `json:"namespace,omitempty"`
 }
 
 type AuthProvider struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AuthProvider"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AuthProvider"`
 
 	*Metadata
 
-	AuthorizeUrl string `xml:"authorizeUrl,omitempty"`
+	AuthorizeUrl string `json:"authorizeUrl,omitempty"`
 
-	ConsumerKey string `xml:"consumerKey,omitempty"`
+	ConsumerKey string `json:"consumerKey,omitempty"`
 
-	ConsumerSecret string `xml:"consumerSecret,omitempty"`
+	ConsumerSecret string `json:"consumerSecret,omitempty"`
 
-	CustomMetadataTypeRecord string `xml:"customMetadataTypeRecord,omitempty"`
+	CustomMetadataTypeRecord string `json:"customMetadataTypeRecord,omitempty"`
 
-	DefaultScopes string `xml:"defaultScopes,omitempty"`
+	DefaultScopes string `json:"defaultScopes,omitempty"`
 
-	ErrorUrl string `xml:"errorUrl,omitempty"`
+	ErrorUrl string `json:"errorUrl,omitempty"`
 
-	ExecutionUser string `xml:"executionUser,omitempty"`
+	ExecutionUser string `json:"executionUser,omitempty"`
 
-	FriendlyName string `xml:"friendlyName,omitempty"`
+	FriendlyName string `json:"friendlyName,omitempty"`
 
-	IconUrl string `xml:"iconUrl,omitempty"`
+	IconUrl string `json:"iconUrl,omitempty"`
 
-	IdTokenIssuer string `xml:"idTokenIssuer,omitempty"`
+	IdTokenIssuer string `json:"idTokenIssuer,omitempty"`
 
-	IncludeOrgIdInIdentifier bool `xml:"includeOrgIdInIdentifier,omitempty"`
+	IncludeOrgIdInIdentifier bool `json:"includeOrgIdInIdentifier,omitempty"`
 
-	LogoutUrl string `xml:"logoutUrl,omitempty"`
+	LogoutUrl string `json:"logoutUrl,omitempty"`
 
-	Plugin string `xml:"plugin,omitempty"`
+	Plugin string `json:"plugin,omitempty"`
 
-	Portal string `xml:"portal,omitempty"`
+	Portal string `json:"portal,omitempty"`
 
-	ProviderType *AuthProviderType `xml:"providerType,omitempty"`
+	ProviderType *AuthProviderType `json:"providerType,omitempty"`
 
-	RegistrationHandler string `xml:"registrationHandler,omitempty"`
+	RegistrationHandler string `json:"registrationHandler,omitempty"`
 
-	SendAccessTokenInHeader bool `xml:"sendAccessTokenInHeader,omitempty"`
+	SendAccessTokenInHeader bool `json:"sendAccessTokenInHeader,omitempty"`
 
-	SendClientCredentialsInHeader bool `xml:"sendClientCredentialsInHeader,omitempty"`
+	SendClientCredentialsInHeader bool `json:"sendClientCredentialsInHeader,omitempty"`
 
-	TokenUrl string `xml:"tokenUrl,omitempty"`
+	TokenUrl string `json:"tokenUrl,omitempty"`
 
-	UserInfoUrl string `xml:"userInfoUrl,omitempty"`
+	UserInfoUrl string `json:"userInfoUrl,omitempty"`
 }
 
 type AutoResponseRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AutoResponseRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AutoResponseRule"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	RuleEntry []*RuleEntry `xml:"ruleEntry,omitempty"`
+	RuleEntry []*RuleEntry `json:"ruleEntry,omitempty"`
 }
 
 type AutoResponseRules struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AutoResponseRules"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AutoResponseRules"`
 
 	*Metadata
 
-	AutoResponseRule []*AutoResponseRule `xml:"autoResponseRule,omitempty"`
+	AutoResponseRule []*AutoResponseRule `json:"autoResponseRule,omitempty"`
 }
 
 type BusinessHoursEntry struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata BusinessHoursEntry"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata BusinessHoursEntry"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	Default_ bool `xml:"default,omitempty"`
+	Default_ bool `json:"default,omitempty"`
 
-	FridayEndTime time.Time `xml:"fridayEndTime,omitempty"`
+	FridayEndTime time.Time `json:"fridayEndTime,omitempty"`
 
-	FridayStartTime time.Time `xml:"fridayStartTime,omitempty"`
+	FridayStartTime time.Time `json:"fridayStartTime,omitempty"`
 
-	MondayEndTime time.Time `xml:"mondayEndTime,omitempty"`
+	MondayEndTime time.Time `json:"mondayEndTime,omitempty"`
 
-	MondayStartTime time.Time `xml:"mondayStartTime,omitempty"`
+	MondayStartTime time.Time `json:"mondayStartTime,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	SaturdayEndTime time.Time `xml:"saturdayEndTime,omitempty"`
+	SaturdayEndTime time.Time `json:"saturdayEndTime,omitempty"`
 
-	SaturdayStartTime time.Time `xml:"saturdayStartTime,omitempty"`
+	SaturdayStartTime time.Time `json:"saturdayStartTime,omitempty"`
 
-	SundayEndTime time.Time `xml:"sundayEndTime,omitempty"`
+	SundayEndTime time.Time `json:"sundayEndTime,omitempty"`
 
-	SundayStartTime time.Time `xml:"sundayStartTime,omitempty"`
+	SundayStartTime time.Time `json:"sundayStartTime,omitempty"`
 
-	ThursdayEndTime time.Time `xml:"thursdayEndTime,omitempty"`
+	ThursdayEndTime time.Time `json:"thursdayEndTime,omitempty"`
 
-	ThursdayStartTime time.Time `xml:"thursdayStartTime,omitempty"`
+	ThursdayStartTime time.Time `json:"thursdayStartTime,omitempty"`
 
-	TimeZoneId string `xml:"timeZoneId,omitempty"`
+	TimeZoneId string `json:"timeZoneId,omitempty"`
 
-	TuesdayEndTime time.Time `xml:"tuesdayEndTime,omitempty"`
+	TuesdayEndTime time.Time `json:"tuesdayEndTime,omitempty"`
 
-	TuesdayStartTime time.Time `xml:"tuesdayStartTime,omitempty"`
+	TuesdayStartTime time.Time `json:"tuesdayStartTime,omitempty"`
 
-	WednesdayEndTime time.Time `xml:"wednesdayEndTime,omitempty"`
+	WednesdayEndTime time.Time `json:"wednesdayEndTime,omitempty"`
 
-	WednesdayStartTime time.Time `xml:"wednesdayStartTime,omitempty"`
+	WednesdayStartTime time.Time `json:"wednesdayStartTime,omitempty"`
 }
 
 type BusinessHoursSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata BusinessHoursSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata BusinessHoursSettings"`
 
 	*Metadata
 
-	BusinessHours []*BusinessHoursEntry `xml:"businessHours,omitempty"`
+	BusinessHours []*BusinessHoursEntry `json:"businessHours,omitempty"`
 
-	Holidays []*Holiday `xml:"holidays,omitempty"`
+	Holidays []*Holiday `json:"holidays,omitempty"`
 }
 
 type Holiday struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Holiday"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Holiday"`
 
-	ActivityDate time.Time `xml:"activityDate,omitempty"`
+	ActivityDate time.Time `json:"activityDate,omitempty"`
 
-	BusinessHours []string `xml:"businessHours,omitempty"`
+	BusinessHours []string `json:"businessHours,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EndTime time.Time `xml:"endTime,omitempty"`
+	EndTime time.Time `json:"endTime,omitempty"`
 
-	IsRecurring bool `xml:"isRecurring,omitempty"`
+	IsRecurring bool `json:"isRecurring,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	RecurrenceDayOfMonth int32 `xml:"recurrenceDayOfMonth,omitempty"`
+	RecurrenceDayOfMonth int32 `json:"recurrenceDayOfMonth,omitempty"`
 
-	RecurrenceDayOfWeek []string `xml:"recurrenceDayOfWeek,omitempty"`
+	RecurrenceDayOfWeek []string `json:"recurrenceDayOfWeek,omitempty"`
 
-	RecurrenceDayOfWeekMask int32 `xml:"recurrenceDayOfWeekMask,omitempty"`
+	RecurrenceDayOfWeekMask int32 `json:"recurrenceDayOfWeekMask,omitempty"`
 
-	RecurrenceEndDate time.Time `xml:"recurrenceEndDate,omitempty"`
+	RecurrenceEndDate time.Time `json:"recurrenceEndDate,omitempty"`
 
-	RecurrenceInstance string `xml:"recurrenceInstance,omitempty"`
+	RecurrenceInstance string `json:"recurrenceInstance,omitempty"`
 
-	RecurrenceInterval int32 `xml:"recurrenceInterval,omitempty"`
+	RecurrenceInterval int32 `json:"recurrenceInterval,omitempty"`
 
-	RecurrenceMonthOfYear string `xml:"recurrenceMonthOfYear,omitempty"`
+	RecurrenceMonthOfYear string `json:"recurrenceMonthOfYear,omitempty"`
 
-	RecurrenceStartDate time.Time `xml:"recurrenceStartDate,omitempty"`
+	RecurrenceStartDate time.Time `json:"recurrenceStartDate,omitempty"`
 
-	RecurrenceType string `xml:"recurrenceType,omitempty"`
+	RecurrenceType string `json:"recurrenceType,omitempty"`
 
-	StartTime time.Time `xml:"startTime,omitempty"`
+	StartTime time.Time `json:"startTime,omitempty"`
 }
 
 type BusinessProcess struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata BusinessProcess"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata BusinessProcess"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	IsActive bool `xml:"isActive,omitempty"`
+	IsActive bool `json:"isActive,omitempty"`
 
-	Values []*PicklistValue `xml:"values,omitempty"`
+	Values []*PicklistValue `json:"values,omitempty"`
 }
 
 type PicklistValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PicklistValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PicklistValue"`
 
 	*GlobalPicklistValue
 
-	AllowEmail bool `xml:"allowEmail,omitempty"`
+	AllowEmail bool `json:"allowEmail,omitempty"`
 
-	Closed bool `xml:"closed,omitempty"`
+	Closed bool `json:"closed,omitempty"`
 
-	ControllingFieldValues []string `xml:"controllingFieldValues,omitempty"`
+	ControllingFieldValues []string `json:"controllingFieldValues,omitempty"`
 
-	Converted bool `xml:"converted,omitempty"`
+	Converted bool `json:"converted,omitempty"`
 
-	CssExposed bool `xml:"cssExposed,omitempty"`
+	CssExposed bool `json:"cssExposed,omitempty"`
 
-	ForecastCategory *ForecastCategories `xml:"forecastCategory,omitempty"`
+	ForecastCategory *ForecastCategories `json:"forecastCategory,omitempty"`
 
-	HighPriority bool `xml:"highPriority,omitempty"`
+	HighPriority bool `json:"highPriority,omitempty"`
 
-	Probability int32 `xml:"probability,omitempty"`
+	Probability int32 `json:"probability,omitempty"`
 
-	ReverseRole string `xml:"reverseRole,omitempty"`
+	ReverseRole string `json:"reverseRole,omitempty"`
 
-	Reviewed bool `xml:"reviewed,omitempty"`
+	Reviewed bool `json:"reviewed,omitempty"`
 
-	Won bool `xml:"won,omitempty"`
+	Won bool `json:"won,omitempty"`
 }
 
 type GlobalPicklistValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata GlobalPicklistValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata GlobalPicklistValue"`
 
 	*Metadata
 
-	Color string `xml:"color,omitempty"`
+	Color string `json:"color,omitempty"`
 
-	Default_ bool `xml:"default,omitempty"`
+	Default_ bool `json:"default,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	IsActive bool `xml:"isActive,omitempty"`
+	IsActive bool `json:"isActive,omitempty"`
 }
 
 type CallCenter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CallCenter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CallCenter"`
 
 	*Metadata
 
-	AdapterUrl string `xml:"adapterUrl,omitempty"`
+	AdapterUrl string `json:"adapterUrl,omitempty"`
 
-	CustomSettings string `xml:"customSettings,omitempty"`
+	CustomSettings string `json:"customSettings,omitempty"`
 
-	DisplayName string `xml:"displayName,omitempty"`
+	DisplayName string `json:"displayName,omitempty"`
 
-	DisplayNameLabel string `xml:"displayNameLabel,omitempty"`
+	DisplayNameLabel string `json:"displayNameLabel,omitempty"`
 
-	InternalNameLabel string `xml:"internalNameLabel,omitempty"`
+	InternalNameLabel string `json:"internalNameLabel,omitempty"`
 
-	Sections []*CallCenterSection `xml:"sections,omitempty"`
+	Sections []*CallCenterSection `json:"sections,omitempty"`
 
-	Version string `xml:"version,omitempty"`
+	Version string `json:"version,omitempty"`
 }
 
 type CallCenterSection struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CallCenterSection"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CallCenterSection"`
 
-	Items []*CallCenterItem `xml:"items,omitempty"`
+	Items []*CallCenterItem `json:"items,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type CallCenterItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CallCenterItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CallCenterItem"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type CampaignInfluenceModel struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CampaignInfluenceModel"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CampaignInfluenceModel"`
 
 	*Metadata
 
-	IsDefaultModel bool `xml:"isDefaultModel,omitempty"`
+	IsDefaultModel bool `json:"isDefaultModel,omitempty"`
 
-	IsModelLocked bool `xml:"isModelLocked,omitempty"`
+	IsModelLocked bool `json:"isModelLocked,omitempty"`
 
-	ModelDescription string `xml:"modelDescription,omitempty"`
+	ModelDescription string `json:"modelDescription,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type CaseSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CaseSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CaseSettings"`
 
 	*Metadata
 
-	CaseAssignNotificationTemplate string `xml:"caseAssignNotificationTemplate,omitempty"`
+	CaseAssignNotificationTemplate string `json:"caseAssignNotificationTemplate,omitempty"`
 
-	CaseCloseNotificationTemplate string `xml:"caseCloseNotificationTemplate,omitempty"`
+	CaseCloseNotificationTemplate string `json:"caseCloseNotificationTemplate,omitempty"`
 
-	CaseCommentNotificationTemplate string `xml:"caseCommentNotificationTemplate,omitempty"`
+	CaseCommentNotificationTemplate string `json:"caseCommentNotificationTemplate,omitempty"`
 
-	CaseCreateNotificationTemplate string `xml:"caseCreateNotificationTemplate,omitempty"`
+	CaseCreateNotificationTemplate string `json:"caseCreateNotificationTemplate,omitempty"`
 
-	CaseFeedItemSettings []*FeedItemSettings `xml:"caseFeedItemSettings,omitempty"`
+	CaseFeedItemSettings []*FeedItemSettings `json:"caseFeedItemSettings,omitempty"`
 
-	CloseCaseThroughStatusChange bool `xml:"closeCaseThroughStatusChange,omitempty"`
+	CloseCaseThroughStatusChange bool `json:"closeCaseThroughStatusChange,omitempty"`
 
-	DefaultCaseOwner string `xml:"defaultCaseOwner,omitempty"`
+	DefaultCaseOwner string `json:"defaultCaseOwner,omitempty"`
 
-	DefaultCaseOwnerType string `xml:"defaultCaseOwnerType,omitempty"`
+	DefaultCaseOwnerType string `json:"defaultCaseOwnerType,omitempty"`
 
-	DefaultCaseUser string `xml:"defaultCaseUser,omitempty"`
+	DefaultCaseUser string `json:"defaultCaseUser,omitempty"`
 
-	EmailActionDefaultsHandlerClass string `xml:"emailActionDefaultsHandlerClass,omitempty"`
+	EmailActionDefaultsHandlerClass string `json:"emailActionDefaultsHandlerClass,omitempty"`
 
-	EmailToCase *EmailToCaseSettings `xml:"emailToCase,omitempty"`
+	EmailToCase *EmailToCaseSettings `json:"emailToCase,omitempty"`
 
-	EnableCaseFeed bool `xml:"enableCaseFeed,omitempty"`
+	EnableCaseFeed bool `json:"enableCaseFeed,omitempty"`
 
-	EnableDraftEmails bool `xml:"enableDraftEmails,omitempty"`
+	EnableDraftEmails bool `json:"enableDraftEmails,omitempty"`
 
-	EnableEarlyEscalationRuleTriggers bool `xml:"enableEarlyEscalationRuleTriggers,omitempty"`
+	EnableEarlyEscalationRuleTriggers bool `json:"enableEarlyEscalationRuleTriggers,omitempty"`
 
-	EnableEmailActionDefaultsHandler bool `xml:"enableEmailActionDefaultsHandler,omitempty"`
+	EnableEmailActionDefaultsHandler bool `json:"enableEmailActionDefaultsHandler,omitempty"`
 
-	EnableSuggestedArticlesApplication bool `xml:"enableSuggestedArticlesApplication,omitempty"`
+	EnableSuggestedArticlesApplication bool `json:"enableSuggestedArticlesApplication,omitempty"`
 
-	EnableSuggestedArticlesCustomerPortal bool `xml:"enableSuggestedArticlesCustomerPortal,omitempty"`
+	EnableSuggestedArticlesCustomerPortal bool `json:"enableSuggestedArticlesCustomerPortal,omitempty"`
 
-	EnableSuggestedArticlesPartnerPortal bool `xml:"enableSuggestedArticlesPartnerPortal,omitempty"`
+	EnableSuggestedArticlesPartnerPortal bool `json:"enableSuggestedArticlesPartnerPortal,omitempty"`
 
-	EnableSuggestedSolutions bool `xml:"enableSuggestedSolutions,omitempty"`
+	EnableSuggestedSolutions bool `json:"enableSuggestedSolutions,omitempty"`
 
-	KeepRecordTypeOnAssignmentRule bool `xml:"keepRecordTypeOnAssignmentRule,omitempty"`
+	KeepRecordTypeOnAssignmentRule bool `json:"keepRecordTypeOnAssignmentRule,omitempty"`
 
-	NotifyContactOnCaseComment bool `xml:"notifyContactOnCaseComment,omitempty"`
+	NotifyContactOnCaseComment bool `json:"notifyContactOnCaseComment,omitempty"`
 
-	NotifyDefaultCaseOwner bool `xml:"notifyDefaultCaseOwner,omitempty"`
+	NotifyDefaultCaseOwner bool `json:"notifyDefaultCaseOwner,omitempty"`
 
-	NotifyOwnerOnCaseComment bool `xml:"notifyOwnerOnCaseComment,omitempty"`
+	NotifyOwnerOnCaseComment bool `json:"notifyOwnerOnCaseComment,omitempty"`
 
-	NotifyOwnerOnCaseOwnerChange bool `xml:"notifyOwnerOnCaseOwnerChange,omitempty"`
+	NotifyOwnerOnCaseOwnerChange bool `json:"notifyOwnerOnCaseOwnerChange,omitempty"`
 
-	ShowFewerCloseActions bool `xml:"showFewerCloseActions,omitempty"`
+	ShowFewerCloseActions bool `json:"showFewerCloseActions,omitempty"`
 
-	UseSystemEmailAddress bool `xml:"useSystemEmailAddress,omitempty"`
+	UseSystemEmailAddress bool `json:"useSystemEmailAddress,omitempty"`
 
-	WebToCase *WebToCaseSettings `xml:"webToCase,omitempty"`
+	WebToCase *WebToCaseSettings `json:"webToCase,omitempty"`
 }
 
 type FeedItemSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FeedItemSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FeedItemSettings"`
 
-	CharacterLimit int32 `xml:"characterLimit,omitempty"`
+	CharacterLimit int32 `json:"characterLimit,omitempty"`
 
-	CollapseThread bool `xml:"collapseThread,omitempty"`
+	CollapseThread bool `json:"collapseThread,omitempty"`
 
-	DisplayFormat *FeedItemDisplayFormat `xml:"displayFormat,omitempty"`
+	DisplayFormat *FeedItemDisplayFormat `json:"displayFormat,omitempty"`
 
-	FeedItemType *FeedItemType `xml:"feedItemType,omitempty"`
+	FeedItemType *FeedItemType `json:"feedItemType,omitempty"`
 }
 
 type EmailToCaseSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EmailToCaseSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmailToCaseSettings"`
 
-	EnableEmailToCase bool `xml:"enableEmailToCase,omitempty"`
+	EnableEmailToCase bool `json:"enableEmailToCase,omitempty"`
 
-	EnableHtmlEmail bool `xml:"enableHtmlEmail,omitempty"`
+	EnableHtmlEmail bool `json:"enableHtmlEmail,omitempty"`
 
-	EnableOnDemandEmailToCase bool `xml:"enableOnDemandEmailToCase,omitempty"`
+	EnableOnDemandEmailToCase bool `json:"enableOnDemandEmailToCase,omitempty"`
 
-	EnableThreadIDInBody bool `xml:"enableThreadIDInBody,omitempty"`
+	EnableThreadIDInBody bool `json:"enableThreadIDInBody,omitempty"`
 
-	EnableThreadIDInSubject bool `xml:"enableThreadIDInSubject,omitempty"`
+	EnableThreadIDInSubject bool `json:"enableThreadIDInSubject,omitempty"`
 
-	NotifyOwnerOnNewCaseEmail bool `xml:"notifyOwnerOnNewCaseEmail,omitempty"`
+	NotifyOwnerOnNewCaseEmail bool `json:"notifyOwnerOnNewCaseEmail,omitempty"`
 
-	OverEmailLimitAction *EmailToCaseOnFailureActionType `xml:"overEmailLimitAction,omitempty"`
+	OverEmailLimitAction *EmailToCaseOnFailureActionType `json:"overEmailLimitAction,omitempty"`
 
-	PreQuoteSignature bool `xml:"preQuoteSignature,omitempty"`
+	PreQuoteSignature bool `json:"preQuoteSignature,omitempty"`
 
-	RoutingAddresses []*EmailToCaseRoutingAddress `xml:"routingAddresses,omitempty"`
+	RoutingAddresses []*EmailToCaseRoutingAddress `json:"routingAddresses,omitempty"`
 
-	UnauthorizedSenderAction *EmailToCaseOnFailureActionType `xml:"unauthorizedSenderAction,omitempty"`
+	UnauthorizedSenderAction *EmailToCaseOnFailureActionType `json:"unauthorizedSenderAction,omitempty"`
 }
 
 type EmailToCaseRoutingAddress struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EmailToCaseRoutingAddress"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmailToCaseRoutingAddress"`
 
-	AddressType *EmailToCaseRoutingAddressType `xml:"addressType,omitempty"`
+	AddressType *EmailToCaseRoutingAddressType `json:"addressType,omitempty"`
 
-	AuthorizedSenders string `xml:"authorizedSenders,omitempty"`
+	AuthorizedSenders string `json:"authorizedSenders,omitempty"`
 
-	CaseOrigin string `xml:"caseOrigin,omitempty"`
+	CaseOrigin string `json:"caseOrigin,omitempty"`
 
-	CaseOwner string `xml:"caseOwner,omitempty"`
+	CaseOwner string `json:"caseOwner,omitempty"`
 
-	CaseOwnerType string `xml:"caseOwnerType,omitempty"`
+	CaseOwnerType string `json:"caseOwnerType,omitempty"`
 
-	CasePriority string `xml:"casePriority,omitempty"`
+	CasePriority string `json:"casePriority,omitempty"`
 
-	CreateTask bool `xml:"createTask,omitempty"`
+	CreateTask bool `json:"createTask,omitempty"`
 
-	EmailAddress string `xml:"emailAddress,omitempty"`
+	EmailAddress string `json:"emailAddress,omitempty"`
 
-	EmailServicesAddress string `xml:"emailServicesAddress,omitempty"`
+	EmailServicesAddress string `json:"emailServicesAddress,omitempty"`
 
-	IsVerified bool `xml:"isVerified,omitempty"`
+	IsVerified bool `json:"isVerified,omitempty"`
 
-	RoutingName string `xml:"routingName,omitempty"`
+	RoutingName string `json:"routingName,omitempty"`
 
-	SaveEmailHeaders bool `xml:"saveEmailHeaders,omitempty"`
+	SaveEmailHeaders bool `json:"saveEmailHeaders,omitempty"`
 
-	TaskStatus string `xml:"taskStatus,omitempty"`
+	TaskStatus string `json:"taskStatus,omitempty"`
 }
 
 type WebToCaseSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WebToCaseSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WebToCaseSettings"`
 
-	CaseOrigin string `xml:"caseOrigin,omitempty"`
+	CaseOrigin string `json:"caseOrigin,omitempty"`
 
-	DefaultResponseTemplate string `xml:"defaultResponseTemplate,omitempty"`
+	DefaultResponseTemplate string `json:"defaultResponseTemplate,omitempty"`
 
-	EnableWebToCase bool `xml:"enableWebToCase,omitempty"`
+	EnableWebToCase bool `json:"enableWebToCase,omitempty"`
 }
 
 type ChannelLayout struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ChannelLayout"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ChannelLayout"`
 
 	*Metadata
 
-	EnabledChannels []string `xml:"enabledChannels,omitempty"`
+	EnabledChannels []string `json:"enabledChannels,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	LayoutItems []*ChannelLayoutItem `xml:"layoutItems,omitempty"`
+	LayoutItems []*ChannelLayoutItem `json:"layoutItems,omitempty"`
 }
 
 type ChannelLayoutItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ChannelLayoutItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ChannelLayoutItem"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 }
 
 type ChatterAnswersSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ChatterAnswersSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ChatterAnswersSettings"`
 
 	*Metadata
 
-	EmailFollowersOnBestAnswer bool `xml:"emailFollowersOnBestAnswer,omitempty"`
+	EmailFollowersOnBestAnswer bool `json:"emailFollowersOnBestAnswer,omitempty"`
 
-	EmailFollowersOnReply bool `xml:"emailFollowersOnReply,omitempty"`
+	EmailFollowersOnReply bool `json:"emailFollowersOnReply,omitempty"`
 
-	EmailOwnerOnPrivateReply bool `xml:"emailOwnerOnPrivateReply,omitempty"`
+	EmailOwnerOnPrivateReply bool `json:"emailOwnerOnPrivateReply,omitempty"`
 
-	EmailOwnerOnReply bool `xml:"emailOwnerOnReply,omitempty"`
+	EmailOwnerOnReply bool `json:"emailOwnerOnReply,omitempty"`
 
-	EnableAnswerViaEmail bool `xml:"enableAnswerViaEmail,omitempty"`
+	EnableAnswerViaEmail bool `json:"enableAnswerViaEmail,omitempty"`
 
-	EnableChatterAnswers bool `xml:"enableChatterAnswers,omitempty"`
+	EnableChatterAnswers bool `json:"enableChatterAnswers,omitempty"`
 
-	EnableFacebookSSO bool `xml:"enableFacebookSSO,omitempty"`
+	EnableFacebookSSO bool `json:"enableFacebookSSO,omitempty"`
 
-	EnableInlinePublisher bool `xml:"enableInlinePublisher,omitempty"`
+	EnableInlinePublisher bool `json:"enableInlinePublisher,omitempty"`
 
-	EnableReputation bool `xml:"enableReputation,omitempty"`
+	EnableReputation bool `json:"enableReputation,omitempty"`
 
-	EnableRichTextEditor bool `xml:"enableRichTextEditor,omitempty"`
+	EnableRichTextEditor bool `json:"enableRichTextEditor,omitempty"`
 
-	FacebookAuthProvider string `xml:"facebookAuthProvider,omitempty"`
+	FacebookAuthProvider string `json:"facebookAuthProvider,omitempty"`
 
-	ShowInPortals bool `xml:"showInPortals,omitempty"`
+	ShowInPortals bool `json:"showInPortals,omitempty"`
 }
 
 type CleanDataService struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CleanDataService"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CleanDataService"`
 
 	*Metadata
 
-	CleanRules []*CleanRule `xml:"cleanRules,omitempty"`
+	CleanRules []*CleanRule `json:"cleanRules,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	MatchEngine string `xml:"matchEngine,omitempty"`
+	MatchEngine string `json:"matchEngine,omitempty"`
 }
 
 type CleanRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CleanRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CleanRule"`
 
-	BulkEnabled bool `xml:"bulkEnabled,omitempty"`
+	BulkEnabled bool `json:"bulkEnabled,omitempty"`
 
-	BypassTriggers bool `xml:"bypassTriggers,omitempty"`
+	BypassTriggers bool `json:"bypassTriggers,omitempty"`
 
-	BypassWorkflow bool `xml:"bypassWorkflow,omitempty"`
+	BypassWorkflow bool `json:"bypassWorkflow,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DeveloperName string `xml:"developerName,omitempty"`
+	DeveloperName string `json:"developerName,omitempty"`
 
-	FieldMappings []*FieldMapping `xml:"fieldMappings,omitempty"`
+	FieldMappings []*FieldMapping `json:"fieldMappings,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	MatchRule string `xml:"matchRule,omitempty"`
+	MatchRule string `json:"matchRule,omitempty"`
 
-	SourceSobjectType string `xml:"sourceSobjectType,omitempty"`
+	SourceSobjectType string `json:"sourceSobjectType,omitempty"`
 
-	Status *CleanRuleStatus `xml:"status,omitempty"`
+	Status *CleanRuleStatus `json:"status,omitempty"`
 
-	TargetSobjectType string `xml:"targetSobjectType,omitempty"`
+	TargetSobjectType string `json:"targetSobjectType,omitempty"`
 }
 
 type FieldMapping struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FieldMapping"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldMapping"`
 
-	SObjectType string `xml:"SObjectType,omitempty"`
+	SObjectType string `json:"SObjectType,omitempty"`
 
-	DeveloperName string `xml:"developerName,omitempty"`
+	DeveloperName string `json:"developerName,omitempty"`
 
-	FieldMappingRows []*FieldMappingRow `xml:"fieldMappingRows,omitempty"`
+	FieldMappingRows []*FieldMappingRow `json:"fieldMappingRows,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 }
 
 type FieldMappingRow struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FieldMappingRow"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldMappingRow"`
 
-	SObjectType string `xml:"SObjectType,omitempty"`
+	SObjectType string `json:"SObjectType,omitempty"`
 
-	FieldMappingFields []*FieldMappingField `xml:"fieldMappingFields,omitempty"`
+	FieldMappingFields []*FieldMappingField `json:"fieldMappingFields,omitempty"`
 
-	FieldName string `xml:"fieldName,omitempty"`
+	FieldName string `json:"fieldName,omitempty"`
 
-	MappingOperation *MappingOperation `xml:"mappingOperation,omitempty"`
+	MappingOperation *MappingOperation `json:"mappingOperation,omitempty"`
 }
 
 type FieldMappingField struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FieldMappingField"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldMappingField"`
 
-	DataServiceField string `xml:"dataServiceField,omitempty"`
+	DataServiceField string `json:"dataServiceField,omitempty"`
 
-	DataServiceObjectName string `xml:"dataServiceObjectName,omitempty"`
+	DataServiceObjectName string `json:"dataServiceObjectName,omitempty"`
 
-	Priority int32 `xml:"priority,omitempty"`
+	Priority int32 `json:"priority,omitempty"`
 }
 
 type Community struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Community"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Community"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	ChatterAnswersFacebookSsoUrl string `xml:"chatterAnswersFacebookSsoUrl,omitempty"`
+	ChatterAnswersFacebookSsoUrl string `json:"chatterAnswersFacebookSsoUrl,omitempty"`
 
-	CommunityFeedPage string `xml:"communityFeedPage,omitempty"`
+	CommunityFeedPage string `json:"communityFeedPage,omitempty"`
 
-	DataCategoryName string `xml:"dataCategoryName,omitempty"`
+	DataCategoryName string `json:"dataCategoryName,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EmailFooterDocument string `xml:"emailFooterDocument,omitempty"`
+	EmailFooterDocument string `json:"emailFooterDocument,omitempty"`
 
-	EmailHeaderDocument string `xml:"emailHeaderDocument,omitempty"`
+	EmailHeaderDocument string `json:"emailHeaderDocument,omitempty"`
 
-	EmailNotificationUrl string `xml:"emailNotificationUrl,omitempty"`
+	EmailNotificationUrl string `json:"emailNotificationUrl,omitempty"`
 
-	EnableChatterAnswers bool `xml:"enableChatterAnswers,omitempty"`
+	EnableChatterAnswers bool `json:"enableChatterAnswers,omitempty"`
 
-	EnablePrivateQuestions bool `xml:"enablePrivateQuestions,omitempty"`
+	EnablePrivateQuestions bool `json:"enablePrivateQuestions,omitempty"`
 
-	ExpertsGroup string `xml:"expertsGroup,omitempty"`
+	ExpertsGroup string `json:"expertsGroup,omitempty"`
 
-	Portal string `xml:"portal,omitempty"`
+	Portal string `json:"portal,omitempty"`
 
-	ReputationLevels *ReputationLevels `xml:"reputationLevels,omitempty"`
+	ReputationLevels *ReputationLevels `json:"reputationLevels,omitempty"`
 
-	ShowInPortal bool `xml:"showInPortal,omitempty"`
+	ShowInPortal bool `json:"showInPortal,omitempty"`
 
-	Site string `xml:"site,omitempty"`
+	Site string `json:"site,omitempty"`
 }
 
 type ReputationLevels struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReputationLevels"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationLevels"`
 
-	ChatterAnswersReputationLevels []*ChatterAnswersReputationLevel `xml:"chatterAnswersReputationLevels,omitempty"`
+	ChatterAnswersReputationLevels []*ChatterAnswersReputationLevel `json:"chatterAnswersReputationLevels,omitempty"`
 
-	IdeaReputationLevels []*IdeaReputationLevel `xml:"ideaReputationLevels,omitempty"`
+	IdeaReputationLevels []*IdeaReputationLevel `json:"ideaReputationLevels,omitempty"`
 }
 
 type ChatterAnswersReputationLevel struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ChatterAnswersReputationLevel"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ChatterAnswersReputationLevel"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Value int32 `xml:"value,omitempty"`
+	Value int32 `json:"value,omitempty"`
 }
 
 type IdeaReputationLevel struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata IdeaReputationLevel"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata IdeaReputationLevel"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Value int32 `xml:"value,omitempty"`
+	Value int32 `json:"value,omitempty"`
 }
 
 type CommunityTemplateDefinition struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CommunityTemplateDefinition"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CommunityTemplateDefinition"`
 
 	*Metadata
 
-	BundlesInfo []*CommunityTemplateBundleInfo `xml:"bundlesInfo,omitempty"`
+	BundlesInfo []*CommunityTemplateBundleInfo `json:"bundlesInfo,omitempty"`
 
-	Category *CommunityTemplateCategory `xml:"category,omitempty"`
+	Category *CommunityTemplateCategory `json:"category,omitempty"`
 
-	DefaultThemeDefinition string `xml:"defaultThemeDefinition,omitempty"`
+	DefaultThemeDefinition string `json:"defaultThemeDefinition,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EnableExtendedCleanUpOnDelete bool `xml:"enableExtendedCleanUpOnDelete,omitempty"`
+	EnableExtendedCleanUpOnDelete bool `json:"enableExtendedCleanUpOnDelete,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	PageSetting []*CommunityTemplatePageSetting `xml:"pageSetting,omitempty"`
+	PageSetting []*CommunityTemplatePageSetting `json:"pageSetting,omitempty"`
 }
 
 type CommunityTemplateBundleInfo struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CommunityTemplateBundleInfo"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CommunityTemplateBundleInfo"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Image string `xml:"image,omitempty"`
+	Image string `json:"image,omitempty"`
 
-	Order int32 `xml:"order,omitempty"`
+	Order int32 `json:"order,omitempty"`
 
-	Title string `xml:"title,omitempty"`
+	Title string `json:"title,omitempty"`
 
-	Type_ *CommunityTemplateBundleInfoType `xml:"type,omitempty"`
+	Type_ *CommunityTemplateBundleInfoType `json:"type,omitempty"`
 }
 
 type CommunityTemplatePageSetting struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CommunityTemplatePageSetting"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CommunityTemplatePageSetting"`
 
-	Page string `xml:"page,omitempty"`
+	Page string `json:"page,omitempty"`
 }
 
 type CommunityThemeDefinition struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CommunityThemeDefinition"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CommunityThemeDefinition"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EnableExtendedCleanUpOnDelete bool `xml:"enableExtendedCleanUpOnDelete,omitempty"`
+	EnableExtendedCleanUpOnDelete bool `json:"enableExtendedCleanUpOnDelete,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	ThemeSetting []*CommunityThemeSetting `xml:"themeSetting,omitempty"`
+	ThemeSetting []*CommunityThemeSetting `json:"themeSetting,omitempty"`
 }
 
 type CommunityThemeSetting struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CommunityThemeSetting"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CommunityThemeSetting"`
 
-	ThemeLayout string `xml:"themeLayout,omitempty"`
+	ThemeLayout string `json:"themeLayout,omitempty"`
 
-	ThemeLayoutType *CommunityThemeLayoutType `xml:"themeLayoutType,omitempty"`
+	ThemeLayoutType *CommunityThemeLayoutType `json:"themeLayoutType,omitempty"`
 }
 
 type CompactLayout struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CompactLayout"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CompactLayout"`
 
 	*Metadata
 
-	Fields []string `xml:"fields,omitempty"`
+	Fields []string `json:"fields,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type CompanySettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CompanySettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CompanySettings"`
 
 	*Metadata
 
-	FiscalYear *FiscalYearSettings `xml:"fiscalYear,omitempty"`
+	FiscalYear *FiscalYearSettings `json:"fiscalYear,omitempty"`
 }
 
 type FiscalYearSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FiscalYearSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FiscalYearSettings"`
 
-	FiscalYearNameBasedOn string `xml:"fiscalYearNameBasedOn,omitempty"`
+	FiscalYearNameBasedOn string `json:"fiscalYearNameBasedOn,omitempty"`
 
-	StartMonth string `xml:"startMonth,omitempty"`
+	StartMonth string `json:"startMonth,omitempty"`
 }
 
 type ConnectedApp struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ConnectedApp"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedApp"`
 
 	*Metadata
 
-	Attributes []*ConnectedAppAttribute `xml:"attributes,omitempty"`
+	Attributes []*ConnectedAppAttribute `json:"attributes,omitempty"`
 
-	CanvasConfig *ConnectedAppCanvasConfig `xml:"canvasConfig,omitempty"`
+	CanvasConfig *ConnectedAppCanvasConfig `json:"canvasConfig,omitempty"`
 
-	ContactEmail string `xml:"contactEmail,omitempty"`
+	ContactEmail string `json:"contactEmail,omitempty"`
 
-	ContactPhone string `xml:"contactPhone,omitempty"`
+	ContactPhone string `json:"contactPhone,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	IconUrl string `xml:"iconUrl,omitempty"`
+	IconUrl string `json:"iconUrl,omitempty"`
 
-	InfoUrl string `xml:"infoUrl,omitempty"`
+	InfoUrl string `json:"infoUrl,omitempty"`
 
-	IpRanges []*ConnectedAppIpRange `xml:"ipRanges,omitempty"`
+	IpRanges []*ConnectedAppIpRange `json:"ipRanges,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	LogoUrl string `xml:"logoUrl,omitempty"`
+	LogoUrl string `json:"logoUrl,omitempty"`
 
-	MobileAppConfig *ConnectedAppMobileDetailConfig `xml:"mobileAppConfig,omitempty"`
+	MobileAppConfig *ConnectedAppMobileDetailConfig `json:"mobileAppConfig,omitempty"`
 
-	MobileStartUrl string `xml:"mobileStartUrl,omitempty"`
+	MobileStartUrl string `json:"mobileStartUrl,omitempty"`
 
-	OauthConfig *ConnectedAppOauthConfig `xml:"oauthConfig,omitempty"`
+	OauthConfig *ConnectedAppOauthConfig `json:"oauthConfig,omitempty"`
 
-	Plugin string `xml:"plugin,omitempty"`
+	Plugin string `json:"plugin,omitempty"`
 
-	SamlConfig *ConnectedAppSamlConfig `xml:"samlConfig,omitempty"`
+	SamlConfig *ConnectedAppSamlConfig `json:"samlConfig,omitempty"`
 
-	StartUrl string `xml:"startUrl,omitempty"`
+	StartUrl string `json:"startUrl,omitempty"`
 }
 
 type ConnectedAppAttribute struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ConnectedAppAttribute"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppAttribute"`
 
-	Formula string `xml:"formula,omitempty"`
+	Formula string `json:"formula,omitempty"`
 
-	Key string `xml:"key,omitempty"`
+	Key string `json:"key,omitempty"`
 }
 
 type ConnectedAppCanvasConfig struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ConnectedAppCanvasConfig"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppCanvasConfig"`
 
-	AccessMethod *AccessMethod `xml:"accessMethod,omitempty"`
+	AccessMethod *AccessMethod `json:"accessMethod,omitempty"`
 
-	CanvasUrl string `xml:"canvasUrl,omitempty"`
+	CanvasUrl string `json:"canvasUrl,omitempty"`
 
-	LifecycleClass string `xml:"lifecycleClass,omitempty"`
+	LifecycleClass string `json:"lifecycleClass,omitempty"`
 
-	Locations []*CanvasLocationOptions `xml:"locations,omitempty"`
+	Locations []*CanvasLocationOptions `json:"locations,omitempty"`
 
-	Options []*CanvasOptions `xml:"options,omitempty"`
+	Options []*CanvasOptions `json:"options,omitempty"`
 
-	SamlInitiationMethod *SamlInitiationMethod `xml:"samlInitiationMethod,omitempty"`
+	SamlInitiationMethod *SamlInitiationMethod `json:"samlInitiationMethod,omitempty"`
 }
 
 type ConnectedAppIpRange struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ConnectedAppIpRange"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppIpRange"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	End string `xml:"end,omitempty"`
+	End string `json:"end,omitempty"`
 
-	Start string `xml:"start,omitempty"`
+	Start string `json:"start,omitempty"`
 }
 
 type ConnectedAppMobileDetailConfig struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ConnectedAppMobileDetailConfig"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppMobileDetailConfig"`
 
-	ApplicationBinaryFile []byte `xml:"applicationBinaryFile,omitempty"`
+	ApplicationBinaryFile []byte `json:"applicationBinaryFile,omitempty"`
 
-	ApplicationBinaryFileName string `xml:"applicationBinaryFileName,omitempty"`
+	ApplicationBinaryFileName string `json:"applicationBinaryFileName,omitempty"`
 
-	ApplicationBundleIdentifier string `xml:"applicationBundleIdentifier,omitempty"`
+	ApplicationBundleIdentifier string `json:"applicationBundleIdentifier,omitempty"`
 
-	ApplicationFileLength int32 `xml:"applicationFileLength,omitempty"`
+	ApplicationFileLength int32 `json:"applicationFileLength,omitempty"`
 
-	ApplicationIconFile string `xml:"applicationIconFile,omitempty"`
+	ApplicationIconFile string `json:"applicationIconFile,omitempty"`
 
-	ApplicationIconFileName string `xml:"applicationIconFileName,omitempty"`
+	ApplicationIconFileName string `json:"applicationIconFileName,omitempty"`
 
-	ApplicationInstallUrl string `xml:"applicationInstallUrl,omitempty"`
+	ApplicationInstallUrl string `json:"applicationInstallUrl,omitempty"`
 
-	DevicePlatform *DevicePlatformType `xml:"devicePlatform,omitempty"`
+	DevicePlatform *DevicePlatformType `json:"devicePlatform,omitempty"`
 
-	DeviceType *DeviceType `xml:"deviceType,omitempty"`
+	DeviceType *DeviceType `json:"deviceType,omitempty"`
 
-	MinimumOsVersion string `xml:"minimumOsVersion,omitempty"`
+	MinimumOsVersion string `json:"minimumOsVersion,omitempty"`
 
-	PrivateApp bool `xml:"privateApp,omitempty"`
+	PrivateApp bool `json:"privateApp,omitempty"`
 
-	Version string `xml:"version,omitempty"`
+	Version string `json:"version,omitempty"`
 }
 
 type ConnectedAppOauthConfig struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ConnectedAppOauthConfig"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppOauthConfig"`
 
-	CallbackUrl string `xml:"callbackUrl,omitempty"`
+	CallbackUrl string `json:"callbackUrl,omitempty"`
 
-	Certificate string `xml:"certificate,omitempty"`
+	Certificate string `json:"certificate,omitempty"`
 
-	ConsumerKey string `xml:"consumerKey,omitempty"`
+	ConsumerKey string `json:"consumerKey,omitempty"`
 
-	ConsumerSecret string `xml:"consumerSecret,omitempty"`
+	ConsumerSecret string `json:"consumerSecret,omitempty"`
 
-	Scopes []*ConnectedAppOauthAccessScope `xml:"scopes,omitempty"`
+	Scopes []*ConnectedAppOauthAccessScope `json:"scopes,omitempty"`
 }
 
 type ConnectedAppSamlConfig struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ConnectedAppSamlConfig"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppSamlConfig"`
 
-	AcsUrl string `xml:"acsUrl,omitempty"`
+	AcsUrl string `json:"acsUrl,omitempty"`
 
-	Certificate string `xml:"certificate,omitempty"`
+	Certificate string `json:"certificate,omitempty"`
 
-	EncryptionCertificate string `xml:"encryptionCertificate,omitempty"`
+	EncryptionCertificate string `json:"encryptionCertificate,omitempty"`
 
-	EncryptionType *SamlEncryptionType `xml:"encryptionType,omitempty"`
+	EncryptionType *SamlEncryptionType `json:"encryptionType,omitempty"`
 
-	EntityUrl string `xml:"entityUrl,omitempty"`
+	EntityUrl string `json:"entityUrl,omitempty"`
 
-	Issuer string `xml:"issuer,omitempty"`
+	Issuer string `json:"issuer,omitempty"`
 
-	SamlNameIdFormat *SamlNameIdFormatType `xml:"samlNameIdFormat,omitempty"`
+	SamlNameIdFormat *SamlNameIdFormatType `json:"samlNameIdFormat,omitempty"`
 
-	SamlSubjectCustomAttr string `xml:"samlSubjectCustomAttr,omitempty"`
+	SamlSubjectCustomAttr string `json:"samlSubjectCustomAttr,omitempty"`
 
-	SamlSubjectType *SamlSubjectType `xml:"samlSubjectType,omitempty"`
+	SamlSubjectType *SamlSubjectType `json:"samlSubjectType,omitempty"`
 }
 
 type ContractSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ContractSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContractSettings"`
 
 	*Metadata
 
-	AutoCalculateEndDate bool `xml:"autoCalculateEndDate,omitempty"`
+	AutoCalculateEndDate bool `json:"autoCalculateEndDate,omitempty"`
 
-	AutoExpirationDelay string `xml:"autoExpirationDelay,omitempty"`
+	AutoExpirationDelay string `json:"autoExpirationDelay,omitempty"`
 
-	AutoExpirationRecipient string `xml:"autoExpirationRecipient,omitempty"`
+	AutoExpirationRecipient string `json:"autoExpirationRecipient,omitempty"`
 
-	AutoExpireContracts bool `xml:"autoExpireContracts,omitempty"`
+	AutoExpireContracts bool `json:"autoExpireContracts,omitempty"`
 
-	EnableContractHistoryTracking bool `xml:"enableContractHistoryTracking,omitempty"`
+	EnableContractHistoryTracking bool `json:"enableContractHistoryTracking,omitempty"`
 
-	NotifyOwnersOnContractExpiration bool `xml:"notifyOwnersOnContractExpiration,omitempty"`
+	NotifyOwnersOnContractExpiration bool `json:"notifyOwnersOnContractExpiration,omitempty"`
 }
 
 type CorsWhitelistOrigin struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CorsWhitelistOrigin"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CorsWhitelistOrigin"`
 
 	*Metadata
 
-	UrlPattern string `xml:"urlPattern,omitempty"`
+	UrlPattern string `json:"urlPattern,omitempty"`
 }
 
 type CustomApplication struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomApplication"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomApplication"`
 
 	*Metadata
 
-	ActionOverrides []*AppActionOverride `xml:"actionOverrides,omitempty"`
+	ActionOverrides []*AppActionOverride `json:"actionOverrides,omitempty"`
 
-	Brand *AppBrand `xml:"brand,omitempty"`
+	Brand *AppBrand `json:"brand,omitempty"`
 
-	CustomApplicationComponents *CustomApplicationComponents `xml:"customApplicationComponents,omitempty"`
+	CustomApplicationComponents *CustomApplicationComponents `json:"customApplicationComponents,omitempty"`
 
-	DefaultLandingTab string `xml:"defaultLandingTab,omitempty"`
+	DefaultLandingTab string `json:"defaultLandingTab,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DetailPageRefreshMethod string `xml:"detailPageRefreshMethod,omitempty"`
+	DetailPageRefreshMethod string `json:"detailPageRefreshMethod,omitempty"`
 
-	DomainWhitelist *DomainWhitelist `xml:"domainWhitelist,omitempty"`
+	DomainWhitelist *DomainWhitelist `json:"domainWhitelist,omitempty"`
 
-	EnableCustomizeMyTabs bool `xml:"enableCustomizeMyTabs,omitempty"`
+	EnableCustomizeMyTabs bool `json:"enableCustomizeMyTabs,omitempty"`
 
-	EnableKeyboardShortcuts bool `xml:"enableKeyboardShortcuts,omitempty"`
+	EnableKeyboardShortcuts bool `json:"enableKeyboardShortcuts,omitempty"`
 
-	EnableListViewHover bool `xml:"enableListViewHover,omitempty"`
+	EnableListViewHover bool `json:"enableListViewHover,omitempty"`
 
-	EnableListViewReskin bool `xml:"enableListViewReskin,omitempty"`
+	EnableListViewReskin bool `json:"enableListViewReskin,omitempty"`
 
-	EnableMultiMonitorComponents bool `xml:"enableMultiMonitorComponents,omitempty"`
+	EnableMultiMonitorComponents bool `json:"enableMultiMonitorComponents,omitempty"`
 
-	EnablePinTabs bool `xml:"enablePinTabs,omitempty"`
+	EnablePinTabs bool `json:"enablePinTabs,omitempty"`
 
-	EnableTabHover bool `xml:"enableTabHover,omitempty"`
+	EnableTabHover bool `json:"enableTabHover,omitempty"`
 
-	EnableTabLimits bool `xml:"enableTabLimits,omitempty"`
+	EnableTabLimits bool `json:"enableTabLimits,omitempty"`
 
-	FooterColor string `xml:"footerColor,omitempty"`
+	FooterColor string `json:"footerColor,omitempty"`
 
-	FormFactors []*FormFactor `xml:"formFactors,omitempty"`
+	FormFactors []*FormFactor `json:"formFactors,omitempty"`
 
-	HeaderColor string `xml:"headerColor,omitempty"`
+	HeaderColor string `json:"headerColor,omitempty"`
 
-	IsServiceCloudConsole bool `xml:"isServiceCloudConsole,omitempty"`
+	IsServiceCloudConsole bool `json:"isServiceCloudConsole,omitempty"`
 
-	KeyboardShortcuts *KeyboardShortcuts `xml:"keyboardShortcuts,omitempty"`
+	KeyboardShortcuts *KeyboardShortcuts `json:"keyboardShortcuts,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	ListPlacement *ListPlacement `xml:"listPlacement,omitempty"`
+	ListPlacement *ListPlacement `json:"listPlacement,omitempty"`
 
-	ListRefreshMethod string `xml:"listRefreshMethod,omitempty"`
+	ListRefreshMethod string `json:"listRefreshMethod,omitempty"`
 
-	LiveAgentConfig *LiveAgentConfig `xml:"liveAgentConfig,omitempty"`
+	LiveAgentConfig *LiveAgentConfig `json:"liveAgentConfig,omitempty"`
 
-	Logo string `xml:"logo,omitempty"`
+	Logo string `json:"logo,omitempty"`
 
-	NavType *NavType `xml:"navType,omitempty"`
+	NavType *NavType `json:"navType,omitempty"`
 
-	PrimaryTabColor string `xml:"primaryTabColor,omitempty"`
+	PrimaryTabColor string `json:"primaryTabColor,omitempty"`
 
-	PushNotifications *PushNotifications `xml:"pushNotifications,omitempty"`
+	PushNotifications *PushNotifications `json:"pushNotifications,omitempty"`
 
-	SaveUserSessions bool `xml:"saveUserSessions,omitempty"`
+	SaveUserSessions bool `json:"saveUserSessions,omitempty"`
 
-	Tab []string `xml:"tab,omitempty"`
+	Tab []string `json:"tab,omitempty"`
 
-	TabLimitConfig *TabLimitConfig `xml:"tabLimitConfig,omitempty"`
+	TabLimitConfig *TabLimitConfig `json:"tabLimitConfig,omitempty"`
 
-	UiType *UiType `xml:"uiType,omitempty"`
+	UiType *UiType `json:"uiType,omitempty"`
 
-	UtilityBar string `xml:"utilityBar,omitempty"`
+	UtilityBar string `json:"utilityBar,omitempty"`
 
-	WorkspaceMappings *WorkspaceMappings `xml:"workspaceMappings,omitempty"`
+	WorkspaceMappings *WorkspaceMappings `json:"workspaceMappings,omitempty"`
 }
 
 type AppActionOverride struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AppActionOverride"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AppActionOverride"`
 
 	*ActionOverride
 
-	PageOrSobjectType string `xml:"pageOrSobjectType,omitempty"`
+	PageOrSobjectType string `json:"pageOrSobjectType,omitempty"`
 }
 
 type ActionOverride struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ActionOverride"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ActionOverride"`
 
-	ActionName string `xml:"actionName,omitempty"`
+	ActionName string `json:"actionName,omitempty"`
 
-	Comment string `xml:"comment,omitempty"`
+	Comment string `json:"comment,omitempty"`
 
-	Content string `xml:"content,omitempty"`
+	Content string `json:"content,omitempty"`
 
-	FormFactor *FormFactor `xml:"formFactor,omitempty"`
+	FormFactor *FormFactor `json:"formFactor,omitempty"`
 
-	SkipRecordTypeSelect bool `xml:"skipRecordTypeSelect,omitempty"`
+	SkipRecordTypeSelect bool `json:"skipRecordTypeSelect,omitempty"`
 
-	Type_ *ActionOverrideType `xml:"type,omitempty"`
+	Type_ *ActionOverrideType `json:"type,omitempty"`
 }
 
 type AppBrand struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AppBrand"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AppBrand"`
 
-	FooterColor string `xml:"footerColor,omitempty"`
+	FooterColor string `json:"footerColor,omitempty"`
 
-	HeaderColor string `xml:"headerColor,omitempty"`
+	HeaderColor string `json:"headerColor,omitempty"`
 
-	Logo string `xml:"logo,omitempty"`
+	Logo string `json:"logo,omitempty"`
 
-	LogoVersion int32 `xml:"logoVersion,omitempty"`
+	LogoVersion int32 `json:"logoVersion,omitempty"`
 }
 
 type CustomApplicationComponents struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomApplicationComponents"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomApplicationComponents"`
 
-	Alignment string `xml:"alignment,omitempty"`
+	Alignment string `json:"alignment,omitempty"`
 
-	CustomApplicationComponent []string `xml:"customApplicationComponent,omitempty"`
+	CustomApplicationComponent []string `json:"customApplicationComponent,omitempty"`
 }
 
 type DomainWhitelist struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DomainWhitelist"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DomainWhitelist"`
 
-	Domain []string `xml:"domain,omitempty"`
+	Domain []string `json:"domain,omitempty"`
 }
 
 type KeyboardShortcuts struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KeyboardShortcuts"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KeyboardShortcuts"`
 
-	CustomShortcut []*CustomShortcut `xml:"customShortcut,omitempty"`
+	CustomShortcut []*CustomShortcut `json:"customShortcut,omitempty"`
 
-	DefaultShortcut []*DefaultShortcut `xml:"defaultShortcut,omitempty"`
+	DefaultShortcut []*DefaultShortcut `json:"defaultShortcut,omitempty"`
 }
 
 type CustomShortcut struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomShortcut"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomShortcut"`
 
 	*DefaultShortcut
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EventName string `xml:"eventName,omitempty"`
+	EventName string `json:"eventName,omitempty"`
 }
 
 type DefaultShortcut struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DefaultShortcut"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DefaultShortcut"`
 
-	Action string `xml:"action,omitempty"`
+	Action string `json:"action,omitempty"`
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	KeyCommand string `xml:"keyCommand,omitempty"`
+	KeyCommand string `json:"keyCommand,omitempty"`
 }
 
 type ListPlacement struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ListPlacement"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ListPlacement"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	Location string `xml:"location,omitempty"`
+	Location string `json:"location,omitempty"`
 
-	Units string `xml:"units,omitempty"`
+	Units string `json:"units,omitempty"`
 
-	Width int32 `xml:"width,omitempty"`
+	Width int32 `json:"width,omitempty"`
 }
 
 type LiveAgentConfig struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LiveAgentConfig"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveAgentConfig"`
 
-	EnableLiveChat bool `xml:"enableLiveChat,omitempty"`
+	EnableLiveChat bool `json:"enableLiveChat,omitempty"`
 
-	OpenNewAccountSubtab bool `xml:"openNewAccountSubtab,omitempty"`
+	OpenNewAccountSubtab bool `json:"openNewAccountSubtab,omitempty"`
 
-	OpenNewCaseSubtab bool `xml:"openNewCaseSubtab,omitempty"`
+	OpenNewCaseSubtab bool `json:"openNewCaseSubtab,omitempty"`
 
-	OpenNewContactSubtab bool `xml:"openNewContactSubtab,omitempty"`
+	OpenNewContactSubtab bool `json:"openNewContactSubtab,omitempty"`
 
-	OpenNewLeadSubtab bool `xml:"openNewLeadSubtab,omitempty"`
+	OpenNewLeadSubtab bool `json:"openNewLeadSubtab,omitempty"`
 
-	OpenNewVFPageSubtab bool `xml:"openNewVFPageSubtab,omitempty"`
+	OpenNewVFPageSubtab bool `json:"openNewVFPageSubtab,omitempty"`
 
-	PagesToOpen *PagesToOpen `xml:"pagesToOpen,omitempty"`
+	PagesToOpen *PagesToOpen `json:"pagesToOpen,omitempty"`
 
-	ShowKnowledgeArticles bool `xml:"showKnowledgeArticles,omitempty"`
+	ShowKnowledgeArticles bool `json:"showKnowledgeArticles,omitempty"`
 }
 
 type PagesToOpen struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PagesToOpen"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PagesToOpen"`
 
-	PageToOpen []string `xml:"pageToOpen,omitempty"`
+	PageToOpen []string `json:"pageToOpen,omitempty"`
 }
 
 type PushNotifications struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PushNotifications"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PushNotifications"`
 
-	PushNotification []*PushNotification `xml:"pushNotification,omitempty"`
+	PushNotification []*PushNotification `json:"pushNotification,omitempty"`
 }
 
 type PushNotification struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PushNotification"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PushNotification"`
 
-	FieldNames []string `xml:"fieldNames,omitempty"`
+	FieldNames []string `json:"fieldNames,omitempty"`
 
-	ObjectName string `xml:"objectName,omitempty"`
+	ObjectName string `json:"objectName,omitempty"`
 }
 
 type TabLimitConfig struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata TabLimitConfig"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata TabLimitConfig"`
 
-	MaxNumberOfPrimaryTabs string `xml:"maxNumberOfPrimaryTabs,omitempty"`
+	MaxNumberOfPrimaryTabs string `json:"maxNumberOfPrimaryTabs,omitempty"`
 
-	MaxNumberOfSubTabs string `xml:"maxNumberOfSubTabs,omitempty"`
+	MaxNumberOfSubTabs string `json:"maxNumberOfSubTabs,omitempty"`
 }
 
 type WorkspaceMappings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkspaceMappings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkspaceMappings"`
 
-	Mapping []*WorkspaceMapping `xml:"mapping,omitempty"`
+	Mapping []*WorkspaceMapping `json:"mapping,omitempty"`
 }
 
 type WorkspaceMapping struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkspaceMapping"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkspaceMapping"`
 
-	FieldName string `xml:"fieldName,omitempty"`
+	FieldName string `json:"fieldName,omitempty"`
 
-	Tab string `xml:"tab,omitempty"`
+	Tab string `json:"tab,omitempty"`
 }
 
 type CustomApplicationComponent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomApplicationComponent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomApplicationComponent"`
 
 	*Metadata
 
-	ButtonIconUrl string `xml:"buttonIconUrl,omitempty"`
+	ButtonIconUrl string `json:"buttonIconUrl,omitempty"`
 
-	ButtonStyle string `xml:"buttonStyle,omitempty"`
+	ButtonStyle string `json:"buttonStyle,omitempty"`
 
-	ButtonText string `xml:"buttonText,omitempty"`
+	ButtonText string `json:"buttonText,omitempty"`
 
-	ButtonWidth int32 `xml:"buttonWidth,omitempty"`
+	ButtonWidth int32 `json:"buttonWidth,omitempty"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	IsHeightFixed bool `xml:"isHeightFixed,omitempty"`
+	IsHeightFixed bool `json:"isHeightFixed,omitempty"`
 
-	IsHidden bool `xml:"isHidden,omitempty"`
+	IsHidden bool `json:"isHidden,omitempty"`
 
-	IsWidthFixed bool `xml:"isWidthFixed,omitempty"`
+	IsWidthFixed bool `json:"isWidthFixed,omitempty"`
 
-	VisualforcePage string `xml:"visualforcePage,omitempty"`
+	VisualforcePage string `json:"visualforcePage,omitempty"`
 
-	Width int32 `xml:"width,omitempty"`
+	Width int32 `json:"width,omitempty"`
 }
 
 type CustomDataType struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomDataType"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomDataType"`
 
 	*Metadata
 
-	CustomDataTypeComponents []*CustomDataTypeComponent `xml:"customDataTypeComponents,omitempty"`
+	CustomDataTypeComponents []*CustomDataTypeComponent `json:"customDataTypeComponents,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DisplayFormula string `xml:"displayFormula,omitempty"`
+	DisplayFormula string `json:"displayFormula,omitempty"`
 
-	EditComponentsOnSeparateLines bool `xml:"editComponentsOnSeparateLines,omitempty"`
+	EditComponentsOnSeparateLines bool `json:"editComponentsOnSeparateLines,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	RightAligned bool `xml:"rightAligned,omitempty"`
+	RightAligned bool `json:"rightAligned,omitempty"`
 
-	SupportComponentsInReports bool `xml:"supportComponentsInReports,omitempty"`
+	SupportComponentsInReports bool `json:"supportComponentsInReports,omitempty"`
 }
 
 type CustomDataTypeComponent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomDataTypeComponent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomDataTypeComponent"`
 
-	DeveloperSuffix string `xml:"developerSuffix,omitempty"`
+	DeveloperSuffix string `json:"developerSuffix,omitempty"`
 
-	EnforceFieldRequiredness bool `xml:"enforceFieldRequiredness,omitempty"`
+	EnforceFieldRequiredness bool `json:"enforceFieldRequiredness,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Length int32 `xml:"length,omitempty"`
+	Length int32 `json:"length,omitempty"`
 
-	Precision int32 `xml:"precision,omitempty"`
+	Precision int32 `json:"precision,omitempty"`
 
-	Scale int32 `xml:"scale,omitempty"`
+	Scale int32 `json:"scale,omitempty"`
 
-	SortOrder *SortOrder `xml:"sortOrder,omitempty"`
+	SortOrder *SortOrder `json:"sortOrder,omitempty"`
 
-	SortPriority int32 `xml:"sortPriority,omitempty"`
+	SortPriority int32 `json:"sortPriority,omitempty"`
 
-	Type_ *FieldType `xml:"type,omitempty"`
+	Type_ *FieldType `json:"type,omitempty"`
 }
 
 type CustomExperience struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomExperience"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomExperience"`
 
 	*Metadata
 
-	AllowInternalUserLogin bool `xml:"allowInternalUserLogin,omitempty"`
+	AllowInternalUserLogin bool `json:"allowInternalUserLogin,omitempty"`
 
-	Branding *CustomExperienceBranding `xml:"branding,omitempty"`
+	Branding *CustomExperienceBranding `json:"branding,omitempty"`
 
-	ChangePasswordEmailTemplate string `xml:"changePasswordEmailTemplate,omitempty"`
+	ChangePasswordEmailTemplate string `json:"changePasswordEmailTemplate,omitempty"`
 
-	EmailFooterLogo string `xml:"emailFooterLogo,omitempty"`
+	EmailFooterLogo string `json:"emailFooterLogo,omitempty"`
 
-	EmailFooterText string `xml:"emailFooterText,omitempty"`
+	EmailFooterText string `json:"emailFooterText,omitempty"`
 
-	EmailSenderAddress string `xml:"emailSenderAddress,omitempty"`
+	EmailSenderAddress string `json:"emailSenderAddress,omitempty"`
 
-	EmailSenderName string `xml:"emailSenderName,omitempty"`
+	EmailSenderName string `json:"emailSenderName,omitempty"`
 
-	EnableErrorPageOverridesForVisualforce bool `xml:"enableErrorPageOverridesForVisualforce,omitempty"`
+	EnableErrorPageOverridesForVisualforce bool `json:"enableErrorPageOverridesForVisualforce,omitempty"`
 
-	ForgotPasswordEmailTemplate string `xml:"forgotPasswordEmailTemplate,omitempty"`
+	ForgotPasswordEmailTemplate string `json:"forgotPasswordEmailTemplate,omitempty"`
 
-	PicassoSite string `xml:"picassoSite,omitempty"`
+	PicassoSite string `json:"picassoSite,omitempty"`
 
-	SObjectType string `xml:"sObjectType,omitempty"`
+	SObjectType string `json:"sObjectType,omitempty"`
 
-	SendWelcomeEmail bool `xml:"sendWelcomeEmail,omitempty"`
+	SendWelcomeEmail bool `json:"sendWelcomeEmail,omitempty"`
 
-	Site string `xml:"site,omitempty"`
+	Site string `json:"site,omitempty"`
 
-	SiteAsContainerEnabled bool `xml:"siteAsContainerEnabled,omitempty"`
+	SiteAsContainerEnabled bool `json:"siteAsContainerEnabled,omitempty"`
 
-	Tabs *CustomExperienceTabSet `xml:"tabs,omitempty"`
+	Tabs *CustomExperienceTabSet `json:"tabs,omitempty"`
 
-	UrlPathPrefix string `xml:"urlPathPrefix,omitempty"`
+	UrlPathPrefix string `json:"urlPathPrefix,omitempty"`
 
-	WelcomeEmailTemplate string `xml:"welcomeEmailTemplate,omitempty"`
+	WelcomeEmailTemplate string `json:"welcomeEmailTemplate,omitempty"`
 }
 
 type CustomExperienceBranding struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomExperienceBranding"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomExperienceBranding"`
 
-	LoginFooterText string `xml:"loginFooterText,omitempty"`
+	LoginFooterText string `json:"loginFooterText,omitempty"`
 
-	LoginLogo string `xml:"loginLogo,omitempty"`
+	LoginLogo string `json:"loginLogo,omitempty"`
 
-	PageFooter string `xml:"pageFooter,omitempty"`
+	PageFooter string `json:"pageFooter,omitempty"`
 
-	PageHeader string `xml:"pageHeader,omitempty"`
+	PageHeader string `json:"pageHeader,omitempty"`
 
-	PrimaryColor string `xml:"primaryColor,omitempty"`
+	PrimaryColor string `json:"primaryColor,omitempty"`
 
-	PrimaryComplementColor string `xml:"primaryComplementColor,omitempty"`
+	PrimaryComplementColor string `json:"primaryComplementColor,omitempty"`
 
-	QuaternaryColor string `xml:"quaternaryColor,omitempty"`
+	QuaternaryColor string `json:"quaternaryColor,omitempty"`
 
-	QuaternaryComplementColor string `xml:"quaternaryComplementColor,omitempty"`
+	QuaternaryComplementColor string `json:"quaternaryComplementColor,omitempty"`
 
-	SecondaryColor string `xml:"secondaryColor,omitempty"`
+	SecondaryColor string `json:"secondaryColor,omitempty"`
 
-	TertiaryColor string `xml:"tertiaryColor,omitempty"`
+	TertiaryColor string `json:"tertiaryColor,omitempty"`
 
-	TertiaryComplementColor string `xml:"tertiaryComplementColor,omitempty"`
+	TertiaryComplementColor string `json:"tertiaryComplementColor,omitempty"`
 
-	ZeronaryColor string `xml:"zeronaryColor,omitempty"`
+	ZeronaryColor string `json:"zeronaryColor,omitempty"`
 
-	ZeronaryComplementColor string `xml:"zeronaryComplementColor,omitempty"`
+	ZeronaryComplementColor string `json:"zeronaryComplementColor,omitempty"`
 }
 
 type CustomExperienceTabSet struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomExperienceTabSet"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomExperienceTabSet"`
 
-	CustomTab []string `xml:"customTab,omitempty"`
+	CustomTab []string `json:"customTab,omitempty"`
 
-	DefaultTab string `xml:"defaultTab,omitempty"`
+	DefaultTab string `json:"defaultTab,omitempty"`
 
-	StandardTab []string `xml:"standardTab,omitempty"`
+	StandardTab []string `json:"standardTab,omitempty"`
 }
 
 type CustomFeedFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomFeedFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomFeedFilter"`
 
 	*Metadata
 
-	Criteria []*FeedFilterCriterion `xml:"criteria,omitempty"`
+	Criteria []*FeedFilterCriterion `json:"criteria,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	IsProtected bool `xml:"isProtected,omitempty"`
+	IsProtected bool `json:"isProtected,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type FeedFilterCriterion struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FeedFilterCriterion"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FeedFilterCriterion"`
 
-	FeedItemType *FeedItemType `xml:"feedItemType,omitempty"`
+	FeedItemType *FeedItemType `json:"feedItemType,omitempty"`
 
-	FeedItemVisibility *FeedItemVisibility `xml:"feedItemVisibility,omitempty"`
+	FeedItemVisibility *FeedItemVisibility `json:"feedItemVisibility,omitempty"`
 
-	RelatedSObjectType string `xml:"relatedSObjectType,omitempty"`
+	RelatedSObjectType string `json:"relatedSObjectType,omitempty"`
 }
 
 type CustomField struct {
-	CaseSensitive bool `xml:"caseSensitive,omitempty"`
+	CaseSensitive bool `json:"caseSensitive,omitempty"`
 
-	CustomDataType string `xml:"customDataType,omitempty"`
+	CustomDataType string `json:"customDataType,omitempty"`
 
-	DefaultValue string `xml:"defaultValue,omitempty"`
+	DefaultValue string `json:"defaultValue,omitempty"`
 
-	DeleteConstraint *DeleteConstraint `xml:"deleteConstraint,omitempty"`
+	DeleteConstraint *DeleteConstraint `json:"deleteConstraint,omitempty"`
 
-	Deprecated bool `xml:"deprecated,omitempty"`
+	Deprecated bool `json:"deprecated,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DisplayFormat string `xml:"displayFormat,omitempty"`
+	DisplayFormat string `json:"displayFormat,omitempty"`
 
-	Encrypted bool `xml:"encrypted,omitempty"`
+	Encrypted bool `json:"encrypted,omitempty"`
 
-	EscapeMarkup bool `xml:"escapeMarkup,omitempty"`
+	EscapeMarkup bool `json:"escapeMarkup,omitempty"`
 
-	ExternalDeveloperName string `xml:"externalDeveloperName,omitempty"`
+	ExternalDeveloperName string `json:"externalDeveloperName,omitempty"`
 
-	ExternalId bool `xml:"externalId,omitempty"`
+	ExternalId bool `json:"externalId,omitempty"`
 
-	FieldManageability *FieldManageability `xml:"fieldManageability,omitempty"`
+	FieldManageability *FieldManageability `json:"fieldManageability,omitempty"`
 
-	Formula string `xml:"formula,omitempty"`
+	Formula string `json:"formula,omitempty"`
 
-	FormulaTreatBlanksAs *TreatBlanksAs `xml:"formulaTreatBlanksAs,omitempty"`
+	FormulaTreatBlanksAs *TreatBlanksAs `json:"formulaTreatBlanksAs,omitempty"`
 
-	FullName string `xml:"fullName"`
+	FullName string `json:"fullName"`
 
-	InlineHelpText string `xml:"inlineHelpText,omitempty"`
+	InlineHelpText string `json:"inlineHelpText,omitempty"`
 
-	IsConvertLeadDisabled bool `xml:"isConvertLeadDisabled,omitempty"`
+	IsConvertLeadDisabled bool `json:"isConvertLeadDisabled,omitempty"`
 
-	IsFilteringDisabled bool `xml:"isFilteringDisabled,omitempty"`
+	IsFilteringDisabled bool `json:"isFilteringDisabled,omitempty"`
 
-	IsNameField bool `xml:"isNameField,omitempty"`
+	IsNameField bool `json:"isNameField,omitempty"`
 
-	IsSortingDisabled bool `xml:"isSortingDisabled,omitempty"`
+	IsSortingDisabled bool `json:"isSortingDisabled,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Length int32 `xml:"length,omitempty"`
+	Length int32 `json:"length,omitempty"`
 
-	LookupFilter *LookupFilter `xml:"lookupFilter,omitempty"`
+	LookupFilter *LookupFilter `json:"lookupFilter,omitempty"`
 
-	MaskChar *EncryptedFieldMaskChar `xml:"maskChar,omitempty"`
+	MaskChar *EncryptedFieldMaskChar `json:"maskChar,omitempty"`
 
-	MaskType *EncryptedFieldMaskType `xml:"maskType,omitempty"`
+	MaskType *EncryptedFieldMaskType `json:"maskType,omitempty"`
 
-	Picklist *Picklist `xml:"picklist,omitempty"`
+	Picklist *Picklist `json:"picklist,omitempty"`
 
-	PopulateExistingRows bool `xml:"populateExistingRows,omitempty"`
+	PopulateExistingRows bool `json:"populateExistingRows,omitempty"`
 
-	Precision int32 `xml:"precision,omitempty"`
+	Precision int32 `json:"precision,omitempty"`
 
-	ReferenceTargetField string `xml:"referenceTargetField,omitempty"`
+	ReferenceTargetField string `json:"referenceTargetField,omitempty"`
 
-	ReferenceTo string `xml:"referenceTo,omitempty"`
+	ReferenceTo string `json:"referenceTo,omitempty"`
 
-	RelationshipLabel string `xml:"relationshipLabel,omitempty"`
+	RelationshipLabel string `json:"relationshipLabel,omitempty"`
 
-	RelationshipName string `xml:"relationshipName,omitempty"`
+	RelationshipName string `json:"relationshipName,omitempty"`
 
-	RelationshipOrder int32 `xml:"relationshipOrder,omitempty"`
+	RelationshipOrder int32 `json:"relationshipOrder,omitempty"`
 
-	ReparentableMasterDetail bool `xml:"reparentableMasterDetail,omitempty"`
+	ReparentableMasterDetail bool `json:"reparentableMasterDetail,omitempty"`
 
-	Required bool `xml:"required,omitempty"`
+	Required bool `json:"required,omitempty"`
 
-	RestrictedAdminField bool `xml:"restrictedAdminField,omitempty"`
+	RestrictedAdminField bool `json:"restrictedAdminField,omitempty"`
 
-	Scale int32 `xml:"scale,omitempty"`
+	Scale int32 `json:"scale,omitempty"`
 
-	StartingNumber int32 `xml:"startingNumber,omitempty"`
+	StartingNumber int32 `json:"startingNumber,omitempty"`
 
-	StripMarkup bool `xml:"stripMarkup,omitempty"`
+	StripMarkup bool `json:"stripMarkup,omitempty"`
 
-	SummarizedField string `xml:"summarizedField,omitempty"`
+	SummarizedField string `json:"summarizedField,omitempty"`
 
-	SummaryFilterItems []*FilterItem `xml:"summaryFilterItems,omitempty"`
+	SummaryFilterItems []*FilterItem `json:"summaryFilterItems,omitempty"`
 
-	SummaryForeignKey string `xml:"summaryForeignKey,omitempty"`
+	SummaryForeignKey string `json:"summaryForeignKey,omitempty"`
 
-	SummaryOperation *SummaryOperations `xml:"summaryOperation,omitempty"`
+	SummaryOperation *SummaryOperations `json:"summaryOperation,omitempty"`
 
-	TrackFeedHistory bool `xml:"trackFeedHistory,omitempty"`
+	TrackFeedHistory bool `json:"trackFeedHistory,omitempty"`
 
-	TrackHistory bool `xml:"trackHistory,omitempty"`
+	TrackHistory bool `json:"trackHistory,omitempty"`
 
-	TrackTrending bool `xml:"trackTrending,omitempty"`
+	TrackTrending bool `json:"trackTrending,omitempty"`
 
-	Type FieldType `xml:"type,omitempty"`
+	Type FieldType `json:"type,omitempty"`
 
-	Unique bool `xml:"unique,omitempty"`
+	Unique bool `json:"unique,omitempty"`
 
-	ValueSet *ValueSet `xml:"valueSet,omitempty"`
+	ValueSet *ValueSet `json:"valueSet,omitempty"`
 
-	VisibleLines int32 `xml:"visibleLines,omitempty"`
+	VisibleLines int32 `json:"visibleLines,omitempty"`
 
-	WriteRequiresMasterRead bool `xml:"writeRequiresMasterRead,omitempty"`
+	WriteRequiresMasterRead bool `json:"writeRequiresMasterRead,omitempty"`
 }
 
 type LookupFilter struct {
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	BooleanFilter string `xml:"booleanFilter,omitempty"`
+	BooleanFilter string `json:"booleanFilter,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	ErrorMessage string `xml:"errorMessage,omitempty"`
+	ErrorMessage string `json:"errorMessage,omitempty"`
 
-	FilterItems []*FilterItem `xml:"filterItems,omitempty"`
+	FilterItems []*FilterItem `json:"filterItems,omitempty"`
 
-	InfoMessage string `xml:"infoMessage,omitempty"`
+	InfoMessage string `json:"infoMessage,omitempty"`
 
-	IsOptional bool `xml:"isOptional,omitempty"`
+	IsOptional bool `json:"isOptional,omitempty"`
 }
 
 type Picklist struct {
-	ControllingField string `xml:"controllingField,omitempty"`
+	ControllingField string `json:"controllingField,omitempty"`
 
-	PicklistValues []*PicklistValue `xml:"picklistValues,omitempty"`
+	PicklistValues []*PicklistValue `json:"picklistValues,omitempty"`
 
-	RestrictedPicklist bool `xml:"restrictedPicklist,omitempty"`
+	RestrictedPicklist bool `json:"restrictedPicklist,omitempty"`
 
-	Sorted bool `xml:"sorted,omitempty"`
+	Sorted bool `json:"sorted,omitempty"`
 }
 
 type ValueSet struct {
-	ControllingField string `xml:"controllingField,omitempty"`
+	ControllingField string `json:"controllingField,omitempty"`
 
-	Restricted bool `xml:"restricted,omitempty"`
+	Restricted bool `json:"restricted,omitempty"`
 
-	ValueSetDefinition *ValueSetValuesDefinition `xml:"valueSetDefinition,omitempty"`
+	ValueSetDefinition *ValueSetValuesDefinition `json:"valueSetDefinition,omitempty"`
 
-	ValueSetName string `xml:"valueSetName,omitempty"`
+	ValueSetName string `json:"valueSetName,omitempty"`
 
-	ValueSettings []*ValueSettings `xml:"valueSettings,omitempty"`
+	ValueSettings []*ValueSettings `json:"valueSettings,omitempty"`
 }
 
 type ValueSetValuesDefinition struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ValueSetValuesDefinition"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ValueSetValuesDefinition"`
 
-	Sorted bool `xml:"sorted,omitempty"`
+	Sorted bool `json:"sorted,omitempty"`
 
-	Value []*CustomValue `xml:"value,omitempty"`
+	Value []*CustomValue `json:"value,omitempty"`
 }
 
 type CustomValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomValue"`
 
 	*Metadata
 
-	Color string `xml:"color,omitempty"`
+	Color string `json:"color,omitempty"`
 
-	Default_ bool `xml:"default,omitempty"`
+	Default_ bool `json:"default,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	IsActive bool `xml:"isActive,omitempty"`
+	IsActive bool `json:"isActive,omitempty"`
 }
 
 type StandardValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata StandardValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata StandardValue"`
 
 	*CustomValue
 
-	AllowEmail bool `xml:"allowEmail,omitempty"`
+	AllowEmail bool `json:"allowEmail,omitempty"`
 
-	Closed bool `xml:"closed,omitempty"`
+	Closed bool `json:"closed,omitempty"`
 
-	Converted bool `xml:"converted,omitempty"`
+	Converted bool `json:"converted,omitempty"`
 
-	CssExposed bool `xml:"cssExposed,omitempty"`
+	CssExposed bool `json:"cssExposed,omitempty"`
 
-	ForecastCategory *ForecastCategories `xml:"forecastCategory,omitempty"`
+	ForecastCategory *ForecastCategories `json:"forecastCategory,omitempty"`
 
-	HighPriority bool `xml:"highPriority,omitempty"`
+	HighPriority bool `json:"highPriority,omitempty"`
 
-	Probability int32 `xml:"probability,omitempty"`
+	Probability int32 `json:"probability,omitempty"`
 
-	ReverseRole string `xml:"reverseRole,omitempty"`
+	ReverseRole string `json:"reverseRole,omitempty"`
 
-	Reviewed bool `xml:"reviewed,omitempty"`
+	Reviewed bool `json:"reviewed,omitempty"`
 
-	Won bool `xml:"won,omitempty"`
+	Won bool `json:"won,omitempty"`
 }
 
 type ValueSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ValueSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ValueSettings"`
 
-	ControllingFieldValue []string `xml:"controllingFieldValue,omitempty"`
+	ControllingFieldValue []string `json:"controllingFieldValue,omitempty"`
 
-	ValueName string `xml:"valueName,omitempty"`
+	ValueName string `json:"valueName,omitempty"`
 }
 
 type CustomLabel struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomLabel"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomLabel"`
 
 	*Metadata
 
-	Categories string `xml:"categories,omitempty"`
+	Categories string `json:"categories,omitempty"`
 
-	Language string `xml:"language,omitempty"`
+	Language string `json:"language,omitempty"`
 
-	Protected bool `xml:"protected,omitempty"`
+	Protected bool `json:"protected,omitempty"`
 
-	ShortDescription string `xml:"shortDescription,omitempty"`
+	ShortDescription string `json:"shortDescription,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type CustomLabels struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomLabels"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomLabels"`
 
 	*Metadata
 
-	Labels []*CustomLabel `xml:"labels,omitempty"`
+	Labels []*CustomLabel `json:"labels,omitempty"`
 }
 
 type CustomMetadata struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomMetadata"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomMetadata"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Protected bool `xml:"protected,omitempty"`
+	Protected bool `json:"protected,omitempty"`
 
-	Values []*CustomMetadataValue `xml:"values,omitempty"`
+	Values []*CustomMetadataValue `json:"values,omitempty"`
 }
 
 type CustomMetadataValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomMetadataValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomMetadataValue"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Value interface{} `xml:"value,omitempty"`
+	Value interface{} `json:"value,omitempty"`
 }
 
 type CustomObject struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata metadata"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata metadata"`
 
-	Type string `xml:"http://www.w3.org/2001/XMLSchema-instance type,attr"`
+	Type string `json:"http://www.w3.org/2001/XMLSchema-instance type,attr"`
 
-	FullName string `xml:"fullName"`
+	FullName string `json:"fullName"`
 
-	ActionOverrides []*ActionOverride `xml:"actionOverrides,omitempty"`
+	ActionOverrides []*ActionOverride `json:"actionOverrides,omitempty"`
 
-	AllowInChatterGroups bool `xml:"allowInChatterGroups,omitempty"`
+	AllowInChatterGroups bool `json:"allowInChatterGroups,omitempty"`
 
-	ArticleTypeChannelDisplay *ArticleTypeChannelDisplay `xml:"articleTypeChannelDisplay,omitempty"`
+	ArticleTypeChannelDisplay *ArticleTypeChannelDisplay `json:"articleTypeChannelDisplay,omitempty"`
 
-	BusinessProcesses []*BusinessProcess `xml:"businessProcesses,omitempty"`
+	BusinessProcesses []*BusinessProcess `json:"businessProcesses,omitempty"`
 
-	CompactLayoutAssignment string `xml:"compactLayoutAssignment,omitempty"`
+	CompactLayoutAssignment string `json:"compactLayoutAssignment,omitempty"`
 
-	CompactLayouts []*CompactLayout `xml:"compactLayouts,omitempty"`
+	CompactLayouts []*CompactLayout `json:"compactLayouts,omitempty"`
 
-	CustomHelp string `xml:"customHelp,omitempty"`
+	CustomHelp string `json:"customHelp,omitempty"`
 
-	CustomHelpPage string `xml:"customHelpPage,omitempty"`
+	CustomHelpPage string `json:"customHelpPage,omitempty"`
 
-	CustomSettingsType *CustomSettingsType `xml:"customSettingsType,omitempty"`
+	CustomSettingsType *CustomSettingsType `json:"customSettingsType,omitempty"`
 
-	DeploymentStatus DeploymentStatus `xml:"deploymentStatus,omitempty"`
+	DeploymentStatus DeploymentStatus `json:"deploymentStatus,omitempty"`
 
-	Deprecated bool `xml:"deprecated,omitempty"`
+	Deprecated bool `json:"deprecated,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EnableActivities bool `xml:"enableActivities,omitempty"`
+	EnableActivities bool `json:"enableActivities,omitempty"`
 
-	EnableBulkApi bool `xml:"enableBulkApi,omitempty"`
+	EnableBulkApi bool `json:"enableBulkApi,omitempty"`
 
-	EnableDivisions bool `xml:"enableDivisions,omitempty"`
+	EnableDivisions bool `json:"enableDivisions,omitempty"`
 
-	EnableEnhancedLookup bool `xml:"enableEnhancedLookup,omitempty"`
+	EnableEnhancedLookup bool `json:"enableEnhancedLookup,omitempty"`
 
-	EnableFeeds bool `xml:"enableFeeds,omitempty"`
+	EnableFeeds bool `json:"enableFeeds,omitempty"`
 
-	EnableHistory bool `xml:"enableHistory,omitempty"`
+	EnableHistory bool `json:"enableHistory,omitempty"`
 
-	EnableReports bool `xml:"enableReports,omitempty"`
+	EnableReports bool `json:"enableReports,omitempty"`
 
-	EnableSearch bool `xml:"enableSearch,omitempty"`
+	EnableSearch bool `json:"enableSearch,omitempty"`
 
-	EnableSharing bool `xml:"enableSharing,omitempty"`
+	EnableSharing bool `json:"enableSharing,omitempty"`
 
-	EnableStreamingApi bool `xml:"enableStreamingApi,omitempty"`
+	EnableStreamingApi bool `json:"enableStreamingApi,omitempty"`
 
-	ExternalDataSource string `xml:"externalDataSource,omitempty"`
+	ExternalDataSource string `json:"externalDataSource,omitempty"`
 
-	ExternalName string `xml:"externalName,omitempty"`
+	ExternalName string `json:"externalName,omitempty"`
 
-	ExternalRepository string `xml:"externalRepository,omitempty"`
+	ExternalRepository string `json:"externalRepository,omitempty"`
 
-	ExternalSharingModel SharingModel `xml:"externalSharingModel,omitempty"`
+	ExternalSharingModel SharingModel `json:"externalSharingModel,omitempty"`
 
-	FieldSets []*FieldSet `xml:"fieldSets,omitempty"`
+	FieldSets []*FieldSet `json:"fieldSets,omitempty"`
 
-	Fields []*CustomField `xml:"fields,omitempty"`
+	Fields []*CustomField `json:"fields,omitempty"`
 
-	Gender *Gender `xml:"gender,omitempty"`
+	Gender *Gender `json:"gender,omitempty"`
 
-	HistoryRetentionPolicy *HistoryRetentionPolicy `xml:"historyRetentionPolicy,omitempty"`
+	HistoryRetentionPolicy *HistoryRetentionPolicy `json:"historyRetentionPolicy,omitempty"`
 
-	Household bool `xml:"household,omitempty"`
+	Household bool `json:"household,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	ListViews []*ListView `xml:"listViews,omitempty"`
+	ListViews []*ListView `json:"listViews,omitempty"`
 
-	NameField *CustomField `xml:"nameField,omitempty"`
+	NameField *CustomField `json:"nameField,omitempty"`
 
-	PluralLabel string `xml:"pluralLabel,omitempty"`
+	PluralLabel string `json:"pluralLabel,omitempty"`
 
-	RecordTypeTrackFeedHistory bool `xml:"recordTypeTrackFeedHistory,omitempty"`
+	RecordTypeTrackFeedHistory bool `json:"recordTypeTrackFeedHistory,omitempty"`
 
-	RecordTypeTrackHistory bool `xml:"recordTypeTrackHistory,omitempty"`
+	RecordTypeTrackHistory bool `json:"recordTypeTrackHistory,omitempty"`
 
-	RecordTypes []*RecordType `xml:"recordTypes,omitempty"`
+	RecordTypes []*RecordType `json:"recordTypes,omitempty"`
 
-	SearchLayouts *SearchLayouts `xml:"searchLayouts,omitempty"`
+	SearchLayouts *SearchLayouts `json:"searchLayouts,omitempty"`
 
-	SharingModel SharingModel `xml:"sharingModel,omitempty"`
+	SharingModel SharingModel `json:"sharingModel,omitempty"`
 
-	SharingReasons []*SharingReason `xml:"sharingReasons,omitempty"`
+	SharingReasons []*SharingReason `json:"sharingReasons,omitempty"`
 
-	SharingRecalculations []*SharingRecalculation `xml:"sharingRecalculations,omitempty"`
+	SharingRecalculations []*SharingRecalculation `json:"sharingRecalculations,omitempty"`
 
-	StartsWith *StartsWith `xml:"startsWith,omitempty"`
+	StartsWith *StartsWith `json:"startsWith,omitempty"`
 
-	ValidationRules []*ValidationRule `xml:"validationRules,omitempty"`
+	ValidationRules []*ValidationRule `json:"validationRules,omitempty"`
 
-	Visibility *SetupObjectVisibility `xml:"visibility,omitempty"`
+	Visibility *SetupObjectVisibility `json:"visibility,omitempty"`
 
-	WebLinks []*WebLink `xml:"webLinks,omitempty"`
+	WebLinks []*WebLink `json:"webLinks,omitempty"`
 }
 
 type ArticleTypeChannelDisplay struct {
-	ArticleTypeTemplates []*ArticleTypeTemplate `xml:"articleTypeTemplates,omitempty"`
+	ArticleTypeTemplates []*ArticleTypeTemplate `json:"articleTypeTemplates,omitempty"`
 }
 
 type ArticleTypeTemplate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ArticleTypeTemplate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ArticleTypeTemplate"`
 
-	Channel *Channel `xml:"channel,omitempty"`
+	Channel *Channel `json:"channel,omitempty"`
 
-	Page string `xml:"page,omitempty"`
+	Page string `json:"page,omitempty"`
 
-	Template *Template `xml:"template,omitempty"`
+	Template *Template `json:"template,omitempty"`
 }
 
 type FieldSet struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FieldSet"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldSet"`
 
 	*Metadata
 
-	AvailableFields []*FieldSetItem `xml:"availableFields,omitempty"`
+	AvailableFields []*FieldSetItem `json:"availableFields,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DisplayedFields []*FieldSetItem `xml:"displayedFields,omitempty"`
+	DisplayedFields []*FieldSetItem `json:"displayedFields,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type FieldSetItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FieldSetItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldSetItem"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	IsFieldManaged bool `xml:"isFieldManaged,omitempty"`
+	IsFieldManaged bool `json:"isFieldManaged,omitempty"`
 
-	IsRequired bool `xml:"isRequired,omitempty"`
+	IsRequired bool `json:"isRequired,omitempty"`
 }
 
 type HistoryRetentionPolicy struct {
-	ArchiveAfterMonths int32 `xml:"archiveAfterMonths,omitempty"`
+	ArchiveAfterMonths int32 `json:"archiveAfterMonths,omitempty"`
 
-	ArchiveRetentionYears int32 `xml:"archiveRetentionYears,omitempty"`
+	ArchiveRetentionYears int32 `json:"archiveRetentionYears,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 }
 
 type ListView struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ListView"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ListView"`
 
 	*Metadata
 
-	BooleanFilter string `xml:"booleanFilter,omitempty"`
+	BooleanFilter string `json:"booleanFilter,omitempty"`
 
-	Columns []string `xml:"columns,omitempty"`
+	Columns []string `json:"columns,omitempty"`
 
-	Division string `xml:"division,omitempty"`
+	Division string `json:"division,omitempty"`
 
-	FilterScope *FilterScope `xml:"filterScope,omitempty"`
+	FilterScope *FilterScope `json:"filterScope,omitempty"`
 
-	Filters []*ListViewFilter `xml:"filters,omitempty"`
+	Filters []*ListViewFilter `json:"filters,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Language *Language `xml:"language,omitempty"`
+	Language *Language `json:"language,omitempty"`
 
-	Queue string `xml:"queue,omitempty"`
+	Queue string `json:"queue,omitempty"`
 
-	SharedTo *SharedTo `xml:"sharedTo,omitempty"`
+	SharedTo *SharedTo `json:"sharedTo,omitempty"`
 }
 
 type ListViewFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ListViewFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ListViewFilter"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Operation *FilterOperation `xml:"operation,omitempty"`
+	Operation *FilterOperation `json:"operation,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type SharedTo struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SharedTo"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharedTo"`
 
-	AllCustomerPortalUsers string `xml:"allCustomerPortalUsers,omitempty"`
+	AllCustomerPortalUsers string `json:"allCustomerPortalUsers,omitempty"`
 
-	AllInternalUsers string `xml:"allInternalUsers,omitempty"`
+	AllInternalUsers string `json:"allInternalUsers,omitempty"`
 
-	AllPartnerUsers string `xml:"allPartnerUsers,omitempty"`
+	AllPartnerUsers string `json:"allPartnerUsers,omitempty"`
 
-	Group []string `xml:"group,omitempty"`
+	Group []string `json:"group,omitempty"`
 
-	Groups []string `xml:"groups,omitempty"`
+	Groups []string `json:"groups,omitempty"`
 
-	ManagerSubordinates []string `xml:"managerSubordinates,omitempty"`
+	ManagerSubordinates []string `json:"managerSubordinates,omitempty"`
 
-	Managers []string `xml:"managers,omitempty"`
+	Managers []string `json:"managers,omitempty"`
 
-	PortalRole []string `xml:"portalRole,omitempty"`
+	PortalRole []string `json:"portalRole,omitempty"`
 
-	PortalRoleAndSubordinates []string `xml:"portalRoleAndSubordinates,omitempty"`
+	PortalRoleAndSubordinates []string `json:"portalRoleAndSubordinates,omitempty"`
 
-	Queue []string `xml:"queue,omitempty"`
+	Queue []string `json:"queue,omitempty"`
 
-	Role []string `xml:"role,omitempty"`
+	Role []string `json:"role,omitempty"`
 
-	RoleAndSubordinates []string `xml:"roleAndSubordinates,omitempty"`
+	RoleAndSubordinates []string `json:"roleAndSubordinates,omitempty"`
 
-	RoleAndSubordinatesInternal []string `xml:"roleAndSubordinatesInternal,omitempty"`
+	RoleAndSubordinatesInternal []string `json:"roleAndSubordinatesInternal,omitempty"`
 
-	Roles []string `xml:"roles,omitempty"`
+	Roles []string `json:"roles,omitempty"`
 
-	RolesAndSubordinates []string `xml:"rolesAndSubordinates,omitempty"`
+	RolesAndSubordinates []string `json:"rolesAndSubordinates,omitempty"`
 
-	Territories []string `xml:"territories,omitempty"`
+	Territories []string `json:"territories,omitempty"`
 
-	TerritoriesAndSubordinates []string `xml:"territoriesAndSubordinates,omitempty"`
+	TerritoriesAndSubordinates []string `json:"territoriesAndSubordinates,omitempty"`
 
-	Territory []string `xml:"territory,omitempty"`
+	Territory []string `json:"territory,omitempty"`
 
-	TerritoryAndSubordinates []string `xml:"territoryAndSubordinates,omitempty"`
+	TerritoryAndSubordinates []string `json:"territoryAndSubordinates,omitempty"`
 }
 
 type RecordType struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RecordType"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RecordType"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	BusinessProcess string `xml:"businessProcess,omitempty"`
+	BusinessProcess string `json:"businessProcess,omitempty"`
 
-	CompactLayoutAssignment string `xml:"compactLayoutAssignment,omitempty"`
+	CompactLayoutAssignment string `json:"compactLayoutAssignment,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	PicklistValues []*RecordTypePicklistValue `xml:"picklistValues,omitempty"`
+	PicklistValues []*RecordTypePicklistValue `json:"picklistValues,omitempty"`
 }
 
 type RecordTypePicklistValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RecordTypePicklistValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RecordTypePicklistValue"`
 
-	Picklist string `xml:"picklist,omitempty"`
+	Picklist string `json:"picklist,omitempty"`
 
-	Values []*PicklistValue `xml:"values,omitempty"`
+	Values []*PicklistValue `json:"values,omitempty"`
 }
 
 type SearchLayouts struct {
-	CustomTabListAdditionalFields []string `xml:"customTabListAdditionalFields,omitempty"`
+	CustomTabListAdditionalFields []string `json:"customTabListAdditionalFields,omitempty"`
 
-	ExcludedStandardButtons []string `xml:"excludedStandardButtons,omitempty"`
+	ExcludedStandardButtons []string `json:"excludedStandardButtons,omitempty"`
 
-	ListViewButtons []string `xml:"listViewButtons,omitempty"`
+	ListViewButtons []string `json:"listViewButtons,omitempty"`
 
-	LookupDialogsAdditionalFields []string `xml:"lookupDialogsAdditionalFields,omitempty"`
+	LookupDialogsAdditionalFields []string `json:"lookupDialogsAdditionalFields,omitempty"`
 
-	LookupFilterFields []string `xml:"lookupFilterFields,omitempty"`
+	LookupFilterFields []string `json:"lookupFilterFields,omitempty"`
 
-	LookupPhoneDialogsAdditionalFields []string `xml:"lookupPhoneDialogsAdditionalFields,omitempty"`
+	LookupPhoneDialogsAdditionalFields []string `json:"lookupPhoneDialogsAdditionalFields,omitempty"`
 
-	SearchFilterFields []string `xml:"searchFilterFields,omitempty"`
+	SearchFilterFields []string `json:"searchFilterFields,omitempty"`
 
-	SearchResultsAdditionalFields []string `xml:"searchResultsAdditionalFields,omitempty"`
+	SearchResultsAdditionalFields []string `json:"searchResultsAdditionalFields,omitempty"`
 
-	SearchResultsCustomButtons []string `xml:"searchResultsCustomButtons,omitempty"`
+	SearchResultsCustomButtons []string `json:"searchResultsCustomButtons,omitempty"`
 }
 
 type SharingReason struct {
 	*Metadata
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type SharingRecalculation struct {
-	ClassName string `xml:"className,omitempty"`
+	ClassName string `json:"className,omitempty"`
 }
 
 type ValidationRule struct {
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	ErrorConditionFormula string `xml:"errorConditionFormula,omitempty"`
+	ErrorConditionFormula string `json:"errorConditionFormula,omitempty"`
 
-	ErrorDisplayField string `xml:"errorDisplayField,omitempty"`
+	ErrorDisplayField string `json:"errorDisplayField,omitempty"`
 
-	ErrorMessage string `xml:"errorMessage,omitempty"`
+	ErrorMessage string `json:"errorMessage,omitempty"`
 }
 
 type WebLink struct {
 	*Metadata
 
-	Availability *WebLinkAvailability `xml:"availability,omitempty"`
+	Availability *WebLinkAvailability `json:"availability,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DisplayType *WebLinkDisplayType `xml:"displayType,omitempty"`
+	DisplayType *WebLinkDisplayType `json:"displayType,omitempty"`
 
-	EncodingKey *Encoding `xml:"encodingKey,omitempty"`
+	EncodingKey *Encoding `json:"encodingKey,omitempty"`
 
-	HasMenubar bool `xml:"hasMenubar,omitempty"`
+	HasMenubar bool `json:"hasMenubar,omitempty"`
 
-	HasScrollbars bool `xml:"hasScrollbars,omitempty"`
+	HasScrollbars bool `json:"hasScrollbars,omitempty"`
 
-	HasToolbar bool `xml:"hasToolbar,omitempty"`
+	HasToolbar bool `json:"hasToolbar,omitempty"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	IsResizable bool `xml:"isResizable,omitempty"`
+	IsResizable bool `json:"isResizable,omitempty"`
 
-	LinkType *WebLinkType `xml:"linkType,omitempty"`
+	LinkType *WebLinkType `json:"linkType,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	OpenType *WebLinkWindowType `xml:"openType,omitempty"`
+	OpenType *WebLinkWindowType `json:"openType,omitempty"`
 
-	Page string `xml:"page,omitempty"`
+	Page string `json:"page,omitempty"`
 
-	Position *WebLinkPosition `xml:"position,omitempty"`
+	Position *WebLinkPosition `json:"position,omitempty"`
 
-	Protected bool `xml:"protected,omitempty"`
+	Protected bool `json:"protected,omitempty"`
 
-	RequireRowSelection bool `xml:"requireRowSelection,omitempty"`
+	RequireRowSelection bool `json:"requireRowSelection,omitempty"`
 
-	Scontrol string `xml:"scontrol,omitempty"`
+	Scontrol string `json:"scontrol,omitempty"`
 
-	ShowsLocation bool `xml:"showsLocation,omitempty"`
+	ShowsLocation bool `json:"showsLocation,omitempty"`
 
-	ShowsStatus bool `xml:"showsStatus,omitempty"`
+	ShowsStatus bool `json:"showsStatus,omitempty"`
 
-	Url string `xml:"url,omitempty"`
+	Url string `json:"url,omitempty"`
 
-	Width int32 `xml:"width,omitempty"`
+	Width int32 `json:"width,omitempty"`
 }
 
 type CustomObjectTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomObjectTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomObjectTranslation"`
 
 	*Metadata
 
-	CaseValues []*ObjectNameCaseValue `xml:"caseValues,omitempty"`
+	CaseValues []*ObjectNameCaseValue `json:"caseValues,omitempty"`
 
-	Fields []*CustomFieldTranslation `xml:"fields,omitempty"`
+	Fields []*CustomFieldTranslation `json:"fields,omitempty"`
 
-	Gender *Gender `xml:"gender,omitempty"`
+	Gender *Gender `json:"gender,omitempty"`
 
-	Layouts []*LayoutTranslation `xml:"layouts,omitempty"`
+	Layouts []*LayoutTranslation `json:"layouts,omitempty"`
 
-	NameFieldLabel string `xml:"nameFieldLabel,omitempty"`
+	NameFieldLabel string `json:"nameFieldLabel,omitempty"`
 
-	QuickActions []*QuickActionTranslation `xml:"quickActions,omitempty"`
+	QuickActions []*QuickActionTranslation `json:"quickActions,omitempty"`
 
-	RecordTypes []*RecordTypeTranslation `xml:"recordTypes,omitempty"`
+	RecordTypes []*RecordTypeTranslation `json:"recordTypes,omitempty"`
 
-	SharingReasons []*SharingReasonTranslation `xml:"sharingReasons,omitempty"`
+	SharingReasons []*SharingReasonTranslation `json:"sharingReasons,omitempty"`
 
-	StandardFields []*StandardFieldTranslation `xml:"standardFields,omitempty"`
+	StandardFields []*StandardFieldTranslation `json:"standardFields,omitempty"`
 
-	StartsWith *StartsWith `xml:"startsWith,omitempty"`
+	StartsWith *StartsWith `json:"startsWith,omitempty"`
 
-	ValidationRules []*ValidationRuleTranslation `xml:"validationRules,omitempty"`
+	ValidationRules []*ValidationRuleTranslation `json:"validationRules,omitempty"`
 
-	WebLinks []*WebLinkTranslation `xml:"webLinks,omitempty"`
+	WebLinks []*WebLinkTranslation `json:"webLinks,omitempty"`
 
-	WorkflowTasks []*WorkflowTaskTranslation `xml:"workflowTasks,omitempty"`
+	WorkflowTasks []*WorkflowTaskTranslation `json:"workflowTasks,omitempty"`
 }
 
 type ObjectNameCaseValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ObjectNameCaseValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectNameCaseValue"`
 
-	Article *Article `xml:"article,omitempty"`
+	Article *Article `json:"article,omitempty"`
 
-	CaseType *CaseType `xml:"caseType,omitempty"`
+	CaseType *CaseType `json:"caseType,omitempty"`
 
-	Plural bool `xml:"plural,omitempty"`
+	Plural bool `json:"plural,omitempty"`
 
-	Possessive *Possessive `xml:"possessive,omitempty"`
+	Possessive *Possessive `json:"possessive,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type CustomFieldTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomFieldTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomFieldTranslation"`
 
-	CaseValues []*ObjectNameCaseValue `xml:"caseValues,omitempty"`
+	CaseValues []*ObjectNameCaseValue `json:"caseValues,omitempty"`
 
-	Gender *Gender `xml:"gender,omitempty"`
+	Gender *Gender `json:"gender,omitempty"`
 
-	Help string `xml:"help,omitempty"`
+	Help string `json:"help,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	LookupFilter *LookupFilterTranslation `xml:"lookupFilter,omitempty"`
+	LookupFilter *LookupFilterTranslation `json:"lookupFilter,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	PicklistValues []*PicklistValueTranslation `xml:"picklistValues,omitempty"`
+	PicklistValues []*PicklistValueTranslation `json:"picklistValues,omitempty"`
 
-	RelationshipLabel string `xml:"relationshipLabel,omitempty"`
+	RelationshipLabel string `json:"relationshipLabel,omitempty"`
 
-	StartsWith *StartsWith `xml:"startsWith,omitempty"`
+	StartsWith *StartsWith `json:"startsWith,omitempty"`
 }
 
 type LookupFilterTranslation struct {
-	ErrorMessage string `xml:"errorMessage,omitempty"`
+	ErrorMessage string `json:"errorMessage,omitempty"`
 
-	InformationalMessage string `xml:"informationalMessage,omitempty"`
+	InformationalMessage string `json:"informationalMessage,omitempty"`
 }
 
 type PicklistValueTranslation struct {
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	Translation string `xml:"translation,omitempty"`
+	Translation string `json:"translation,omitempty"`
 }
 
 type LayoutTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LayoutTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LayoutTranslation"`
 
-	Layout string `xml:"layout,omitempty"`
+	Layout string `json:"layout,omitempty"`
 
-	LayoutType string `xml:"layoutType,omitempty"`
+	LayoutType string `json:"layoutType,omitempty"`
 
-	Sections []*LayoutSectionTranslation `xml:"sections,omitempty"`
+	Sections []*LayoutSectionTranslation `json:"sections,omitempty"`
 }
 
 type LayoutSectionTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LayoutSectionTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LayoutSectionTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Section string `xml:"section,omitempty"`
+	Section string `json:"section,omitempty"`
 }
 
 type QuickActionTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata QuickActionTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type RecordTypeTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RecordTypeTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RecordTypeTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type SharingReasonTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SharingReasonTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingReasonTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type StandardFieldTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata StandardFieldTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata StandardFieldTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type ValidationRuleTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ValidationRuleTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ValidationRuleTranslation"`
 
-	ErrorMessage string `xml:"errorMessage,omitempty"`
+	ErrorMessage string `json:"errorMessage,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type WebLinkTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WebLinkTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WebLinkTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type WorkflowTaskTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowTaskTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowTaskTranslation"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Subject string `xml:"subject,omitempty"`
+	Subject string `json:"subject,omitempty"`
 }
 
 type CustomPageWebLink struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomPageWebLink"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomPageWebLink"`
 
 	*Metadata
 
-	Availability *WebLinkAvailability `xml:"availability,omitempty"`
+	Availability *WebLinkAvailability `json:"availability,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DisplayType *WebLinkDisplayType `xml:"displayType,omitempty"`
+	DisplayType *WebLinkDisplayType `json:"displayType,omitempty"`
 
-	EncodingKey *Encoding `xml:"encodingKey,omitempty"`
+	EncodingKey *Encoding `json:"encodingKey,omitempty"`
 
-	HasMenubar bool `xml:"hasMenubar,omitempty"`
+	HasMenubar bool `json:"hasMenubar,omitempty"`
 
-	HasScrollbars bool `xml:"hasScrollbars,omitempty"`
+	HasScrollbars bool `json:"hasScrollbars,omitempty"`
 
-	HasToolbar bool `xml:"hasToolbar,omitempty"`
+	HasToolbar bool `json:"hasToolbar,omitempty"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	IsResizable bool `xml:"isResizable,omitempty"`
+	IsResizable bool `json:"isResizable,omitempty"`
 
-	LinkType *WebLinkType `xml:"linkType,omitempty"`
+	LinkType *WebLinkType `json:"linkType,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	OpenType *WebLinkWindowType `xml:"openType,omitempty"`
+	OpenType *WebLinkWindowType `json:"openType,omitempty"`
 
-	Page string `xml:"page,omitempty"`
+	Page string `json:"page,omitempty"`
 
-	Position *WebLinkPosition `xml:"position,omitempty"`
+	Position *WebLinkPosition `json:"position,omitempty"`
 
-	Protected bool `xml:"protected,omitempty"`
+	Protected bool `json:"protected,omitempty"`
 
-	RequireRowSelection bool `xml:"requireRowSelection,omitempty"`
+	RequireRowSelection bool `json:"requireRowSelection,omitempty"`
 
-	Scontrol string `xml:"scontrol,omitempty"`
+	Scontrol string `json:"scontrol,omitempty"`
 
-	ShowsLocation bool `xml:"showsLocation,omitempty"`
+	ShowsLocation bool `json:"showsLocation,omitempty"`
 
-	ShowsStatus bool `xml:"showsStatus,omitempty"`
+	ShowsStatus bool `json:"showsStatus,omitempty"`
 
-	Url string `xml:"url,omitempty"`
+	Url string `json:"url,omitempty"`
 
-	Width int32 `xml:"width,omitempty"`
+	Width int32 `json:"width,omitempty"`
 }
 
 type CustomPermission struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomPermission"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomPermission"`
 
 	*Metadata
 
-	ConnectedApp string `xml:"connectedApp,omitempty"`
+	ConnectedApp string `json:"connectedApp,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	RequiredPermission []*CustomPermissionDependencyRequired `xml:"requiredPermission,omitempty"`
+	RequiredPermission []*CustomPermissionDependencyRequired `json:"requiredPermission,omitempty"`
 }
 
 type CustomPermissionDependencyRequired struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomPermissionDependencyRequired"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomPermissionDependencyRequired"`
 
-	CustomPermission string `xml:"customPermission,omitempty"`
+	CustomPermission string `json:"customPermission,omitempty"`
 
-	Dependency bool `xml:"dependency,omitempty"`
+	Dependency bool `json:"dependency,omitempty"`
 }
 
 type CustomSite struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomSite"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomSite"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	AllowHomePage bool `xml:"allowHomePage,omitempty"`
+	AllowHomePage bool `json:"allowHomePage,omitempty"`
 
-	AllowStandardAnswersPages bool `xml:"allowStandardAnswersPages,omitempty"`
+	AllowStandardAnswersPages bool `json:"allowStandardAnswersPages,omitempty"`
 
-	AllowStandardIdeasPages bool `xml:"allowStandardIdeasPages,omitempty"`
+	AllowStandardIdeasPages bool `json:"allowStandardIdeasPages,omitempty"`
 
-	AllowStandardLookups bool `xml:"allowStandardLookups,omitempty"`
+	AllowStandardLookups bool `json:"allowStandardLookups,omitempty"`
 
-	AllowStandardSearch bool `xml:"allowStandardSearch,omitempty"`
+	AllowStandardSearch bool `json:"allowStandardSearch,omitempty"`
 
-	AnalyticsTrackingCode string `xml:"analyticsTrackingCode,omitempty"`
+	AnalyticsTrackingCode string `json:"analyticsTrackingCode,omitempty"`
 
-	AuthorizationRequiredPage string `xml:"authorizationRequiredPage,omitempty"`
+	AuthorizationRequiredPage string `json:"authorizationRequiredPage,omitempty"`
 
-	BandwidthExceededPage string `xml:"bandwidthExceededPage,omitempty"`
+	BandwidthExceededPage string `json:"bandwidthExceededPage,omitempty"`
 
-	ChangePasswordPage string `xml:"changePasswordPage,omitempty"`
+	ChangePasswordPage string `json:"changePasswordPage,omitempty"`
 
-	ChatterAnswersForgotPasswordConfirmPage string `xml:"chatterAnswersForgotPasswordConfirmPage,omitempty"`
+	ChatterAnswersForgotPasswordConfirmPage string `json:"chatterAnswersForgotPasswordConfirmPage,omitempty"`
 
-	ChatterAnswersForgotPasswordPage string `xml:"chatterAnswersForgotPasswordPage,omitempty"`
+	ChatterAnswersForgotPasswordPage string `json:"chatterAnswersForgotPasswordPage,omitempty"`
 
-	ChatterAnswersHelpPage string `xml:"chatterAnswersHelpPage,omitempty"`
+	ChatterAnswersHelpPage string `json:"chatterAnswersHelpPage,omitempty"`
 
-	ChatterAnswersLoginPage string `xml:"chatterAnswersLoginPage,omitempty"`
+	ChatterAnswersLoginPage string `json:"chatterAnswersLoginPage,omitempty"`
 
-	ChatterAnswersRegistrationPage string `xml:"chatterAnswersRegistrationPage,omitempty"`
+	ChatterAnswersRegistrationPage string `json:"chatterAnswersRegistrationPage,omitempty"`
 
-	ClickjackProtectionLevel *SiteClickjackProtectionLevel `xml:"clickjackProtectionLevel,omitempty"`
+	ClickjackProtectionLevel *SiteClickjackProtectionLevel `json:"clickjackProtectionLevel,omitempty"`
 
-	CustomWebAddresses []*SiteWebAddress `xml:"customWebAddresses,omitempty"`
+	CustomWebAddresses []*SiteWebAddress `json:"customWebAddresses,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	FavoriteIcon string `xml:"favoriteIcon,omitempty"`
+	FavoriteIcon string `json:"favoriteIcon,omitempty"`
 
-	FileNotFoundPage string `xml:"fileNotFoundPage,omitempty"`
+	FileNotFoundPage string `json:"fileNotFoundPage,omitempty"`
 
-	ForgotPasswordPage string `xml:"forgotPasswordPage,omitempty"`
+	ForgotPasswordPage string `json:"forgotPasswordPage,omitempty"`
 
-	GenericErrorPage string `xml:"genericErrorPage,omitempty"`
+	GenericErrorPage string `json:"genericErrorPage,omitempty"`
 
-	GuestProfile string `xml:"guestProfile,omitempty"`
+	GuestProfile string `json:"guestProfile,omitempty"`
 
-	InMaintenancePage string `xml:"inMaintenancePage,omitempty"`
+	InMaintenancePage string `json:"inMaintenancePage,omitempty"`
 
-	InactiveIndexPage string `xml:"inactiveIndexPage,omitempty"`
+	InactiveIndexPage string `json:"inactiveIndexPage,omitempty"`
 
-	IndexPage string `xml:"indexPage,omitempty"`
+	IndexPage string `json:"indexPage,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	MyProfilePage string `xml:"myProfilePage,omitempty"`
+	MyProfilePage string `json:"myProfilePage,omitempty"`
 
-	Portal string `xml:"portal,omitempty"`
+	Portal string `json:"portal,omitempty"`
 
-	RequireHttps bool `xml:"requireHttps,omitempty"`
+	RequireHttps bool `json:"requireHttps,omitempty"`
 
-	RequireInsecurePortalAccess bool `xml:"requireInsecurePortalAccess,omitempty"`
+	RequireInsecurePortalAccess bool `json:"requireInsecurePortalAccess,omitempty"`
 
-	RobotsTxtPage string `xml:"robotsTxtPage,omitempty"`
+	RobotsTxtPage string `json:"robotsTxtPage,omitempty"`
 
-	RootComponent string `xml:"rootComponent,omitempty"`
+	RootComponent string `json:"rootComponent,omitempty"`
 
-	SelfRegPage string `xml:"selfRegPage,omitempty"`
+	SelfRegPage string `json:"selfRegPage,omitempty"`
 
-	ServerIsDown string `xml:"serverIsDown,omitempty"`
+	ServerIsDown string `json:"serverIsDown,omitempty"`
 
-	SiteAdmin string `xml:"siteAdmin,omitempty"`
+	SiteAdmin string `json:"siteAdmin,omitempty"`
 
-	SiteRedirectMappings []*SiteRedirectMapping `xml:"siteRedirectMappings,omitempty"`
+	SiteRedirectMappings []*SiteRedirectMapping `json:"siteRedirectMappings,omitempty"`
 
-	SiteTemplate string `xml:"siteTemplate,omitempty"`
+	SiteTemplate string `json:"siteTemplate,omitempty"`
 
-	SiteType *SiteType `xml:"siteType,omitempty"`
+	SiteType *SiteType `json:"siteType,omitempty"`
 
-	Subdomain string `xml:"subdomain,omitempty"`
+	Subdomain string `json:"subdomain,omitempty"`
 
-	UrlPathPrefix string `xml:"urlPathPrefix,omitempty"`
+	UrlPathPrefix string `json:"urlPathPrefix,omitempty"`
 }
 
 type SiteWebAddress struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SiteWebAddress"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SiteWebAddress"`
 
-	Certificate string `xml:"certificate,omitempty"`
+	Certificate string `json:"certificate,omitempty"`
 
-	DomainName string `xml:"domainName,omitempty"`
+	DomainName string `json:"domainName,omitempty"`
 
-	Primary bool `xml:"primary,omitempty"`
+	Primary bool `json:"primary,omitempty"`
 }
 
 type SiteRedirectMapping struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SiteRedirectMapping"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SiteRedirectMapping"`
 
-	Action *SiteRedirect `xml:"action,omitempty"`
+	Action *SiteRedirect `json:"action,omitempty"`
 
-	IsActive bool `xml:"isActive,omitempty"`
+	IsActive bool `json:"isActive,omitempty"`
 
-	Source string `xml:"source,omitempty"`
+	Source string `json:"source,omitempty"`
 
-	Target string `xml:"target,omitempty"`
+	Target string `json:"target,omitempty"`
 }
 
 type CustomTab struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomTab"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomTab"`
 
 	*Metadata
 
-	ActionOverrides []*ActionOverride `xml:"actionOverrides,omitempty"`
+	ActionOverrides []*ActionOverride `json:"actionOverrides,omitempty"`
 
-	AuraComponent string `xml:"auraComponent,omitempty"`
+	AuraComponent string `json:"auraComponent,omitempty"`
 
-	CustomObject bool `xml:"customObject,omitempty"`
+	CustomObject bool `json:"customObject,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	FlexiPage string `xml:"flexiPage,omitempty"`
+	FlexiPage string `json:"flexiPage,omitempty"`
 
-	FrameHeight int32 `xml:"frameHeight,omitempty"`
+	FrameHeight int32 `json:"frameHeight,omitempty"`
 
-	HasSidebar bool `xml:"hasSidebar,omitempty"`
+	HasSidebar bool `json:"hasSidebar,omitempty"`
 
-	Icon string `xml:"icon,omitempty"`
+	Icon string `json:"icon,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	MobileReady bool `xml:"mobileReady,omitempty"`
+	MobileReady bool `json:"mobileReady,omitempty"`
 
-	Motif string `xml:"motif,omitempty"`
+	Motif string `json:"motif,omitempty"`
 
-	Page string `xml:"page,omitempty"`
+	Page string `json:"page,omitempty"`
 
-	Scontrol string `xml:"scontrol,omitempty"`
+	Scontrol string `json:"scontrol,omitempty"`
 
-	SplashPageLink string `xml:"splashPageLink,omitempty"`
+	SplashPageLink string `json:"splashPageLink,omitempty"`
 
-	Url string `xml:"url,omitempty"`
+	Url string `json:"url,omitempty"`
 
-	UrlEncodingKey *Encoding `xml:"urlEncodingKey,omitempty"`
+	UrlEncodingKey *Encoding `json:"urlEncodingKey,omitempty"`
 }
 
 type Dashboard struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Dashboard"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Dashboard"`
 
 	*Metadata
 
-	BackgroundEndColor string `xml:"backgroundEndColor,omitempty"`
+	BackgroundEndColor string `json:"backgroundEndColor,omitempty"`
 
-	BackgroundFadeDirection *ChartBackgroundDirection `xml:"backgroundFadeDirection,omitempty"`
+	BackgroundFadeDirection *ChartBackgroundDirection `json:"backgroundFadeDirection,omitempty"`
 
-	BackgroundStartColor string `xml:"backgroundStartColor,omitempty"`
+	BackgroundStartColor string `json:"backgroundStartColor,omitempty"`
 
-	DashboardFilters []*DashboardFilter `xml:"dashboardFilters,omitempty"`
+	DashboardFilters []*DashboardFilter `json:"dashboardFilters,omitempty"`
 
-	DashboardGridLayout *DashboardGridLayout `xml:"dashboardGridLayout,omitempty"`
+	DashboardGridLayout *DashboardGridLayout `json:"dashboardGridLayout,omitempty"`
 
-	DashboardResultRefreshedDate string `xml:"dashboardResultRefreshedDate,omitempty"`
+	DashboardResultRefreshedDate string `json:"dashboardResultRefreshedDate,omitempty"`
 
-	DashboardResultRunningUser string `xml:"dashboardResultRunningUser,omitempty"`
+	DashboardResultRunningUser string `json:"dashboardResultRunningUser,omitempty"`
 
-	DashboardType *DashboardType `xml:"dashboardType,omitempty"`
+	DashboardType *DashboardType `json:"dashboardType,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	FolderName string `xml:"folderName,omitempty"`
+	FolderName string `json:"folderName,omitempty"`
 
-	IsGridLayout bool `xml:"isGridLayout,omitempty"`
+	IsGridLayout bool `json:"isGridLayout,omitempty"`
 
-	LeftSection *DashboardComponentSection `xml:"leftSection,omitempty"`
+	LeftSection *DashboardComponentSection `json:"leftSection,omitempty"`
 
-	MiddleSection *DashboardComponentSection `xml:"middleSection,omitempty"`
+	MiddleSection *DashboardComponentSection `json:"middleSection,omitempty"`
 
-	RightSection *DashboardComponentSection `xml:"rightSection,omitempty"`
+	RightSection *DashboardComponentSection `json:"rightSection,omitempty"`
 
-	RunningUser string `xml:"runningUser,omitempty"`
+	RunningUser string `json:"runningUser,omitempty"`
 
-	TextColor string `xml:"textColor,omitempty"`
+	TextColor string `json:"textColor,omitempty"`
 
-	Title string `xml:"title,omitempty"`
+	Title string `json:"title,omitempty"`
 
-	TitleColor string `xml:"titleColor,omitempty"`
+	TitleColor string `json:"titleColor,omitempty"`
 
-	TitleSize int32 `xml:"titleSize,omitempty"`
+	TitleSize int32 `json:"titleSize,omitempty"`
 }
 
 type DashboardFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DashboardFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardFilter"`
 
-	DashboardFilterOptions []*DashboardFilterOption `xml:"dashboardFilterOptions,omitempty"`
+	DashboardFilterOptions []*DashboardFilterOption `json:"dashboardFilterOptions,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type DashboardFilterOption struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DashboardFilterOption"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardFilterOption"`
 
-	Operator *DashboardFilterOperation `xml:"operator,omitempty"`
+	Operator *DashboardFilterOperation `json:"operator,omitempty"`
 
-	Values []string `xml:"values,omitempty"`
+	Values []string `json:"values,omitempty"`
 }
 
 type DashboardGridLayout struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DashboardGridLayout"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardGridLayout"`
 
-	DashboardGridComponents []*DashboardGridComponent `xml:"dashboardGridComponents,omitempty"`
+	DashboardGridComponents []*DashboardGridComponent `json:"dashboardGridComponents,omitempty"`
 
-	NumberOfColumns int32 `xml:"numberOfColumns,omitempty"`
+	NumberOfColumns int32 `json:"numberOfColumns,omitempty"`
 
-	RowHeight int32 `xml:"rowHeight,omitempty"`
+	RowHeight int32 `json:"rowHeight,omitempty"`
 }
 
 type DashboardGridComponent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DashboardGridComponent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardGridComponent"`
 
-	ColSpan int32 `xml:"colSpan,omitempty"`
+	ColSpan int32 `json:"colSpan,omitempty"`
 
-	ColumnIndex int32 `xml:"columnIndex,omitempty"`
+	ColumnIndex int32 `json:"columnIndex,omitempty"`
 
-	DashboardComponent *DashboardComponent `xml:"dashboardComponent,omitempty"`
+	DashboardComponent *DashboardComponent `json:"dashboardComponent,omitempty"`
 
-	RowIndex int32 `xml:"rowIndex,omitempty"`
+	RowIndex int32 `json:"rowIndex,omitempty"`
 
-	RowSpan int32 `xml:"rowSpan,omitempty"`
+	RowSpan int32 `json:"rowSpan,omitempty"`
 }
 
 type DashboardComponent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DashboardComponent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardComponent"`
 
-	AutoselectColumnsFromReport bool `xml:"autoselectColumnsFromReport,omitempty"`
+	AutoselectColumnsFromReport bool `json:"autoselectColumnsFromReport,omitempty"`
 
-	ChartAxisRange *ChartRangeType `xml:"chartAxisRange,omitempty"`
+	ChartAxisRange *ChartRangeType `json:"chartAxisRange,omitempty"`
 
-	ChartAxisRangeMax float64 `xml:"chartAxisRangeMax,omitempty"`
+	ChartAxisRangeMax float64 `json:"chartAxisRangeMax,omitempty"`
 
-	ChartAxisRangeMin float64 `xml:"chartAxisRangeMin,omitempty"`
+	ChartAxisRangeMin float64 `json:"chartAxisRangeMin,omitempty"`
 
-	ChartSummary []*ChartSummary `xml:"chartSummary,omitempty"`
+	ChartSummary []*ChartSummary `json:"chartSummary,omitempty"`
 
-	ComponentType *DashboardComponentType `xml:"componentType,omitempty"`
+	ComponentType *DashboardComponentType `json:"componentType,omitempty"`
 
-	DashboardFilterColumns []*DashboardFilterColumn `xml:"dashboardFilterColumns,omitempty"`
+	DashboardFilterColumns []*DashboardFilterColumn `json:"dashboardFilterColumns,omitempty"`
 
-	DashboardTableColumn []*DashboardTableColumn `xml:"dashboardTableColumn,omitempty"`
+	DashboardTableColumn []*DashboardTableColumn `json:"dashboardTableColumn,omitempty"`
 
-	DisplayUnits *ChartUnits `xml:"displayUnits,omitempty"`
+	DisplayUnits *ChartUnits `json:"displayUnits,omitempty"`
 
-	DrillDownUrl string `xml:"drillDownUrl,omitempty"`
+	DrillDownUrl string `json:"drillDownUrl,omitempty"`
 
-	DrillEnabled bool `xml:"drillEnabled,omitempty"`
+	DrillEnabled bool `json:"drillEnabled,omitempty"`
 
-	DrillToDetailEnabled bool `xml:"drillToDetailEnabled,omitempty"`
+	DrillToDetailEnabled bool `json:"drillToDetailEnabled,omitempty"`
 
-	EnableHover bool `xml:"enableHover,omitempty"`
+	EnableHover bool `json:"enableHover,omitempty"`
 
-	ExpandOthers bool `xml:"expandOthers,omitempty"`
+	ExpandOthers bool `json:"expandOthers,omitempty"`
 
-	Footer string `xml:"footer,omitempty"`
+	Footer string `json:"footer,omitempty"`
 
-	GaugeMax float64 `xml:"gaugeMax,omitempty"`
+	GaugeMax float64 `json:"gaugeMax,omitempty"`
 
-	GaugeMin float64 `xml:"gaugeMin,omitempty"`
+	GaugeMin float64 `json:"gaugeMin,omitempty"`
 
-	GroupingColumn []string `xml:"groupingColumn,omitempty"`
+	GroupingColumn []string `json:"groupingColumn,omitempty"`
 
-	Header string `xml:"header,omitempty"`
+	Header string `json:"header,omitempty"`
 
-	IndicatorBreakpoint1 float64 `xml:"indicatorBreakpoint1,omitempty"`
+	IndicatorBreakpoint1 float64 `json:"indicatorBreakpoint1,omitempty"`
 
-	IndicatorBreakpoint2 float64 `xml:"indicatorBreakpoint2,omitempty"`
+	IndicatorBreakpoint2 float64 `json:"indicatorBreakpoint2,omitempty"`
 
-	IndicatorHighColor string `xml:"indicatorHighColor,omitempty"`
+	IndicatorHighColor string `json:"indicatorHighColor,omitempty"`
 
-	IndicatorLowColor string `xml:"indicatorLowColor,omitempty"`
+	IndicatorLowColor string `json:"indicatorLowColor,omitempty"`
 
-	IndicatorMiddleColor string `xml:"indicatorMiddleColor,omitempty"`
+	IndicatorMiddleColor string `json:"indicatorMiddleColor,omitempty"`
 
-	LegendPosition *ChartLegendPosition `xml:"legendPosition,omitempty"`
+	LegendPosition *ChartLegendPosition `json:"legendPosition,omitempty"`
 
-	MaxValuesDisplayed int32 `xml:"maxValuesDisplayed,omitempty"`
+	MaxValuesDisplayed int32 `json:"maxValuesDisplayed,omitempty"`
 
-	MetricLabel string `xml:"metricLabel,omitempty"`
+	MetricLabel string `json:"metricLabel,omitempty"`
 
-	Page string `xml:"page,omitempty"`
+	Page string `json:"page,omitempty"`
 
-	PageHeightInPixels int32 `xml:"pageHeightInPixels,omitempty"`
+	PageHeightInPixels int32 `json:"pageHeightInPixels,omitempty"`
 
-	Report string `xml:"report,omitempty"`
+	Report string `json:"report,omitempty"`
 
-	Scontrol string `xml:"scontrol,omitempty"`
+	Scontrol string `json:"scontrol,omitempty"`
 
-	ScontrolHeightInPixels int32 `xml:"scontrolHeightInPixels,omitempty"`
+	ScontrolHeightInPixels int32 `json:"scontrolHeightInPixels,omitempty"`
 
-	ShowPercentage bool `xml:"showPercentage,omitempty"`
+	ShowPercentage bool `json:"showPercentage,omitempty"`
 
-	ShowPicturesOnCharts bool `xml:"showPicturesOnCharts,omitempty"`
+	ShowPicturesOnCharts bool `json:"showPicturesOnCharts,omitempty"`
 
-	ShowPicturesOnTables bool `xml:"showPicturesOnTables,omitempty"`
+	ShowPicturesOnTables bool `json:"showPicturesOnTables,omitempty"`
 
-	ShowTotal bool `xml:"showTotal,omitempty"`
+	ShowTotal bool `json:"showTotal,omitempty"`
 
-	ShowValues bool `xml:"showValues,omitempty"`
+	ShowValues bool `json:"showValues,omitempty"`
 
-	SortBy *DashboardComponentFilter `xml:"sortBy,omitempty"`
+	SortBy *DashboardComponentFilter `json:"sortBy,omitempty"`
 
-	Title string `xml:"title,omitempty"`
+	Title string `json:"title,omitempty"`
 
-	UseReportChart bool `xml:"useReportChart,omitempty"`
+	UseReportChart bool `json:"useReportChart,omitempty"`
 }
 
 type ChartSummary struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ChartSummary"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ChartSummary"`
 
-	Aggregate *ReportSummaryType `xml:"aggregate,omitempty"`
+	Aggregate *ReportSummaryType `json:"aggregate,omitempty"`
 
-	AxisBinding *ChartAxis `xml:"axisBinding,omitempty"`
+	AxisBinding *ChartAxis `json:"axisBinding,omitempty"`
 
-	Column string `xml:"column,omitempty"`
+	Column string `json:"column,omitempty"`
 }
 
 type DashboardFilterColumn struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DashboardFilterColumn"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardFilterColumn"`
 
-	Column string `xml:"column,omitempty"`
+	Column string `json:"column,omitempty"`
 }
 
 type DashboardTableColumn struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DashboardTableColumn"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardTableColumn"`
 
-	AggregateType *ReportSummaryType `xml:"aggregateType,omitempty"`
+	AggregateType *ReportSummaryType `json:"aggregateType,omitempty"`
 
-	CalculatePercent bool `xml:"calculatePercent,omitempty"`
+	CalculatePercent bool `json:"calculatePercent,omitempty"`
 
-	Column string `xml:"column,omitempty"`
+	Column string `json:"column,omitempty"`
 
-	DecimalPlaces int32 `xml:"decimalPlaces,omitempty"`
+	DecimalPlaces int32 `json:"decimalPlaces,omitempty"`
 
-	ShowTotal bool `xml:"showTotal,omitempty"`
+	ShowTotal bool `json:"showTotal,omitempty"`
 
-	SortBy *DashboardComponentFilter `xml:"sortBy,omitempty"`
+	SortBy *DashboardComponentFilter `json:"sortBy,omitempty"`
 }
 
 type DashboardComponentSection struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DashboardComponentSection"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardComponentSection"`
 
-	ColumnSize *DashboardComponentSize `xml:"columnSize,omitempty"`
+	ColumnSize *DashboardComponentSize `json:"columnSize,omitempty"`
 
-	Components []*DashboardComponent `xml:"components,omitempty"`
+	Components []*DashboardComponent `json:"components,omitempty"`
 }
 
 type DataCategoryGroup struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DataCategoryGroup"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DataCategoryGroup"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	DataCategory *DataCategory `xml:"dataCategory,omitempty"`
+	DataCategory *DataCategory `json:"dataCategory,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	ObjectUsage *ObjectUsage `xml:"objectUsage,omitempty"`
+	ObjectUsage *ObjectUsage `json:"objectUsage,omitempty"`
 }
 
 type DataCategory struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DataCategory"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DataCategory"`
 
-	DataCategory []*DataCategory `xml:"dataCategory,omitempty"`
+	DataCategory []*DataCategory `json:"dataCategory,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type ObjectUsage struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ObjectUsage"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectUsage"`
 
-	Object []string `xml:"object,omitempty"`
+	Object []string `json:"object,omitempty"`
 }
 
 type DelegateGroup struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DelegateGroup"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DelegateGroup"`
 
 	*Metadata
 
-	CustomObjects []string `xml:"customObjects,omitempty"`
+	CustomObjects []string `json:"customObjects,omitempty"`
 
-	Groups []string `xml:"groups,omitempty"`
+	Groups []string `json:"groups,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	LoginAccess bool `xml:"loginAccess,omitempty"`
+	LoginAccess bool `json:"loginAccess,omitempty"`
 
-	PermissionSets []string `xml:"permissionSets,omitempty"`
+	PermissionSets []string `json:"permissionSets,omitempty"`
 
-	Profiles []string `xml:"profiles,omitempty"`
+	Profiles []string `json:"profiles,omitempty"`
 
-	Roles []string `xml:"roles,omitempty"`
+	Roles []string `json:"roles,omitempty"`
 }
 
 type DuplicateRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DuplicateRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DuplicateRule"`
 
 	*Metadata
 
-	ActionOnInsert *DupeActionType `xml:"actionOnInsert,omitempty"`
+	ActionOnInsert *DupeActionType `json:"actionOnInsert,omitempty"`
 
-	ActionOnUpdate *DupeActionType `xml:"actionOnUpdate,omitempty"`
+	ActionOnUpdate *DupeActionType `json:"actionOnUpdate,omitempty"`
 
-	AlertText string `xml:"alertText,omitempty"`
+	AlertText string `json:"alertText,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DuplicateRuleFilter *DuplicateRuleFilter `xml:"duplicateRuleFilter,omitempty"`
+	DuplicateRuleFilter *DuplicateRuleFilter `json:"duplicateRuleFilter,omitempty"`
 
-	DuplicateRuleMatchRules []*DuplicateRuleMatchRule `xml:"duplicateRuleMatchRules,omitempty"`
+	DuplicateRuleMatchRules []*DuplicateRuleMatchRule `json:"duplicateRuleMatchRules,omitempty"`
 
-	IsActive bool `xml:"isActive,omitempty"`
+	IsActive bool `json:"isActive,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	OperationsOnInsert []string `xml:"operationsOnInsert,omitempty"`
+	OperationsOnInsert []string `json:"operationsOnInsert,omitempty"`
 
-	OperationsOnUpdate []string `xml:"operationsOnUpdate,omitempty"`
+	OperationsOnUpdate []string `json:"operationsOnUpdate,omitempty"`
 
-	SecurityOption *DupeSecurityOptionType `xml:"securityOption,omitempty"`
+	SecurityOption *DupeSecurityOptionType `json:"securityOption,omitempty"`
 
-	SortOrder int32 `xml:"sortOrder,omitempty"`
+	SortOrder int32 `json:"sortOrder,omitempty"`
 }
 
 type DuplicateRuleFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DuplicateRuleFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DuplicateRuleFilter"`
 
-	BooleanFilter string `xml:"booleanFilter,omitempty"`
+	BooleanFilter string `json:"booleanFilter,omitempty"`
 
-	DuplicateRuleFilterItems []*DuplicateRuleFilterItem `xml:"duplicateRuleFilterItems,omitempty"`
+	DuplicateRuleFilterItems []*DuplicateRuleFilterItem `json:"duplicateRuleFilterItems,omitempty"`
 }
 
 type DuplicateRuleMatchRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DuplicateRuleMatchRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DuplicateRuleMatchRule"`
 
-	MatchRuleSObjectType string `xml:"matchRuleSObjectType,omitempty"`
+	MatchRuleSObjectType string `json:"matchRuleSObjectType,omitempty"`
 
-	MatchingRule string `xml:"matchingRule,omitempty"`
+	MatchingRule string `json:"matchingRule,omitempty"`
 
-	ObjectMapping *ObjectMapping `xml:"objectMapping,omitempty"`
+	ObjectMapping *ObjectMapping `json:"objectMapping,omitempty"`
 }
 
 type ObjectMapping struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ObjectMapping"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectMapping"`
 
-	InputObject string `xml:"inputObject,omitempty"`
+	InputObject string `json:"inputObject,omitempty"`
 
-	MappingFields []*ObjectMappingField `xml:"mappingFields,omitempty"`
+	MappingFields []*ObjectMappingField `json:"mappingFields,omitempty"`
 
-	OutputObject string `xml:"outputObject,omitempty"`
+	OutputObject string `json:"outputObject,omitempty"`
 }
 
 type ObjectMappingField struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ObjectMappingField"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectMappingField"`
 
-	InputField string `xml:"inputField,omitempty"`
+	InputField string `json:"inputField,omitempty"`
 
-	OutputField string `xml:"outputField,omitempty"`
+	OutputField string `json:"outputField,omitempty"`
 }
 
 type EmbeddedServiceConfig struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EmbeddedServiceConfig"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmbeddedServiceConfig"`
 
 	*Metadata
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	Site string `xml:"site,omitempty"`
+	Site string `json:"site,omitempty"`
 }
 
 type EmbeddedServiceLiveAgent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EmbeddedServiceLiveAgent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmbeddedServiceLiveAgent"`
 
 	*Metadata
 
-	EmbeddedServiceConfig string `xml:"embeddedServiceConfig,omitempty"`
+	EmbeddedServiceConfig string `json:"embeddedServiceConfig,omitempty"`
 
-	LiveAgentChatUrl string `xml:"liveAgentChatUrl,omitempty"`
+	LiveAgentChatUrl string `json:"liveAgentChatUrl,omitempty"`
 
-	LiveAgentContentUrl string `xml:"liveAgentContentUrl,omitempty"`
+	LiveAgentContentUrl string `json:"liveAgentContentUrl,omitempty"`
 
-	LiveChatButton string `xml:"liveChatButton,omitempty"`
+	LiveChatButton string `json:"liveChatButton,omitempty"`
 
-	LiveChatDeployment string `xml:"liveChatDeployment,omitempty"`
+	LiveChatDeployment string `json:"liveChatDeployment,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 }
 
 type EntitlementProcess struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EntitlementProcess"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EntitlementProcess"`
 
 	*Metadata
 
-	SObjectType string `xml:"SObjectType,omitempty"`
+	SObjectType string `json:"SObjectType,omitempty"`
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	BusinessHours string `xml:"businessHours,omitempty"`
+	BusinessHours string `json:"businessHours,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EntryStartDateField string `xml:"entryStartDateField,omitempty"`
+	EntryStartDateField string `json:"entryStartDateField,omitempty"`
 
-	ExitCriteriaBooleanFilter string `xml:"exitCriteriaBooleanFilter,omitempty"`
+	ExitCriteriaBooleanFilter string `json:"exitCriteriaBooleanFilter,omitempty"`
 
-	ExitCriteriaFilterItems []*FilterItem `xml:"exitCriteriaFilterItems,omitempty"`
+	ExitCriteriaFilterItems []*FilterItem `json:"exitCriteriaFilterItems,omitempty"`
 
-	ExitCriteriaFormula string `xml:"exitCriteriaFormula,omitempty"`
+	ExitCriteriaFormula string `json:"exitCriteriaFormula,omitempty"`
 
-	IsVersionDefault bool `xml:"isVersionDefault,omitempty"`
+	IsVersionDefault bool `json:"isVersionDefault,omitempty"`
 
-	Milestones []*EntitlementProcessMilestoneItem `xml:"milestones,omitempty"`
+	Milestones []*EntitlementProcessMilestoneItem `json:"milestones,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	VersionMaster string `xml:"versionMaster,omitempty"`
+	VersionMaster string `json:"versionMaster,omitempty"`
 
-	VersionNotes string `xml:"versionNotes,omitempty"`
+	VersionNotes string `json:"versionNotes,omitempty"`
 
-	VersionNumber int32 `xml:"versionNumber,omitempty"`
+	VersionNumber int32 `json:"versionNumber,omitempty"`
 }
 
 type EntitlementProcessMilestoneItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EntitlementProcessMilestoneItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EntitlementProcessMilestoneItem"`
 
-	BusinessHours string `xml:"businessHours,omitempty"`
+	BusinessHours string `json:"businessHours,omitempty"`
 
-	CriteriaBooleanFilter string `xml:"criteriaBooleanFilter,omitempty"`
+	CriteriaBooleanFilter string `json:"criteriaBooleanFilter,omitempty"`
 
-	MilestoneCriteriaFilterItems []*FilterItem `xml:"milestoneCriteriaFilterItems,omitempty"`
+	MilestoneCriteriaFilterItems []*FilterItem `json:"milestoneCriteriaFilterItems,omitempty"`
 
-	MilestoneCriteriaFormula string `xml:"milestoneCriteriaFormula,omitempty"`
+	MilestoneCriteriaFormula string `json:"milestoneCriteriaFormula,omitempty"`
 
-	MilestoneName string `xml:"milestoneName,omitempty"`
+	MilestoneName string `json:"milestoneName,omitempty"`
 
-	MinutesCustomClass string `xml:"minutesCustomClass,omitempty"`
+	MinutesCustomClass string `json:"minutesCustomClass,omitempty"`
 
-	MinutesToComplete int32 `xml:"minutesToComplete,omitempty"`
+	MinutesToComplete int32 `json:"minutesToComplete,omitempty"`
 
-	SuccessActions []*WorkflowActionReference `xml:"successActions,omitempty"`
+	SuccessActions []*WorkflowActionReference `json:"successActions,omitempty"`
 
-	TimeTriggers []*EntitlementProcessMilestoneTimeTrigger `xml:"timeTriggers,omitempty"`
+	TimeTriggers []*EntitlementProcessMilestoneTimeTrigger `json:"timeTriggers,omitempty"`
 
-	UseCriteriaStartTime bool `xml:"useCriteriaStartTime,omitempty"`
+	UseCriteriaStartTime bool `json:"useCriteriaStartTime,omitempty"`
 }
 
 type EntitlementProcessMilestoneTimeTrigger struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EntitlementProcessMilestoneTimeTrigger"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EntitlementProcessMilestoneTimeTrigger"`
 
-	Actions []*WorkflowActionReference `xml:"actions,omitempty"`
+	Actions []*WorkflowActionReference `json:"actions,omitempty"`
 
-	TimeLength int32 `xml:"timeLength,omitempty"`
+	TimeLength int32 `json:"timeLength,omitempty"`
 
-	WorkflowTimeTriggerUnit *MilestoneTimeUnits `xml:"workflowTimeTriggerUnit,omitempty"`
+	WorkflowTimeTriggerUnit *MilestoneTimeUnits `json:"workflowTimeTriggerUnit,omitempty"`
 }
 
 type EntitlementSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EntitlementSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EntitlementSettings"`
 
 	*Metadata
 
-	AssetLookupLimitedToActiveEntitlementsOnAccount bool `xml:"assetLookupLimitedToActiveEntitlementsOnAccount,omitempty"`
+	AssetLookupLimitedToActiveEntitlementsOnAccount bool `json:"assetLookupLimitedToActiveEntitlementsOnAccount,omitempty"`
 
-	AssetLookupLimitedToActiveEntitlementsOnContact bool `xml:"assetLookupLimitedToActiveEntitlementsOnContact,omitempty"`
+	AssetLookupLimitedToActiveEntitlementsOnContact bool `json:"assetLookupLimitedToActiveEntitlementsOnContact,omitempty"`
 
-	AssetLookupLimitedToSameAccount bool `xml:"assetLookupLimitedToSameAccount,omitempty"`
+	AssetLookupLimitedToSameAccount bool `json:"assetLookupLimitedToSameAccount,omitempty"`
 
-	AssetLookupLimitedToSameContact bool `xml:"assetLookupLimitedToSameContact,omitempty"`
+	AssetLookupLimitedToSameContact bool `json:"assetLookupLimitedToSameContact,omitempty"`
 
-	EnableEntitlementVersioning bool `xml:"enableEntitlementVersioning,omitempty"`
+	EnableEntitlementVersioning bool `json:"enableEntitlementVersioning,omitempty"`
 
-	EnableEntitlements bool `xml:"enableEntitlements,omitempty"`
+	EnableEntitlements bool `json:"enableEntitlements,omitempty"`
 
-	EntitlementLookupLimitedToActiveStatus bool `xml:"entitlementLookupLimitedToActiveStatus,omitempty"`
+	EntitlementLookupLimitedToActiveStatus bool `json:"entitlementLookupLimitedToActiveStatus,omitempty"`
 
-	EntitlementLookupLimitedToSameAccount bool `xml:"entitlementLookupLimitedToSameAccount,omitempty"`
+	EntitlementLookupLimitedToSameAccount bool `json:"entitlementLookupLimitedToSameAccount,omitempty"`
 
-	EntitlementLookupLimitedToSameAsset bool `xml:"entitlementLookupLimitedToSameAsset,omitempty"`
+	EntitlementLookupLimitedToSameAsset bool `json:"entitlementLookupLimitedToSameAsset,omitempty"`
 
-	EntitlementLookupLimitedToSameContact bool `xml:"entitlementLookupLimitedToSameContact,omitempty"`
+	EntitlementLookupLimitedToSameContact bool `json:"entitlementLookupLimitedToSameContact,omitempty"`
 }
 
 type EntitlementTemplate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EntitlementTemplate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EntitlementTemplate"`
 
 	*Metadata
 
-	BusinessHours string `xml:"businessHours,omitempty"`
+	BusinessHours string `json:"businessHours,omitempty"`
 
-	CasesPerEntitlement int32 `xml:"casesPerEntitlement,omitempty"`
+	CasesPerEntitlement int32 `json:"casesPerEntitlement,omitempty"`
 
-	EntitlementProcess string `xml:"entitlementProcess,omitempty"`
+	EntitlementProcess string `json:"entitlementProcess,omitempty"`
 
-	IsPerIncident bool `xml:"isPerIncident,omitempty"`
+	IsPerIncident bool `json:"isPerIncident,omitempty"`
 
-	Term int32 `xml:"term,omitempty"`
+	Term int32 `json:"term,omitempty"`
 
-	Type_ string `xml:"type,omitempty"`
+	Type_ string `json:"type,omitempty"`
 }
 
 type EscalationRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EscalationRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EscalationRule"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	RuleEntry []*RuleEntry `xml:"ruleEntry,omitempty"`
+	RuleEntry []*RuleEntry `json:"ruleEntry,omitempty"`
 }
 
 type EscalationRules struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EscalationRules"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EscalationRules"`
 
 	*Metadata
 
-	EscalationRule []*EscalationRule `xml:"escalationRule,omitempty"`
+	EscalationRule []*EscalationRule `json:"escalationRule,omitempty"`
 }
 
 type EventDelivery struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EventDelivery"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EventDelivery"`
 
 	*Metadata
 
-	EventParameters []*EventParameterMap `xml:"eventParameters,omitempty"`
+	EventParameters []*EventParameterMap `json:"eventParameters,omitempty"`
 
-	EventSubscription string `xml:"eventSubscription,omitempty"`
+	EventSubscription string `json:"eventSubscription,omitempty"`
 
-	ReferenceData string `xml:"referenceData,omitempty"`
+	ReferenceData string `json:"referenceData,omitempty"`
 
-	Type_ *EventDeliveryType `xml:"type,omitempty"`
+	Type_ *EventDeliveryType `json:"type,omitempty"`
 }
 
 type EventParameterMap struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EventParameterMap"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EventParameterMap"`
 
-	ParameterName string `xml:"parameterName,omitempty"`
+	ParameterName string `json:"parameterName,omitempty"`
 
-	ParameterValue string `xml:"parameterValue,omitempty"`
+	ParameterValue string `json:"parameterValue,omitempty"`
 }
 
 type EventSubscription struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EventSubscription"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EventSubscription"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	EventParameters []*EventParameterMap `xml:"eventParameters,omitempty"`
+	EventParameters []*EventParameterMap `json:"eventParameters,omitempty"`
 
-	EventType string `xml:"eventType,omitempty"`
+	EventType string `json:"eventType,omitempty"`
 
-	ReferenceData string `xml:"referenceData,omitempty"`
+	ReferenceData string `json:"referenceData,omitempty"`
 }
 
 type EventType struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EventType"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EventType"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Fields []*EventTypeParameter `xml:"fields,omitempty"`
+	Fields []*EventTypeParameter `json:"fields,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type EventTypeParameter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EventTypeParameter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EventTypeParameter"`
 
-	DefaultValue string `xml:"defaultValue,omitempty"`
+	DefaultValue string `json:"defaultValue,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	MaxOccurs int32 `xml:"maxOccurs,omitempty"`
+	MaxOccurs int32 `json:"maxOccurs,omitempty"`
 
-	MinOccurs int32 `xml:"minOccurs,omitempty"`
+	MinOccurs int32 `json:"minOccurs,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	SObjectType string `xml:"sObjectType,omitempty"`
+	SObjectType string `json:"sObjectType,omitempty"`
 
-	Type_ *FieldType `xml:"type,omitempty"`
+	Type_ *FieldType `json:"type,omitempty"`
 }
 
 type ExternalDataSource struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ExternalDataSource"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ExternalDataSource"`
 
 	*Metadata
 
-	AuthProvider string `xml:"authProvider,omitempty"`
+	AuthProvider string `json:"authProvider,omitempty"`
 
-	Certificate string `xml:"certificate,omitempty"`
+	Certificate string `json:"certificate,omitempty"`
 
-	CustomConfiguration string `xml:"customConfiguration,omitempty"`
+	CustomConfiguration string `json:"customConfiguration,omitempty"`
 
-	Endpoint string `xml:"endpoint,omitempty"`
+	Endpoint string `json:"endpoint,omitempty"`
 
-	IsWritable bool `xml:"isWritable,omitempty"`
+	IsWritable bool `json:"isWritable,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	OauthRefreshToken string `xml:"oauthRefreshToken,omitempty"`
+	OauthRefreshToken string `json:"oauthRefreshToken,omitempty"`
 
-	OauthScope string `xml:"oauthScope,omitempty"`
+	OauthScope string `json:"oauthScope,omitempty"`
 
-	OauthToken string `xml:"oauthToken,omitempty"`
+	OauthToken string `json:"oauthToken,omitempty"`
 
-	Password string `xml:"password,omitempty"`
+	Password string `json:"password,omitempty"`
 
-	PrincipalType *ExternalPrincipalType `xml:"principalType,omitempty"`
+	PrincipalType *ExternalPrincipalType `json:"principalType,omitempty"`
 
-	Protocol *AuthenticationProtocol `xml:"protocol,omitempty"`
+	Protocol *AuthenticationProtocol `json:"protocol,omitempty"`
 
-	Repository string `xml:"repository,omitempty"`
+	Repository string `json:"repository,omitempty"`
 
-	Type_ *ExternalDataSourceType `xml:"type,omitempty"`
+	Type_ *ExternalDataSourceType `json:"type,omitempty"`
 
-	Username string `xml:"username,omitempty"`
+	Username string `json:"username,omitempty"`
 
-	Version string `xml:"version,omitempty"`
+	Version string `json:"version,omitempty"`
 }
 
 type ExternalServiceRegistration struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ExternalServiceRegistration"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ExternalServiceRegistration"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	NamedCredential string `xml:"namedCredential,omitempty"`
+	NamedCredential string `json:"namedCredential,omitempty"`
 
-	Schema string `xml:"schema,omitempty"`
+	Schema string `json:"schema,omitempty"`
 
-	SchemaType string `xml:"schemaType,omitempty"`
+	SchemaType string `json:"schemaType,omitempty"`
 
-	SchemaUrl string `xml:"schemaUrl,omitempty"`
+	SchemaUrl string `json:"schemaUrl,omitempty"`
 
-	Status string `xml:"status,omitempty"`
+	Status string `json:"status,omitempty"`
 }
 
 type FlexiPage struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlexiPage"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlexiPage"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	FlexiPageRegions []*FlexiPageRegion `xml:"flexiPageRegions,omitempty"`
+	FlexiPageRegions []*FlexiPageRegion `json:"flexiPageRegions,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	PageTemplate string `xml:"pageTemplate,omitempty"`
+	PageTemplate string `json:"pageTemplate,omitempty"`
 
-	ParentFlexiPage string `xml:"parentFlexiPage,omitempty"`
+	ParentFlexiPage string `json:"parentFlexiPage,omitempty"`
 
-	PlatformActionlist *PlatformActionList `xml:"platformActionlist,omitempty"`
+	PlatformActionlist *PlatformActionList `json:"platformActionlist,omitempty"`
 
-	QuickActionList *QuickActionList `xml:"quickActionList,omitempty"`
+	QuickActionList *QuickActionList `json:"quickActionList,omitempty"`
 
-	SobjectType string `xml:"sobjectType,omitempty"`
+	SobjectType string `json:"sobjectType,omitempty"`
 
-	Type_ *FlexiPageType `xml:"type,omitempty"`
+	Type_ *FlexiPageType `json:"type,omitempty"`
 }
 
 type FlexiPageRegion struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlexiPageRegion"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlexiPageRegion"`
 
-	Appendable *RegionFlagStatus `xml:"appendable,omitempty"`
+	Appendable *RegionFlagStatus `json:"appendable,omitempty"`
 
-	ComponentInstances []*ComponentInstance `xml:"componentInstances,omitempty"`
+	ComponentInstances []*ComponentInstance `json:"componentInstances,omitempty"`
 
-	Mode *FlexiPageRegionMode `xml:"mode,omitempty"`
+	Mode *FlexiPageRegionMode `json:"mode,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Prependable *RegionFlagStatus `xml:"prependable,omitempty"`
+	Prependable *RegionFlagStatus `json:"prependable,omitempty"`
 
-	Replaceable *RegionFlagStatus `xml:"replaceable,omitempty"`
+	Replaceable *RegionFlagStatus `json:"replaceable,omitempty"`
 
-	Type_ *FlexiPageRegionType `xml:"type,omitempty"`
+	Type_ *FlexiPageRegionType `json:"type,omitempty"`
 }
 
 type ComponentInstance struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ComponentInstance"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ComponentInstance"`
 
-	ComponentInstanceProperties []*ComponentInstanceProperty `xml:"componentInstanceProperties,omitempty"`
+	ComponentInstanceProperties []*ComponentInstanceProperty `json:"componentInstanceProperties,omitempty"`
 
-	ComponentName string `xml:"componentName,omitempty"`
+	ComponentName string `json:"componentName,omitempty"`
 }
 
 type ComponentInstanceProperty struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ComponentInstanceProperty"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ComponentInstanceProperty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Type_ *ComponentInstancePropertyTypeEnum `xml:"type,omitempty"`
+	Type_ *ComponentInstancePropertyTypeEnum `json:"type,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type QuickActionList struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata QuickActionList"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionList"`
 
-	QuickActionListItems []*QuickActionListItem `xml:"quickActionListItems,omitempty"`
+	QuickActionListItems []*QuickActionListItem `json:"quickActionListItems,omitempty"`
 }
 
 type QuickActionListItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata QuickActionListItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionListItem"`
 
-	QuickActionName string `xml:"quickActionName,omitempty"`
+	QuickActionName string `json:"quickActionName,omitempty"`
 }
 
 type Flow struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Flow"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Flow"`
 
 	*Metadata
 
-	ActionCalls []*FlowActionCall `xml:"actionCalls,omitempty"`
+	ActionCalls []*FlowActionCall `json:"actionCalls,omitempty"`
 
-	ApexPluginCalls []*FlowApexPluginCall `xml:"apexPluginCalls,omitempty"`
+	ApexPluginCalls []*FlowApexPluginCall `json:"apexPluginCalls,omitempty"`
 
-	Assignments []*FlowAssignment `xml:"assignments,omitempty"`
+	Assignments []*FlowAssignment `json:"assignments,omitempty"`
 
-	Choices []*FlowChoice `xml:"choices,omitempty"`
+	Choices []*FlowChoice `json:"choices,omitempty"`
 
-	Constants []*FlowConstant `xml:"constants,omitempty"`
+	Constants []*FlowConstant `json:"constants,omitempty"`
 
-	Decisions []*FlowDecision `xml:"decisions,omitempty"`
+	Decisions []*FlowDecision `json:"decisions,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DynamicChoiceSets []*FlowDynamicChoiceSet `xml:"dynamicChoiceSets,omitempty"`
+	DynamicChoiceSets []*FlowDynamicChoiceSet `json:"dynamicChoiceSets,omitempty"`
 
-	Formulas []*FlowFormula `xml:"formulas,omitempty"`
+	Formulas []*FlowFormula `json:"formulas,omitempty"`
 
-	InterviewLabel string `xml:"interviewLabel,omitempty"`
+	InterviewLabel string `json:"interviewLabel,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Loops []*FlowLoop `xml:"loops,omitempty"`
+	Loops []*FlowLoop `json:"loops,omitempty"`
 
-	ProcessMetadataValues []*FlowMetadataValue `xml:"processMetadataValues,omitempty"`
+	ProcessMetadataValues []*FlowMetadataValue `json:"processMetadataValues,omitempty"`
 
-	ProcessType *FlowProcessType `xml:"processType,omitempty"`
+	ProcessType *FlowProcessType `json:"processType,omitempty"`
 
-	RecordCreates []*FlowRecordCreate `xml:"recordCreates,omitempty"`
+	RecordCreates []*FlowRecordCreate `json:"recordCreates,omitempty"`
 
-	RecordDeletes []*FlowRecordDelete `xml:"recordDeletes,omitempty"`
+	RecordDeletes []*FlowRecordDelete `json:"recordDeletes,omitempty"`
 
-	RecordLookups []*FlowRecordLookup `xml:"recordLookups,omitempty"`
+	RecordLookups []*FlowRecordLookup `json:"recordLookups,omitempty"`
 
-	RecordUpdates []*FlowRecordUpdate `xml:"recordUpdates,omitempty"`
+	RecordUpdates []*FlowRecordUpdate `json:"recordUpdates,omitempty"`
 
-	Screens []*FlowScreen `xml:"screens,omitempty"`
+	Screens []*FlowScreen `json:"screens,omitempty"`
 
-	StartElementReference string `xml:"startElementReference,omitempty"`
+	StartElementReference string `json:"startElementReference,omitempty"`
 
-	Steps []*FlowStep `xml:"steps,omitempty"`
+	Steps []*FlowStep `json:"steps,omitempty"`
 
-	Subflows []*FlowSubflow `xml:"subflows,omitempty"`
+	Subflows []*FlowSubflow `json:"subflows,omitempty"`
 
-	TextTemplates []*FlowTextTemplate `xml:"textTemplates,omitempty"`
+	TextTemplates []*FlowTextTemplate `json:"textTemplates,omitempty"`
 
-	Variables []*FlowVariable `xml:"variables,omitempty"`
+	Variables []*FlowVariable `json:"variables,omitempty"`
 
-	Waits []*FlowWait `xml:"waits,omitempty"`
+	Waits []*FlowWait `json:"waits,omitempty"`
 }
 
 type FlowActionCall struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowActionCall"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowActionCall"`
 
 	*FlowNode
 
-	ActionName string `xml:"actionName,omitempty"`
+	ActionName string `json:"actionName,omitempty"`
 
-	ActionType *InvocableActionType `xml:"actionType,omitempty"`
+	ActionType *InvocableActionType `json:"actionType,omitempty"`
 
-	Connector *FlowConnector `xml:"connector,omitempty"`
+	Connector *FlowConnector `json:"connector,omitempty"`
 
-	FaultConnector *FlowConnector `xml:"faultConnector,omitempty"`
+	FaultConnector *FlowConnector `json:"faultConnector,omitempty"`
 
-	InputParameters []*FlowActionCallInputParameter `xml:"inputParameters,omitempty"`
+	InputParameters []*FlowActionCallInputParameter `json:"inputParameters,omitempty"`
 
-	OutputParameters []*FlowActionCallOutputParameter `xml:"outputParameters,omitempty"`
+	OutputParameters []*FlowActionCallOutputParameter `json:"outputParameters,omitempty"`
 }
 
 type FlowNode struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowNode"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowNode"`
 
 	*FlowElement
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	LocationX int32 `xml:"locationX,omitempty"`
+	LocationX int32 `json:"locationX,omitempty"`
 
-	LocationY int32 `xml:"locationY,omitempty"`
+	LocationY int32 `json:"locationY,omitempty"`
 }
 
 type FlowElement struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowElement"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowElement"`
 
 	*FlowBaseElement
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type FlowBaseElement struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowBaseElement"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowBaseElement"`
 
-	ProcessMetadataValues []*FlowMetadataValue `xml:"processMetadataValues,omitempty"`
+	ProcessMetadataValues []*FlowMetadataValue `json:"processMetadataValues,omitempty"`
 }
 
 type FlowMetadataValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowMetadataValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowMetadataValue"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowElementReferenceOrValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowElementReferenceOrValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowElementReferenceOrValue"`
 
-	BooleanValue bool `xml:"booleanValue,omitempty"`
+	BooleanValue bool `json:"booleanValue,omitempty"`
 
-	DateTimeValue time.Time `xml:"dateTimeValue,omitempty"`
+	DateTimeValue time.Time `json:"dateTimeValue,omitempty"`
 
-	DateValue time.Time `xml:"dateValue,omitempty"`
+	DateValue time.Time `json:"dateValue,omitempty"`
 
-	ElementReference string `xml:"elementReference,omitempty"`
+	ElementReference string `json:"elementReference,omitempty"`
 
-	NumberValue float64 `xml:"numberValue,omitempty"`
+	NumberValue float64 `json:"numberValue,omitempty"`
 
-	StringValue string `xml:"stringValue,omitempty"`
+	StringValue string `json:"stringValue,omitempty"`
 }
 
 type FlowActionCallInputParameter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowActionCallInputParameter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowActionCallInputParameter"`
 
 	*FlowBaseElement
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowActionCallOutputParameter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowActionCallOutputParameter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowActionCallOutputParameter"`
 
 	*FlowBaseElement
 
-	AssignToReference string `xml:"assignToReference,omitempty"`
+	AssignToReference string `json:"assignToReference,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type FlowApexPluginCallInputParameter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowApexPluginCallInputParameter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowApexPluginCallInputParameter"`
 
 	*FlowBaseElement
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowApexPluginCallOutputParameter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowApexPluginCallOutputParameter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowApexPluginCallOutputParameter"`
 
 	*FlowBaseElement
 
-	AssignToReference string `xml:"assignToReference,omitempty"`
+	AssignToReference string `json:"assignToReference,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type FlowAssignmentItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowAssignmentItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowAssignmentItem"`
 
 	*FlowBaseElement
 
-	AssignToReference string `xml:"assignToReference,omitempty"`
+	AssignToReference string `json:"assignToReference,omitempty"`
 
-	Operator *FlowAssignmentOperator `xml:"operator,omitempty"`
+	Operator *FlowAssignmentOperator `json:"operator,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowChoiceUserInput struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowChoiceUserInput"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowChoiceUserInput"`
 
 	*FlowBaseElement
 
-	IsRequired bool `xml:"isRequired,omitempty"`
+	IsRequired bool `json:"isRequired,omitempty"`
 
-	PromptText string `xml:"promptText,omitempty"`
+	PromptText string `json:"promptText,omitempty"`
 
-	ValidationRule *FlowInputValidationRule `xml:"validationRule,omitempty"`
+	ValidationRule *FlowInputValidationRule `json:"validationRule,omitempty"`
 }
 
 type FlowInputValidationRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowInputValidationRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowInputValidationRule"`
 
-	ErrorMessage string `xml:"errorMessage,omitempty"`
+	ErrorMessage string `json:"errorMessage,omitempty"`
 
-	FormulaExpression string `xml:"formulaExpression,omitempty"`
+	FormulaExpression string `json:"formulaExpression,omitempty"`
 }
 
 type FlowCondition struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowCondition"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowCondition"`
 
 	*FlowBaseElement
 
-	LeftValueReference string `xml:"leftValueReference,omitempty"`
+	LeftValueReference string `json:"leftValueReference,omitempty"`
 
-	Operator *FlowComparisonOperator `xml:"operator,omitempty"`
+	Operator *FlowComparisonOperator `json:"operator,omitempty"`
 
-	RightValue *FlowElementReferenceOrValue `xml:"rightValue,omitempty"`
+	RightValue *FlowElementReferenceOrValue `json:"rightValue,omitempty"`
 }
 
 type FlowConnector struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowConnector"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowConnector"`
 
 	*FlowBaseElement
 
-	TargetReference string `xml:"targetReference,omitempty"`
+	TargetReference string `json:"targetReference,omitempty"`
 }
 
 type FlowInputFieldAssignment struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowInputFieldAssignment"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowInputFieldAssignment"`
 
 	*FlowBaseElement
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowOutputFieldAssignment struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowOutputFieldAssignment"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowOutputFieldAssignment"`
 
 	*FlowBaseElement
 
-	AssignToReference string `xml:"assignToReference,omitempty"`
+	AssignToReference string `json:"assignToReference,omitempty"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 }
 
 type FlowRecordFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowRecordFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRecordFilter"`
 
 	*FlowBaseElement
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Operator *FlowRecordFilterOperator `xml:"operator,omitempty"`
+	Operator *FlowRecordFilterOperator `json:"operator,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowScreenRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowScreenRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowScreenRule"`
 
 	*FlowBaseElement
 
-	ConditionLogic string `xml:"conditionLogic,omitempty"`
+	ConditionLogic string `json:"conditionLogic,omitempty"`
 
-	Conditions []*FlowCondition `xml:"conditions,omitempty"`
+	Conditions []*FlowCondition `json:"conditions,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	RuleActions []*FlowScreenRuleAction `xml:"ruleActions,omitempty"`
+	RuleActions []*FlowScreenRuleAction `json:"ruleActions,omitempty"`
 }
 
 type FlowScreenRuleAction struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowScreenRuleAction"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowScreenRuleAction"`
 
 	*FlowBaseElement
 
-	Attribute string `xml:"attribute,omitempty"`
+	Attribute string `json:"attribute,omitempty"`
 
-	FieldReference string `xml:"fieldReference,omitempty"`
+	FieldReference string `json:"fieldReference,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowSubflowInputAssignment struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowSubflowInputAssignment"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowSubflowInputAssignment"`
 
 	*FlowBaseElement
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowSubflowOutputAssignment struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowSubflowOutputAssignment"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowSubflowOutputAssignment"`
 
 	*FlowBaseElement
 
-	AssignToReference string `xml:"assignToReference,omitempty"`
+	AssignToReference string `json:"assignToReference,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type FlowWaitEventInputParameter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowWaitEventInputParameter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowWaitEventInputParameter"`
 
 	*FlowBaseElement
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowWaitEventOutputParameter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowWaitEventOutputParameter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowWaitEventOutputParameter"`
 
 	*FlowBaseElement
 
-	AssignToReference string `xml:"assignToReference,omitempty"`
+	AssignToReference string `json:"assignToReference,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type FlowChoice struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowChoice"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowChoice"`
 
 	*FlowElement
 
-	ChoiceText string `xml:"choiceText,omitempty"`
+	ChoiceText string `json:"choiceText,omitempty"`
 
-	DataType *FlowDataType `xml:"dataType,omitempty"`
+	DataType *FlowDataType `json:"dataType,omitempty"`
 
-	UserInput *FlowChoiceUserInput `xml:"userInput,omitempty"`
+	UserInput *FlowChoiceUserInput `json:"userInput,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowConstant struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowConstant"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowConstant"`
 
 	*FlowElement
 
-	DataType *FlowDataType `xml:"dataType,omitempty"`
+	DataType *FlowDataType `json:"dataType,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowDynamicChoiceSet struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowDynamicChoiceSet"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowDynamicChoiceSet"`
 
 	*FlowElement
 
-	DataType *FlowDataType `xml:"dataType,omitempty"`
+	DataType *FlowDataType `json:"dataType,omitempty"`
 
-	DisplayField string `xml:"displayField,omitempty"`
+	DisplayField string `json:"displayField,omitempty"`
 
-	Filters []*FlowRecordFilter `xml:"filters,omitempty"`
+	Filters []*FlowRecordFilter `json:"filters,omitempty"`
 
-	Limit int32 `xml:"limit,omitempty"`
+	Limit int32 `json:"limit,omitempty"`
 
-	Object string `xml:"object,omitempty"`
+	Object string `json:"object,omitempty"`
 
-	OutputAssignments []*FlowOutputFieldAssignment `xml:"outputAssignments,omitempty"`
+	OutputAssignments []*FlowOutputFieldAssignment `json:"outputAssignments,omitempty"`
 
-	PicklistField string `xml:"picklistField,omitempty"`
+	PicklistField string `json:"picklistField,omitempty"`
 
-	PicklistObject string `xml:"picklistObject,omitempty"`
+	PicklistObject string `json:"picklistObject,omitempty"`
 
-	SortField string `xml:"sortField,omitempty"`
+	SortField string `json:"sortField,omitempty"`
 
-	SortOrder *SortOrder `xml:"sortOrder,omitempty"`
+	SortOrder *SortOrder `json:"sortOrder,omitempty"`
 
-	ValueField string `xml:"valueField,omitempty"`
+	ValueField string `json:"valueField,omitempty"`
 }
 
 type FlowFormula struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowFormula"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowFormula"`
 
 	*FlowElement
 
-	DataType *FlowDataType `xml:"dataType,omitempty"`
+	DataType *FlowDataType `json:"dataType,omitempty"`
 
-	Expression string `xml:"expression,omitempty"`
+	Expression string `json:"expression,omitempty"`
 
-	Scale int32 `xml:"scale,omitempty"`
+	Scale int32 `json:"scale,omitempty"`
 }
 
 type FlowRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRule"`
 
 	*FlowElement
 
-	ConditionLogic string `xml:"conditionLogic,omitempty"`
+	ConditionLogic string `json:"conditionLogic,omitempty"`
 
-	Conditions []*FlowCondition `xml:"conditions,omitempty"`
+	Conditions []*FlowCondition `json:"conditions,omitempty"`
 
-	Connector *FlowConnector `xml:"connector,omitempty"`
+	Connector *FlowConnector `json:"connector,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type FlowScreenField struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowScreenField"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowScreenField"`
 
 	*FlowElement
 
-	ChoiceReferences []string `xml:"choiceReferences,omitempty"`
+	ChoiceReferences []string `json:"choiceReferences,omitempty"`
 
-	DataType *FlowDataType `xml:"dataType,omitempty"`
+	DataType *FlowDataType `json:"dataType,omitempty"`
 
-	DefaultSelectedChoiceReference string `xml:"defaultSelectedChoiceReference,omitempty"`
+	DefaultSelectedChoiceReference string `json:"defaultSelectedChoiceReference,omitempty"`
 
-	DefaultValue *FlowElementReferenceOrValue `xml:"defaultValue,omitempty"`
+	DefaultValue *FlowElementReferenceOrValue `json:"defaultValue,omitempty"`
 
-	FieldText string `xml:"fieldText,omitempty"`
+	FieldText string `json:"fieldText,omitempty"`
 
-	FieldType *FlowScreenFieldType `xml:"fieldType,omitempty"`
+	FieldType *FlowScreenFieldType `json:"fieldType,omitempty"`
 
-	HelpText string `xml:"helpText,omitempty"`
+	HelpText string `json:"helpText,omitempty"`
 
-	IsRequired bool `xml:"isRequired,omitempty"`
+	IsRequired bool `json:"isRequired,omitempty"`
 
-	Scale int32 `xml:"scale,omitempty"`
+	Scale int32 `json:"scale,omitempty"`
 
-	ValidationRule *FlowInputValidationRule `xml:"validationRule,omitempty"`
+	ValidationRule *FlowInputValidationRule `json:"validationRule,omitempty"`
 }
 
 type FlowTextTemplate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowTextTemplate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowTextTemplate"`
 
 	*FlowElement
 
-	Text string `xml:"text,omitempty"`
+	Text string `json:"text,omitempty"`
 }
 
 type FlowVariable struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowVariable"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowVariable"`
 
 	*FlowElement
 
-	DataType *FlowDataType `xml:"dataType,omitempty"`
+	DataType *FlowDataType `json:"dataType,omitempty"`
 
-	IsCollection bool `xml:"isCollection,omitempty"`
+	IsCollection bool `json:"isCollection,omitempty"`
 
-	IsInput bool `xml:"isInput,omitempty"`
+	IsInput bool `json:"isInput,omitempty"`
 
-	IsOutput bool `xml:"isOutput,omitempty"`
+	IsOutput bool `json:"isOutput,omitempty"`
 
-	ObjectType string `xml:"objectType,omitempty"`
+	ObjectType string `json:"objectType,omitempty"`
 
-	Scale int32 `xml:"scale,omitempty"`
+	Scale int32 `json:"scale,omitempty"`
 
-	Value *FlowElementReferenceOrValue `xml:"value,omitempty"`
+	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowWaitEvent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowWaitEvent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowWaitEvent"`
 
 	*FlowElement
 
-	ConditionLogic string `xml:"conditionLogic,omitempty"`
+	ConditionLogic string `json:"conditionLogic,omitempty"`
 
-	Conditions []*FlowCondition `xml:"conditions,omitempty"`
+	Conditions []*FlowCondition `json:"conditions,omitempty"`
 
-	Connector *FlowConnector `xml:"connector,omitempty"`
+	Connector *FlowConnector `json:"connector,omitempty"`
 
-	EventType string `xml:"eventType,omitempty"`
+	EventType string `json:"eventType,omitempty"`
 
-	InputParameters []*FlowWaitEventInputParameter `xml:"inputParameters,omitempty"`
+	InputParameters []*FlowWaitEventInputParameter `json:"inputParameters,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	OutputParameters []*FlowWaitEventOutputParameter `xml:"outputParameters,omitempty"`
+	OutputParameters []*FlowWaitEventOutputParameter `json:"outputParameters,omitempty"`
 }
 
 type FlowApexPluginCall struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowApexPluginCall"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowApexPluginCall"`
 
 	*FlowNode
 
-	ApexClass string `xml:"apexClass,omitempty"`
+	ApexClass string `json:"apexClass,omitempty"`
 
-	Connector *FlowConnector `xml:"connector,omitempty"`
+	Connector *FlowConnector `json:"connector,omitempty"`
 
-	FaultConnector *FlowConnector `xml:"faultConnector,omitempty"`
+	FaultConnector *FlowConnector `json:"faultConnector,omitempty"`
 
-	InputParameters []*FlowApexPluginCallInputParameter `xml:"inputParameters,omitempty"`
+	InputParameters []*FlowApexPluginCallInputParameter `json:"inputParameters,omitempty"`
 
-	OutputParameters []*FlowApexPluginCallOutputParameter `xml:"outputParameters,omitempty"`
+	OutputParameters []*FlowApexPluginCallOutputParameter `json:"outputParameters,omitempty"`
 }
 
 type FlowAssignment struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowAssignment"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowAssignment"`
 
 	*FlowNode
 
-	AssignmentItems []*FlowAssignmentItem `xml:"assignmentItems,omitempty"`
+	AssignmentItems []*FlowAssignmentItem `json:"assignmentItems,omitempty"`
 
-	Connector *FlowConnector `xml:"connector,omitempty"`
+	Connector *FlowConnector `json:"connector,omitempty"`
 }
 
 type FlowDecision struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowDecision"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowDecision"`
 
 	*FlowNode
 
-	DefaultConnector *FlowConnector `xml:"defaultConnector,omitempty"`
+	DefaultConnector *FlowConnector `json:"defaultConnector,omitempty"`
 
-	DefaultConnectorLabel string `xml:"defaultConnectorLabel,omitempty"`
+	DefaultConnectorLabel string `json:"defaultConnectorLabel,omitempty"`
 
-	Rules []*FlowRule `xml:"rules,omitempty"`
+	Rules []*FlowRule `json:"rules,omitempty"`
 }
 
 type FlowLoop struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowLoop"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowLoop"`
 
 	*FlowNode
 
-	AssignNextValueToReference string `xml:"assignNextValueToReference,omitempty"`
+	AssignNextValueToReference string `json:"assignNextValueToReference,omitempty"`
 
-	CollectionReference string `xml:"collectionReference,omitempty"`
+	CollectionReference string `json:"collectionReference,omitempty"`
 
-	IterationOrder *IterationOrder `xml:"iterationOrder,omitempty"`
+	IterationOrder *IterationOrder `json:"iterationOrder,omitempty"`
 
-	NextValueConnector *FlowConnector `xml:"nextValueConnector,omitempty"`
+	NextValueConnector *FlowConnector `json:"nextValueConnector,omitempty"`
 
-	NoMoreValuesConnector *FlowConnector `xml:"noMoreValuesConnector,omitempty"`
+	NoMoreValuesConnector *FlowConnector `json:"noMoreValuesConnector,omitempty"`
 }
 
 type FlowRecordCreate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowRecordCreate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRecordCreate"`
 
 	*FlowNode
 
-	AssignRecordIdToReference string `xml:"assignRecordIdToReference,omitempty"`
+	AssignRecordIdToReference string `json:"assignRecordIdToReference,omitempty"`
 
-	Connector *FlowConnector `xml:"connector,omitempty"`
+	Connector *FlowConnector `json:"connector,omitempty"`
 
-	FaultConnector *FlowConnector `xml:"faultConnector,omitempty"`
+	FaultConnector *FlowConnector `json:"faultConnector,omitempty"`
 
-	InputAssignments []*FlowInputFieldAssignment `xml:"inputAssignments,omitempty"`
+	InputAssignments []*FlowInputFieldAssignment `json:"inputAssignments,omitempty"`
 
-	InputReference string `xml:"inputReference,omitempty"`
+	InputReference string `json:"inputReference,omitempty"`
 
-	Object string `xml:"object,omitempty"`
+	Object string `json:"object,omitempty"`
 }
 
 type FlowRecordDelete struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowRecordDelete"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRecordDelete"`
 
 	*FlowNode
 
-	Connector *FlowConnector `xml:"connector,omitempty"`
+	Connector *FlowConnector `json:"connector,omitempty"`
 
-	FaultConnector *FlowConnector `xml:"faultConnector,omitempty"`
+	FaultConnector *FlowConnector `json:"faultConnector,omitempty"`
 
-	Filters []*FlowRecordFilter `xml:"filters,omitempty"`
+	Filters []*FlowRecordFilter `json:"filters,omitempty"`
 
-	InputReference string `xml:"inputReference,omitempty"`
+	InputReference string `json:"inputReference,omitempty"`
 
-	Object string `xml:"object,omitempty"`
+	Object string `json:"object,omitempty"`
 }
 
 type FlowRecordLookup struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowRecordLookup"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRecordLookup"`
 
 	*FlowNode
 
-	AssignNullValuesIfNoRecordsFound bool `xml:"assignNullValuesIfNoRecordsFound,omitempty"`
+	AssignNullValuesIfNoRecordsFound bool `json:"assignNullValuesIfNoRecordsFound,omitempty"`
 
-	Connector *FlowConnector `xml:"connector,omitempty"`
+	Connector *FlowConnector `json:"connector,omitempty"`
 
-	FaultConnector *FlowConnector `xml:"faultConnector,omitempty"`
+	FaultConnector *FlowConnector `json:"faultConnector,omitempty"`
 
-	Filters []*FlowRecordFilter `xml:"filters,omitempty"`
+	Filters []*FlowRecordFilter `json:"filters,omitempty"`
 
-	Object string `xml:"object,omitempty"`
+	Object string `json:"object,omitempty"`
 
-	OutputAssignments []*FlowOutputFieldAssignment `xml:"outputAssignments,omitempty"`
+	OutputAssignments []*FlowOutputFieldAssignment `json:"outputAssignments,omitempty"`
 
-	OutputReference string `xml:"outputReference,omitempty"`
+	OutputReference string `json:"outputReference,omitempty"`
 
-	QueriedFields []string `xml:"queriedFields,omitempty"`
+	QueriedFields []string `json:"queriedFields,omitempty"`
 
-	SortField string `xml:"sortField,omitempty"`
+	SortField string `json:"sortField,omitempty"`
 
-	SortOrder *SortOrder `xml:"sortOrder,omitempty"`
+	SortOrder *SortOrder `json:"sortOrder,omitempty"`
 }
 
 type FlowRecordUpdate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowRecordUpdate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRecordUpdate"`
 
 	*FlowNode
 
-	Connector *FlowConnector `xml:"connector,omitempty"`
+	Connector *FlowConnector `json:"connector,omitempty"`
 
-	FaultConnector *FlowConnector `xml:"faultConnector,omitempty"`
+	FaultConnector *FlowConnector `json:"faultConnector,omitempty"`
 
-	Filters []*FlowRecordFilter `xml:"filters,omitempty"`
+	Filters []*FlowRecordFilter `json:"filters,omitempty"`
 
-	InputAssignments []*FlowInputFieldAssignment `xml:"inputAssignments,omitempty"`
+	InputAssignments []*FlowInputFieldAssignment `json:"inputAssignments,omitempty"`
 
-	InputReference string `xml:"inputReference,omitempty"`
+	InputReference string `json:"inputReference,omitempty"`
 
-	Object string `xml:"object,omitempty"`
+	Object string `json:"object,omitempty"`
 }
 
 type FlowScreen struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowScreen"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowScreen"`
 
 	*FlowNode
 
-	AllowBack bool `xml:"allowBack,omitempty"`
+	AllowBack bool `json:"allowBack,omitempty"`
 
-	AllowFinish bool `xml:"allowFinish,omitempty"`
+	AllowFinish bool `json:"allowFinish,omitempty"`
 
-	AllowPause bool `xml:"allowPause,omitempty"`
+	AllowPause bool `json:"allowPause,omitempty"`
 
-	Connector *FlowConnector `xml:"connector,omitempty"`
+	Connector *FlowConnector `json:"connector,omitempty"`
 
-	Fields []*FlowScreenField `xml:"fields,omitempty"`
+	Fields []*FlowScreenField `json:"fields,omitempty"`
 
-	HelpText string `xml:"helpText,omitempty"`
+	HelpText string `json:"helpText,omitempty"`
 
-	PausedText string `xml:"pausedText,omitempty"`
+	PausedText string `json:"pausedText,omitempty"`
 
-	Rules []*FlowScreenRule `xml:"rules,omitempty"`
+	Rules []*FlowScreenRule `json:"rules,omitempty"`
 }
 
 type FlowStep struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowStep"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowStep"`
 
 	*FlowNode
 
-	Connectors []*FlowConnector `xml:"connectors,omitempty"`
+	Connectors []*FlowConnector `json:"connectors,omitempty"`
 }
 
 type FlowSubflow struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowSubflow"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowSubflow"`
 
 	*FlowNode
 
-	Connector *FlowConnector `xml:"connector,omitempty"`
+	Connector *FlowConnector `json:"connector,omitempty"`
 
-	FlowName string `xml:"flowName,omitempty"`
+	FlowName string `json:"flowName,omitempty"`
 
-	InputAssignments []*FlowSubflowInputAssignment `xml:"inputAssignments,omitempty"`
+	InputAssignments []*FlowSubflowInputAssignment `json:"inputAssignments,omitempty"`
 
-	OutputAssignments []*FlowSubflowOutputAssignment `xml:"outputAssignments,omitempty"`
+	OutputAssignments []*FlowSubflowOutputAssignment `json:"outputAssignments,omitempty"`
 }
 
 type FlowWait struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowWait"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowWait"`
 
 	*FlowNode
 
-	DefaultConnector *FlowConnector `xml:"defaultConnector,omitempty"`
+	DefaultConnector *FlowConnector `json:"defaultConnector,omitempty"`
 
-	DefaultConnectorLabel string `xml:"defaultConnectorLabel,omitempty"`
+	DefaultConnectorLabel string `json:"defaultConnectorLabel,omitempty"`
 
-	FaultConnector *FlowConnector `xml:"faultConnector,omitempty"`
+	FaultConnector *FlowConnector `json:"faultConnector,omitempty"`
 
-	WaitEvents []*FlowWaitEvent `xml:"waitEvents,omitempty"`
+	WaitEvents []*FlowWaitEvent `json:"waitEvents,omitempty"`
 }
 
 type FlowDefinition struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FlowDefinition"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowDefinition"`
 
 	*Metadata
 
-	ActiveVersionNumber int32 `xml:"activeVersionNumber,omitempty"`
+	ActiveVersionNumber int32 `json:"activeVersionNumber,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 }
 
 type Folder struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Folder"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Folder"`
 
 	*Metadata
 
-	AccessType *FolderAccessTypes `xml:"accessType,omitempty"`
+	AccessType *FolderAccessTypes `json:"accessType,omitempty"`
 
-	FolderShares []*FolderShare `xml:"folderShares,omitempty"`
+	FolderShares []*FolderShare `json:"folderShares,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	PublicFolderAccess *PublicFolderAccess `xml:"publicFolderAccess,omitempty"`
+	PublicFolderAccess *PublicFolderAccess `json:"publicFolderAccess,omitempty"`
 
-	SharedTo *SharedTo `xml:"sharedTo,omitempty"`
+	SharedTo *SharedTo `json:"sharedTo,omitempty"`
 }
 
 type FolderShare struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FolderShare"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FolderShare"`
 
-	AccessLevel *FolderShareAccessLevel `xml:"accessLevel,omitempty"`
+	AccessLevel *FolderShareAccessLevel `json:"accessLevel,omitempty"`
 
-	SharedTo string `xml:"sharedTo,omitempty"`
+	SharedTo string `json:"sharedTo,omitempty"`
 
-	SharedToType *FolderSharedToType `xml:"sharedToType,omitempty"`
+	SharedToType *FolderSharedToType `json:"sharedToType,omitempty"`
 }
 
 type DashboardFolder struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DashboardFolder"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardFolder"`
 
 	*Folder
 }
 
 type DocumentFolder struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DocumentFolder"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DocumentFolder"`
 
 	*Folder
 }
 
 type EmailFolder struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EmailFolder"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmailFolder"`
 
 	*Folder
 }
 
 type ReportFolder struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportFolder"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportFolder"`
 
 	*Folder
 }
 
 type ForecastingSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ForecastingSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ForecastingSettings"`
 
 	*Metadata
 
-	DisplayCurrency *DisplayCurrency `xml:"displayCurrency,omitempty"`
+	DisplayCurrency *DisplayCurrency `json:"displayCurrency,omitempty"`
 
-	EnableForecasts bool `xml:"enableForecasts,omitempty"`
+	EnableForecasts bool `json:"enableForecasts,omitempty"`
 
-	ForecastingCategoryMappings []*ForecastingCategoryMapping `xml:"forecastingCategoryMappings,omitempty"`
+	ForecastingCategoryMappings []*ForecastingCategoryMapping `json:"forecastingCategoryMappings,omitempty"`
 
-	ForecastingTypeSettings []*ForecastingTypeSettings `xml:"forecastingTypeSettings,omitempty"`
+	ForecastingTypeSettings []*ForecastingTypeSettings `json:"forecastingTypeSettings,omitempty"`
 }
 
 type ForecastingCategoryMapping struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ForecastingCategoryMapping"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ForecastingCategoryMapping"`
 
-	ForecastingItemCategoryApiName string `xml:"forecastingItemCategoryApiName,omitempty"`
+	ForecastingItemCategoryApiName string `json:"forecastingItemCategoryApiName,omitempty"`
 
-	WeightedSourceCategories []*WeightedSourceCategory `xml:"weightedSourceCategories,omitempty"`
+	WeightedSourceCategories []*WeightedSourceCategory `json:"weightedSourceCategories,omitempty"`
 }
 
 type WeightedSourceCategory struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WeightedSourceCategory"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WeightedSourceCategory"`
 
-	SourceCategoryApiName string `xml:"sourceCategoryApiName,omitempty"`
+	SourceCategoryApiName string `json:"sourceCategoryApiName,omitempty"`
 
-	Weight float64 `xml:"weight,omitempty"`
+	Weight float64 `json:"weight,omitempty"`
 }
 
 type ForecastingTypeSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ForecastingTypeSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ForecastingTypeSettings"`
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	AdjustmentsSettings *AdjustmentsSettings `xml:"adjustmentsSettings,omitempty"`
+	AdjustmentsSettings *AdjustmentsSettings `json:"adjustmentsSettings,omitempty"`
 
-	DisplayedCategoryApiNames []string `xml:"displayedCategoryApiNames,omitempty"`
+	DisplayedCategoryApiNames []string `json:"displayedCategoryApiNames,omitempty"`
 
-	ForecastRangeSettings *ForecastRangeSettings `xml:"forecastRangeSettings,omitempty"`
+	ForecastRangeSettings *ForecastRangeSettings `json:"forecastRangeSettings,omitempty"`
 
-	ForecastedCategoryApiNames []string `xml:"forecastedCategoryApiNames,omitempty"`
+	ForecastedCategoryApiNames []string `json:"forecastedCategoryApiNames,omitempty"`
 
-	IsAmount bool `xml:"isAmount,omitempty"`
+	IsAmount bool `json:"isAmount,omitempty"`
 
-	IsAvailable bool `xml:"isAvailable,omitempty"`
+	IsAvailable bool `json:"isAvailable,omitempty"`
 
-	IsQuantity bool `xml:"isQuantity,omitempty"`
+	IsQuantity bool `json:"isQuantity,omitempty"`
 
-	ManagerAdjustableCategoryApiNames []string `xml:"managerAdjustableCategoryApiNames,omitempty"`
+	ManagerAdjustableCategoryApiNames []string `json:"managerAdjustableCategoryApiNames,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	OpportunityListFieldsLabelMappings []*OpportunityListFieldsLabelMapping `xml:"opportunityListFieldsLabelMappings,omitempty"`
+	OpportunityListFieldsLabelMappings []*OpportunityListFieldsLabelMapping `json:"opportunityListFieldsLabelMappings,omitempty"`
 
-	OpportunityListFieldsSelectedSettings *OpportunityListFieldsSelectedSettings `xml:"opportunityListFieldsSelectedSettings,omitempty"`
+	OpportunityListFieldsSelectedSettings *OpportunityListFieldsSelectedSettings `json:"opportunityListFieldsSelectedSettings,omitempty"`
 
-	OpportunityListFieldsUnselectedSettings *OpportunityListFieldsUnselectedSettings `xml:"opportunityListFieldsUnselectedSettings,omitempty"`
+	OpportunityListFieldsUnselectedSettings *OpportunityListFieldsUnselectedSettings `json:"opportunityListFieldsUnselectedSettings,omitempty"`
 
-	OwnerAdjustableCategoryApiNames []string `xml:"ownerAdjustableCategoryApiNames,omitempty"`
+	OwnerAdjustableCategoryApiNames []string `json:"ownerAdjustableCategoryApiNames,omitempty"`
 
-	QuotasSettings *QuotasSettings `xml:"quotasSettings,omitempty"`
+	QuotasSettings *QuotasSettings `json:"quotasSettings,omitempty"`
 }
 
 type AdjustmentsSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AdjustmentsSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AdjustmentsSettings"`
 
-	EnableAdjustments bool `xml:"enableAdjustments,omitempty"`
+	EnableAdjustments bool `json:"enableAdjustments,omitempty"`
 
-	EnableOwnerAdjustments bool `xml:"enableOwnerAdjustments,omitempty"`
+	EnableOwnerAdjustments bool `json:"enableOwnerAdjustments,omitempty"`
 }
 
 type ForecastRangeSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ForecastRangeSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ForecastRangeSettings"`
 
-	Beginning int32 `xml:"beginning,omitempty"`
+	Beginning int32 `json:"beginning,omitempty"`
 
-	Displaying int32 `xml:"displaying,omitempty"`
+	Displaying int32 `json:"displaying,omitempty"`
 
-	PeriodType *PeriodTypes `xml:"periodType,omitempty"`
+	PeriodType *PeriodTypes `json:"periodType,omitempty"`
 }
 
 type OpportunityListFieldsLabelMapping struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata OpportunityListFieldsLabelMapping"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OpportunityListFieldsLabelMapping"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type OpportunityListFieldsSelectedSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata OpportunityListFieldsSelectedSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OpportunityListFieldsSelectedSettings"`
 
-	Field []string `xml:"field,omitempty"`
+	Field []string `json:"field,omitempty"`
 }
 
 type OpportunityListFieldsUnselectedSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata OpportunityListFieldsUnselectedSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OpportunityListFieldsUnselectedSettings"`
 
-	Field []string `xml:"field,omitempty"`
+	Field []string `json:"field,omitempty"`
 }
 
 type QuotasSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata QuotasSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuotasSettings"`
 
-	ShowQuotas bool `xml:"showQuotas,omitempty"`
+	ShowQuotas bool `json:"showQuotas,omitempty"`
 }
 
 type GlobalValueSet struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata GlobalValueSet"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata GlobalValueSet"`
 
 	*Metadata
 
-	CustomValue []*CustomValue `xml:"customValue,omitempty"`
+	CustomValue []*CustomValue `json:"customValue,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	Sorted bool `xml:"sorted,omitempty"`
+	Sorted bool `json:"sorted,omitempty"`
 }
 
 type GlobalValueSetTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata GlobalValueSetTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata GlobalValueSetTranslation"`
 
 	*Metadata
 
-	ValueTranslation []*ValueTranslation `xml:"valueTranslation,omitempty"`
+	ValueTranslation []*ValueTranslation `json:"valueTranslation,omitempty"`
 }
 
 type ValueTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ValueTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ValueTranslation"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	Translation string `xml:"translation,omitempty"`
+	Translation string `json:"translation,omitempty"`
 }
 
 type Group struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Group"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Group"`
 
 	*Metadata
 
-	DoesIncludeBosses bool `xml:"doesIncludeBosses,omitempty"`
+	DoesIncludeBosses bool `json:"doesIncludeBosses,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type HomePageComponent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata HomePageComponent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata HomePageComponent"`
 
 	*Metadata
 
-	Body string `xml:"body,omitempty"`
+	Body string `json:"body,omitempty"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	Links []string `xml:"links,omitempty"`
+	Links []string `json:"links,omitempty"`
 
-	Page string `xml:"page,omitempty"`
+	Page string `json:"page,omitempty"`
 
-	PageComponentType *PageComponentType `xml:"pageComponentType,omitempty"`
+	PageComponentType *PageComponentType `json:"pageComponentType,omitempty"`
 
-	ShowLabel bool `xml:"showLabel,omitempty"`
+	ShowLabel bool `json:"showLabel,omitempty"`
 
-	ShowScrollbars bool `xml:"showScrollbars,omitempty"`
+	ShowScrollbars bool `json:"showScrollbars,omitempty"`
 
-	Width *PageComponentWidth `xml:"width,omitempty"`
+	Width *PageComponentWidth `json:"width,omitempty"`
 }
 
 type HomePageLayout struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata HomePageLayout"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata HomePageLayout"`
 
 	*Metadata
 
-	NarrowComponents []string `xml:"narrowComponents,omitempty"`
+	NarrowComponents []string `json:"narrowComponents,omitempty"`
 
-	WideComponents []string `xml:"wideComponents,omitempty"`
+	WideComponents []string `json:"wideComponents,omitempty"`
 }
 
 type IdeasSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata IdeasSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata IdeasSettings"`
 
 	*Metadata
 
-	EnableChatterProfile bool `xml:"enableChatterProfile,omitempty"`
+	EnableChatterProfile bool `json:"enableChatterProfile,omitempty"`
 
-	EnableIdeaThemes bool `xml:"enableIdeaThemes,omitempty"`
+	EnableIdeaThemes bool `json:"enableIdeaThemes,omitempty"`
 
-	EnableIdeas bool `xml:"enableIdeas,omitempty"`
+	EnableIdeas bool `json:"enableIdeas,omitempty"`
 
-	EnableIdeasReputation bool `xml:"enableIdeasReputation,omitempty"`
+	EnableIdeasReputation bool `json:"enableIdeasReputation,omitempty"`
 
-	HalfLife float64 `xml:"halfLife,omitempty"`
+	HalfLife float64 `json:"halfLife,omitempty"`
 
-	IdeasProfilePage string `xml:"ideasProfilePage,omitempty"`
+	IdeasProfilePage string `json:"ideasProfilePage,omitempty"`
 }
 
 type InstalledPackage struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata InstalledPackage"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata InstalledPackage"`
 
 	*Metadata
 
-	Password string `xml:"password,omitempty"`
+	Password string `json:"password,omitempty"`
 
-	VersionNumber string `xml:"versionNumber,omitempty"`
+	VersionNumber string `json:"versionNumber,omitempty"`
 }
 
 type KeywordList struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KeywordList"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KeywordList"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Keywords []*Keyword `xml:"keywords,omitempty"`
+	Keywords []*Keyword `json:"keywords,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 }
 
 type Keyword struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Keyword"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Keyword"`
 
-	Keyword string `xml:"keyword,omitempty"`
+	Keyword string `json:"keyword,omitempty"`
 }
 
 type KnowledgeSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KnowledgeSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeSettings"`
 
 	*Metadata
 
-	Answers *KnowledgeAnswerSettings `xml:"answers,omitempty"`
+	Answers *KnowledgeAnswerSettings `json:"answers,omitempty"`
 
-	Cases *KnowledgeCaseSettings `xml:"cases,omitempty"`
+	Cases *KnowledgeCaseSettings `json:"cases,omitempty"`
 
-	DefaultLanguage string `xml:"defaultLanguage,omitempty"`
+	DefaultLanguage string `json:"defaultLanguage,omitempty"`
 
-	EnableChatterQuestionKBDeflection bool `xml:"enableChatterQuestionKBDeflection,omitempty"`
+	EnableChatterQuestionKBDeflection bool `json:"enableChatterQuestionKBDeflection,omitempty"`
 
-	EnableCreateEditOnArticlesTab bool `xml:"enableCreateEditOnArticlesTab,omitempty"`
+	EnableCreateEditOnArticlesTab bool `json:"enableCreateEditOnArticlesTab,omitempty"`
 
-	EnableExternalMediaContent bool `xml:"enableExternalMediaContent,omitempty"`
+	EnableExternalMediaContent bool `json:"enableExternalMediaContent,omitempty"`
 
-	EnableKnowledge bool `xml:"enableKnowledge,omitempty"`
+	EnableKnowledge bool `json:"enableKnowledge,omitempty"`
 
-	Languages *KnowledgeLanguageSettings `xml:"languages,omitempty"`
+	Languages *KnowledgeLanguageSettings `json:"languages,omitempty"`
 
-	ShowArticleSummariesCustomerPortal bool `xml:"showArticleSummariesCustomerPortal,omitempty"`
+	ShowArticleSummariesCustomerPortal bool `json:"showArticleSummariesCustomerPortal,omitempty"`
 
-	ShowArticleSummariesInternalApp bool `xml:"showArticleSummariesInternalApp,omitempty"`
+	ShowArticleSummariesInternalApp bool `json:"showArticleSummariesInternalApp,omitempty"`
 
-	ShowArticleSummariesPartnerPortal bool `xml:"showArticleSummariesPartnerPortal,omitempty"`
+	ShowArticleSummariesPartnerPortal bool `json:"showArticleSummariesPartnerPortal,omitempty"`
 
-	ShowValidationStatusField bool `xml:"showValidationStatusField,omitempty"`
+	ShowValidationStatusField bool `json:"showValidationStatusField,omitempty"`
 
-	SuggestedArticles *KnowledgeSuggestedArticlesSettings `xml:"suggestedArticles,omitempty"`
+	SuggestedArticles *KnowledgeSuggestedArticlesSettings `json:"suggestedArticles,omitempty"`
 }
 
 type KnowledgeAnswerSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KnowledgeAnswerSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeAnswerSettings"`
 
-	AssignTo string `xml:"assignTo,omitempty"`
+	AssignTo string `json:"assignTo,omitempty"`
 
-	DefaultArticleType string `xml:"defaultArticleType,omitempty"`
+	DefaultArticleType string `json:"defaultArticleType,omitempty"`
 
-	EnableArticleCreation bool `xml:"enableArticleCreation,omitempty"`
+	EnableArticleCreation bool `json:"enableArticleCreation,omitempty"`
 }
 
 type KnowledgeCaseSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KnowledgeCaseSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeCaseSettings"`
 
-	ArticlePDFCreationProfile string `xml:"articlePDFCreationProfile,omitempty"`
+	ArticlePDFCreationProfile string `json:"articlePDFCreationProfile,omitempty"`
 
-	ArticlePublicSharingCommunities *KnowledgeCommunitiesSettings `xml:"articlePublicSharingCommunities,omitempty"`
+	ArticlePublicSharingCommunities *KnowledgeCommunitiesSettings `json:"articlePublicSharingCommunities,omitempty"`
 
-	ArticlePublicSharingSites *KnowledgeSitesSettings `xml:"articlePublicSharingSites,omitempty"`
+	ArticlePublicSharingSites *KnowledgeSitesSettings `json:"articlePublicSharingSites,omitempty"`
 
-	ArticlePublicSharingSitesChatterAnswers *KnowledgeSitesSettings `xml:"articlePublicSharingSitesChatterAnswers,omitempty"`
+	ArticlePublicSharingSitesChatterAnswers *KnowledgeSitesSettings `json:"articlePublicSharingSitesChatterAnswers,omitempty"`
 
-	AssignTo string `xml:"assignTo,omitempty"`
+	AssignTo string `json:"assignTo,omitempty"`
 
-	CustomizationClass string `xml:"customizationClass,omitempty"`
+	CustomizationClass string `json:"customizationClass,omitempty"`
 
-	DefaultContributionArticleType string `xml:"defaultContributionArticleType,omitempty"`
+	DefaultContributionArticleType string `json:"defaultContributionArticleType,omitempty"`
 
-	Editor *KnowledgeCaseEditor `xml:"editor,omitempty"`
+	Editor *KnowledgeCaseEditor `json:"editor,omitempty"`
 
-	EnableArticleCreation bool `xml:"enableArticleCreation,omitempty"`
+	EnableArticleCreation bool `json:"enableArticleCreation,omitempty"`
 
-	EnableArticlePublicSharingSites bool `xml:"enableArticlePublicSharingSites,omitempty"`
+	EnableArticlePublicSharingSites bool `json:"enableArticlePublicSharingSites,omitempty"`
 
-	UseProfileForPDFCreation bool `xml:"useProfileForPDFCreation,omitempty"`
+	UseProfileForPDFCreation bool `json:"useProfileForPDFCreation,omitempty"`
 }
 
 type KnowledgeCommunitiesSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KnowledgeCommunitiesSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeCommunitiesSettings"`
 
-	Community []string `xml:"community,omitempty"`
+	Community []string `json:"community,omitempty"`
 }
 
 type KnowledgeSitesSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KnowledgeSitesSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeSitesSettings"`
 
-	Site []string `xml:"site,omitempty"`
+	Site []string `json:"site,omitempty"`
 }
 
 type KnowledgeLanguageSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KnowledgeLanguageSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeLanguageSettings"`
 
-	Language []*KnowledgeLanguage `xml:"language,omitempty"`
+	Language []*KnowledgeLanguage `json:"language,omitempty"`
 }
 
 type KnowledgeLanguage struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KnowledgeLanguage"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeLanguage"`
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	DefaultAssignee string `xml:"defaultAssignee,omitempty"`
+	DefaultAssignee string `json:"defaultAssignee,omitempty"`
 
-	DefaultAssigneeType *KnowledgeLanguageLookupValueType `xml:"defaultAssigneeType,omitempty"`
+	DefaultAssigneeType *KnowledgeLanguageLookupValueType `json:"defaultAssigneeType,omitempty"`
 
-	DefaultReviewer string `xml:"defaultReviewer,omitempty"`
+	DefaultReviewer string `json:"defaultReviewer,omitempty"`
 
-	DefaultReviewerType *KnowledgeLanguageLookupValueType `xml:"defaultReviewerType,omitempty"`
+	DefaultReviewerType *KnowledgeLanguageLookupValueType `json:"defaultReviewerType,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type KnowledgeSuggestedArticlesSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KnowledgeSuggestedArticlesSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeSuggestedArticlesSettings"`
 
-	CaseFields *KnowledgeCaseFieldsSettings `xml:"caseFields,omitempty"`
+	CaseFields *KnowledgeCaseFieldsSettings `json:"caseFields,omitempty"`
 
-	UseSuggestedArticlesForCase bool `xml:"useSuggestedArticlesForCase,omitempty"`
+	UseSuggestedArticlesForCase bool `json:"useSuggestedArticlesForCase,omitempty"`
 }
 
 type KnowledgeCaseFieldsSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KnowledgeCaseFieldsSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeCaseFieldsSettings"`
 
-	Field []*KnowledgeCaseField `xml:"field,omitempty"`
+	Field []*KnowledgeCaseField `json:"field,omitempty"`
 }
 
 type KnowledgeCaseField struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata KnowledgeCaseField"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeCaseField"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type Layout struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Layout"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Layout"`
 
 	*Metadata
 
-	CustomButtons []string `xml:"customButtons,omitempty"`
+	CustomButtons []string `json:"customButtons,omitempty"`
 
-	CustomConsoleComponents *CustomConsoleComponents `xml:"customConsoleComponents,omitempty"`
+	CustomConsoleComponents *CustomConsoleComponents `json:"customConsoleComponents,omitempty"`
 
-	EmailDefault bool `xml:"emailDefault,omitempty"`
+	EmailDefault bool `json:"emailDefault,omitempty"`
 
-	ExcludeButtons []string `xml:"excludeButtons,omitempty"`
+	ExcludeButtons []string `json:"excludeButtons,omitempty"`
 
-	FeedLayout *FeedLayout `xml:"feedLayout,omitempty"`
+	FeedLayout *FeedLayout `json:"feedLayout,omitempty"`
 
-	Headers []*LayoutHeader `xml:"headers,omitempty"`
+	Headers []*LayoutHeader `json:"headers,omitempty"`
 
-	LayoutSections []*LayoutSection `xml:"layoutSections,omitempty"`
+	LayoutSections []*LayoutSection `json:"layoutSections,omitempty"`
 
-	MiniLayout *MiniLayout `xml:"miniLayout,omitempty"`
+	MiniLayout *MiniLayout `json:"miniLayout,omitempty"`
 
-	MultilineLayoutFields []string `xml:"multilineLayoutFields,omitempty"`
+	MultilineLayoutFields []string `json:"multilineLayoutFields,omitempty"`
 
-	PlatformActionList *PlatformActionList `xml:"platformActionList,omitempty"`
+	PlatformActionList *PlatformActionList `json:"platformActionList,omitempty"`
 
-	QuickActionList *QuickActionList `xml:"quickActionList,omitempty"`
+	QuickActionList *QuickActionList `json:"quickActionList,omitempty"`
 
-	RelatedContent *RelatedContent `xml:"relatedContent,omitempty"`
+	RelatedContent *RelatedContent `json:"relatedContent,omitempty"`
 
-	RelatedLists []*RelatedListItem `xml:"relatedLists,omitempty"`
+	RelatedLists []*RelatedListItem `json:"relatedLists,omitempty"`
 
-	RelatedObjects []string `xml:"relatedObjects,omitempty"`
+	RelatedObjects []string `json:"relatedObjects,omitempty"`
 
-	RunAssignmentRulesDefault bool `xml:"runAssignmentRulesDefault,omitempty"`
+	RunAssignmentRulesDefault bool `json:"runAssignmentRulesDefault,omitempty"`
 
-	ShowEmailCheckbox bool `xml:"showEmailCheckbox,omitempty"`
+	ShowEmailCheckbox bool `json:"showEmailCheckbox,omitempty"`
 
-	ShowHighlightsPanel bool `xml:"showHighlightsPanel,omitempty"`
+	ShowHighlightsPanel bool `json:"showHighlightsPanel,omitempty"`
 
-	ShowInteractionLogPanel bool `xml:"showInteractionLogPanel,omitempty"`
+	ShowInteractionLogPanel bool `json:"showInteractionLogPanel,omitempty"`
 
-	ShowKnowledgeComponent bool `xml:"showKnowledgeComponent,omitempty"`
+	ShowKnowledgeComponent bool `json:"showKnowledgeComponent,omitempty"`
 
-	ShowRunAssignmentRulesCheckbox bool `xml:"showRunAssignmentRulesCheckbox,omitempty"`
+	ShowRunAssignmentRulesCheckbox bool `json:"showRunAssignmentRulesCheckbox,omitempty"`
 
-	ShowSolutionSection bool `xml:"showSolutionSection,omitempty"`
+	ShowSolutionSection bool `json:"showSolutionSection,omitempty"`
 
-	ShowSubmitAndAttachButton bool `xml:"showSubmitAndAttachButton,omitempty"`
+	ShowSubmitAndAttachButton bool `json:"showSubmitAndAttachButton,omitempty"`
 
-	SummaryLayout *SummaryLayout `xml:"summaryLayout,omitempty"`
+	SummaryLayout *SummaryLayout `json:"summaryLayout,omitempty"`
 }
 
 type CustomConsoleComponents struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomConsoleComponents"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomConsoleComponents"`
 
-	PrimaryTabComponents *PrimaryTabComponents `xml:"primaryTabComponents,omitempty"`
+	PrimaryTabComponents *PrimaryTabComponents `json:"primaryTabComponents,omitempty"`
 
-	SubtabComponents *SubtabComponents `xml:"subtabComponents,omitempty"`
+	SubtabComponents *SubtabComponents `json:"subtabComponents,omitempty"`
 }
 
 type PrimaryTabComponents struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PrimaryTabComponents"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PrimaryTabComponents"`
 
-	Containers []*Container `xml:"containers,omitempty"`
+	Containers []*Container `json:"containers,omitempty"`
 }
 
 type Container struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Container"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Container"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	IsContainerAutoSizeEnabled bool `xml:"isContainerAutoSizeEnabled,omitempty"`
+	IsContainerAutoSizeEnabled bool `json:"isContainerAutoSizeEnabled,omitempty"`
 
-	Region string `xml:"region,omitempty"`
+	Region string `json:"region,omitempty"`
 
-	SidebarComponents []*SidebarComponent `xml:"sidebarComponents,omitempty"`
+	SidebarComponents []*SidebarComponent `json:"sidebarComponents,omitempty"`
 
-	Style string `xml:"style,omitempty"`
+	Style string `json:"style,omitempty"`
 
-	Unit string `xml:"unit,omitempty"`
+	Unit string `json:"unit,omitempty"`
 
-	Width int32 `xml:"width,omitempty"`
+	Width int32 `json:"width,omitempty"`
 }
 
 type SidebarComponent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SidebarComponent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SidebarComponent"`
 
-	ComponentType string `xml:"componentType,omitempty"`
+	ComponentType string `json:"componentType,omitempty"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Lookup string `xml:"lookup,omitempty"`
+	Lookup string `json:"lookup,omitempty"`
 
-	Page string `xml:"page,omitempty"`
+	Page string `json:"page,omitempty"`
 
-	RelatedLists []*RelatedList `xml:"relatedLists,omitempty"`
+	RelatedLists []*RelatedList `json:"relatedLists,omitempty"`
 
-	Unit string `xml:"unit,omitempty"`
+	Unit string `json:"unit,omitempty"`
 
-	Width int32 `xml:"width,omitempty"`
+	Width int32 `json:"width,omitempty"`
 }
 
 type RelatedList struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RelatedList"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RelatedList"`
 
-	HideOnDetail bool `xml:"hideOnDetail,omitempty"`
+	HideOnDetail bool `json:"hideOnDetail,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type SubtabComponents struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SubtabComponents"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SubtabComponents"`
 
-	Containers []*Container `xml:"containers,omitempty"`
+	Containers []*Container `json:"containers,omitempty"`
 }
 
 type FeedLayout struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FeedLayout"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FeedLayout"`
 
-	AutocollapsePublisher bool `xml:"autocollapsePublisher,omitempty"`
+	AutocollapsePublisher bool `json:"autocollapsePublisher,omitempty"`
 
-	CompactFeed bool `xml:"compactFeed,omitempty"`
+	CompactFeed bool `json:"compactFeed,omitempty"`
 
-	FeedFilterPosition *FeedLayoutFilterPosition `xml:"feedFilterPosition,omitempty"`
+	FeedFilterPosition *FeedLayoutFilterPosition `json:"feedFilterPosition,omitempty"`
 
-	FeedFilters []*FeedLayoutFilter `xml:"feedFilters,omitempty"`
+	FeedFilters []*FeedLayoutFilter `json:"feedFilters,omitempty"`
 
-	FullWidthFeed bool `xml:"fullWidthFeed,omitempty"`
+	FullWidthFeed bool `json:"fullWidthFeed,omitempty"`
 
-	HideSidebar bool `xml:"hideSidebar,omitempty"`
+	HideSidebar bool `json:"hideSidebar,omitempty"`
 
-	HighlightExternalFeedItems bool `xml:"highlightExternalFeedItems,omitempty"`
+	HighlightExternalFeedItems bool `json:"highlightExternalFeedItems,omitempty"`
 
-	LeftComponents []*FeedLayoutComponent `xml:"leftComponents,omitempty"`
+	LeftComponents []*FeedLayoutComponent `json:"leftComponents,omitempty"`
 
-	RightComponents []*FeedLayoutComponent `xml:"rightComponents,omitempty"`
+	RightComponents []*FeedLayoutComponent `json:"rightComponents,omitempty"`
 
-	UseInlineFiltersInConsole bool `xml:"useInlineFiltersInConsole,omitempty"`
+	UseInlineFiltersInConsole bool `json:"useInlineFiltersInConsole,omitempty"`
 }
 
 type FeedLayoutFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FeedLayoutFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FeedLayoutFilter"`
 
-	FeedFilterName string `xml:"feedFilterName,omitempty"`
+	FeedFilterName string `json:"feedFilterName,omitempty"`
 
-	FeedFilterType *FeedLayoutFilterType `xml:"feedFilterType,omitempty"`
+	FeedFilterType *FeedLayoutFilterType `json:"feedFilterType,omitempty"`
 
-	FeedItemType *FeedItemType `xml:"feedItemType,omitempty"`
+	FeedItemType *FeedItemType `json:"feedItemType,omitempty"`
 }
 
 type FeedLayoutComponent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FeedLayoutComponent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FeedLayoutComponent"`
 
-	ComponentType *FeedLayoutComponentType `xml:"componentType,omitempty"`
+	ComponentType *FeedLayoutComponentType `json:"componentType,omitempty"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	Page string `xml:"page,omitempty"`
+	Page string `json:"page,omitempty"`
 }
 
 type LayoutSection struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LayoutSection"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LayoutSection"`
 
-	CustomLabel bool `xml:"customLabel,omitempty"`
+	CustomLabel bool `json:"customLabel,omitempty"`
 
-	DetailHeading bool `xml:"detailHeading,omitempty"`
+	DetailHeading bool `json:"detailHeading,omitempty"`
 
-	EditHeading bool `xml:"editHeading,omitempty"`
+	EditHeading bool `json:"editHeading,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	LayoutColumns []*LayoutColumn `xml:"layoutColumns,omitempty"`
+	LayoutColumns []*LayoutColumn `json:"layoutColumns,omitempty"`
 
-	Style *LayoutSectionStyle `xml:"style,omitempty"`
+	Style *LayoutSectionStyle `json:"style,omitempty"`
 }
 
 type LayoutColumn struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LayoutColumn"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LayoutColumn"`
 
-	LayoutItems []*LayoutItem `xml:"layoutItems,omitempty"`
+	LayoutItems []*LayoutItem `json:"layoutItems,omitempty"`
 
-	Reserved string `xml:"reserved,omitempty"`
+	Reserved string `json:"reserved,omitempty"`
 }
 
 type LayoutItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LayoutItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LayoutItem"`
 
-	AnalyticsCloudComponent *AnalyticsCloudComponentLayoutItem `xml:"analyticsCloudComponent,omitempty"`
+	AnalyticsCloudComponent *AnalyticsCloudComponentLayoutItem `json:"analyticsCloudComponent,omitempty"`
 
-	Behavior *UiBehavior `xml:"behavior,omitempty"`
+	Behavior *UiBehavior `json:"behavior,omitempty"`
 
-	Canvas string `xml:"canvas,omitempty"`
+	Canvas string `json:"canvas,omitempty"`
 
-	Component string `xml:"component,omitempty"`
+	Component string `json:"component,omitempty"`
 
-	CustomLink string `xml:"customLink,omitempty"`
+	CustomLink string `json:"customLink,omitempty"`
 
-	EmptySpace bool `xml:"emptySpace,omitempty"`
+	EmptySpace bool `json:"emptySpace,omitempty"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	Page string `xml:"page,omitempty"`
+	Page string `json:"page,omitempty"`
 
-	ReportChartComponent *ReportChartComponentLayoutItem `xml:"reportChartComponent,omitempty"`
+	ReportChartComponent *ReportChartComponentLayoutItem `json:"reportChartComponent,omitempty"`
 
-	Scontrol string `xml:"scontrol,omitempty"`
+	Scontrol string `json:"scontrol,omitempty"`
 
-	ShowLabel bool `xml:"showLabel,omitempty"`
+	ShowLabel bool `json:"showLabel,omitempty"`
 
-	ShowScrollbars bool `xml:"showScrollbars,omitempty"`
+	ShowScrollbars bool `json:"showScrollbars,omitempty"`
 
-	Width string `xml:"width,omitempty"`
+	Width string `json:"width,omitempty"`
 }
 
 type AnalyticsCloudComponentLayoutItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AnalyticsCloudComponentLayoutItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AnalyticsCloudComponentLayoutItem"`
 
-	AssetType string `xml:"assetType,omitempty"`
+	AssetType string `json:"assetType,omitempty"`
 
-	DevName string `xml:"devName,omitempty"`
+	DevName string `json:"devName,omitempty"`
 
-	Error string `xml:"error,omitempty"`
+	Error string `json:"error,omitempty"`
 
-	Filter string `xml:"filter,omitempty"`
+	Filter string `json:"filter,omitempty"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	HideOnError bool `xml:"hideOnError,omitempty"`
+	HideOnError bool `json:"hideOnError,omitempty"`
 
-	ShowSharing bool `xml:"showSharing,omitempty"`
+	ShowSharing bool `json:"showSharing,omitempty"`
 
-	ShowTitle bool `xml:"showTitle,omitempty"`
+	ShowTitle bool `json:"showTitle,omitempty"`
 
-	Width string `xml:"width,omitempty"`
+	Width string `json:"width,omitempty"`
 }
 
 type ReportChartComponentLayoutItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportChartComponentLayoutItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportChartComponentLayoutItem"`
 
-	CacheData bool `xml:"cacheData,omitempty"`
+	CacheData bool `json:"cacheData,omitempty"`
 
-	ContextFilterableField string `xml:"contextFilterableField,omitempty"`
+	ContextFilterableField string `json:"contextFilterableField,omitempty"`
 
-	Error string `xml:"error,omitempty"`
+	Error string `json:"error,omitempty"`
 
-	HideOnError bool `xml:"hideOnError,omitempty"`
+	HideOnError bool `json:"hideOnError,omitempty"`
 
-	IncludeContext bool `xml:"includeContext,omitempty"`
+	IncludeContext bool `json:"includeContext,omitempty"`
 
-	ReportName string `xml:"reportName,omitempty"`
+	ReportName string `json:"reportName,omitempty"`
 
-	ShowTitle bool `xml:"showTitle,omitempty"`
+	ShowTitle bool `json:"showTitle,omitempty"`
 
-	Size *ReportChartComponentSize `xml:"size,omitempty"`
+	Size *ReportChartComponentSize `json:"size,omitempty"`
 }
 
 type MiniLayout struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata MiniLayout"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MiniLayout"`
 
-	Fields []string `xml:"fields,omitempty"`
+	Fields []string `json:"fields,omitempty"`
 
-	RelatedLists []*RelatedListItem `xml:"relatedLists,omitempty"`
+	RelatedLists []*RelatedListItem `json:"relatedLists,omitempty"`
 }
 
 type RelatedListItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RelatedListItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RelatedListItem"`
 
-	CustomButtons []string `xml:"customButtons,omitempty"`
+	CustomButtons []string `json:"customButtons,omitempty"`
 
-	ExcludeButtons []string `xml:"excludeButtons,omitempty"`
+	ExcludeButtons []string `json:"excludeButtons,omitempty"`
 
-	Fields []string `xml:"fields,omitempty"`
+	Fields []string `json:"fields,omitempty"`
 
-	RelatedList string `xml:"relatedList,omitempty"`
+	RelatedList string `json:"relatedList,omitempty"`
 
-	SortField string `xml:"sortField,omitempty"`
+	SortField string `json:"sortField,omitempty"`
 
-	SortOrder *SortOrder `xml:"sortOrder,omitempty"`
+	SortOrder *SortOrder `json:"sortOrder,omitempty"`
 }
 
 type RelatedContent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RelatedContent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RelatedContent"`
 
-	RelatedContentItems []*RelatedContentItem `xml:"relatedContentItems,omitempty"`
+	RelatedContentItems []*RelatedContentItem `json:"relatedContentItems,omitempty"`
 }
 
 type RelatedContentItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RelatedContentItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RelatedContentItem"`
 
-	LayoutItem *LayoutItem `xml:"layoutItem,omitempty"`
+	LayoutItem *LayoutItem `json:"layoutItem,omitempty"`
 }
 
 type SummaryLayout struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SummaryLayout"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SummaryLayout"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	SizeX int32 `xml:"sizeX,omitempty"`
+	SizeX int32 `json:"sizeX,omitempty"`
 
-	SizeY int32 `xml:"sizeY,omitempty"`
+	SizeY int32 `json:"sizeY,omitempty"`
 
-	SizeZ int32 `xml:"sizeZ,omitempty"`
+	SizeZ int32 `json:"sizeZ,omitempty"`
 
-	SummaryLayoutItems []*SummaryLayoutItem `xml:"summaryLayoutItems,omitempty"`
+	SummaryLayoutItems []*SummaryLayoutItem `json:"summaryLayoutItems,omitempty"`
 
-	SummaryLayoutStyle *SummaryLayoutStyle `xml:"summaryLayoutStyle,omitempty"`
+	SummaryLayoutStyle *SummaryLayoutStyle `json:"summaryLayoutStyle,omitempty"`
 }
 
 type SummaryLayoutItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SummaryLayoutItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SummaryLayoutItem"`
 
-	CustomLink string `xml:"customLink,omitempty"`
+	CustomLink string `json:"customLink,omitempty"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	PosX int32 `xml:"posX,omitempty"`
+	PosX int32 `json:"posX,omitempty"`
 
-	PosY int32 `xml:"posY,omitempty"`
+	PosY int32 `json:"posY,omitempty"`
 
-	PosZ int32 `xml:"posZ,omitempty"`
+	PosZ int32 `json:"posZ,omitempty"`
 }
 
 type LeadConvertSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LeadConvertSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LeadConvertSettings"`
 
 	*Metadata
 
-	AllowOwnerChange bool `xml:"allowOwnerChange,omitempty"`
+	AllowOwnerChange bool `json:"allowOwnerChange,omitempty"`
 
-	OpportunityCreationOptions *VisibleOrRequired `xml:"opportunityCreationOptions,omitempty"`
+	OpportunityCreationOptions *VisibleOrRequired `json:"opportunityCreationOptions,omitempty"`
 }
 
 type Letterhead struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Letterhead"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Letterhead"`
 
 	*Metadata
 
-	Available bool `xml:"available,omitempty"`
+	Available bool `json:"available,omitempty"`
 
-	BackgroundColor string `xml:"backgroundColor,omitempty"`
+	BackgroundColor string `json:"backgroundColor,omitempty"`
 
-	BodyColor string `xml:"bodyColor,omitempty"`
+	BodyColor string `json:"bodyColor,omitempty"`
 
-	BottomLine *LetterheadLine `xml:"bottomLine,omitempty"`
+	BottomLine *LetterheadLine `json:"bottomLine,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Footer *LetterheadHeaderFooter `xml:"footer,omitempty"`
+	Footer *LetterheadHeaderFooter `json:"footer,omitempty"`
 
-	Header *LetterheadHeaderFooter `xml:"header,omitempty"`
+	Header *LetterheadHeaderFooter `json:"header,omitempty"`
 
-	MiddleLine *LetterheadLine `xml:"middleLine,omitempty"`
+	MiddleLine *LetterheadLine `json:"middleLine,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	TopLine *LetterheadLine `xml:"topLine,omitempty"`
+	TopLine *LetterheadLine `json:"topLine,omitempty"`
 }
 
 type LetterheadLine struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LetterheadLine"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LetterheadLine"`
 
-	Color string `xml:"color,omitempty"`
+	Color string `json:"color,omitempty"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 }
 
 type LetterheadHeaderFooter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LetterheadHeaderFooter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LetterheadHeaderFooter"`
 
-	BackgroundColor string `xml:"backgroundColor,omitempty"`
+	BackgroundColor string `json:"backgroundColor,omitempty"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	HorizontalAlignment *LetterheadHorizontalAlignment `xml:"horizontalAlignment,omitempty"`
+	HorizontalAlignment *LetterheadHorizontalAlignment `json:"horizontalAlignment,omitempty"`
 
-	Logo string `xml:"logo,omitempty"`
+	Logo string `json:"logo,omitempty"`
 
-	VerticalAlignment *LetterheadVerticalAlignment `xml:"verticalAlignment,omitempty"`
+	VerticalAlignment *LetterheadVerticalAlignment `json:"verticalAlignment,omitempty"`
 }
 
 type LicenseDefinition struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LicenseDefinition"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LicenseDefinition"`
 
 	*Metadata
 
-	AggregationGroup string `xml:"aggregationGroup,omitempty"`
+	AggregationGroup string `json:"aggregationGroup,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	IsPublished bool `xml:"isPublished,omitempty"`
+	IsPublished bool `json:"isPublished,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	LicensedCustomPermissions []*LicensedCustomPermissions `xml:"licensedCustomPermissions,omitempty"`
+	LicensedCustomPermissions []*LicensedCustomPermissions `json:"licensedCustomPermissions,omitempty"`
 
-	LicensingAuthority string `xml:"licensingAuthority,omitempty"`
+	LicensingAuthority string `json:"licensingAuthority,omitempty"`
 
-	LicensingAuthorityProvider string `xml:"licensingAuthorityProvider,omitempty"`
+	LicensingAuthorityProvider string `json:"licensingAuthorityProvider,omitempty"`
 
-	MinPlatformVersion int32 `xml:"minPlatformVersion,omitempty"`
+	MinPlatformVersion int32 `json:"minPlatformVersion,omitempty"`
 
-	Origin string `xml:"origin,omitempty"`
+	Origin string `json:"origin,omitempty"`
 
-	Revision int32 `xml:"revision,omitempty"`
+	Revision int32 `json:"revision,omitempty"`
 
-	TrialLicenseDuration int32 `xml:"trialLicenseDuration,omitempty"`
+	TrialLicenseDuration int32 `json:"trialLicenseDuration,omitempty"`
 
-	TrialLicenseQuantity int32 `xml:"trialLicenseQuantity,omitempty"`
+	TrialLicenseQuantity int32 `json:"trialLicenseQuantity,omitempty"`
 }
 
 type LicensedCustomPermissions struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LicensedCustomPermissions"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LicensedCustomPermissions"`
 
-	CustomPermission string `xml:"customPermission,omitempty"`
+	CustomPermission string `json:"customPermission,omitempty"`
 
-	LicenseDefinition string `xml:"licenseDefinition,omitempty"`
+	LicenseDefinition string `json:"licenseDefinition,omitempty"`
 }
 
 type LiveAgentSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LiveAgentSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveAgentSettings"`
 
 	*Metadata
 
-	EnableLiveAgent bool `xml:"enableLiveAgent,omitempty"`
+	EnableLiveAgent bool `json:"enableLiveAgent,omitempty"`
 }
 
 type LiveChatAgentConfig struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LiveChatAgentConfig"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatAgentConfig"`
 
 	*Metadata
 
-	Assignments *AgentConfigAssignments `xml:"assignments,omitempty"`
+	Assignments *AgentConfigAssignments `json:"assignments,omitempty"`
 
-	AutoGreeting string `xml:"autoGreeting,omitempty"`
+	AutoGreeting string `json:"autoGreeting,omitempty"`
 
-	Capacity int32 `xml:"capacity,omitempty"`
+	Capacity int32 `json:"capacity,omitempty"`
 
-	CriticalWaitTime int32 `xml:"criticalWaitTime,omitempty"`
+	CriticalWaitTime int32 `json:"criticalWaitTime,omitempty"`
 
-	CustomAgentName string `xml:"customAgentName,omitempty"`
+	CustomAgentName string `json:"customAgentName,omitempty"`
 
-	EnableAgentFileTransfer bool `xml:"enableAgentFileTransfer,omitempty"`
+	EnableAgentFileTransfer bool `json:"enableAgentFileTransfer,omitempty"`
 
-	EnableAgentSneakPeek bool `xml:"enableAgentSneakPeek,omitempty"`
+	EnableAgentSneakPeek bool `json:"enableAgentSneakPeek,omitempty"`
 
-	EnableAssistanceFlag bool `xml:"enableAssistanceFlag,omitempty"`
+	EnableAssistanceFlag bool `json:"enableAssistanceFlag,omitempty"`
 
-	EnableAutoAwayOnDecline bool `xml:"enableAutoAwayOnDecline,omitempty"`
+	EnableAutoAwayOnDecline bool `json:"enableAutoAwayOnDecline,omitempty"`
 
-	EnableAutoAwayOnPushTimeout bool `xml:"enableAutoAwayOnPushTimeout,omitempty"`
+	EnableAutoAwayOnPushTimeout bool `json:"enableAutoAwayOnPushTimeout,omitempty"`
 
-	EnableChatConferencing bool `xml:"enableChatConferencing,omitempty"`
+	EnableChatConferencing bool `json:"enableChatConferencing,omitempty"`
 
-	EnableChatMonitoring bool `xml:"enableChatMonitoring,omitempty"`
+	EnableChatMonitoring bool `json:"enableChatMonitoring,omitempty"`
 
-	EnableChatTransferToAgent bool `xml:"enableChatTransferToAgent,omitempty"`
+	EnableChatTransferToAgent bool `json:"enableChatTransferToAgent,omitempty"`
 
-	EnableChatTransferToButton bool `xml:"enableChatTransferToButton,omitempty"`
+	EnableChatTransferToButton bool `json:"enableChatTransferToButton,omitempty"`
 
-	EnableChatTransferToSkill bool `xml:"enableChatTransferToSkill,omitempty"`
+	EnableChatTransferToSkill bool `json:"enableChatTransferToSkill,omitempty"`
 
-	EnableLogoutSound bool `xml:"enableLogoutSound,omitempty"`
+	EnableLogoutSound bool `json:"enableLogoutSound,omitempty"`
 
-	EnableNotifications bool `xml:"enableNotifications,omitempty"`
+	EnableNotifications bool `json:"enableNotifications,omitempty"`
 
-	EnableRequestSound bool `xml:"enableRequestSound,omitempty"`
+	EnableRequestSound bool `json:"enableRequestSound,omitempty"`
 
-	EnableSneakPeek bool `xml:"enableSneakPeek,omitempty"`
+	EnableSneakPeek bool `json:"enableSneakPeek,omitempty"`
 
-	EnableVisitorBlocking bool `xml:"enableVisitorBlocking,omitempty"`
+	EnableVisitorBlocking bool `json:"enableVisitorBlocking,omitempty"`
 
-	EnableWhisperMessage bool `xml:"enableWhisperMessage,omitempty"`
+	EnableWhisperMessage bool `json:"enableWhisperMessage,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	SupervisorDefaultAgentStatusFilter *SupervisorAgentStatusFilter `xml:"supervisorDefaultAgentStatusFilter,omitempty"`
+	SupervisorDefaultAgentStatusFilter *SupervisorAgentStatusFilter `json:"supervisorDefaultAgentStatusFilter,omitempty"`
 
-	SupervisorDefaultButtonFilter string `xml:"supervisorDefaultButtonFilter,omitempty"`
+	SupervisorDefaultButtonFilter string `json:"supervisorDefaultButtonFilter,omitempty"`
 
-	SupervisorDefaultSkillFilter string `xml:"supervisorDefaultSkillFilter,omitempty"`
+	SupervisorDefaultSkillFilter string `json:"supervisorDefaultSkillFilter,omitempty"`
 
-	SupervisorSkills *SupervisorAgentConfigSkills `xml:"supervisorSkills,omitempty"`
+	SupervisorSkills *SupervisorAgentConfigSkills `json:"supervisorSkills,omitempty"`
 
-	TransferableButtons *AgentConfigButtons `xml:"transferableButtons,omitempty"`
+	TransferableButtons *AgentConfigButtons `json:"transferableButtons,omitempty"`
 
-	TransferableSkills *AgentConfigSkills `xml:"transferableSkills,omitempty"`
+	TransferableSkills *AgentConfigSkills `json:"transferableSkills,omitempty"`
 }
 
 type AgentConfigAssignments struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AgentConfigAssignments"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AgentConfigAssignments"`
 
-	Profiles *AgentConfigProfileAssignments `xml:"profiles,omitempty"`
+	Profiles *AgentConfigProfileAssignments `json:"profiles,omitempty"`
 
-	Users *AgentConfigUserAssignments `xml:"users,omitempty"`
+	Users *AgentConfigUserAssignments `json:"users,omitempty"`
 }
 
 type AgentConfigProfileAssignments struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AgentConfigProfileAssignments"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AgentConfigProfileAssignments"`
 
-	Profile []string `xml:"profile,omitempty"`
+	Profile []string `json:"profile,omitempty"`
 }
 
 type AgentConfigUserAssignments struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AgentConfigUserAssignments"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AgentConfigUserAssignments"`
 
-	User []string `xml:"user,omitempty"`
+	User []string `json:"user,omitempty"`
 }
 
 type SupervisorAgentConfigSkills struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SupervisorAgentConfigSkills"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SupervisorAgentConfigSkills"`
 
-	Skill []string `xml:"skill,omitempty"`
+	Skill []string `json:"skill,omitempty"`
 }
 
 type AgentConfigButtons struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AgentConfigButtons"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AgentConfigButtons"`
 
-	Button []string `xml:"button,omitempty"`
+	Button []string `json:"button,omitempty"`
 }
 
 type AgentConfigSkills struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AgentConfigSkills"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AgentConfigSkills"`
 
-	Skill []string `xml:"skill,omitempty"`
+	Skill []string `json:"skill,omitempty"`
 }
 
 type LiveChatButton struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LiveChatButton"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatButton"`
 
 	*Metadata
 
-	Animation *LiveChatButtonPresentation `xml:"animation,omitempty"`
+	Animation *LiveChatButtonPresentation `json:"animation,omitempty"`
 
-	AutoGreeting string `xml:"autoGreeting,omitempty"`
+	AutoGreeting string `json:"autoGreeting,omitempty"`
 
-	ChasitorIdleTimeout int32 `xml:"chasitorIdleTimeout,omitempty"`
+	ChasitorIdleTimeout int32 `json:"chasitorIdleTimeout,omitempty"`
 
-	ChasitorIdleTimeoutWarning int32 `xml:"chasitorIdleTimeoutWarning,omitempty"`
+	ChasitorIdleTimeoutWarning int32 `json:"chasitorIdleTimeoutWarning,omitempty"`
 
-	ChatPage string `xml:"chatPage,omitempty"`
+	ChatPage string `json:"chatPage,omitempty"`
 
-	CustomAgentName string `xml:"customAgentName,omitempty"`
+	CustomAgentName string `json:"customAgentName,omitempty"`
 
-	Deployments *LiveChatButtonDeployments `xml:"deployments,omitempty"`
+	Deployments *LiveChatButtonDeployments `json:"deployments,omitempty"`
 
-	EnableQueue bool `xml:"enableQueue,omitempty"`
+	EnableQueue bool `json:"enableQueue,omitempty"`
 
-	InviteEndPosition *LiveChatButtonInviteEndPosition `xml:"inviteEndPosition,omitempty"`
+	InviteEndPosition *LiveChatButtonInviteEndPosition `json:"inviteEndPosition,omitempty"`
 
-	InviteImage string `xml:"inviteImage,omitempty"`
+	InviteImage string `json:"inviteImage,omitempty"`
 
-	InviteStartPosition *LiveChatButtonInviteStartPosition `xml:"inviteStartPosition,omitempty"`
+	InviteStartPosition *LiveChatButtonInviteStartPosition `json:"inviteStartPosition,omitempty"`
 
-	IsActive bool `xml:"isActive,omitempty"`
+	IsActive bool `json:"isActive,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	NumberOfReroutingAttempts int32 `xml:"numberOfReroutingAttempts,omitempty"`
+	NumberOfReroutingAttempts int32 `json:"numberOfReroutingAttempts,omitempty"`
 
-	OfflineImage string `xml:"offlineImage,omitempty"`
+	OfflineImage string `json:"offlineImage,omitempty"`
 
-	OnlineImage string `xml:"onlineImage,omitempty"`
+	OnlineImage string `json:"onlineImage,omitempty"`
 
-	OptionsCustomRoutingIsEnabled bool `xml:"optionsCustomRoutingIsEnabled,omitempty"`
+	OptionsCustomRoutingIsEnabled bool `json:"optionsCustomRoutingIsEnabled,omitempty"`
 
-	OptionsHasChasitorIdleTimeout bool `xml:"optionsHasChasitorIdleTimeout,omitempty"`
+	OptionsHasChasitorIdleTimeout bool `json:"optionsHasChasitorIdleTimeout,omitempty"`
 
-	OptionsHasInviteAfterAccept bool `xml:"optionsHasInviteAfterAccept,omitempty"`
+	OptionsHasInviteAfterAccept bool `json:"optionsHasInviteAfterAccept,omitempty"`
 
-	OptionsHasInviteAfterReject bool `xml:"optionsHasInviteAfterReject,omitempty"`
+	OptionsHasInviteAfterReject bool `json:"optionsHasInviteAfterReject,omitempty"`
 
-	OptionsHasRerouteDeclinedRequest bool `xml:"optionsHasRerouteDeclinedRequest,omitempty"`
+	OptionsHasRerouteDeclinedRequest bool `json:"optionsHasRerouteDeclinedRequest,omitempty"`
 
-	OptionsIsAutoAccept bool `xml:"optionsIsAutoAccept,omitempty"`
+	OptionsIsAutoAccept bool `json:"optionsIsAutoAccept,omitempty"`
 
-	OptionsIsInviteAutoRemove bool `xml:"optionsIsInviteAutoRemove,omitempty"`
+	OptionsIsInviteAutoRemove bool `json:"optionsIsInviteAutoRemove,omitempty"`
 
-	OverallQueueLength int32 `xml:"overallQueueLength,omitempty"`
+	OverallQueueLength int32 `json:"overallQueueLength,omitempty"`
 
-	PerAgentQueueLength int32 `xml:"perAgentQueueLength,omitempty"`
+	PerAgentQueueLength int32 `json:"perAgentQueueLength,omitempty"`
 
-	PostChatPage string `xml:"postChatPage,omitempty"`
+	PostChatPage string `json:"postChatPage,omitempty"`
 
-	PostChatUrl string `xml:"postChatUrl,omitempty"`
+	PostChatUrl string `json:"postChatUrl,omitempty"`
 
-	PreChatFormPage string `xml:"preChatFormPage,omitempty"`
+	PreChatFormPage string `json:"preChatFormPage,omitempty"`
 
-	PreChatFormUrl string `xml:"preChatFormUrl,omitempty"`
+	PreChatFormUrl string `json:"preChatFormUrl,omitempty"`
 
-	PushTimeOut int32 `xml:"pushTimeOut,omitempty"`
+	PushTimeOut int32 `json:"pushTimeOut,omitempty"`
 
-	RoutingType *LiveChatButtonRoutingType `xml:"routingType,omitempty"`
+	RoutingType *LiveChatButtonRoutingType `json:"routingType,omitempty"`
 
-	Site string `xml:"site,omitempty"`
+	Site string `json:"site,omitempty"`
 
-	Skills *LiveChatButtonSkills `xml:"skills,omitempty"`
+	Skills *LiveChatButtonSkills `json:"skills,omitempty"`
 
-	TimeToRemoveInvite int32 `xml:"timeToRemoveInvite,omitempty"`
+	TimeToRemoveInvite int32 `json:"timeToRemoveInvite,omitempty"`
 
-	Type_ *LiveChatButtonType `xml:"type,omitempty"`
+	Type_ *LiveChatButtonType `json:"type,omitempty"`
 
-	WindowLanguage *Language `xml:"windowLanguage,omitempty"`
+	WindowLanguage *Language `json:"windowLanguage,omitempty"`
 }
 
 type LiveChatButtonDeployments struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LiveChatButtonDeployments"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatButtonDeployments"`
 
-	Deployment []string `xml:"deployment,omitempty"`
+	Deployment []string `json:"deployment,omitempty"`
 }
 
 type LiveChatButtonSkills struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LiveChatButtonSkills"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatButtonSkills"`
 
-	Skill []string `xml:"skill,omitempty"`
+	Skill []string `json:"skill,omitempty"`
 }
 
 type LiveChatDeployment struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LiveChatDeployment"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatDeployment"`
 
 	*Metadata
 
-	BrandingImage string `xml:"brandingImage,omitempty"`
+	BrandingImage string `json:"brandingImage,omitempty"`
 
-	ConnectionTimeoutDuration int32 `xml:"connectionTimeoutDuration,omitempty"`
+	ConnectionTimeoutDuration int32 `json:"connectionTimeoutDuration,omitempty"`
 
-	ConnectionWarningDuration int32 `xml:"connectionWarningDuration,omitempty"`
+	ConnectionWarningDuration int32 `json:"connectionWarningDuration,omitempty"`
 
-	DisplayQueuePosition bool `xml:"displayQueuePosition,omitempty"`
+	DisplayQueuePosition bool `json:"displayQueuePosition,omitempty"`
 
-	DomainWhiteList *LiveChatDeploymentDomainWhitelist `xml:"domainWhiteList,omitempty"`
+	DomainWhiteList *LiveChatDeploymentDomainWhitelist `json:"domainWhiteList,omitempty"`
 
-	EnablePrechatApi bool `xml:"enablePrechatApi,omitempty"`
+	EnablePrechatApi bool `json:"enablePrechatApi,omitempty"`
 
-	EnableTranscriptSave bool `xml:"enableTranscriptSave,omitempty"`
+	EnableTranscriptSave bool `json:"enableTranscriptSave,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	MobileBrandingImage string `xml:"mobileBrandingImage,omitempty"`
+	MobileBrandingImage string `json:"mobileBrandingImage,omitempty"`
 
-	Site string `xml:"site,omitempty"`
+	Site string `json:"site,omitempty"`
 
-	WindowTitle string `xml:"windowTitle,omitempty"`
+	WindowTitle string `json:"windowTitle,omitempty"`
 }
 
 type LiveChatDeploymentDomainWhitelist struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LiveChatDeploymentDomainWhitelist"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatDeploymentDomainWhitelist"`
 
-	Domain []string `xml:"domain,omitempty"`
+	Domain []string `json:"domain,omitempty"`
 }
 
 type LiveChatSensitiveDataRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LiveChatSensitiveDataRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatSensitiveDataRule"`
 
 	*Metadata
 
-	ActionType *SensitiveDataActionType `xml:"actionType,omitempty"`
+	ActionType *SensitiveDataActionType `json:"actionType,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EnforceOn int32 `xml:"enforceOn,omitempty"`
+	EnforceOn int32 `json:"enforceOn,omitempty"`
 
-	IsEnabled bool `xml:"isEnabled,omitempty"`
+	IsEnabled bool `json:"isEnabled,omitempty"`
 
-	Pattern string `xml:"pattern,omitempty"`
+	Pattern string `json:"pattern,omitempty"`
 
-	Replacement string `xml:"replacement,omitempty"`
+	Replacement string `json:"replacement,omitempty"`
 }
 
 type ManagedTopic struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ManagedTopic"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ManagedTopic"`
 
 	*Metadata
 
-	ManagedTopicType string `xml:"managedTopicType,omitempty"`
+	ManagedTopicType string `json:"managedTopicType,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	ParentName string `xml:"parentName,omitempty"`
+	ParentName string `json:"parentName,omitempty"`
 
-	Position int32 `xml:"position,omitempty"`
+	Position int32 `json:"position,omitempty"`
 
-	TopicDescription string `xml:"topicDescription,omitempty"`
+	TopicDescription string `json:"topicDescription,omitempty"`
 }
 
 type ManagedTopics struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ManagedTopics"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ManagedTopics"`
 
 	*Metadata
 
-	ManagedTopic []*ManagedTopic `xml:"managedTopic,omitempty"`
+	ManagedTopic []*ManagedTopic `json:"managedTopic,omitempty"`
 }
 
 type MarketingActionSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata MarketingActionSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MarketingActionSettings"`
 
 	*Metadata
 
-	EnableMarketingAction bool `xml:"enableMarketingAction,omitempty"`
+	EnableMarketingAction bool `json:"enableMarketingAction,omitempty"`
 }
 
 type MarketingResourceType struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata MarketingResourceType"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MarketingResourceType"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	Object string `xml:"object,omitempty"`
+	Object string `json:"object,omitempty"`
 
-	Provider string `xml:"provider,omitempty"`
+	Provider string `json:"provider,omitempty"`
 }
 
 type MatchingRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata MatchingRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MatchingRule"`
 
 	*Metadata
 
-	BooleanFilter string `xml:"booleanFilter,omitempty"`
+	BooleanFilter string `json:"booleanFilter,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	MatchingRuleItems []*MatchingRuleItem `xml:"matchingRuleItems,omitempty"`
+	MatchingRuleItems []*MatchingRuleItem `json:"matchingRuleItems,omitempty"`
 
-	RuleStatus *MatchingRuleStatus `xml:"ruleStatus,omitempty"`
+	RuleStatus *MatchingRuleStatus `json:"ruleStatus,omitempty"`
 }
 
 type MatchingRuleItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata MatchingRuleItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MatchingRuleItem"`
 
-	BlankValueBehavior *BlankValueBehavior `xml:"blankValueBehavior,omitempty"`
+	BlankValueBehavior *BlankValueBehavior `json:"blankValueBehavior,omitempty"`
 
-	FieldName string `xml:"fieldName,omitempty"`
+	FieldName string `json:"fieldName,omitempty"`
 
-	MatchingMethod *MatchingMethod `xml:"matchingMethod,omitempty"`
+	MatchingMethod *MatchingMethod `json:"matchingMethod,omitempty"`
 }
 
 type MatchingRules struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata MatchingRules"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MatchingRules"`
 
 	*Metadata
 
-	MatchingRules []*MatchingRule `xml:"matchingRules,omitempty"`
+	MatchingRules []*MatchingRule `json:"matchingRules,omitempty"`
 }
 
 type MetadataWithContent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata MetadataWithContent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MetadataWithContent"`
 
 	*Metadata
 
-	Content []byte `xml:"content,omitempty"`
+	Content []byte `json:"content,omitempty"`
 }
 
 type ApexClass struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApexClass"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApexClass"`
 
 	*MetadataWithContent
 
-	ApiVersion float64 `xml:"apiVersion,omitempty"`
+	ApiVersion float64 `json:"apiVersion,omitempty"`
 
-	PackageVersions []*PackageVersion `xml:"packageVersions,omitempty"`
+	PackageVersions []*PackageVersion `json:"packageVersions,omitempty"`
 
-	Status *ApexCodeUnitStatus `xml:"status,omitempty"`
+	Status *ApexCodeUnitStatus `json:"status,omitempty"`
 }
 
 type ApexComponent struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApexComponent"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApexComponent"`
 
 	*MetadataWithContent
 
-	ApiVersion float64 `xml:"apiVersion,omitempty"`
+	ApiVersion float64 `json:"apiVersion,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	PackageVersions []*PackageVersion `xml:"packageVersions,omitempty"`
+	PackageVersions []*PackageVersion `json:"packageVersions,omitempty"`
 }
 
 type ApexPage struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApexPage"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApexPage"`
 
 	*MetadataWithContent
 
-	ApiVersion float64 `xml:"apiVersion,omitempty"`
+	ApiVersion float64 `json:"apiVersion,omitempty"`
 
-	AvailableInTouch bool `xml:"availableInTouch,omitempty"`
+	AvailableInTouch bool `json:"availableInTouch,omitempty"`
 
-	ConfirmationTokenRequired bool `xml:"confirmationTokenRequired,omitempty"`
+	ConfirmationTokenRequired bool `json:"confirmationTokenRequired,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	PackageVersions []*PackageVersion `xml:"packageVersions,omitempty"`
+	PackageVersions []*PackageVersion `json:"packageVersions,omitempty"`
 }
 
 type ApexTrigger struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ApexTrigger"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApexTrigger"`
 
 	*MetadataWithContent
 
-	ApiVersion float64 `xml:"apiVersion,omitempty"`
+	ApiVersion float64 `json:"apiVersion,omitempty"`
 
-	PackageVersions []*PackageVersion `xml:"packageVersions,omitempty"`
+	PackageVersions []*PackageVersion `json:"packageVersions,omitempty"`
 
-	Status *ApexCodeUnitStatus `xml:"status,omitempty"`
+	Status *ApexCodeUnitStatus `json:"status,omitempty"`
 }
 
 type Certificate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Certificate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Certificate"`
 
 	*MetadataWithContent
 
-	CaSigned bool `xml:"caSigned,omitempty"`
+	CaSigned bool `json:"caSigned,omitempty"`
 
-	EncryptedWithPlatformEncryption bool `xml:"encryptedWithPlatformEncryption,omitempty"`
+	EncryptedWithPlatformEncryption bool `json:"encryptedWithPlatformEncryption,omitempty"`
 
-	ExpirationDate time.Time `xml:"expirationDate,omitempty"`
+	ExpirationDate time.Time `json:"expirationDate,omitempty"`
 
-	KeySize int32 `xml:"keySize,omitempty"`
+	KeySize int32 `json:"keySize,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	PrivateKeyExportable bool `xml:"privateKeyExportable,omitempty"`
+	PrivateKeyExportable bool `json:"privateKeyExportable,omitempty"`
 }
 
 type ContentAsset struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ContentAsset"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContentAsset"`
 
 	*MetadataWithContent
 
-	Format *ContentAssetFormat `xml:"format,omitempty"`
+	Format *ContentAssetFormat `json:"format,omitempty"`
 
-	Language string `xml:"language,omitempty"`
+	Language string `json:"language,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	OriginNetwork string `xml:"originNetwork,omitempty"`
+	OriginNetwork string `json:"originNetwork,omitempty"`
 
-	Relationships *ContentAssetRelationships `xml:"relationships,omitempty"`
+	Relationships *ContentAssetRelationships `json:"relationships,omitempty"`
 
-	Versions *ContentAssetVersions `xml:"versions,omitempty"`
+	Versions *ContentAssetVersions `json:"versions,omitempty"`
 }
 
 type ContentAssetRelationships struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ContentAssetRelationships"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContentAssetRelationships"`
 
-	Organization *ContentAssetLink `xml:"organization,omitempty"`
+	Organization *ContentAssetLink `json:"organization,omitempty"`
 }
 
 type ContentAssetLink struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ContentAssetLink"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContentAssetLink"`
 
-	Access *ContentAssetAccess `xml:"access,omitempty"`
+	Access *ContentAssetAccess `json:"access,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type ContentAssetVersions struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ContentAssetVersions"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContentAssetVersions"`
 
-	Version []*ContentAssetVersion `xml:"version,omitempty"`
+	Version []*ContentAssetVersion `json:"version,omitempty"`
 }
 
 type ContentAssetVersion struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ContentAssetVersion"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContentAssetVersion"`
 
-	Number string `xml:"number,omitempty"`
+	Number string `json:"number,omitempty"`
 
-	PathOnClient string `xml:"pathOnClient,omitempty"`
+	PathOnClient string `json:"pathOnClient,omitempty"`
 
-	ZipEntry string `xml:"zipEntry,omitempty"`
+	ZipEntry string `json:"zipEntry,omitempty"`
 }
 
 type DataPipeline struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DataPipeline"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DataPipeline"`
 
 	*MetadataWithContent
 
-	ApiVersion float64 `xml:"apiVersion,omitempty"`
+	ApiVersion float64 `json:"apiVersion,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	ScriptType *DataPipelineType `xml:"scriptType,omitempty"`
+	ScriptType *DataPipelineType `json:"scriptType,omitempty"`
 }
 
 type Document struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Document"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Document"`
 
 	*MetadataWithContent
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	InternalUseOnly bool `xml:"internalUseOnly,omitempty"`
+	InternalUseOnly bool `json:"internalUseOnly,omitempty"`
 
-	Keywords string `xml:"keywords,omitempty"`
+	Keywords string `json:"keywords,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Public bool `xml:"public,omitempty"`
+	Public bool `json:"public,omitempty"`
 }
 
 type EmailTemplate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata EmailTemplate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmailTemplate"`
 
 	*MetadataWithContent
 
-	ApiVersion float64 `xml:"apiVersion,omitempty"`
+	ApiVersion float64 `json:"apiVersion,omitempty"`
 
-	AttachedDocuments []string `xml:"attachedDocuments,omitempty"`
+	AttachedDocuments []string `json:"attachedDocuments,omitempty"`
 
-	Attachments []*Attachment `xml:"attachments,omitempty"`
+	Attachments []*Attachment `json:"attachments,omitempty"`
 
-	Available bool `xml:"available,omitempty"`
+	Available bool `json:"available,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EncodingKey *Encoding `xml:"encodingKey,omitempty"`
+	EncodingKey *Encoding `json:"encodingKey,omitempty"`
 
-	Letterhead string `xml:"letterhead,omitempty"`
+	Letterhead string `json:"letterhead,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	PackageVersions []*PackageVersion `xml:"packageVersions,omitempty"`
+	PackageVersions []*PackageVersion `json:"packageVersions,omitempty"`
 
-	Style *EmailTemplateStyle `xml:"style,omitempty"`
+	Style *EmailTemplateStyle `json:"style,omitempty"`
 
-	Subject string `xml:"subject,omitempty"`
+	Subject string `json:"subject,omitempty"`
 
-	TextOnly string `xml:"textOnly,omitempty"`
+	TextOnly string `json:"textOnly,omitempty"`
 
-	Type_ *EmailTemplateType `xml:"type,omitempty"`
+	Type_ *EmailTemplateType `json:"type,omitempty"`
 }
 
 type Attachment struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Attachment"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Attachment"`
 
-	Content []byte `xml:"content,omitempty"`
+	Content []byte `json:"content,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type Scontrol struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Scontrol"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Scontrol"`
 
 	*MetadataWithContent
 
-	ContentSource *SControlContentSource `xml:"contentSource,omitempty"`
+	ContentSource *SControlContentSource `json:"contentSource,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EncodingKey *Encoding `xml:"encodingKey,omitempty"`
+	EncodingKey *Encoding `json:"encodingKey,omitempty"`
 
-	FileContent []byte `xml:"fileContent,omitempty"`
+	FileContent []byte `json:"fileContent,omitempty"`
 
-	FileName string `xml:"fileName,omitempty"`
+	FileName string `json:"fileName,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	SupportsCaching bool `xml:"supportsCaching,omitempty"`
+	SupportsCaching bool `json:"supportsCaching,omitempty"`
 }
 
 type SiteDotCom struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SiteDotCom"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SiteDotCom"`
 
 	*MetadataWithContent
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	SiteType *SiteType `xml:"siteType,omitempty"`
+	SiteType *SiteType `json:"siteType,omitempty"`
 }
 
 type StaticResource struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata StaticResource"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata StaticResource"`
 
 	*MetadataWithContent
 
-	CacheControl *StaticResourceCacheControl `xml:"cacheControl,omitempty"`
+	CacheControl *StaticResourceCacheControl `json:"cacheControl,omitempty"`
 
-	ContentType string `xml:"contentType,omitempty"`
+	ContentType string `json:"contentType,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 }
 
 type UiPlugin struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata UiPlugin"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata UiPlugin"`
 
 	*MetadataWithContent
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	ExtensionPointIdentifier string `xml:"extensionPointIdentifier,omitempty"`
+	ExtensionPointIdentifier string `json:"extensionPointIdentifier,omitempty"`
 
-	IsEnabled bool `xml:"isEnabled,omitempty"`
+	IsEnabled bool `json:"isEnabled,omitempty"`
 
-	Language string `xml:"language,omitempty"`
+	Language string `json:"language,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 }
 
 type WaveDashboard struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WaveDashboard"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveDashboard"`
 
 	*MetadataWithContent
 
-	Application string `xml:"application,omitempty"`
+	Application string `json:"application,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	TemplateAssetSourceName string `xml:"templateAssetSourceName,omitempty"`
+	TemplateAssetSourceName string `json:"templateAssetSourceName,omitempty"`
 }
 
 type WaveDataflow struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WaveDataflow"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveDataflow"`
 
 	*MetadataWithContent
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 }
 
 type WaveLens struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WaveLens"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveLens"`
 
 	*MetadataWithContent
 
-	Application string `xml:"application,omitempty"`
+	Application string `json:"application,omitempty"`
 
-	Datasets []string `xml:"datasets,omitempty"`
+	Datasets []string `json:"datasets,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	TemplateAssetSourceName string `xml:"templateAssetSourceName,omitempty"`
+	TemplateAssetSourceName string `json:"templateAssetSourceName,omitempty"`
 
-	VisualizationType string `xml:"visualizationType,omitempty"`
+	VisualizationType string `json:"visualizationType,omitempty"`
 }
 
 type MilestoneType struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata MilestoneType"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MilestoneType"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	RecurrenceType *MilestoneTypeRecurrenceType `xml:"recurrenceType,omitempty"`
+	RecurrenceType *MilestoneTypeRecurrenceType `json:"recurrenceType,omitempty"`
 }
 
 type MobileSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata MobileSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MobileSettings"`
 
 	*Metadata
 
-	ChatterMobile *ChatterMobileSettings `xml:"chatterMobile,omitempty"`
+	ChatterMobile *ChatterMobileSettings `json:"chatterMobile,omitempty"`
 
-	DashboardMobile *DashboardMobileSettings `xml:"dashboardMobile,omitempty"`
+	DashboardMobile *DashboardMobileSettings `json:"dashboardMobile,omitempty"`
 
-	ObjforceMobile *SFDCMobileSettings `xml:"objforceMobile,omitempty"`
+	ObjforceMobile *SFDCMobileSettings `json:"objforceMobile,omitempty"`
 
-	TouchMobile *TouchMobileSettings `xml:"touchMobile,omitempty"`
+	TouchMobile *TouchMobileSettings `json:"touchMobile,omitempty"`
 }
 
 type ChatterMobileSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ChatterMobileSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ChatterMobileSettings"`
 
-	EnablePushNotifications bool `xml:"enablePushNotifications,omitempty"`
+	EnablePushNotifications bool `json:"enablePushNotifications,omitempty"`
 }
 
 type DashboardMobileSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DashboardMobileSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardMobileSettings"`
 
-	EnableDashboardIPadApp bool `xml:"enableDashboardIPadApp,omitempty"`
+	EnableDashboardIPadApp bool `json:"enableDashboardIPadApp,omitempty"`
 }
 
 type SFDCMobileSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SFDCMobileSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SFDCMobileSettings"`
 
-	EnableMobileLite bool `xml:"enableMobileLite,omitempty"`
+	EnableMobileLite bool `json:"enableMobileLite,omitempty"`
 
-	EnableUserToDeviceLinking bool `xml:"enableUserToDeviceLinking,omitempty"`
+	EnableUserToDeviceLinking bool `json:"enableUserToDeviceLinking,omitempty"`
 }
 
 type TouchMobileSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata TouchMobileSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata TouchMobileSettings"`
 
-	EnableTouchAppIPad bool `xml:"enableTouchAppIPad,omitempty"`
+	EnableTouchAppIPad bool `json:"enableTouchAppIPad,omitempty"`
 
-	EnableTouchAppIPhone bool `xml:"enableTouchAppIPhone,omitempty"`
+	EnableTouchAppIPhone bool `json:"enableTouchAppIPhone,omitempty"`
 
-	EnableTouchBrowserIPad bool `xml:"enableTouchBrowserIPad,omitempty"`
+	EnableTouchBrowserIPad bool `json:"enableTouchBrowserIPad,omitempty"`
 
-	EnableTouchIosPhone bool `xml:"enableTouchIosPhone,omitempty"`
+	EnableTouchIosPhone bool `json:"enableTouchIosPhone,omitempty"`
 
-	EnableVisualforceInTouch bool `xml:"enableVisualforceInTouch,omitempty"`
+	EnableVisualforceInTouch bool `json:"enableVisualforceInTouch,omitempty"`
 }
 
 type ModerationRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ModerationRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ModerationRule"`
 
 	*Metadata
 
-	Action *ModerationRuleAction `xml:"action,omitempty"`
+	Action *ModerationRuleAction `json:"action,omitempty"`
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EntitiesAndFields []*ModeratedEntityField `xml:"entitiesAndFields,omitempty"`
+	EntitiesAndFields []*ModeratedEntityField `json:"entitiesAndFields,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	UserMessage string `xml:"userMessage,omitempty"`
+	UserMessage string `json:"userMessage,omitempty"`
 }
 
 type ModeratedEntityField struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ModeratedEntityField"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ModeratedEntityField"`
 
-	EntityName string `xml:"entityName,omitempty"`
+	EntityName string `json:"entityName,omitempty"`
 
-	FieldName string `xml:"fieldName,omitempty"`
+	FieldName string `json:"fieldName,omitempty"`
 
-	KeywordList string `xml:"keywordList,omitempty"`
+	KeywordList string `json:"keywordList,omitempty"`
 }
 
 type NameSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata NameSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NameSettings"`
 
 	*Metadata
 
-	EnableMiddleName bool `xml:"enableMiddleName,omitempty"`
+	EnableMiddleName bool `json:"enableMiddleName,omitempty"`
 
-	EnableNameSuffix bool `xml:"enableNameSuffix,omitempty"`
+	EnableNameSuffix bool `json:"enableNameSuffix,omitempty"`
 }
 
 type NamedCredential struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata NamedCredential"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NamedCredential"`
 
 	*Metadata
 
-	AuthProvider string `xml:"authProvider,omitempty"`
+	AuthProvider string `json:"authProvider,omitempty"`
 
-	Certificate string `xml:"certificate,omitempty"`
+	Certificate string `json:"certificate,omitempty"`
 
-	Endpoint string `xml:"endpoint,omitempty"`
+	Endpoint string `json:"endpoint,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	OauthRefreshToken string `xml:"oauthRefreshToken,omitempty"`
+	OauthRefreshToken string `json:"oauthRefreshToken,omitempty"`
 
-	OauthScope string `xml:"oauthScope,omitempty"`
+	OauthScope string `json:"oauthScope,omitempty"`
 
-	OauthToken string `xml:"oauthToken,omitempty"`
+	OauthToken string `json:"oauthToken,omitempty"`
 
-	Password string `xml:"password,omitempty"`
+	Password string `json:"password,omitempty"`
 
-	PrincipalType *ExternalPrincipalType `xml:"principalType,omitempty"`
+	PrincipalType *ExternalPrincipalType `json:"principalType,omitempty"`
 
-	Protocol *AuthenticationProtocol `xml:"protocol,omitempty"`
+	Protocol *AuthenticationProtocol `json:"protocol,omitempty"`
 
-	Username string `xml:"username,omitempty"`
+	Username string `json:"username,omitempty"`
 }
 
 type Network struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Network"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Network"`
 
 	*Metadata
 
-	AllowMembersToFlag bool `xml:"allowMembersToFlag,omitempty"`
+	AllowMembersToFlag bool `json:"allowMembersToFlag,omitempty"`
 
-	AllowedExtensions string `xml:"allowedExtensions,omitempty"`
+	AllowedExtensions string `json:"allowedExtensions,omitempty"`
 
-	Branding *Branding `xml:"branding,omitempty"`
+	Branding *Branding `json:"branding,omitempty"`
 
-	CaseCommentEmailTemplate string `xml:"caseCommentEmailTemplate,omitempty"`
+	CaseCommentEmailTemplate string `json:"caseCommentEmailTemplate,omitempty"`
 
-	ChangePasswordTemplate string `xml:"changePasswordTemplate,omitempty"`
+	ChangePasswordTemplate string `json:"changePasswordTemplate,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EmailSenderAddress string `xml:"emailSenderAddress,omitempty"`
+	EmailSenderAddress string `json:"emailSenderAddress,omitempty"`
 
-	EmailSenderName string `xml:"emailSenderName,omitempty"`
+	EmailSenderName string `json:"emailSenderName,omitempty"`
 
-	EnableGuestChatter bool `xml:"enableGuestChatter,omitempty"`
+	EnableGuestChatter bool `json:"enableGuestChatter,omitempty"`
 
-	EnableInvitation bool `xml:"enableInvitation,omitempty"`
+	EnableInvitation bool `json:"enableInvitation,omitempty"`
 
-	EnableKnowledgeable bool `xml:"enableKnowledgeable,omitempty"`
+	EnableKnowledgeable bool `json:"enableKnowledgeable,omitempty"`
 
-	EnableNicknameDisplay bool `xml:"enableNicknameDisplay,omitempty"`
+	EnableNicknameDisplay bool `json:"enableNicknameDisplay,omitempty"`
 
-	EnablePrivateMessages bool `xml:"enablePrivateMessages,omitempty"`
+	EnablePrivateMessages bool `json:"enablePrivateMessages,omitempty"`
 
-	EnableReputation bool `xml:"enableReputation,omitempty"`
+	EnableReputation bool `json:"enableReputation,omitempty"`
 
-	EnableSiteAsContainer bool `xml:"enableSiteAsContainer,omitempty"`
+	EnableSiteAsContainer bool `json:"enableSiteAsContainer,omitempty"`
 
-	FeedChannel string `xml:"feedChannel,omitempty"`
+	FeedChannel string `json:"feedChannel,omitempty"`
 
-	ForgotPasswordTemplate string `xml:"forgotPasswordTemplate,omitempty"`
+	ForgotPasswordTemplate string `json:"forgotPasswordTemplate,omitempty"`
 
-	LogoutUrl string `xml:"logoutUrl,omitempty"`
+	LogoutUrl string `json:"logoutUrl,omitempty"`
 
-	MaxFileSizeKb int32 `xml:"maxFileSizeKb,omitempty"`
+	MaxFileSizeKb int32 `json:"maxFileSizeKb,omitempty"`
 
-	NavigationLinkSet *NavigationLinkSet `xml:"navigationLinkSet,omitempty"`
+	NavigationLinkSet *NavigationLinkSet `json:"navigationLinkSet,omitempty"`
 
-	NetworkMemberGroups *NetworkMemberGroup `xml:"networkMemberGroups,omitempty"`
+	NetworkMemberGroups *NetworkMemberGroup `json:"networkMemberGroups,omitempty"`
 
-	NewSenderAddress string `xml:"newSenderAddress,omitempty"`
+	NewSenderAddress string `json:"newSenderAddress,omitempty"`
 
-	PicassoSite string `xml:"picassoSite,omitempty"`
+	PicassoSite string `json:"picassoSite,omitempty"`
 
-	ReputationLevels *ReputationLevelDefinitions `xml:"reputationLevels,omitempty"`
+	ReputationLevels *ReputationLevelDefinitions `json:"reputationLevels,omitempty"`
 
-	ReputationPointsRules *ReputationPointsRules `xml:"reputationPointsRules,omitempty"`
+	ReputationPointsRules *ReputationPointsRules `json:"reputationPointsRules,omitempty"`
 
-	SelfRegProfile string `xml:"selfRegProfile,omitempty"`
+	SelfRegProfile string `json:"selfRegProfile,omitempty"`
 
-	SelfRegistration bool `xml:"selfRegistration,omitempty"`
+	SelfRegistration bool `json:"selfRegistration,omitempty"`
 
-	SendWelcomeEmail bool `xml:"sendWelcomeEmail,omitempty"`
+	SendWelcomeEmail bool `json:"sendWelcomeEmail,omitempty"`
 
-	Site string `xml:"site,omitempty"`
+	Site string `json:"site,omitempty"`
 
-	Status *NetworkStatus `xml:"status,omitempty"`
+	Status *NetworkStatus `json:"status,omitempty"`
 
-	Tabs *NetworkTabSet `xml:"tabs,omitempty"`
+	Tabs *NetworkTabSet `json:"tabs,omitempty"`
 
-	UrlPathPrefix string `xml:"urlPathPrefix,omitempty"`
+	UrlPathPrefix string `json:"urlPathPrefix,omitempty"`
 
-	WelcomeTemplate string `xml:"welcomeTemplate,omitempty"`
+	WelcomeTemplate string `json:"welcomeTemplate,omitempty"`
 }
 
 type Branding struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Branding"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Branding"`
 
-	LoginFooterText string `xml:"loginFooterText,omitempty"`
+	LoginFooterText string `json:"loginFooterText,omitempty"`
 
-	LoginLogo string `xml:"loginLogo,omitempty"`
+	LoginLogo string `json:"loginLogo,omitempty"`
 
-	PageFooter string `xml:"pageFooter,omitempty"`
+	PageFooter string `json:"pageFooter,omitempty"`
 
-	PageHeader string `xml:"pageHeader,omitempty"`
+	PageHeader string `json:"pageHeader,omitempty"`
 
-	PrimaryColor string `xml:"primaryColor,omitempty"`
+	PrimaryColor string `json:"primaryColor,omitempty"`
 
-	PrimaryComplementColor string `xml:"primaryComplementColor,omitempty"`
+	PrimaryComplementColor string `json:"primaryComplementColor,omitempty"`
 
-	QuaternaryColor string `xml:"quaternaryColor,omitempty"`
+	QuaternaryColor string `json:"quaternaryColor,omitempty"`
 
-	QuaternaryComplementColor string `xml:"quaternaryComplementColor,omitempty"`
+	QuaternaryComplementColor string `json:"quaternaryComplementColor,omitempty"`
 
-	SecondaryColor string `xml:"secondaryColor,omitempty"`
+	SecondaryColor string `json:"secondaryColor,omitempty"`
 
-	TertiaryColor string `xml:"tertiaryColor,omitempty"`
+	TertiaryColor string `json:"tertiaryColor,omitempty"`
 
-	TertiaryComplementColor string `xml:"tertiaryComplementColor,omitempty"`
+	TertiaryComplementColor string `json:"tertiaryComplementColor,omitempty"`
 
-	ZeronaryColor string `xml:"zeronaryColor,omitempty"`
+	ZeronaryColor string `json:"zeronaryColor,omitempty"`
 
-	ZeronaryComplementColor string `xml:"zeronaryComplementColor,omitempty"`
+	ZeronaryComplementColor string `json:"zeronaryComplementColor,omitempty"`
 }
 
 type NavigationLinkSet struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata NavigationLinkSet"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NavigationLinkSet"`
 
-	NavigationMenuItem []*NavigationMenuItem `xml:"navigationMenuItem,omitempty"`
+	NavigationMenuItem []*NavigationMenuItem `json:"navigationMenuItem,omitempty"`
 }
 
 type NavigationMenuItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata NavigationMenuItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NavigationMenuItem"`
 
-	DefaultListViewId string `xml:"defaultListViewId,omitempty"`
+	DefaultListViewId string `json:"defaultListViewId,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Position int32 `xml:"position,omitempty"`
+	Position int32 `json:"position,omitempty"`
 
-	PubliclyAvailable bool `xml:"publiclyAvailable,omitempty"`
+	PubliclyAvailable bool `json:"publiclyAvailable,omitempty"`
 
-	Target string `xml:"target,omitempty"`
+	Target string `json:"target,omitempty"`
 
-	TargetPreference string `xml:"targetPreference,omitempty"`
+	TargetPreference string `json:"targetPreference,omitempty"`
 
-	Type_ string `xml:"type,omitempty"`
+	Type_ string `json:"type,omitempty"`
 }
 
 type NetworkMemberGroup struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata NetworkMemberGroup"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NetworkMemberGroup"`
 
-	PermissionSet []string `xml:"permissionSet,omitempty"`
+	PermissionSet []string `json:"permissionSet,omitempty"`
 
-	Profile []string `xml:"profile,omitempty"`
+	Profile []string `json:"profile,omitempty"`
 }
 
 type ReputationLevelDefinitions struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReputationLevelDefinitions"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationLevelDefinitions"`
 
-	Level []*ReputationLevel `xml:"level,omitempty"`
+	Level []*ReputationLevel `json:"level,omitempty"`
 }
 
 type ReputationLevel struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReputationLevel"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationLevel"`
 
-	Branding *ReputationBranding `xml:"branding,omitempty"`
+	Branding *ReputationBranding `json:"branding,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	LowerThreshold float64 `xml:"lowerThreshold,omitempty"`
+	LowerThreshold float64 `json:"lowerThreshold,omitempty"`
 }
 
 type ReputationBranding struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReputationBranding"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationBranding"`
 
-	SmallImage string `xml:"smallImage,omitempty"`
+	SmallImage string `json:"smallImage,omitempty"`
 }
 
 type ReputationPointsRules struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReputationPointsRules"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationPointsRules"`
 
-	PointsRule []*ReputationPointsRule `xml:"pointsRule,omitempty"`
+	PointsRule []*ReputationPointsRule `json:"pointsRule,omitempty"`
 }
 
 type ReputationPointsRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReputationPointsRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationPointsRule"`
 
-	EventType string `xml:"eventType,omitempty"`
+	EventType string `json:"eventType,omitempty"`
 
-	Points int32 `xml:"points,omitempty"`
+	Points int32 `json:"points,omitempty"`
 }
 
 type NetworkTabSet struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata NetworkTabSet"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NetworkTabSet"`
 
-	CustomTab []string `xml:"customTab,omitempty"`
+	CustomTab []string `json:"customTab,omitempty"`
 
-	DefaultTab string `xml:"defaultTab,omitempty"`
+	DefaultTab string `json:"defaultTab,omitempty"`
 
-	StandardTab []string `xml:"standardTab,omitempty"`
+	StandardTab []string `json:"standardTab,omitempty"`
 }
 
 type OpportunitySettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata OpportunitySettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OpportunitySettings"`
 
 	*Metadata
 
-	AutoActivateNewReminders bool `xml:"autoActivateNewReminders,omitempty"`
+	AutoActivateNewReminders bool `json:"autoActivateNewReminders,omitempty"`
 
-	EnableFindSimilarOpportunities bool `xml:"enableFindSimilarOpportunities,omitempty"`
+	EnableFindSimilarOpportunities bool `json:"enableFindSimilarOpportunities,omitempty"`
 
-	EnableOpportunityTeam bool `xml:"enableOpportunityTeam,omitempty"`
+	EnableOpportunityTeam bool `json:"enableOpportunityTeam,omitempty"`
 
-	EnableUpdateReminders bool `xml:"enableUpdateReminders,omitempty"`
+	EnableUpdateReminders bool `json:"enableUpdateReminders,omitempty"`
 
-	FindSimilarOppFilter *FindSimilarOppFilter `xml:"findSimilarOppFilter,omitempty"`
+	FindSimilarOppFilter *FindSimilarOppFilter `json:"findSimilarOppFilter,omitempty"`
 
-	PromptToAddProducts bool `xml:"promptToAddProducts,omitempty"`
+	PromptToAddProducts bool `json:"promptToAddProducts,omitempty"`
 }
 
 type FindSimilarOppFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FindSimilarOppFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FindSimilarOppFilter"`
 
-	SimilarOpportunitiesDisplayColumns []string `xml:"similarOpportunitiesDisplayColumns,omitempty"`
+	SimilarOpportunitiesDisplayColumns []string `json:"similarOpportunitiesDisplayColumns,omitempty"`
 
-	SimilarOpportunitiesMatchFields []string `xml:"similarOpportunitiesMatchFields,omitempty"`
+	SimilarOpportunitiesMatchFields []string `json:"similarOpportunitiesMatchFields,omitempty"`
 }
 
 type OrderSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata OrderSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OrderSettings"`
 
 	*Metadata
 
-	EnableNegativeQuantity bool `xml:"enableNegativeQuantity,omitempty"`
+	EnableNegativeQuantity bool `json:"enableNegativeQuantity,omitempty"`
 
-	EnableOrders bool `xml:"enableOrders,omitempty"`
+	EnableOrders bool `json:"enableOrders,omitempty"`
 
-	EnableReductionOrders bool `xml:"enableReductionOrders,omitempty"`
+	EnableReductionOrders bool `json:"enableReductionOrders,omitempty"`
 }
 
 type OrgPreferenceSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata OrgPreferenceSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OrgPreferenceSettings"`
 
 	*Metadata
 
-	Preferences []*OrganizationSettingsDetail `xml:"preferences,omitempty"`
+	Preferences []*OrganizationSettingsDetail `json:"preferences,omitempty"`
 }
 
 type OrganizationSettingsDetail struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata OrganizationSettingsDetail"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OrganizationSettingsDetail"`
 
-	SettingName string `xml:"settingName,omitempty"`
+	SettingName string `json:"settingName,omitempty"`
 
-	SettingValue bool `xml:"settingValue,omitempty"`
+	SettingValue bool `json:"settingValue,omitempty"`
 }
 
 type Package struct {
 	*Metadata
 
-	ApiAccessLevel *APIAccessLevel `xml:"apiAccessLevel,omitempty"`
+	ApiAccessLevel *APIAccessLevel `json:"apiAccessLevel,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	NamespacePrefix string `xml:"namespacePrefix,omitempty"`
+	NamespacePrefix string `json:"namespacePrefix,omitempty"`
 
-	ObjectPermissions []*ProfileObjectPermissions `xml:"objectPermissions,omitempty"`
+	ObjectPermissions []*ProfileObjectPermissions `json:"objectPermissions,omitempty"`
 
-	PackageType string `xml:"packageType,omitempty"`
+	PackageType string `json:"packageType,omitempty"`
 
-	PostInstallClass string `xml:"postInstallClass,omitempty"`
+	PostInstallClass string `json:"postInstallClass,omitempty"`
 
-	SetupWeblink string `xml:"setupWeblink,omitempty"`
+	SetupWeblink string `json:"setupWeblink,omitempty"`
 
-	Types []*PackageTypeMembers `xml:"types,omitempty"`
+	Types []*PackageTypeMembers `json:"types,omitempty"`
 
-	UninstallClass string `xml:"uninstallClass,omitempty"`
+	UninstallClass string `json:"uninstallClass,omitempty"`
 
-	Version string `xml:"version,omitempty"`
+	Version string `json:"version,omitempty"`
 }
 
 type ProfileObjectPermissions struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileObjectPermissions"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileObjectPermissions"`
 
-	AllowCreate bool `xml:"allowCreate,omitempty"`
+	AllowCreate bool `json:"allowCreate,omitempty"`
 
-	AllowDelete bool `xml:"allowDelete,omitempty"`
+	AllowDelete bool `json:"allowDelete,omitempty"`
 
-	AllowEdit bool `xml:"allowEdit,omitempty"`
+	AllowEdit bool `json:"allowEdit,omitempty"`
 
-	AllowRead bool `xml:"allowRead,omitempty"`
+	AllowRead bool `json:"allowRead,omitempty"`
 
-	ModifyAllRecords bool `xml:"modifyAllRecords,omitempty"`
+	ModifyAllRecords bool `json:"modifyAllRecords,omitempty"`
 
-	Object string `xml:"object,omitempty"`
+	Object string `json:"object,omitempty"`
 
-	ViewAllRecords bool `xml:"viewAllRecords,omitempty"`
+	ViewAllRecords bool `json:"viewAllRecords,omitempty"`
 }
 
 type PackageTypeMembers struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PackageTypeMembers"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PackageTypeMembers"`
 
-	Members []string `xml:"members,omitempty"`
+	Members []string `json:"members,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type PathAssistant struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PathAssistant"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PathAssistant"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	EntityName string `xml:"entityName,omitempty"`
+	EntityName string `json:"entityName,omitempty"`
 
-	FieldName string `xml:"fieldName,omitempty"`
+	FieldName string `json:"fieldName,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	PathAssistantSteps []*PathAssistantStep `xml:"pathAssistantSteps,omitempty"`
+	PathAssistantSteps []*PathAssistantStep `json:"pathAssistantSteps,omitempty"`
 
-	RecordTypeName string `xml:"recordTypeName,omitempty"`
+	RecordTypeName string `json:"recordTypeName,omitempty"`
 }
 
 type PathAssistantStep struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PathAssistantStep"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PathAssistantStep"`
 
-	FieldNames []string `xml:"fieldNames,omitempty"`
+	FieldNames []string `json:"fieldNames,omitempty"`
 
-	Info string `xml:"info,omitempty"`
+	Info string `json:"info,omitempty"`
 
-	PicklistValueName string `xml:"picklistValueName,omitempty"`
+	PicklistValueName string `json:"picklistValueName,omitempty"`
 }
 
 type PathAssistantSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PathAssistantSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PathAssistantSettings"`
 
 	*Metadata
 
-	PathAssistantEnabled bool `xml:"pathAssistantEnabled,omitempty"`
+	PathAssistantEnabled bool `json:"pathAssistantEnabled,omitempty"`
 }
 
 type PermissionSet struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PermissionSet"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSet"`
 
 	*Metadata
 
-	ApplicationVisibilities []*PermissionSetApplicationVisibility `xml:"applicationVisibilities,omitempty"`
+	ApplicationVisibilities []*PermissionSetApplicationVisibility `json:"applicationVisibilities,omitempty"`
 
-	ClassAccesses []*PermissionSetApexClassAccess `xml:"classAccesses,omitempty"`
+	ClassAccesses []*PermissionSetApexClassAccess `json:"classAccesses,omitempty"`
 
-	CustomPermissions []*PermissionSetCustomPermissions `xml:"customPermissions,omitempty"`
+	CustomPermissions []*PermissionSetCustomPermissions `json:"customPermissions,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	ExternalDataSourceAccesses []*PermissionSetExternalDataSourceAccess `xml:"externalDataSourceAccesses,omitempty"`
+	ExternalDataSourceAccesses []*PermissionSetExternalDataSourceAccess `json:"externalDataSourceAccesses,omitempty"`
 
-	FieldPermissions []*PermissionSetFieldPermissions `xml:"fieldPermissions,omitempty"`
+	FieldPermissions []*PermissionSetFieldPermissions `json:"fieldPermissions,omitempty"`
 
-	HasActivationRequired bool `xml:"hasActivationRequired,omitempty"`
+	HasActivationRequired bool `json:"hasActivationRequired,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	License string `xml:"license,omitempty"`
+	License string `json:"license,omitempty"`
 
-	ObjectPermissions []*PermissionSetObjectPermissions `xml:"objectPermissions,omitempty"`
+	ObjectPermissions []*PermissionSetObjectPermissions `json:"objectPermissions,omitempty"`
 
-	PageAccesses []*PermissionSetApexPageAccess `xml:"pageAccesses,omitempty"`
+	PageAccesses []*PermissionSetApexPageAccess `json:"pageAccesses,omitempty"`
 
-	RecordTypeVisibilities []*PermissionSetRecordTypeVisibility `xml:"recordTypeVisibilities,omitempty"`
+	RecordTypeVisibilities []*PermissionSetRecordTypeVisibility `json:"recordTypeVisibilities,omitempty"`
 
-	TabSettings []*PermissionSetTabSetting `xml:"tabSettings,omitempty"`
+	TabSettings []*PermissionSetTabSetting `json:"tabSettings,omitempty"`
 
-	UserPermissions []*PermissionSetUserPermission `xml:"userPermissions,omitempty"`
+	UserPermissions []*PermissionSetUserPermission `json:"userPermissions,omitempty"`
 }
 
 type PermissionSetApplicationVisibility struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PermissionSetApplicationVisibility"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetApplicationVisibility"`
 
-	Application string `xml:"application,omitempty"`
+	Application string `json:"application,omitempty"`
 
-	Visible bool `xml:"visible,omitempty"`
+	Visible bool `json:"visible,omitempty"`
 }
 
 type PermissionSetApexClassAccess struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PermissionSetApexClassAccess"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetApexClassAccess"`
 
-	ApexClass string `xml:"apexClass,omitempty"`
+	ApexClass string `json:"apexClass,omitempty"`
 
-	Enabled bool `xml:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty"`
 }
 
 type PermissionSetCustomPermissions struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PermissionSetCustomPermissions"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetCustomPermissions"`
 
-	Enabled bool `xml:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type PermissionSetExternalDataSourceAccess struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PermissionSetExternalDataSourceAccess"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetExternalDataSourceAccess"`
 
-	Enabled bool `xml:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty"`
 
-	ExternalDataSource string `xml:"externalDataSource,omitempty"`
+	ExternalDataSource string `json:"externalDataSource,omitempty"`
 }
 
 type PermissionSetFieldPermissions struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PermissionSetFieldPermissions"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetFieldPermissions"`
 
-	Editable bool `xml:"editable,omitempty"`
+	Editable bool `json:"editable,omitempty"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Readable bool `xml:"readable,omitempty"`
+	Readable bool `json:"readable,omitempty"`
 }
 
 type PermissionSetObjectPermissions struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PermissionSetObjectPermissions"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetObjectPermissions"`
 
-	AllowCreate bool `xml:"allowCreate,omitempty"`
+	AllowCreate bool `json:"allowCreate,omitempty"`
 
-	AllowDelete bool `xml:"allowDelete,omitempty"`
+	AllowDelete bool `json:"allowDelete,omitempty"`
 
-	AllowEdit bool `xml:"allowEdit,omitempty"`
+	AllowEdit bool `json:"allowEdit,omitempty"`
 
-	AllowRead bool `xml:"allowRead,omitempty"`
+	AllowRead bool `json:"allowRead,omitempty"`
 
-	ModifyAllRecords bool `xml:"modifyAllRecords,omitempty"`
+	ModifyAllRecords bool `json:"modifyAllRecords,omitempty"`
 
-	Object string `xml:"object,omitempty"`
+	Object string `json:"object,omitempty"`
 
-	ViewAllRecords bool `xml:"viewAllRecords,omitempty"`
+	ViewAllRecords bool `json:"viewAllRecords,omitempty"`
 }
 
 type PermissionSetApexPageAccess struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PermissionSetApexPageAccess"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetApexPageAccess"`
 
-	ApexPage string `xml:"apexPage,omitempty"`
+	ApexPage string `json:"apexPage,omitempty"`
 
-	Enabled bool `xml:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty"`
 }
 
 type PermissionSetRecordTypeVisibility struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PermissionSetRecordTypeVisibility"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetRecordTypeVisibility"`
 
-	RecordType string `xml:"recordType,omitempty"`
+	RecordType string `json:"recordType,omitempty"`
 
-	Visible bool `xml:"visible,omitempty"`
+	Visible bool `json:"visible,omitempty"`
 }
 
 type PermissionSetTabSetting struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PermissionSetTabSetting"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetTabSetting"`
 
-	Tab string `xml:"tab,omitempty"`
+	Tab string `json:"tab,omitempty"`
 
-	Visibility *PermissionSetTabVisibility `xml:"visibility,omitempty"`
+	Visibility *PermissionSetTabVisibility `json:"visibility,omitempty"`
 }
 
 type PermissionSetUserPermission struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PermissionSetUserPermission"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetUserPermission"`
 
-	Enabled bool `xml:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type PersonListSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PersonListSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PersonListSettings"`
 
 	*Metadata
 
-	EnablePersonList bool `xml:"enablePersonList,omitempty"`
+	EnablePersonList bool `json:"enablePersonList,omitempty"`
 }
 
 type PersonalJourneySettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PersonalJourneySettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PersonalJourneySettings"`
 
 	*Metadata
 
-	EnableExactTargetForObjforceApps bool `xml:"enableExactTargetForObjforceApps,omitempty"`
+	EnableExactTargetForObjforceApps bool `json:"enableExactTargetForObjforceApps,omitempty"`
 }
 
 type PlatformCachePartition struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PlatformCachePartition"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PlatformCachePartition"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	IsDefaultPartition bool `xml:"isDefaultPartition,omitempty"`
+	IsDefaultPartition bool `json:"isDefaultPartition,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	PlatformCachePartitionTypes []*PlatformCachePartitionType `xml:"platformCachePartitionTypes,omitempty"`
+	PlatformCachePartitionTypes []*PlatformCachePartitionType `json:"platformCachePartitionTypes,omitempty"`
 }
 
 type PlatformCachePartitionType struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PlatformCachePartitionType"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PlatformCachePartitionType"`
 
-	AllocatedCapacity int32 `xml:"allocatedCapacity,omitempty"`
+	AllocatedCapacity int32 `json:"allocatedCapacity,omitempty"`
 
-	AllocatedPurchasedCapacity int32 `xml:"allocatedPurchasedCapacity,omitempty"`
+	AllocatedPurchasedCapacity int32 `json:"allocatedPurchasedCapacity,omitempty"`
 
-	AllocatedTrialCapacity int32 `xml:"allocatedTrialCapacity,omitempty"`
+	AllocatedTrialCapacity int32 `json:"allocatedTrialCapacity,omitempty"`
 
-	CacheType *PlatformCacheType `xml:"cacheType,omitempty"`
+	CacheType *PlatformCacheType `json:"cacheType,omitempty"`
 }
 
 type Portal struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Portal"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Portal"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	Admin string `xml:"admin,omitempty"`
+	Admin string `json:"admin,omitempty"`
 
-	DefaultLanguage string `xml:"defaultLanguage,omitempty"`
+	DefaultLanguage string `json:"defaultLanguage,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EmailSenderAddress string `xml:"emailSenderAddress,omitempty"`
+	EmailSenderAddress string `json:"emailSenderAddress,omitempty"`
 
-	EmailSenderName string `xml:"emailSenderName,omitempty"`
+	EmailSenderName string `json:"emailSenderName,omitempty"`
 
-	EnableSelfCloseCase bool `xml:"enableSelfCloseCase,omitempty"`
+	EnableSelfCloseCase bool `json:"enableSelfCloseCase,omitempty"`
 
-	FooterDocument string `xml:"footerDocument,omitempty"`
+	FooterDocument string `json:"footerDocument,omitempty"`
 
-	ForgotPassTemplate string `xml:"forgotPassTemplate,omitempty"`
+	ForgotPassTemplate string `json:"forgotPassTemplate,omitempty"`
 
-	HeaderDocument string `xml:"headerDocument,omitempty"`
+	HeaderDocument string `json:"headerDocument,omitempty"`
 
-	IsSelfRegistrationActivated bool `xml:"isSelfRegistrationActivated,omitempty"`
+	IsSelfRegistrationActivated bool `json:"isSelfRegistrationActivated,omitempty"`
 
-	LoginHeaderDocument string `xml:"loginHeaderDocument,omitempty"`
+	LoginHeaderDocument string `json:"loginHeaderDocument,omitempty"`
 
-	LogoDocument string `xml:"logoDocument,omitempty"`
+	LogoDocument string `json:"logoDocument,omitempty"`
 
-	LogoutUrl string `xml:"logoutUrl,omitempty"`
+	LogoutUrl string `json:"logoutUrl,omitempty"`
 
-	NewCommentTemplate string `xml:"newCommentTemplate,omitempty"`
+	NewCommentTemplate string `json:"newCommentTemplate,omitempty"`
 
-	NewPassTemplate string `xml:"newPassTemplate,omitempty"`
+	NewPassTemplate string `json:"newPassTemplate,omitempty"`
 
-	NewUserTemplate string `xml:"newUserTemplate,omitempty"`
+	NewUserTemplate string `json:"newUserTemplate,omitempty"`
 
-	OwnerNotifyTemplate string `xml:"ownerNotifyTemplate,omitempty"`
+	OwnerNotifyTemplate string `json:"ownerNotifyTemplate,omitempty"`
 
-	SelfRegNewUserUrl string `xml:"selfRegNewUserUrl,omitempty"`
+	SelfRegNewUserUrl string `json:"selfRegNewUserUrl,omitempty"`
 
-	SelfRegUserDefaultProfile string `xml:"selfRegUserDefaultProfile,omitempty"`
+	SelfRegUserDefaultProfile string `json:"selfRegUserDefaultProfile,omitempty"`
 
-	SelfRegUserDefaultRole *PortalRoles `xml:"selfRegUserDefaultRole,omitempty"`
+	SelfRegUserDefaultRole *PortalRoles `json:"selfRegUserDefaultRole,omitempty"`
 
-	SelfRegUserTemplate string `xml:"selfRegUserTemplate,omitempty"`
+	SelfRegUserTemplate string `json:"selfRegUserTemplate,omitempty"`
 
-	ShowActionConfirmation bool `xml:"showActionConfirmation,omitempty"`
+	ShowActionConfirmation bool `json:"showActionConfirmation,omitempty"`
 
-	StylesheetDocument string `xml:"stylesheetDocument,omitempty"`
+	StylesheetDocument string `json:"stylesheetDocument,omitempty"`
 
-	Type_ *PortalType `xml:"type,omitempty"`
+	Type_ *PortalType `json:"type,omitempty"`
 }
 
 type PostTemplate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PostTemplate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PostTemplate"`
 
 	*Metadata
 
-	Default_ bool `xml:"default,omitempty"`
+	Default_ bool `json:"default,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Fields []string `xml:"fields,omitempty"`
+	Fields []string `json:"fields,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type ProductSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProductSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProductSettings"`
 
 	*Metadata
 
-	EnableCascadeActivateToRelatedPrices bool `xml:"enableCascadeActivateToRelatedPrices,omitempty"`
+	EnableCascadeActivateToRelatedPrices bool `json:"enableCascadeActivateToRelatedPrices,omitempty"`
 
-	EnableQuantitySchedule bool `xml:"enableQuantitySchedule,omitempty"`
+	EnableQuantitySchedule bool `json:"enableQuantitySchedule,omitempty"`
 
-	EnableRevenueSchedule bool `xml:"enableRevenueSchedule,omitempty"`
+	EnableRevenueSchedule bool `json:"enableRevenueSchedule,omitempty"`
 }
 
 type Profile struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Profile"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Profile"`
 
 	*Metadata
 
-	ApplicationVisibilities []*ProfileApplicationVisibility `xml:"applicationVisibilities,omitempty"`
+	ApplicationVisibilities []*ProfileApplicationVisibility `json:"applicationVisibilities,omitempty"`
 
-	ClassAccesses []*ProfileApexClassAccess `xml:"classAccesses,omitempty"`
+	ClassAccesses []*ProfileApexClassAccess `json:"classAccesses,omitempty"`
 
-	Custom bool `xml:"custom,omitempty"`
+	Custom bool `json:"custom,omitempty"`
 
-	CustomPermissions []*ProfileCustomPermissions `xml:"customPermissions,omitempty"`
+	CustomPermissions []*ProfileCustomPermissions `json:"customPermissions,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	ExternalDataSourceAccesses []*ProfileExternalDataSourceAccess `xml:"externalDataSourceAccesses,omitempty"`
+	ExternalDataSourceAccesses []*ProfileExternalDataSourceAccess `json:"externalDataSourceAccesses,omitempty"`
 
-	FieldPermissions []*ProfileFieldLevelSecurity `xml:"fieldPermissions,omitempty"`
+	FieldPermissions []*ProfileFieldLevelSecurity `json:"fieldPermissions,omitempty"`
 
-	LayoutAssignments []*ProfileLayoutAssignment `xml:"layoutAssignments,omitempty"`
+	LayoutAssignments []*ProfileLayoutAssignment `json:"layoutAssignments,omitempty"`
 
-	LoginHours *ProfileLoginHours `xml:"loginHours,omitempty"`
+	LoginHours *ProfileLoginHours `json:"loginHours,omitempty"`
 
-	LoginIpRanges []*ProfileLoginIpRange `xml:"loginIpRanges,omitempty"`
+	LoginIpRanges []*ProfileLoginIpRange `json:"loginIpRanges,omitempty"`
 
-	ObjectPermissions []*ProfileObjectPermissions `xml:"objectPermissions,omitempty"`
+	ObjectPermissions []*ProfileObjectPermissions `json:"objectPermissions,omitempty"`
 
-	PageAccesses []*ProfileApexPageAccess `xml:"pageAccesses,omitempty"`
+	PageAccesses []*ProfileApexPageAccess `json:"pageAccesses,omitempty"`
 
-	ProfileActionOverrides []*ProfileActionOverride `xml:"profileActionOverrides,omitempty"`
+	ProfileActionOverrides []*ProfileActionOverride `json:"profileActionOverrides,omitempty"`
 
-	RecordTypeVisibilities []*ProfileRecordTypeVisibility `xml:"recordTypeVisibilities,omitempty"`
+	RecordTypeVisibilities []*ProfileRecordTypeVisibility `json:"recordTypeVisibilities,omitempty"`
 
-	TabVisibilities []*ProfileTabVisibility `xml:"tabVisibilities,omitempty"`
+	TabVisibilities []*ProfileTabVisibility `json:"tabVisibilities,omitempty"`
 
-	UserLicense string `xml:"userLicense,omitempty"`
+	UserLicense string `json:"userLicense,omitempty"`
 
-	UserPermissions []*ProfileUserPermission `xml:"userPermissions,omitempty"`
+	UserPermissions []*ProfileUserPermission `json:"userPermissions,omitempty"`
 }
 
 type ProfileApplicationVisibility struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileApplicationVisibility"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileApplicationVisibility"`
 
-	Application string `xml:"application,omitempty"`
+	Application string `json:"application,omitempty"`
 
-	Default_ bool `xml:"default,omitempty"`
+	Default_ bool `json:"default,omitempty"`
 
-	Visible bool `xml:"visible,omitempty"`
+	Visible bool `json:"visible,omitempty"`
 }
 
 type ProfileApexClassAccess struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileApexClassAccess"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileApexClassAccess"`
 
-	ApexClass string `xml:"apexClass,omitempty"`
+	ApexClass string `json:"apexClass,omitempty"`
 
-	Enabled bool `xml:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty"`
 }
 
 type ProfileCustomPermissions struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileCustomPermissions"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileCustomPermissions"`
 
-	Enabled bool `xml:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type ProfileExternalDataSourceAccess struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileExternalDataSourceAccess"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileExternalDataSourceAccess"`
 
-	Enabled bool `xml:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty"`
 
-	ExternalDataSource string `xml:"externalDataSource,omitempty"`
+	ExternalDataSource string `json:"externalDataSource,omitempty"`
 }
 
 type ProfileFieldLevelSecurity struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileFieldLevelSecurity"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileFieldLevelSecurity"`
 
-	Editable bool `xml:"editable,omitempty"`
+	Editable bool `json:"editable,omitempty"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Readable bool `xml:"readable,omitempty"`
+	Readable bool `json:"readable,omitempty"`
 }
 
 type ProfileLayoutAssignment struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileLayoutAssignment"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileLayoutAssignment"`
 
-	Layout string `xml:"layout,omitempty"`
+	Layout string `json:"layout,omitempty"`
 
-	RecordType string `xml:"recordType,omitempty"`
+	RecordType string `json:"recordType,omitempty"`
 }
 
 type ProfileLoginHours struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileLoginHours"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileLoginHours"`
 
-	FridayEnd string `xml:"fridayEnd,omitempty"`
+	FridayEnd string `json:"fridayEnd,omitempty"`
 
-	FridayStart string `xml:"fridayStart,omitempty"`
+	FridayStart string `json:"fridayStart,omitempty"`
 
-	MondayEnd string `xml:"mondayEnd,omitempty"`
+	MondayEnd string `json:"mondayEnd,omitempty"`
 
-	MondayStart string `xml:"mondayStart,omitempty"`
+	MondayStart string `json:"mondayStart,omitempty"`
 
-	SaturdayEnd string `xml:"saturdayEnd,omitempty"`
+	SaturdayEnd string `json:"saturdayEnd,omitempty"`
 
-	SaturdayStart string `xml:"saturdayStart,omitempty"`
+	SaturdayStart string `json:"saturdayStart,omitempty"`
 
-	SundayEnd string `xml:"sundayEnd,omitempty"`
+	SundayEnd string `json:"sundayEnd,omitempty"`
 
-	SundayStart string `xml:"sundayStart,omitempty"`
+	SundayStart string `json:"sundayStart,omitempty"`
 
-	ThursdayEnd string `xml:"thursdayEnd,omitempty"`
+	ThursdayEnd string `json:"thursdayEnd,omitempty"`
 
-	ThursdayStart string `xml:"thursdayStart,omitempty"`
+	ThursdayStart string `json:"thursdayStart,omitempty"`
 
-	TuesdayEnd string `xml:"tuesdayEnd,omitempty"`
+	TuesdayEnd string `json:"tuesdayEnd,omitempty"`
 
-	TuesdayStart string `xml:"tuesdayStart,omitempty"`
+	TuesdayStart string `json:"tuesdayStart,omitempty"`
 
-	WednesdayEnd string `xml:"wednesdayEnd,omitempty"`
+	WednesdayEnd string `json:"wednesdayEnd,omitempty"`
 
-	WednesdayStart string `xml:"wednesdayStart,omitempty"`
+	WednesdayStart string `json:"wednesdayStart,omitempty"`
 }
 
 type ProfileLoginIpRange struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileLoginIpRange"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileLoginIpRange"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EndAddress string `xml:"endAddress,omitempty"`
+	EndAddress string `json:"endAddress,omitempty"`
 
-	StartAddress string `xml:"startAddress,omitempty"`
+	StartAddress string `json:"startAddress,omitempty"`
 }
 
 type ProfileApexPageAccess struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileApexPageAccess"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileApexPageAccess"`
 
-	ApexPage string `xml:"apexPage,omitempty"`
+	ApexPage string `json:"apexPage,omitempty"`
 
-	Enabled bool `xml:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty"`
 }
 
 type ProfileActionOverride struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileActionOverride"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileActionOverride"`
 
-	ActionName string `xml:"actionName,omitempty"`
+	ActionName string `json:"actionName,omitempty"`
 
-	Content string `xml:"content,omitempty"`
+	Content string `json:"content,omitempty"`
 
-	FormFactor *FormFactor `xml:"formFactor,omitempty"`
+	FormFactor *FormFactor `json:"formFactor,omitempty"`
 
-	PageOrSobjectType string `xml:"pageOrSobjectType,omitempty"`
+	PageOrSobjectType string `json:"pageOrSobjectType,omitempty"`
 
-	RecordType string `xml:"recordType,omitempty"`
+	RecordType string `json:"recordType,omitempty"`
 
-	Type_ *ActionOverrideType `xml:"type,omitempty"`
+	Type_ *ActionOverrideType `json:"type,omitempty"`
 }
 
 type ProfileRecordTypeVisibility struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileRecordTypeVisibility"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileRecordTypeVisibility"`
 
-	Default_ bool `xml:"default,omitempty"`
+	Default_ bool `json:"default,omitempty"`
 
-	PersonAccountDefault bool `xml:"personAccountDefault,omitempty"`
+	PersonAccountDefault bool `json:"personAccountDefault,omitempty"`
 
-	RecordType string `xml:"recordType,omitempty"`
+	RecordType string `json:"recordType,omitempty"`
 
-	Visible bool `xml:"visible,omitempty"`
+	Visible bool `json:"visible,omitempty"`
 }
 
 type ProfileTabVisibility struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileTabVisibility"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileTabVisibility"`
 
-	Tab string `xml:"tab,omitempty"`
+	Tab string `json:"tab,omitempty"`
 
-	Visibility *TabVisibility `xml:"visibility,omitempty"`
+	Visibility *TabVisibility `json:"visibility,omitempty"`
 }
 
 type ProfileUserPermission struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ProfileUserPermission"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileUserPermission"`
 
-	Enabled bool `xml:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type Queue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Queue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Queue"`
 
 	*Metadata
 
-	DoesSendEmailToMembers bool `xml:"doesSendEmailToMembers,omitempty"`
+	DoesSendEmailToMembers bool `json:"doesSendEmailToMembers,omitempty"`
 
-	Email string `xml:"email,omitempty"`
+	Email string `json:"email,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	QueueSobject []*QueueSobject `xml:"queueSobject,omitempty"`
+	QueueSobject []*QueueSobject `json:"queueSobject,omitempty"`
 }
 
 type QueueSobject struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata QueueSobject"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QueueSobject"`
 
-	SobjectType string `xml:"sobjectType,omitempty"`
+	SobjectType string `json:"sobjectType,omitempty"`
 }
 
 type QuickAction struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata QuickAction"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickAction"`
 
 	*Metadata
 
-	Canvas string `xml:"canvas,omitempty"`
+	Canvas string `json:"canvas,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	FieldOverrides []*FieldOverride `xml:"fieldOverrides,omitempty"`
+	FieldOverrides []*FieldOverride `json:"fieldOverrides,omitempty"`
 
-	Height int32 `xml:"height,omitempty"`
+	Height int32 `json:"height,omitempty"`
 
-	Icon string `xml:"icon,omitempty"`
+	Icon string `json:"icon,omitempty"`
 
-	IsProtected bool `xml:"isProtected,omitempty"`
+	IsProtected bool `json:"isProtected,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	LightningComponent string `xml:"lightningComponent,omitempty"`
+	LightningComponent string `json:"lightningComponent,omitempty"`
 
-	OptionsCreateFeedItem bool `xml:"optionsCreateFeedItem,omitempty"`
+	OptionsCreateFeedItem bool `json:"optionsCreateFeedItem,omitempty"`
 
-	Page string `xml:"page,omitempty"`
+	Page string `json:"page,omitempty"`
 
-	QuickActionLayout *QuickActionLayout `xml:"quickActionLayout,omitempty"`
+	QuickActionLayout *QuickActionLayout `json:"quickActionLayout,omitempty"`
 
-	QuickActionSendEmailOptions *QuickActionSendEmailOptions `xml:"quickActionSendEmailOptions,omitempty"`
+	QuickActionSendEmailOptions *QuickActionSendEmailOptions `json:"quickActionSendEmailOptions,omitempty"`
 
-	StandardLabel *QuickActionLabel `xml:"standardLabel,omitempty"`
+	StandardLabel *QuickActionLabel `json:"standardLabel,omitempty"`
 
-	SuccessMessage string `xml:"successMessage,omitempty"`
+	SuccessMessage string `json:"successMessage,omitempty"`
 
-	TargetObject string `xml:"targetObject,omitempty"`
+	TargetObject string `json:"targetObject,omitempty"`
 
-	TargetParentField string `xml:"targetParentField,omitempty"`
+	TargetParentField string `json:"targetParentField,omitempty"`
 
-	TargetRecordType string `xml:"targetRecordType,omitempty"`
+	TargetRecordType string `json:"targetRecordType,omitempty"`
 
-	Type_ *QuickActionType `xml:"type,omitempty"`
+	Type_ *QuickActionType `json:"type,omitempty"`
 
-	Width int32 `xml:"width,omitempty"`
+	Width int32 `json:"width,omitempty"`
 }
 
 type FieldOverride struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FieldOverride"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldOverride"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Formula string `xml:"formula,omitempty"`
+	Formula string `json:"formula,omitempty"`
 
-	LiteralValue string `xml:"literalValue,omitempty"`
+	LiteralValue string `json:"literalValue,omitempty"`
 }
 
 type QuickActionLayout struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata QuickActionLayout"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionLayout"`
 
-	LayoutSectionStyle *LayoutSectionStyle `xml:"layoutSectionStyle,omitempty"`
+	LayoutSectionStyle *LayoutSectionStyle `json:"layoutSectionStyle,omitempty"`
 
-	QuickActionLayoutColumns []*QuickActionLayoutColumn `xml:"quickActionLayoutColumns,omitempty"`
+	QuickActionLayoutColumns []*QuickActionLayoutColumn `json:"quickActionLayoutColumns,omitempty"`
 }
 
 type QuickActionLayoutColumn struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata QuickActionLayoutColumn"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionLayoutColumn"`
 
-	QuickActionLayoutItems []*QuickActionLayoutItem `xml:"quickActionLayoutItems,omitempty"`
+	QuickActionLayoutItems []*QuickActionLayoutItem `json:"quickActionLayoutItems,omitempty"`
 }
 
 type QuickActionLayoutItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata QuickActionLayoutItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionLayoutItem"`
 
-	EmptySpace bool `xml:"emptySpace,omitempty"`
+	EmptySpace bool `json:"emptySpace,omitempty"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	UiBehavior *UiBehavior `xml:"uiBehavior,omitempty"`
+	UiBehavior *UiBehavior `json:"uiBehavior,omitempty"`
 }
 
 type QuickActionSendEmailOptions struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata QuickActionSendEmailOptions"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionSendEmailOptions"`
 
-	DefaultEmailTemplateName string `xml:"defaultEmailTemplateName,omitempty"`
+	DefaultEmailTemplateName string `json:"defaultEmailTemplateName,omitempty"`
 
-	IgnoreDefaultEmailTemplateSubject bool `xml:"ignoreDefaultEmailTemplateSubject,omitempty"`
+	IgnoreDefaultEmailTemplateSubject bool `json:"ignoreDefaultEmailTemplateSubject,omitempty"`
 }
 
 type QuoteSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata QuoteSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuoteSettings"`
 
 	*Metadata
 
-	EnableQuote bool `xml:"enableQuote,omitempty"`
+	EnableQuote bool `json:"enableQuote,omitempty"`
 }
 
 type RemoteSiteSetting struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RemoteSiteSetting"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RemoteSiteSetting"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DisableProtocolSecurity bool `xml:"disableProtocolSecurity,omitempty"`
+	DisableProtocolSecurity bool `json:"disableProtocolSecurity,omitempty"`
 
-	IsActive bool `xml:"isActive,omitempty"`
+	IsActive bool `json:"isActive,omitempty"`
 
-	Url string `xml:"url,omitempty"`
+	Url string `json:"url,omitempty"`
 }
 
 type Report struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Report"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Report"`
 
 	*Metadata
 
-	Aggregates []*ReportAggregate `xml:"aggregates,omitempty"`
+	Aggregates []*ReportAggregate `json:"aggregates,omitempty"`
 
-	Block []*Report `xml:"block,omitempty"`
+	Block []*Report `json:"block,omitempty"`
 
-	BlockInfo *ReportBlockInfo `xml:"blockInfo,omitempty"`
+	BlockInfo *ReportBlockInfo `json:"blockInfo,omitempty"`
 
-	Buckets []*ReportBucketField `xml:"buckets,omitempty"`
+	Buckets []*ReportBucketField `json:"buckets,omitempty"`
 
-	Chart *ReportChart `xml:"chart,omitempty"`
+	Chart *ReportChart `json:"chart,omitempty"`
 
-	ColorRanges []*ReportColorRange `xml:"colorRanges,omitempty"`
+	ColorRanges []*ReportColorRange `json:"colorRanges,omitempty"`
 
-	Columns []*ReportColumn `xml:"columns,omitempty"`
+	Columns []*ReportColumn `json:"columns,omitempty"`
 
-	CrossFilters []*ReportCrossFilter `xml:"crossFilters,omitempty"`
+	CrossFilters []*ReportCrossFilter `json:"crossFilters,omitempty"`
 
-	Currency *CurrencyIsoCode `xml:"currency,omitempty"`
+	Currency *CurrencyIsoCode `json:"currency,omitempty"`
 
-	DataCategoryFilters []*ReportDataCategoryFilter `xml:"dataCategoryFilters,omitempty"`
+	DataCategoryFilters []*ReportDataCategoryFilter `json:"dataCategoryFilters,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Division string `xml:"division,omitempty"`
+	Division string `json:"division,omitempty"`
 
-	Filter *ReportFilter `xml:"filter,omitempty"`
+	Filter *ReportFilter `json:"filter,omitempty"`
 
-	FolderName string `xml:"folderName,omitempty"`
+	FolderName string `json:"folderName,omitempty"`
 
-	Format *ReportFormat `xml:"format,omitempty"`
+	Format *ReportFormat `json:"format,omitempty"`
 
-	GroupingsAcross []*ReportGrouping `xml:"groupingsAcross,omitempty"`
+	GroupingsAcross []*ReportGrouping `json:"groupingsAcross,omitempty"`
 
-	GroupingsDown []*ReportGrouping `xml:"groupingsDown,omitempty"`
+	GroupingsDown []*ReportGrouping `json:"groupingsDown,omitempty"`
 
-	HistoricalSelector *ReportHistoricalSelector `xml:"historicalSelector,omitempty"`
+	HistoricalSelector *ReportHistoricalSelector `json:"historicalSelector,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	NumSubscriptions int32 `xml:"numSubscriptions,omitempty"`
+	NumSubscriptions int32 `json:"numSubscriptions,omitempty"`
 
-	Params []*ReportParam `xml:"params,omitempty"`
+	Params []*ReportParam `json:"params,omitempty"`
 
-	ReportType string `xml:"reportType,omitempty"`
+	ReportType string `json:"reportType,omitempty"`
 
-	RoleHierarchyFilter string `xml:"roleHierarchyFilter,omitempty"`
+	RoleHierarchyFilter string `json:"roleHierarchyFilter,omitempty"`
 
-	RowLimit int32 `xml:"rowLimit,omitempty"`
+	RowLimit int32 `json:"rowLimit,omitempty"`
 
-	Scope string `xml:"scope,omitempty"`
+	Scope string `json:"scope,omitempty"`
 
-	ShowCurrentDate bool `xml:"showCurrentDate,omitempty"`
+	ShowCurrentDate bool `json:"showCurrentDate,omitempty"`
 
-	ShowDetails bool `xml:"showDetails,omitempty"`
+	ShowDetails bool `json:"showDetails,omitempty"`
 
-	SortColumn string `xml:"sortColumn,omitempty"`
+	SortColumn string `json:"sortColumn,omitempty"`
 
-	SortOrder *SortOrder `xml:"sortOrder,omitempty"`
+	SortOrder *SortOrder `json:"sortOrder,omitempty"`
 
-	TerritoryHierarchyFilter string `xml:"territoryHierarchyFilter,omitempty"`
+	TerritoryHierarchyFilter string `json:"territoryHierarchyFilter,omitempty"`
 
-	TimeFrameFilter *ReportTimeFrameFilter `xml:"timeFrameFilter,omitempty"`
+	TimeFrameFilter *ReportTimeFrameFilter `json:"timeFrameFilter,omitempty"`
 
-	UserFilter string `xml:"userFilter,omitempty"`
+	UserFilter string `json:"userFilter,omitempty"`
 }
 
 type ReportAggregate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportAggregate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportAggregate"`
 
-	AcrossGroupingContext string `xml:"acrossGroupingContext,omitempty"`
+	AcrossGroupingContext string `json:"acrossGroupingContext,omitempty"`
 
-	CalculatedFormula string `xml:"calculatedFormula,omitempty"`
+	CalculatedFormula string `json:"calculatedFormula,omitempty"`
 
-	Datatype *ReportAggregateDatatype `xml:"datatype,omitempty"`
+	Datatype *ReportAggregateDatatype `json:"datatype,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DeveloperName string `xml:"developerName,omitempty"`
+	DeveloperName string `json:"developerName,omitempty"`
 
-	DownGroupingContext string `xml:"downGroupingContext,omitempty"`
+	DownGroupingContext string `json:"downGroupingContext,omitempty"`
 
-	IsActive bool `xml:"isActive,omitempty"`
+	IsActive bool `json:"isActive,omitempty"`
 
-	IsCrossBlock bool `xml:"isCrossBlock,omitempty"`
+	IsCrossBlock bool `json:"isCrossBlock,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	ReportType string `xml:"reportType,omitempty"`
+	ReportType string `json:"reportType,omitempty"`
 
-	Scale int32 `xml:"scale,omitempty"`
+	Scale int32 `json:"scale,omitempty"`
 }
 
 type ReportBlockInfo struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportBlockInfo"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportBlockInfo"`
 
-	AggregateReferences []*ReportAggregateReference `xml:"aggregateReferences,omitempty"`
+	AggregateReferences []*ReportAggregateReference `json:"aggregateReferences,omitempty"`
 
-	BlockId string `xml:"blockId,omitempty"`
+	BlockId string `json:"blockId,omitempty"`
 
-	JoinTable string `xml:"joinTable,omitempty"`
+	JoinTable string `json:"joinTable,omitempty"`
 }
 
 type ReportAggregateReference struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportAggregateReference"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportAggregateReference"`
 
-	Aggregate string `xml:"aggregate,omitempty"`
+	Aggregate string `json:"aggregate,omitempty"`
 }
 
 type ReportBucketField struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportBucketField"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportBucketField"`
 
-	BucketType *ReportBucketFieldType `xml:"bucketType,omitempty"`
+	BucketType *ReportBucketFieldType `json:"bucketType,omitempty"`
 
-	DeveloperName string `xml:"developerName,omitempty"`
+	DeveloperName string `json:"developerName,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	NullTreatment *ReportFormulaNullTreatment `xml:"nullTreatment,omitempty"`
+	NullTreatment *ReportFormulaNullTreatment `json:"nullTreatment,omitempty"`
 
-	OtherBucketLabel string `xml:"otherBucketLabel,omitempty"`
+	OtherBucketLabel string `json:"otherBucketLabel,omitempty"`
 
-	SourceColumnName string `xml:"sourceColumnName,omitempty"`
+	SourceColumnName string `json:"sourceColumnName,omitempty"`
 
-	UseOther bool `xml:"useOther,omitempty"`
+	UseOther bool `json:"useOther,omitempty"`
 
-	Values []*ReportBucketFieldValue `xml:"values,omitempty"`
+	Values []*ReportBucketFieldValue `json:"values,omitempty"`
 }
 
 type ReportBucketFieldValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportBucketFieldValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportBucketFieldValue"`
 
-	SourceValues []*ReportBucketFieldSourceValue `xml:"sourceValues,omitempty"`
+	SourceValues []*ReportBucketFieldSourceValue `json:"sourceValues,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type ReportBucketFieldSourceValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportBucketFieldSourceValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportBucketFieldSourceValue"`
 
-	From string `xml:"from,omitempty"`
+	From string `json:"from,omitempty"`
 
-	SourceValue string `xml:"sourceValue,omitempty"`
+	SourceValue string `json:"sourceValue,omitempty"`
 
-	To string `xml:"to,omitempty"`
+	To string `json:"to,omitempty"`
 }
 
 type ReportChart struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportChart"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportChart"`
 
-	BackgroundColor1 string `xml:"backgroundColor1,omitempty"`
+	BackgroundColor1 string `json:"backgroundColor1,omitempty"`
 
-	BackgroundColor2 string `xml:"backgroundColor2,omitempty"`
+	BackgroundColor2 string `json:"backgroundColor2,omitempty"`
 
-	BackgroundFadeDir *ChartBackgroundDirection `xml:"backgroundFadeDir,omitempty"`
+	BackgroundFadeDir *ChartBackgroundDirection `json:"backgroundFadeDir,omitempty"`
 
-	ChartSummaries []*ChartSummary `xml:"chartSummaries,omitempty"`
+	ChartSummaries []*ChartSummary `json:"chartSummaries,omitempty"`
 
-	ChartType *ChartType `xml:"chartType,omitempty"`
+	ChartType *ChartType `json:"chartType,omitempty"`
 
-	EnableHoverLabels bool `xml:"enableHoverLabels,omitempty"`
+	EnableHoverLabels bool `json:"enableHoverLabels,omitempty"`
 
-	ExpandOthers bool `xml:"expandOthers,omitempty"`
+	ExpandOthers bool `json:"expandOthers,omitempty"`
 
-	GroupingColumn string `xml:"groupingColumn,omitempty"`
+	GroupingColumn string `json:"groupingColumn,omitempty"`
 
-	LegendPosition *ChartLegendPosition `xml:"legendPosition,omitempty"`
+	LegendPosition *ChartLegendPosition `json:"legendPosition,omitempty"`
 
-	Location *ChartPosition `xml:"location,omitempty"`
+	Location *ChartPosition `json:"location,omitempty"`
 
-	SecondaryGroupingColumn string `xml:"secondaryGroupingColumn,omitempty"`
+	SecondaryGroupingColumn string `json:"secondaryGroupingColumn,omitempty"`
 
-	ShowAxisLabels bool `xml:"showAxisLabels,omitempty"`
+	ShowAxisLabels bool `json:"showAxisLabels,omitempty"`
 
-	ShowPercentage bool `xml:"showPercentage,omitempty"`
+	ShowPercentage bool `json:"showPercentage,omitempty"`
 
-	ShowTotal bool `xml:"showTotal,omitempty"`
+	ShowTotal bool `json:"showTotal,omitempty"`
 
-	ShowValues bool `xml:"showValues,omitempty"`
+	ShowValues bool `json:"showValues,omitempty"`
 
-	Size *ReportChartSize `xml:"size,omitempty"`
+	Size *ReportChartSize `json:"size,omitempty"`
 
-	SummaryAxisManualRangeEnd float64 `xml:"summaryAxisManualRangeEnd,omitempty"`
+	SummaryAxisManualRangeEnd float64 `json:"summaryAxisManualRangeEnd,omitempty"`
 
-	SummaryAxisManualRangeStart float64 `xml:"summaryAxisManualRangeStart,omitempty"`
+	SummaryAxisManualRangeStart float64 `json:"summaryAxisManualRangeStart,omitempty"`
 
-	SummaryAxisRange *ChartRangeType `xml:"summaryAxisRange,omitempty"`
+	SummaryAxisRange *ChartRangeType `json:"summaryAxisRange,omitempty"`
 
-	TextColor string `xml:"textColor,omitempty"`
+	TextColor string `json:"textColor,omitempty"`
 
-	TextSize int32 `xml:"textSize,omitempty"`
+	TextSize int32 `json:"textSize,omitempty"`
 
-	Title string `xml:"title,omitempty"`
+	Title string `json:"title,omitempty"`
 
-	TitleColor string `xml:"titleColor,omitempty"`
+	TitleColor string `json:"titleColor,omitempty"`
 
-	TitleSize int32 `xml:"titleSize,omitempty"`
+	TitleSize int32 `json:"titleSize,omitempty"`
 }
 
 type ReportColorRange struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportColorRange"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportColorRange"`
 
-	Aggregate *ReportSummaryType `xml:"aggregate,omitempty"`
+	Aggregate *ReportSummaryType `json:"aggregate,omitempty"`
 
-	ColumnName string `xml:"columnName,omitempty"`
+	ColumnName string `json:"columnName,omitempty"`
 
-	HighBreakpoint float64 `xml:"highBreakpoint,omitempty"`
+	HighBreakpoint float64 `json:"highBreakpoint,omitempty"`
 
-	HighColor string `xml:"highColor,omitempty"`
+	HighColor string `json:"highColor,omitempty"`
 
-	LowBreakpoint float64 `xml:"lowBreakpoint,omitempty"`
+	LowBreakpoint float64 `json:"lowBreakpoint,omitempty"`
 
-	LowColor string `xml:"lowColor,omitempty"`
+	LowColor string `json:"lowColor,omitempty"`
 
-	MidColor string `xml:"midColor,omitempty"`
+	MidColor string `json:"midColor,omitempty"`
 }
 
 type ReportColumn struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportColumn"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportColumn"`
 
-	AggregateTypes []*ReportSummaryType `xml:"aggregateTypes,omitempty"`
+	AggregateTypes []*ReportSummaryType `json:"aggregateTypes,omitempty"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	ReverseColors bool `xml:"reverseColors,omitempty"`
+	ReverseColors bool `json:"reverseColors,omitempty"`
 
-	ShowChanges bool `xml:"showChanges,omitempty"`
+	ShowChanges bool `json:"showChanges,omitempty"`
 }
 
 type ReportCrossFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportCrossFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportCrossFilter"`
 
-	CriteriaItems []*ReportFilterItem `xml:"criteriaItems,omitempty"`
+	CriteriaItems []*ReportFilterItem `json:"criteriaItems,omitempty"`
 
-	Operation *ObjectFilterOperator `xml:"operation,omitempty"`
+	Operation *ObjectFilterOperator `json:"operation,omitempty"`
 
-	PrimaryTableColumn string `xml:"primaryTableColumn,omitempty"`
+	PrimaryTableColumn string `json:"primaryTableColumn,omitempty"`
 
-	RelatedTable string `xml:"relatedTable,omitempty"`
+	RelatedTable string `json:"relatedTable,omitempty"`
 
-	RelatedTableJoinColumn string `xml:"relatedTableJoinColumn,omitempty"`
+	RelatedTableJoinColumn string `json:"relatedTableJoinColumn,omitempty"`
 }
 
 type ReportFilterItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportFilterItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportFilterItem"`
 
-	Column string `xml:"column,omitempty"`
+	Column string `json:"column,omitempty"`
 
-	ColumnToColumn bool `xml:"columnToColumn,omitempty"`
+	ColumnToColumn bool `json:"columnToColumn,omitempty"`
 
-	IsUnlocked bool `xml:"isUnlocked,omitempty"`
+	IsUnlocked bool `json:"isUnlocked,omitempty"`
 
-	Operator *FilterOperation `xml:"operator,omitempty"`
+	Operator *FilterOperation `json:"operator,omitempty"`
 
-	Snapshot string `xml:"snapshot,omitempty"`
+	Snapshot string `json:"snapshot,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type ReportDataCategoryFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportDataCategoryFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportDataCategoryFilter"`
 
-	DataCategory string `xml:"dataCategory,omitempty"`
+	DataCategory string `json:"dataCategory,omitempty"`
 
-	DataCategoryGroup string `xml:"dataCategoryGroup,omitempty"`
+	DataCategoryGroup string `json:"dataCategoryGroup,omitempty"`
 
-	Operator *DataCategoryFilterOperation `xml:"operator,omitempty"`
+	Operator *DataCategoryFilterOperation `json:"operator,omitempty"`
 }
 
 type ReportFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportFilter"`
 
-	BooleanFilter string `xml:"booleanFilter,omitempty"`
+	BooleanFilter string `json:"booleanFilter,omitempty"`
 
-	CriteriaItems []*ReportFilterItem `xml:"criteriaItems,omitempty"`
+	CriteriaItems []*ReportFilterItem `json:"criteriaItems,omitempty"`
 
-	Language *Language `xml:"language,omitempty"`
+	Language *Language `json:"language,omitempty"`
 }
 
 type ReportGrouping struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportGrouping"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportGrouping"`
 
-	AggregateType *ReportAggrType `xml:"aggregateType,omitempty"`
+	AggregateType *ReportAggrType `json:"aggregateType,omitempty"`
 
-	DateGranularity *UserDateGranularity `xml:"dateGranularity,omitempty"`
+	DateGranularity *UserDateGranularity `json:"dateGranularity,omitempty"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	SortByName string `xml:"sortByName,omitempty"`
+	SortByName string `json:"sortByName,omitempty"`
 
-	SortOrder *SortOrder `xml:"sortOrder,omitempty"`
+	SortOrder *SortOrder `json:"sortOrder,omitempty"`
 
-	SortType *ReportSortType `xml:"sortType,omitempty"`
+	SortType *ReportSortType `json:"sortType,omitempty"`
 }
 
 type ReportHistoricalSelector struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportHistoricalSelector"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportHistoricalSelector"`
 
-	Snapshot []string `xml:"snapshot,omitempty"`
+	Snapshot []string `json:"snapshot,omitempty"`
 }
 
 type ReportParam struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportParam"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportParam"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type ReportTimeFrameFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportTimeFrameFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportTimeFrameFilter"`
 
-	DateColumn string `xml:"dateColumn,omitempty"`
+	DateColumn string `json:"dateColumn,omitempty"`
 
-	EndDate time.Time `xml:"endDate,omitempty"`
+	EndDate time.Time `json:"endDate,omitempty"`
 
-	Interval *UserDateInterval `xml:"interval,omitempty"`
+	Interval *UserDateInterval `json:"interval,omitempty"`
 
-	StartDate time.Time `xml:"startDate,omitempty"`
+	StartDate time.Time `json:"startDate,omitempty"`
 }
 
 type ReportType struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportType"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportType"`
 
 	*Metadata
 
-	Autogenerated bool `xml:"autogenerated,omitempty"`
+	Autogenerated bool `json:"autogenerated,omitempty"`
 
-	BaseObject string `xml:"baseObject,omitempty"`
+	BaseObject string `json:"baseObject,omitempty"`
 
-	Category *ReportTypeCategory `xml:"category,omitempty"`
+	Category *ReportTypeCategory `json:"category,omitempty"`
 
-	Deployed bool `xml:"deployed,omitempty"`
+	Deployed bool `json:"deployed,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Join *ObjectRelationship `xml:"join,omitempty"`
+	Join *ObjectRelationship `json:"join,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Sections []*ReportLayoutSection `xml:"sections,omitempty"`
+	Sections []*ReportLayoutSection `json:"sections,omitempty"`
 }
 
 type ObjectRelationship struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ObjectRelationship"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectRelationship"`
 
-	Join *ObjectRelationship `xml:"join,omitempty"`
+	Join *ObjectRelationship `json:"join,omitempty"`
 
-	OuterJoin bool `xml:"outerJoin,omitempty"`
+	OuterJoin bool `json:"outerJoin,omitempty"`
 
-	Relationship string `xml:"relationship,omitempty"`
+	Relationship string `json:"relationship,omitempty"`
 }
 
 type ReportLayoutSection struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportLayoutSection"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportLayoutSection"`
 
-	Columns []*ReportTypeColumn `xml:"columns,omitempty"`
+	Columns []*ReportTypeColumn `json:"columns,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 }
 
 type ReportTypeColumn struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportTypeColumn"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportTypeColumn"`
 
-	CheckedByDefault bool `xml:"checkedByDefault,omitempty"`
+	CheckedByDefault bool `json:"checkedByDefault,omitempty"`
 
-	DisplayNameOverride string `xml:"displayNameOverride,omitempty"`
+	DisplayNameOverride string `json:"displayNameOverride,omitempty"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Table string `xml:"table,omitempty"`
+	Table string `json:"table,omitempty"`
 }
 
 type RoleOrTerritory struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata RoleOrTerritory"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RoleOrTerritory"`
 
 	*Metadata
 
-	CaseAccessLevel string `xml:"caseAccessLevel,omitempty"`
+	CaseAccessLevel string `json:"caseAccessLevel,omitempty"`
 
-	ContactAccessLevel string `xml:"contactAccessLevel,omitempty"`
+	ContactAccessLevel string `json:"contactAccessLevel,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	MayForecastManagerShare bool `xml:"mayForecastManagerShare,omitempty"`
+	MayForecastManagerShare bool `json:"mayForecastManagerShare,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	OpportunityAccessLevel string `xml:"opportunityAccessLevel,omitempty"`
+	OpportunityAccessLevel string `json:"opportunityAccessLevel,omitempty"`
 }
 
 type Role struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Role"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Role"`
 
 	*RoleOrTerritory
 
-	ParentRole string `xml:"parentRole,omitempty"`
+	ParentRole string `json:"parentRole,omitempty"`
 }
 
 type Territory struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Territory"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory"`
 
 	*RoleOrTerritory
 
-	AccountAccessLevel string `xml:"accountAccessLevel,omitempty"`
+	AccountAccessLevel string `json:"accountAccessLevel,omitempty"`
 
-	ParentTerritory string `xml:"parentTerritory,omitempty"`
+	ParentTerritory string `json:"parentTerritory,omitempty"`
 }
 
 type SamlSsoConfig struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SamlSsoConfig"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SamlSsoConfig"`
 
 	*Metadata
 
-	AttributeName string `xml:"attributeName,omitempty"`
+	AttributeName string `json:"attributeName,omitempty"`
 
-	AttributeNameIdFormat string `xml:"attributeNameIdFormat,omitempty"`
+	AttributeNameIdFormat string `json:"attributeNameIdFormat,omitempty"`
 
-	DecryptionCertificate string `xml:"decryptionCertificate,omitempty"`
+	DecryptionCertificate string `json:"decryptionCertificate,omitempty"`
 
-	ErrorUrl string `xml:"errorUrl,omitempty"`
+	ErrorUrl string `json:"errorUrl,omitempty"`
 
-	ExecutionUserId string `xml:"executionUserId,omitempty"`
+	ExecutionUserId string `json:"executionUserId,omitempty"`
 
-	IdentityLocation *SamlIdentityLocationType `xml:"identityLocation,omitempty"`
+	IdentityLocation *SamlIdentityLocationType `json:"identityLocation,omitempty"`
 
-	IdentityMapping *SamlIdentityType `xml:"identityMapping,omitempty"`
+	IdentityMapping *SamlIdentityType `json:"identityMapping,omitempty"`
 
-	Issuer string `xml:"issuer,omitempty"`
+	Issuer string `json:"issuer,omitempty"`
 
-	LoginUrl string `xml:"loginUrl,omitempty"`
+	LoginUrl string `json:"loginUrl,omitempty"`
 
-	LogoutUrl string `xml:"logoutUrl,omitempty"`
+	LogoutUrl string `json:"logoutUrl,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	OauthTokenEndpoint string `xml:"oauthTokenEndpoint,omitempty"`
+	OauthTokenEndpoint string `json:"oauthTokenEndpoint,omitempty"`
 
-	RedirectBinding bool `xml:"redirectBinding,omitempty"`
+	RedirectBinding bool `json:"redirectBinding,omitempty"`
 
-	RequestSignatureMethod string `xml:"requestSignatureMethod,omitempty"`
+	RequestSignatureMethod string `json:"requestSignatureMethod,omitempty"`
 
-	ObjforceLoginUrl string `xml:"objforceLoginUrl,omitempty"`
+	ObjforceLoginUrl string `json:"objforceLoginUrl,omitempty"`
 
-	SamlEntityId string `xml:"samlEntityId,omitempty"`
+	SamlEntityId string `json:"samlEntityId,omitempty"`
 
-	SamlJitHandlerId string `xml:"samlJitHandlerId,omitempty"`
+	SamlJitHandlerId string `json:"samlJitHandlerId,omitempty"`
 
-	SamlVersion *SamlType `xml:"samlVersion,omitempty"`
+	SamlVersion *SamlType `json:"samlVersion,omitempty"`
 
-	UserProvisioning bool `xml:"userProvisioning,omitempty"`
+	UserProvisioning bool `json:"userProvisioning,omitempty"`
 
-	ValidationCert string `xml:"validationCert,omitempty"`
+	ValidationCert string `json:"validationCert,omitempty"`
 }
 
 type SearchSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SearchSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SearchSettings"`
 
 	*Metadata
 
-	DocumentContentSearchEnabled bool `xml:"documentContentSearchEnabled,omitempty"`
+	DocumentContentSearchEnabled bool `json:"documentContentSearchEnabled,omitempty"`
 
-	OptimizeSearchForCJKEnabled bool `xml:"optimizeSearchForCJKEnabled,omitempty"`
+	OptimizeSearchForCJKEnabled bool `json:"optimizeSearchForCJKEnabled,omitempty"`
 
-	RecentlyViewedUsersForBlankLookupEnabled bool `xml:"recentlyViewedUsersForBlankLookupEnabled,omitempty"`
+	RecentlyViewedUsersForBlankLookupEnabled bool `json:"recentlyViewedUsersForBlankLookupEnabled,omitempty"`
 
-	SearchSettingsByObject *SearchSettingsByObject `xml:"searchSettingsByObject,omitempty"`
+	SearchSettingsByObject *SearchSettingsByObject `json:"searchSettingsByObject,omitempty"`
 
-	SidebarAutoCompleteEnabled bool `xml:"sidebarAutoCompleteEnabled,omitempty"`
+	SidebarAutoCompleteEnabled bool `json:"sidebarAutoCompleteEnabled,omitempty"`
 
-	SidebarDropDownListEnabled bool `xml:"sidebarDropDownListEnabled,omitempty"`
+	SidebarDropDownListEnabled bool `json:"sidebarDropDownListEnabled,omitempty"`
 
-	SidebarLimitToItemsIOwnCheckboxEnabled bool `xml:"sidebarLimitToItemsIOwnCheckboxEnabled,omitempty"`
+	SidebarLimitToItemsIOwnCheckboxEnabled bool `json:"sidebarLimitToItemsIOwnCheckboxEnabled,omitempty"`
 
-	SingleSearchResultShortcutEnabled bool `xml:"singleSearchResultShortcutEnabled,omitempty"`
+	SingleSearchResultShortcutEnabled bool `json:"singleSearchResultShortcutEnabled,omitempty"`
 
-	SpellCorrectKnowledgeSearchEnabled bool `xml:"spellCorrectKnowledgeSearchEnabled,omitempty"`
+	SpellCorrectKnowledgeSearchEnabled bool `json:"spellCorrectKnowledgeSearchEnabled,omitempty"`
 }
 
 type SearchSettingsByObject struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SearchSettingsByObject"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SearchSettingsByObject"`
 
-	SearchSettingsByObject []*ObjectSearchSetting `xml:"searchSettingsByObject,omitempty"`
+	SearchSettingsByObject []*ObjectSearchSetting `json:"searchSettingsByObject,omitempty"`
 }
 
 type ObjectSearchSetting struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ObjectSearchSetting"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectSearchSetting"`
 
-	EnhancedLookupEnabled bool `xml:"enhancedLookupEnabled,omitempty"`
+	EnhancedLookupEnabled bool `json:"enhancedLookupEnabled,omitempty"`
 
-	LookupAutoCompleteEnabled bool `xml:"lookupAutoCompleteEnabled,omitempty"`
+	LookupAutoCompleteEnabled bool `json:"lookupAutoCompleteEnabled,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	ResultsPerPageCount int32 `xml:"resultsPerPageCount,omitempty"`
+	ResultsPerPageCount int32 `json:"resultsPerPageCount,omitempty"`
 }
 
 type SecuritySettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SecuritySettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SecuritySettings"`
 
 	*Metadata
 
-	NetworkAccess *NetworkAccess `xml:"networkAccess,omitempty"`
+	NetworkAccess *NetworkAccess `json:"networkAccess,omitempty"`
 
-	PasswordPolicies *PasswordPolicies `xml:"passwordPolicies,omitempty"`
+	PasswordPolicies *PasswordPolicies `json:"passwordPolicies,omitempty"`
 
-	SessionSettings *SessionSettings `xml:"sessionSettings,omitempty"`
+	SessionSettings *SessionSettings `json:"sessionSettings,omitempty"`
 }
 
 type NetworkAccess struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata NetworkAccess"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NetworkAccess"`
 
-	IpRanges []*IpRange `xml:"ipRanges,omitempty"`
+	IpRanges []*IpRange `json:"ipRanges,omitempty"`
 }
 
 type IpRange struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata IpRange"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata IpRange"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	End string `xml:"end,omitempty"`
+	End string `json:"end,omitempty"`
 
-	Start string `xml:"start,omitempty"`
+	Start string `json:"start,omitempty"`
 }
 
 type PasswordPolicies struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata PasswordPolicies"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PasswordPolicies"`
 
-	ApiOnlyUserHomePageURL string `xml:"apiOnlyUserHomePageURL,omitempty"`
+	ApiOnlyUserHomePageURL string `json:"apiOnlyUserHomePageURL,omitempty"`
 
-	Complexity *Complexity `xml:"complexity,omitempty"`
+	Complexity *Complexity `json:"complexity,omitempty"`
 
-	Expiration *Expiration `xml:"expiration,omitempty"`
+	Expiration *Expiration `json:"expiration,omitempty"`
 
-	HistoryRestriction string `xml:"historyRestriction,omitempty"`
+	HistoryRestriction string `json:"historyRestriction,omitempty"`
 
-	LockoutInterval *LockoutInterval `xml:"lockoutInterval,omitempty"`
+	LockoutInterval *LockoutInterval `json:"lockoutInterval,omitempty"`
 
-	MaxLoginAttempts *MaxLoginAttempts `xml:"maxLoginAttempts,omitempty"`
+	MaxLoginAttempts *MaxLoginAttempts `json:"maxLoginAttempts,omitempty"`
 
-	MinimumPasswordLength string `xml:"minimumPasswordLength,omitempty"`
+	MinimumPasswordLength string `json:"minimumPasswordLength,omitempty"`
 
-	MinimumPasswordLifetime bool `xml:"minimumPasswordLifetime,omitempty"`
+	MinimumPasswordLifetime bool `json:"minimumPasswordLifetime,omitempty"`
 
-	ObscureSecretAnswer bool `xml:"obscureSecretAnswer,omitempty"`
+	ObscureSecretAnswer bool `json:"obscureSecretAnswer,omitempty"`
 
-	PasswordAssistanceMessage string `xml:"passwordAssistanceMessage,omitempty"`
+	PasswordAssistanceMessage string `json:"passwordAssistanceMessage,omitempty"`
 
-	PasswordAssistanceURL string `xml:"passwordAssistanceURL,omitempty"`
+	PasswordAssistanceURL string `json:"passwordAssistanceURL,omitempty"`
 
-	QuestionRestriction *QuestionRestriction `xml:"questionRestriction,omitempty"`
+	QuestionRestriction *QuestionRestriction `json:"questionRestriction,omitempty"`
 }
 
 type SessionSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SessionSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SessionSettings"`
 
-	DisableTimeoutWarning bool `xml:"disableTimeoutWarning,omitempty"`
+	DisableTimeoutWarning bool `json:"disableTimeoutWarning,omitempty"`
 
-	EnableCSPOnEmail bool `xml:"enableCSPOnEmail,omitempty"`
+	EnableCSPOnEmail bool `json:"enableCSPOnEmail,omitempty"`
 
-	EnableCSRFOnGet bool `xml:"enableCSRFOnGet,omitempty"`
+	EnableCSRFOnGet bool `json:"enableCSRFOnGet,omitempty"`
 
-	EnableCSRFOnPost bool `xml:"enableCSRFOnPost,omitempty"`
+	EnableCSRFOnPost bool `json:"enableCSRFOnPost,omitempty"`
 
-	EnableCacheAndAutocomplete bool `xml:"enableCacheAndAutocomplete,omitempty"`
+	EnableCacheAndAutocomplete bool `json:"enableCacheAndAutocomplete,omitempty"`
 
-	EnableClickjackNonsetupSFDC bool `xml:"enableClickjackNonsetupSFDC,omitempty"`
+	EnableClickjackNonsetupSFDC bool `json:"enableClickjackNonsetupSFDC,omitempty"`
 
-	EnableClickjackNonsetupUser bool `xml:"enableClickjackNonsetupUser,omitempty"`
+	EnableClickjackNonsetupUser bool `json:"enableClickjackNonsetupUser,omitempty"`
 
-	EnableClickjackNonsetupUserHeaderless bool `xml:"enableClickjackNonsetupUserHeaderless,omitempty"`
+	EnableClickjackNonsetupUserHeaderless bool `json:"enableClickjackNonsetupUserHeaderless,omitempty"`
 
-	EnableClickjackSetup bool `xml:"enableClickjackSetup,omitempty"`
+	EnableClickjackSetup bool `json:"enableClickjackSetup,omitempty"`
 
-	EnablePostForSessions bool `xml:"enablePostForSessions,omitempty"`
+	EnablePostForSessions bool `json:"enablePostForSessions,omitempty"`
 
-	EnableSMSIdentity bool `xml:"enableSMSIdentity,omitempty"`
+	EnableSMSIdentity bool `json:"enableSMSIdentity,omitempty"`
 
-	EnforceIpRangesEveryRequest bool `xml:"enforceIpRangesEveryRequest,omitempty"`
+	EnforceIpRangesEveryRequest bool `json:"enforceIpRangesEveryRequest,omitempty"`
 
-	ForceLogoutOnSessionTimeout bool `xml:"forceLogoutOnSessionTimeout,omitempty"`
+	ForceLogoutOnSessionTimeout bool `json:"forceLogoutOnSessionTimeout,omitempty"`
 
-	ForceRelogin bool `xml:"forceRelogin,omitempty"`
+	ForceRelogin bool `json:"forceRelogin,omitempty"`
 
-	LockSessionsToDomain bool `xml:"lockSessionsToDomain,omitempty"`
+	LockSessionsToDomain bool `json:"lockSessionsToDomain,omitempty"`
 
-	LockSessionsToIp bool `xml:"lockSessionsToIp,omitempty"`
+	LockSessionsToIp bool `json:"lockSessionsToIp,omitempty"`
 
-	LogoutURL string `xml:"logoutURL,omitempty"`
+	LogoutURL string `json:"logoutURL,omitempty"`
 
-	SecurityCentralKillSession bool `xml:"securityCentralKillSession,omitempty"`
+	SecurityCentralKillSession bool `json:"securityCentralKillSession,omitempty"`
 
-	SessionTimeout *SessionTimeout `xml:"sessionTimeout,omitempty"`
+	SessionTimeout *SessionTimeout `json:"sessionTimeout,omitempty"`
 }
 
 type SharingBaseRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SharingBaseRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingBaseRule"`
 
 	*Metadata
 
-	AccessLevel string `xml:"accessLevel,omitempty"`
+	AccessLevel string `json:"accessLevel,omitempty"`
 
-	AccountSettings *AccountSharingRuleSettings `xml:"accountSettings,omitempty"`
+	AccountSettings *AccountSharingRuleSettings `json:"accountSettings,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	SharedTo *SharedTo `xml:"sharedTo,omitempty"`
+	SharedTo *SharedTo `json:"sharedTo,omitempty"`
 }
 
 type AccountSharingRuleSettings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AccountSharingRuleSettings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AccountSharingRuleSettings"`
 
-	CaseAccessLevel string `xml:"caseAccessLevel,omitempty"`
+	CaseAccessLevel string `json:"caseAccessLevel,omitempty"`
 
-	ContactAccessLevel string `xml:"contactAccessLevel,omitempty"`
+	ContactAccessLevel string `json:"contactAccessLevel,omitempty"`
 
-	OpportunityAccessLevel string `xml:"opportunityAccessLevel,omitempty"`
+	OpportunityAccessLevel string `json:"opportunityAccessLevel,omitempty"`
 }
 
 type SharingCriteriaRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SharingCriteriaRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingCriteriaRule"`
 
 	*SharingBaseRule
 
-	BooleanFilter string `xml:"booleanFilter,omitempty"`
+	BooleanFilter string `json:"booleanFilter,omitempty"`
 
-	CriteriaItems []*FilterItem `xml:"criteriaItems,omitempty"`
+	CriteriaItems []*FilterItem `json:"criteriaItems,omitempty"`
 }
 
 type SharingOwnerRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SharingOwnerRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingOwnerRule"`
 
 	*SharingBaseRule
 
-	SharedFrom *SharedTo `xml:"sharedFrom,omitempty"`
+	SharedFrom *SharedTo `json:"sharedFrom,omitempty"`
 }
 
 type SharingTerritoryRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SharingTerritoryRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingTerritoryRule"`
 
 	*SharingOwnerRule
 }
 
 type SharingRules struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SharingRules"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingRules"`
 
 	*Metadata
 
-	SharingCriteriaRules []*SharingCriteriaRule `xml:"sharingCriteriaRules,omitempty"`
+	SharingCriteriaRules []*SharingCriteriaRule `json:"sharingCriteriaRules,omitempty"`
 
-	SharingOwnerRules []*SharingOwnerRule `xml:"sharingOwnerRules,omitempty"`
+	SharingOwnerRules []*SharingOwnerRule `json:"sharingOwnerRules,omitempty"`
 
-	SharingTerritoryRules []*SharingTerritoryRule `xml:"sharingTerritoryRules,omitempty"`
+	SharingTerritoryRules []*SharingTerritoryRule `json:"sharingTerritoryRules,omitempty"`
 }
 
 type SharingSet struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SharingSet"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingSet"`
 
 	*Metadata
 
-	AccessMappings []*AccessMapping `xml:"accessMappings,omitempty"`
+	AccessMappings []*AccessMapping `json:"accessMappings,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Profiles []string `xml:"profiles,omitempty"`
+	Profiles []string `json:"profiles,omitempty"`
 }
 
 type AccessMapping struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata AccessMapping"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AccessMapping"`
 
-	AccessLevel string `xml:"accessLevel,omitempty"`
+	AccessLevel string `json:"accessLevel,omitempty"`
 
-	Object string `xml:"object,omitempty"`
+	Object string `json:"object,omitempty"`
 
-	ObjectField string `xml:"objectField,omitempty"`
+	ObjectField string `json:"objectField,omitempty"`
 
-	UserField string `xml:"userField,omitempty"`
+	UserField string `json:"userField,omitempty"`
 }
 
 type Skill struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Skill"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Skill"`
 
 	*Metadata
 
-	Assignments *SkillAssignments `xml:"assignments,omitempty"`
+	Assignments *SkillAssignments `json:"assignments,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type SkillAssignments struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SkillAssignments"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SkillAssignments"`
 
-	Profiles *SkillProfileAssignments `xml:"profiles,omitempty"`
+	Profiles *SkillProfileAssignments `json:"profiles,omitempty"`
 
-	Users *SkillUserAssignments `xml:"users,omitempty"`
+	Users *SkillUserAssignments `json:"users,omitempty"`
 }
 
 type SkillProfileAssignments struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SkillProfileAssignments"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SkillProfileAssignments"`
 
-	Profile []string `xml:"profile,omitempty"`
+	Profile []string `json:"profile,omitempty"`
 }
 
 type SkillUserAssignments struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SkillUserAssignments"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SkillUserAssignments"`
 
-	User []string `xml:"user,omitempty"`
+	User []string `json:"user,omitempty"`
 }
 
 type StandardValueSet struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata StandardValueSet"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata StandardValueSet"`
 
 	*Metadata
 
-	Sorted bool `xml:"sorted,omitempty"`
+	Sorted bool `json:"sorted,omitempty"`
 
-	StandardValue []*StandardValue `xml:"standardValue,omitempty"`
+	StandardValue []*StandardValue `json:"standardValue,omitempty"`
 }
 
 type StandardValueSetTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata StandardValueSetTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata StandardValueSetTranslation"`
 
 	*Metadata
 
-	ValueTranslation []*ValueTranslation `xml:"valueTranslation,omitempty"`
+	ValueTranslation []*ValueTranslation `json:"valueTranslation,omitempty"`
 }
 
 type SynonymDictionary struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SynonymDictionary"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SynonymDictionary"`
 
 	*Metadata
 
-	Groups []*SynonymGroup `xml:"groups,omitempty"`
+	Groups []*SynonymGroup `json:"groups,omitempty"`
 
-	IsProtected bool `xml:"isProtected,omitempty"`
+	IsProtected bool `json:"isProtected,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type SynonymGroup struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata SynonymGroup"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SynonymGroup"`
 
-	Languages []*Language `xml:"languages,omitempty"`
+	Languages []*Language `json:"languages,omitempty"`
 
-	Terms []string `xml:"terms,omitempty"`
+	Terms []string `json:"terms,omitempty"`
 }
 
 type Territory2 struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Territory2"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2"`
 
 	*Metadata
 
-	AccountAccessLevel string `xml:"accountAccessLevel,omitempty"`
+	AccountAccessLevel string `json:"accountAccessLevel,omitempty"`
 
-	CaseAccessLevel string `xml:"caseAccessLevel,omitempty"`
+	CaseAccessLevel string `json:"caseAccessLevel,omitempty"`
 
-	ContactAccessLevel string `xml:"contactAccessLevel,omitempty"`
+	ContactAccessLevel string `json:"contactAccessLevel,omitempty"`
 
-	CustomFields []*FieldValue `xml:"customFields,omitempty"`
+	CustomFields []*FieldValue `json:"customFields,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	OpportunityAccessLevel string `xml:"opportunityAccessLevel,omitempty"`
+	OpportunityAccessLevel string `json:"opportunityAccessLevel,omitempty"`
 
-	ParentTerritory string `xml:"parentTerritory,omitempty"`
+	ParentTerritory string `json:"parentTerritory,omitempty"`
 
-	RuleAssociations []*Territory2RuleAssociation `xml:"ruleAssociations,omitempty"`
+	RuleAssociations []*Territory2RuleAssociation `json:"ruleAssociations,omitempty"`
 
-	Territory2Type string `xml:"territory2Type,omitempty"`
+	Territory2Type string `json:"territory2Type,omitempty"`
 }
 
 type FieldValue struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata FieldValue"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldValue"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Value interface{} `xml:"value,omitempty"`
+	Value interface{} `json:"value,omitempty"`
 }
 
 type Territory2RuleAssociation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Territory2RuleAssociation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2RuleAssociation"`
 
-	Inherited bool `xml:"inherited,omitempty"`
+	Inherited bool `json:"inherited,omitempty"`
 
-	RuleName string `xml:"ruleName,omitempty"`
+	RuleName string `json:"ruleName,omitempty"`
 }
 
 type Territory2Model struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Territory2Model"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2Model"`
 
 	*Metadata
 
-	CustomFields []*FieldValue `xml:"customFields,omitempty"`
+	CustomFields []*FieldValue `json:"customFields,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type Territory2Rule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Territory2Rule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2Rule"`
 
 	*Metadata
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	BooleanFilter string `xml:"booleanFilter,omitempty"`
+	BooleanFilter string `json:"booleanFilter,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	ObjectType string `xml:"objectType,omitempty"`
+	ObjectType string `json:"objectType,omitempty"`
 
-	RuleItems []*Territory2RuleItem `xml:"ruleItems,omitempty"`
+	RuleItems []*Territory2RuleItem `json:"ruleItems,omitempty"`
 }
 
 type Territory2RuleItem struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Territory2RuleItem"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2RuleItem"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Operation *FilterOperation `xml:"operation,omitempty"`
+	Operation *FilterOperation `json:"operation,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type Territory2Settings struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Territory2Settings"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2Settings"`
 
 	*Metadata
 
-	DefaultAccountAccessLevel string `xml:"defaultAccountAccessLevel,omitempty"`
+	DefaultAccountAccessLevel string `json:"defaultAccountAccessLevel,omitempty"`
 
-	DefaultCaseAccessLevel string `xml:"defaultCaseAccessLevel,omitempty"`
+	DefaultCaseAccessLevel string `json:"defaultCaseAccessLevel,omitempty"`
 
-	DefaultContactAccessLevel string `xml:"defaultContactAccessLevel,omitempty"`
+	DefaultContactAccessLevel string `json:"defaultContactAccessLevel,omitempty"`
 
-	DefaultOpportunityAccessLevel string `xml:"defaultOpportunityAccessLevel,omitempty"`
+	DefaultOpportunityAccessLevel string `json:"defaultOpportunityAccessLevel,omitempty"`
 
-	OpportunityFilterSettings *Territory2SettingsOpportunityFilter `xml:"opportunityFilterSettings,omitempty"`
+	OpportunityFilterSettings *Territory2SettingsOpportunityFilter `json:"opportunityFilterSettings,omitempty"`
 }
 
 type Territory2SettingsOpportunityFilter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Territory2SettingsOpportunityFilter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2SettingsOpportunityFilter"`
 
-	ApexClassName string `xml:"apexClassName,omitempty"`
+	ApexClassName string `json:"apexClassName,omitempty"`
 
-	EnableFilter bool `xml:"enableFilter,omitempty"`
+	EnableFilter bool `json:"enableFilter,omitempty"`
 
-	RunOnCreate bool `xml:"runOnCreate,omitempty"`
+	RunOnCreate bool `json:"runOnCreate,omitempty"`
 }
 
 type Territory2Type struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Territory2Type"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2Type"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Priority int32 `xml:"priority,omitempty"`
+	Priority int32 `json:"priority,omitempty"`
 }
 
 type TransactionSecurityPolicy struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata TransactionSecurityPolicy"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata TransactionSecurityPolicy"`
 
 	*Metadata
 
-	Action *TransactionSecurityAction `xml:"action,omitempty"`
+	Action *TransactionSecurityAction `json:"action,omitempty"`
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	ApexClass string `xml:"apexClass,omitempty"`
+	ApexClass string `json:"apexClass,omitempty"`
 
-	EventType *MonitoredEvents `xml:"eventType,omitempty"`
+	EventType *MonitoredEvents `json:"eventType,omitempty"`
 
-	ExecutionUser string `xml:"executionUser,omitempty"`
+	ExecutionUser string `json:"executionUser,omitempty"`
 
-	ResourceName string `xml:"resourceName,omitempty"`
+	ResourceName string `json:"resourceName,omitempty"`
 }
 
 type TransactionSecurityAction struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata TransactionSecurityAction"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata TransactionSecurityAction"`
 
-	Block bool `xml:"block,omitempty"`
+	Block bool `json:"block,omitempty"`
 
-	EndSession bool `xml:"endSession,omitempty"`
+	EndSession bool `json:"endSession,omitempty"`
 
-	Notifications []*TransactionSecurityNotification `xml:"notifications,omitempty"`
+	Notifications []*TransactionSecurityNotification `json:"notifications,omitempty"`
 
-	TwoFactorAuthentication bool `xml:"twoFactorAuthentication,omitempty"`
+	TwoFactorAuthentication bool `json:"twoFactorAuthentication,omitempty"`
 }
 
 type TransactionSecurityNotification struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata TransactionSecurityNotification"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata TransactionSecurityNotification"`
 
-	InApp bool `xml:"inApp,omitempty"`
+	InApp bool `json:"inApp,omitempty"`
 
-	SendEmail bool `xml:"sendEmail,omitempty"`
+	SendEmail bool `json:"sendEmail,omitempty"`
 
-	User string `xml:"user,omitempty"`
+	User string `json:"user,omitempty"`
 }
 
 type Translations struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Translations"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Translations"`
 
 	*Metadata
 
-	CustomApplications []*CustomApplicationTranslation `xml:"customApplications,omitempty"`
+	CustomApplications []*CustomApplicationTranslation `json:"customApplications,omitempty"`
 
-	CustomDataTypeTranslations []*CustomDataTypeTranslation `xml:"customDataTypeTranslations,omitempty"`
+	CustomDataTypeTranslations []*CustomDataTypeTranslation `json:"customDataTypeTranslations,omitempty"`
 
-	CustomLabels []*CustomLabelTranslation `xml:"customLabels,omitempty"`
+	CustomLabels []*CustomLabelTranslation `json:"customLabels,omitempty"`
 
-	CustomPageWebLinks []*CustomPageWebLinkTranslation `xml:"customPageWebLinks,omitempty"`
+	CustomPageWebLinks []*CustomPageWebLinkTranslation `json:"customPageWebLinks,omitempty"`
 
-	CustomTabs []*CustomTabTranslation `xml:"customTabs,omitempty"`
+	CustomTabs []*CustomTabTranslation `json:"customTabs,omitempty"`
 
-	QuickActions []*GlobalQuickActionTranslation `xml:"quickActions,omitempty"`
+	QuickActions []*GlobalQuickActionTranslation `json:"quickActions,omitempty"`
 
-	ReportTypes []*ReportTypeTranslation `xml:"reportTypes,omitempty"`
+	ReportTypes []*ReportTypeTranslation `json:"reportTypes,omitempty"`
 
-	Scontrols []*ScontrolTranslation `xml:"scontrols,omitempty"`
+	Scontrols []*ScontrolTranslation `json:"scontrols,omitempty"`
 }
 
 type CustomApplicationTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomApplicationTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomApplicationTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type CustomDataTypeTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomDataTypeTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomDataTypeTranslation"`
 
-	Components []*CustomDataTypeComponentTranslation `xml:"components,omitempty"`
+	Components []*CustomDataTypeComponentTranslation `json:"components,omitempty"`
 
-	CustomDataTypeName string `xml:"customDataTypeName,omitempty"`
+	CustomDataTypeName string `json:"customDataTypeName,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type CustomDataTypeComponentTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomDataTypeComponentTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomDataTypeComponentTranslation"`
 
-	DeveloperSuffix string `xml:"developerSuffix,omitempty"`
+	DeveloperSuffix string `json:"developerSuffix,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 }
 
 type CustomLabelTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomLabelTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomLabelTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type CustomPageWebLinkTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomPageWebLinkTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomPageWebLinkTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type CustomTabTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata CustomTabTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomTabTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type GlobalQuickActionTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata GlobalQuickActionTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata GlobalQuickActionTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type ReportTypeTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportTypeTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportTypeTranslation"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Sections []*ReportTypeSectionTranslation `xml:"sections,omitempty"`
+	Sections []*ReportTypeSectionTranslation `json:"sections,omitempty"`
 }
 
 type ReportTypeSectionTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportTypeSectionTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportTypeSectionTranslation"`
 
-	Columns []*ReportTypeColumnTranslation `xml:"columns,omitempty"`
+	Columns []*ReportTypeColumnTranslation `json:"columns,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type ReportTypeColumnTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ReportTypeColumnTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportTypeColumnTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type ScontrolTranslation struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ScontrolTranslation"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ScontrolTranslation"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type VisualizationPlugin struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata VisualizationPlugin"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata VisualizationPlugin"`
 
 	*Metadata
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DeveloperName string `xml:"developerName,omitempty"`
+	DeveloperName string `json:"developerName,omitempty"`
 
-	Icon string `xml:"icon,omitempty"`
+	Icon string `json:"icon,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	VisualizationResources []*VisualizationResource `xml:"visualizationResources,omitempty"`
+	VisualizationResources []*VisualizationResource `json:"visualizationResources,omitempty"`
 
-	VisualizationTypes []*VisualizationType `xml:"visualizationTypes,omitempty"`
+	VisualizationTypes []*VisualizationType `json:"visualizationTypes,omitempty"`
 }
 
 type VisualizationResource struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata VisualizationResource"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata VisualizationResource"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	File string `xml:"file,omitempty"`
+	File string `json:"file,omitempty"`
 
-	Rank int32 `xml:"rank,omitempty"`
+	Rank int32 `json:"rank,omitempty"`
 
-	Type_ *VisualizationResourceType `xml:"type,omitempty"`
+	Type_ *VisualizationResourceType `json:"type,omitempty"`
 }
 
 type VisualizationType struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata VisualizationType"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata VisualizationType"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DeveloperName string `xml:"developerName,omitempty"`
+	DeveloperName string `json:"developerName,omitempty"`
 
-	Icon string `xml:"icon,omitempty"`
+	Icon string `json:"icon,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	ScriptBootstrapMethod string `xml:"scriptBootstrapMethod,omitempty"`
+	ScriptBootstrapMethod string `json:"scriptBootstrapMethod,omitempty"`
 }
 
 type WaveApplication struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WaveApplication"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveApplication"`
 
 	*Metadata
 
-	AssetIcon string `xml:"assetIcon,omitempty"`
+	AssetIcon string `json:"assetIcon,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Folder string `xml:"folder,omitempty"`
+	Folder string `json:"folder,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	Shares []*FolderShare `xml:"shares,omitempty"`
+	Shares []*FolderShare `json:"shares,omitempty"`
 
-	TemplateOrigin string `xml:"templateOrigin,omitempty"`
+	TemplateOrigin string `json:"templateOrigin,omitempty"`
 
-	TemplateVersion string `xml:"templateVersion,omitempty"`
+	TemplateVersion string `json:"templateVersion,omitempty"`
 }
 
 type WaveDataset struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WaveDataset"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveDataset"`
 
 	*Metadata
 
-	Application string `xml:"application,omitempty"`
+	Application string `json:"application,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	MasterLabel string `xml:"masterLabel,omitempty"`
+	MasterLabel string `json:"masterLabel,omitempty"`
 
-	TemplateAssetSourceName string `xml:"templateAssetSourceName,omitempty"`
+	TemplateAssetSourceName string `json:"templateAssetSourceName,omitempty"`
 }
 
 type WaveTemplateBundle struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WaveTemplateBundle"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveTemplateBundle"`
 
 	*Metadata
 
-	AssetIcon string `xml:"assetIcon,omitempty"`
+	AssetIcon string `json:"assetIcon,omitempty"`
 
-	AssetVersion float64 `xml:"assetVersion,omitempty"`
+	AssetVersion float64 `json:"assetVersion,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	TemplateType string `xml:"templateType,omitempty"`
+	TemplateType string `json:"templateType,omitempty"`
 }
 
 type Workflow struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata Workflow"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Workflow"`
 
 	*Metadata
 
-	Alerts []*WorkflowAlert `xml:"alerts,omitempty"`
+	Alerts []*WorkflowAlert `json:"alerts,omitempty"`
 
-	FieldUpdates []*WorkflowFieldUpdate `xml:"fieldUpdates,omitempty"`
+	FieldUpdates []*WorkflowFieldUpdate `json:"fieldUpdates,omitempty"`
 
-	FlowActions []*WorkflowFlowAction `xml:"flowActions,omitempty"`
+	FlowActions []*WorkflowFlowAction `json:"flowActions,omitempty"`
 
-	KnowledgePublishes []*WorkflowKnowledgePublish `xml:"knowledgePublishes,omitempty"`
+	KnowledgePublishes []*WorkflowKnowledgePublish `json:"knowledgePublishes,omitempty"`
 
-	OutboundMessages []*WorkflowOutboundMessage `xml:"outboundMessages,omitempty"`
+	OutboundMessages []*WorkflowOutboundMessage `json:"outboundMessages,omitempty"`
 
-	Rules []*WorkflowRule `xml:"rules,omitempty"`
+	Rules []*WorkflowRule `json:"rules,omitempty"`
 
-	Send []*WorkflowSend `xml:"send,omitempty"`
+	Send []*WorkflowSend `json:"send,omitempty"`
 
-	Tasks []*WorkflowTask `xml:"tasks,omitempty"`
+	Tasks []*WorkflowTask `json:"tasks,omitempty"`
 }
 
 type WorkflowAlert struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowAlert"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowAlert"`
 
 	*WorkflowAction
 
-	CcEmails []string `xml:"ccEmails,omitempty"`
+	CcEmails []string `json:"ccEmails,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Protected bool `xml:"protected,omitempty"`
+	Protected bool `json:"protected,omitempty"`
 
-	Recipients []*WorkflowEmailRecipient `xml:"recipients,omitempty"`
+	Recipients []*WorkflowEmailRecipient `json:"recipients,omitempty"`
 
-	SenderAddress string `xml:"senderAddress,omitempty"`
+	SenderAddress string `json:"senderAddress,omitempty"`
 
-	SenderType *ActionEmailSenderType `xml:"senderType,omitempty"`
+	SenderType *ActionEmailSenderType `json:"senderType,omitempty"`
 
-	Template string `xml:"template,omitempty"`
+	Template string `json:"template,omitempty"`
 }
 
 type WorkflowAction struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowAction"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowAction"`
 
 	*Metadata
 }
 
 type WorkflowFieldUpdate struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowFieldUpdate"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowFieldUpdate"`
 
 	*WorkflowAction
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Formula string `xml:"formula,omitempty"`
+	Formula string `json:"formula,omitempty"`
 
-	LiteralValue string `xml:"literalValue,omitempty"`
+	LiteralValue string `json:"literalValue,omitempty"`
 
-	LookupValue string `xml:"lookupValue,omitempty"`
+	LookupValue string `json:"lookupValue,omitempty"`
 
-	LookupValueType *LookupValueType `xml:"lookupValueType,omitempty"`
+	LookupValueType *LookupValueType `json:"lookupValueType,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	NotifyAssignee bool `xml:"notifyAssignee,omitempty"`
+	NotifyAssignee bool `json:"notifyAssignee,omitempty"`
 
-	Operation *FieldUpdateOperation `xml:"operation,omitempty"`
+	Operation *FieldUpdateOperation `json:"operation,omitempty"`
 
-	Protected bool `xml:"protected,omitempty"`
+	Protected bool `json:"protected,omitempty"`
 
-	ReevaluateOnChange bool `xml:"reevaluateOnChange,omitempty"`
+	ReevaluateOnChange bool `json:"reevaluateOnChange,omitempty"`
 
-	TargetObject string `xml:"targetObject,omitempty"`
+	TargetObject string `json:"targetObject,omitempty"`
 }
 
 type WorkflowFlowAction struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowFlowAction"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowFlowAction"`
 
 	*WorkflowAction
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Flow string `xml:"flow,omitempty"`
+	Flow string `json:"flow,omitempty"`
 
-	FlowInputs []*WorkflowFlowActionParameter `xml:"flowInputs,omitempty"`
+	FlowInputs []*WorkflowFlowActionParameter `json:"flowInputs,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Language string `xml:"language,omitempty"`
+	Language string `json:"language,omitempty"`
 
-	Protected bool `xml:"protected,omitempty"`
+	Protected bool `json:"protected,omitempty"`
 }
 
 type WorkflowFlowActionParameter struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowFlowActionParameter"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowFlowActionParameter"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type WorkflowKnowledgePublish struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowKnowledgePublish"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowKnowledgePublish"`
 
 	*WorkflowAction
 
-	Action *KnowledgeWorkflowAction `xml:"action,omitempty"`
+	Action *KnowledgeWorkflowAction `json:"action,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Language string `xml:"language,omitempty"`
+	Language string `json:"language,omitempty"`
 
-	Protected bool `xml:"protected,omitempty"`
+	Protected bool `json:"protected,omitempty"`
 }
 
 type WorkflowOutboundMessage struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowOutboundMessage"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowOutboundMessage"`
 
 	*WorkflowAction
 
-	ApiVersion float64 `xml:"apiVersion,omitempty"`
+	ApiVersion float64 `json:"apiVersion,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	EndpointUrl string `xml:"endpointUrl,omitempty"`
+	EndpointUrl string `json:"endpointUrl,omitempty"`
 
-	Fields []string `xml:"fields,omitempty"`
+	Fields []string `json:"fields,omitempty"`
 
-	IncludeSessionId bool `xml:"includeSessionId,omitempty"`
+	IncludeSessionId bool `json:"includeSessionId,omitempty"`
 
-	IntegrationUser string `xml:"integrationUser,omitempty"`
+	IntegrationUser string `json:"integrationUser,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	Protected bool `xml:"protected,omitempty"`
+	Protected bool `json:"protected,omitempty"`
 
-	UseDeadLetterQueue bool `xml:"useDeadLetterQueue,omitempty"`
+	UseDeadLetterQueue bool `json:"useDeadLetterQueue,omitempty"`
 }
 
 type WorkflowSend struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowSend"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowSend"`
 
 	*WorkflowAction
 
-	Action *SendAction `xml:"action,omitempty"`
+	Action *SendAction `json:"action,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	Language string `xml:"language,omitempty"`
+	Language string `json:"language,omitempty"`
 
-	Protected bool `xml:"protected,omitempty"`
+	Protected bool `json:"protected,omitempty"`
 }
 
 type WorkflowTask struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowTask"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowTask"`
 
 	*WorkflowAction
 
-	AssignedTo string `xml:"assignedTo,omitempty"`
+	AssignedTo string `json:"assignedTo,omitempty"`
 
-	AssignedToType *ActionTaskAssignedToTypes `xml:"assignedToType,omitempty"`
+	AssignedToType *ActionTaskAssignedToTypes `json:"assignedToType,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	DueDateOffset int32 `xml:"dueDateOffset,omitempty"`
+	DueDateOffset int32 `json:"dueDateOffset,omitempty"`
 
-	NotifyAssignee bool `xml:"notifyAssignee,omitempty"`
+	NotifyAssignee bool `json:"notifyAssignee,omitempty"`
 
-	OffsetFromField string `xml:"offsetFromField,omitempty"`
+	OffsetFromField string `json:"offsetFromField,omitempty"`
 
-	Priority string `xml:"priority,omitempty"`
+	Priority string `json:"priority,omitempty"`
 
-	Protected bool `xml:"protected,omitempty"`
+	Protected bool `json:"protected,omitempty"`
 
-	Status string `xml:"status,omitempty"`
+	Status string `json:"status,omitempty"`
 
-	Subject string `xml:"subject,omitempty"`
+	Subject string `json:"subject,omitempty"`
 }
 
 type WorkflowEmailRecipient struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowEmailRecipient"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowEmailRecipient"`
 
-	Field string `xml:"field,omitempty"`
+	Field string `json:"field,omitempty"`
 
-	Recipient string `xml:"recipient,omitempty"`
+	Recipient string `json:"recipient,omitempty"`
 
-	Type_ *ActionEmailRecipientTypes `xml:"type,omitempty"`
+	Type_ *ActionEmailRecipientTypes `json:"type,omitempty"`
 }
 
 type WorkflowRule struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowRule"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowRule"`
 
 	*Metadata
 
-	Actions []*WorkflowActionReference `xml:"actions,omitempty"`
+	Actions []*WorkflowActionReference `json:"actions,omitempty"`
 
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	BooleanFilter string `xml:"booleanFilter,omitempty"`
+	BooleanFilter string `json:"booleanFilter,omitempty"`
 
-	CriteriaItems []*FilterItem `xml:"criteriaItems,omitempty"`
+	CriteriaItems []*FilterItem `json:"criteriaItems,omitempty"`
 
-	Description string `xml:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 
-	Formula string `xml:"formula,omitempty"`
+	Formula string `json:"formula,omitempty"`
 
-	TriggerType *WorkflowTriggerTypes `xml:"triggerType,omitempty"`
+	TriggerType *WorkflowTriggerTypes `json:"triggerType,omitempty"`
 
-	WorkflowTimeTriggers []*WorkflowTimeTrigger `xml:"workflowTimeTriggers,omitempty"`
+	WorkflowTimeTriggers []*WorkflowTimeTrigger `json:"workflowTimeTriggers,omitempty"`
 }
 
 type WorkflowTimeTrigger struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata WorkflowTimeTrigger"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowTimeTrigger"`
 
-	Actions []*WorkflowActionReference `xml:"actions,omitempty"`
+	Actions []*WorkflowActionReference `json:"actions,omitempty"`
 
-	OffsetFromField string `xml:"offsetFromField,omitempty"`
+	OffsetFromField string `json:"offsetFromField,omitempty"`
 
-	TimeLength string `xml:"timeLength,omitempty"`
+	TimeLength string `json:"timeLength,omitempty"`
 
-	WorkflowTimeTriggerUnit *WorkflowTimeUnits `xml:"workflowTimeTriggerUnit,omitempty"`
+	WorkflowTimeTriggerUnit *WorkflowTimeUnits `json:"workflowTimeTriggerUnit,omitempty"`
 }
 
 type XOrgHub struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata XOrgHub"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata XOrgHub"`
 
 	*Metadata
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	LockSharedObjects bool `xml:"lockSharedObjects,omitempty"`
+	LockSharedObjects bool `json:"lockSharedObjects,omitempty"`
 
-	PermissionSets []string `xml:"permissionSets,omitempty"`
+	PermissionSets []string `json:"permissionSets,omitempty"`
 
-	SharedObjects []*XOrgHubSharedObject `xml:"sharedObjects,omitempty"`
+	SharedObjects []*XOrgHubSharedObject `json:"sharedObjects,omitempty"`
 }
 
 type XOrgHubSharedObject struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata XOrgHubSharedObject"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata XOrgHubSharedObject"`
 
-	Fields []string `xml:"fields,omitempty"`
+	Fields []string `json:"fields,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 type SaveResult struct {
-	Errors []*Error `xml:"errors,omitempty"`
+	Errors []*Error `json:"errors,omitempty"`
 
-	FullName string `xml:"fullName,omitempty"`
+	FullName string `json:"fullName,omitempty"`
 
-	Success bool `xml:"success,omitempty"`
+	Success bool `json:"success,omitempty"`
 }
 
 type Error struct {
-	ExtendedErrorDetails []*ExtendedErrorDetails `xml:"extendedErrorDetails,omitempty"`
+	ExtendedErrorDetails []*ExtendedErrorDetails `json:"extendedErrorDetails,omitempty"`
 
-	Fields []string `xml:"fields,omitempty"`
+	Fields []string `json:"fields,omitempty"`
 
-	Message string `xml:"message,omitempty"`
+	Message string `json:"message,omitempty"`
 
-	StatusCode StatusCode `xml:"statusCode,omitempty"`
+	StatusCode StatusCode `json:"statusCode,omitempty"`
 }
 
 type ExtendedErrorDetails struct {
-	ExtendedErrorCode *ExtendedErrorCode `xml:"extendedErrorCode,omitempty"`
+	ExtendedErrorCode *ExtendedErrorCode `json:"extendedErrorCode,omitempty"`
 }
 
 type DeleteResult struct {
-	Errors []*Error `xml:"errors,omitempty"`
+	Errors []*Error `json:"errors,omitempty"`
 
-	FullName string `xml:"fullName,omitempty"`
+	FullName string `json:"fullName,omitempty"`
 
-	Success bool `xml:"success,omitempty"`
+	Success bool `json:"success,omitempty"`
 }
 
 type DeployOptions struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata DeployOptions"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DeployOptions"`
 
-	AllowMissingFiles bool `xml:"allowMissingFiles,omitempty"`
+	AllowMissingFiles bool `json:"allowMissingFiles,omitempty"`
 
-	AutoUpdatePackage bool `xml:"autoUpdatePackage,omitempty"`
+	AutoUpdatePackage bool `json:"autoUpdatePackage,omitempty"`
 
-	CheckOnly bool `xml:"checkOnly,omitempty"`
+	CheckOnly bool `json:"checkOnly,omitempty"`
 
-	IgnoreWarnings bool `xml:"ignoreWarnings,omitempty"`
+	IgnoreWarnings bool `json:"ignoreWarnings,omitempty"`
 
-	PerformRetrieve bool `xml:"performRetrieve,omitempty"`
+	PerformRetrieve bool `json:"performRetrieve,omitempty"`
 
-	PurgeOnDelete bool `xml:"purgeOnDelete,omitempty"`
+	PurgeOnDelete bool `json:"purgeOnDelete,omitempty"`
 
-	RollbackOnError bool `xml:"rollbackOnError,omitempty"`
+	RollbackOnError bool `json:"rollbackOnError,omitempty"`
 
-	RunTests []string `xml:"runTests,omitempty"`
+	RunTests []string `json:"runTests,omitempty"`
 
-	SinglePackage bool `xml:"singlePackage,omitempty"`
+	SinglePackage bool `json:"singlePackage,omitempty"`
 
-	TestLevel *TestLevel `xml:"testLevel,omitempty"`
+	TestLevel *TestLevel `json:"testLevel,omitempty"`
 }
 
 type AsyncResult struct {
-	Done bool `xml:"done,omitempty"`
+	Done bool `json:"done,omitempty"`
 
-	Id ID `xml:"id,omitempty"`
+	Id ID `json:"id,omitempty"`
 
-	Message string `xml:"message,omitempty"`
+	Message string `json:"message,omitempty"`
 
-	State AsyncRequestState `xml:"state,omitempty"`
+	State AsyncRequestState `json:"state,omitempty"`
 
-	StatusCode StatusCode `xml:"statusCode,omitempty"`
+	StatusCode StatusCode `json:"statusCode,omitempty"`
 }
 
 type DescribeMetadataResult struct {
-	MetadataObjects []*DescribeMetadataObject `xml:"metadataObjects,omitempty"`
+	MetadataObjects []*DescribeMetadataObject `json:"metadataObjects,omitempty"`
 
-	OrganizationNamespace string `xml:"organizationNamespace,omitempty"`
+	OrganizationNamespace string `json:"organizationNamespace,omitempty"`
 
-	PartialSaveAllowed bool `xml:"partialSaveAllowed,omitempty"`
+	PartialSaveAllowed bool `json:"partialSaveAllowed,omitempty"`
 
-	TestRequired bool `xml:"testRequired,omitempty"`
+	TestRequired bool `json:"testRequired,omitempty"`
 }
 
 type DescribeMetadataObject struct {
-	ChildXmlNames []string `xml:"childXmlNames,omitempty"`
+	ChildXmlNames []string `json:"childXmlNames,omitempty"`
 
-	DirectoryName string `xml:"directoryName,omitempty"`
+	DirectoryName string `json:"directoryName,omitempty"`
 
-	InFolder bool `xml:"inFolder,omitempty"`
+	InFolder bool `json:"inFolder,omitempty"`
 
-	MetaFile bool `xml:"metaFile,omitempty"`
+	MetaFile bool `json:"metaFile,omitempty"`
 
-	Suffix string `xml:"suffix,omitempty"`
+	Suffix string `json:"suffix,omitempty"`
 
-	XmlName string `xml:"xmlName,omitempty"`
+	XmlName string `json:"xmlName,omitempty"`
 }
 
 type DescribeValueTypeResult struct {
-	ApiCreatable bool `xml:"apiCreatable,omitempty"`
+	ApiCreatable bool `json:"apiCreatable,omitempty"`
 
-	ApiDeletable bool `xml:"apiDeletable,omitempty"`
+	ApiDeletable bool `json:"apiDeletable,omitempty"`
 
-	ApiReadable bool `xml:"apiReadable,omitempty"`
+	ApiReadable bool `json:"apiReadable,omitempty"`
 
-	ApiUpdatable bool `xml:"apiUpdatable,omitempty"`
+	ApiUpdatable bool `json:"apiUpdatable,omitempty"`
 
-	ParentField *ValueTypeField `xml:"parentField,omitempty"`
+	ParentField *ValueTypeField `json:"parentField,omitempty"`
 
-	ValueTypeFields []*ValueTypeField `xml:"valueTypeFields,omitempty"`
+	ValueTypeFields []*ValueTypeField `json:"valueTypeFields,omitempty"`
 }
 
 type ValueTypeField struct {
-	Fields []*ValueTypeField `xml:"fields,omitempty"`
+	Fields []*ValueTypeField `json:"fields,omitempty"`
 
-	ForeignKeyDomain []string `xml:"foreignKeyDomain,omitempty"`
+	ForeignKeyDomain []string `json:"foreignKeyDomain,omitempty"`
 
-	IsForeignKey bool `xml:"isForeignKey,omitempty"`
+	IsForeignKey bool `json:"isForeignKey,omitempty"`
 
-	IsNameField bool `xml:"isNameField,omitempty"`
+	IsNameField bool `json:"isNameField,omitempty"`
 
-	MinOccurs int32 `xml:"minOccurs,omitempty"`
+	MinOccurs int32 `json:"minOccurs,omitempty"`
 
-	Name string `xml:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 
-	PicklistValues []*PicklistEntry `xml:"picklistValues,omitempty"`
+	PicklistValues []*PicklistEntry `json:"picklistValues,omitempty"`
 
-	SoapType string `xml:"soapType,omitempty"`
+	SoapType string `json:"soapType,omitempty"`
 
-	ValueRequired bool `xml:"valueRequired,omitempty"`
+	ValueRequired bool `json:"valueRequired,omitempty"`
 }
 
 type PicklistEntry struct {
-	Active bool `xml:"active,omitempty"`
+	Active bool `json:"active,omitempty"`
 
-	DefaultValue bool `xml:"defaultValue,omitempty"`
+	DefaultValue bool `json:"defaultValue,omitempty"`
 
-	Label string `xml:"label,omitempty"`
+	Label string `json:"label,omitempty"`
 
-	ValidFor string `xml:"validFor,omitempty"`
+	ValidFor string `json:"validFor,omitempty"`
 
-	Value string `xml:"value,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type ListMetadataQuery struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata ListMetadataQuery"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ListMetadataQuery"`
 
-	Folder string `xml:"folder,omitempty"`
+	Folder string `json:"folder,omitempty"`
 
-	Type string `xml:"type,omitempty"`
+	Type string `json:"type,omitempty"`
 }
 
 type ReadResult struct {
-	Records []*Metadata `xml:"records,omitempty"`
+	Records []*Metadata `json:"records,omitempty"`
 }
 
 type RetrieveRequest struct {
-	ApiVersion float64 `xml:"apiVersion,omitempty"`
+	ApiVersion float64 `json:"apiVersion,omitempty"`
 
-	PackageNames []string `xml:"packageNames,omitempty"`
+	PackageNames []string `json:"packageNames,omitempty"`
 
-	SinglePackage bool `xml:"singlePackage,omitempty"`
+	SinglePackage bool `json:"singlePackage,omitempty"`
 
-	SpecificFiles []string `xml:"specificFiles,omitempty"`
+	SpecificFiles []string `json:"specificFiles,omitempty"`
 
-	Unpackaged *Package `xml:"unpackaged,omitempty"`
+	Unpackaged *Package `json:"unpackaged,omitempty"`
 }
 
 type UpsertResult struct {
-	Created bool `xml:"created,omitempty"`
+	Created bool `json:"created,omitempty"`
 
-	Errors []*Error `xml:"errors,omitempty"`
+	Errors []*Error `json:"errors,omitempty"`
 
-	FullName string `xml:"fullName,omitempty"`
+	FullName string `json:"fullName,omitempty"`
 
-	Success bool `xml:"success,omitempty"`
+	Success bool `json:"success,omitempty"`
 }
 
 type LogInfo struct {
-	XMLName xml.Name `xml:"http://soap.sforce.com/2006/04/metadata LogInfo"`
+	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LogInfo"`
 
-	Category *LogCategory `xml:"category,omitempty"`
+	Category *LogCategory `json:"category,omitempty"`
 
-	Level *LogCategoryLevel `xml:"level,omitempty"`
+	Level *LogCategoryLevel `json:"level,omitempty"`
 }
 
 type LoginRequest struct {
-	XMLName  xml.Name `xml:"urn:partner.soap.sforce.com login"`
-	Username string   `xml:"username"`
-	Password string   `xml:"password"`
+	XMLName  xml.Name `json:"urn:partner.soap.sforce.com login"`
+	Username string   `json:"username"`
+	Password string   `json:"password"`
 }
 
 type LoginResponse struct {
-	XMLName     xml.Name    `xml:"urn:partner.soap.sforce.com loginResponse"`
-	LoginResult LoginResult `xml:"result"`
+	XMLName     xml.Name    `json:"urn:partner.soap.sforce.com loginResponse"`
+	LoginResult LoginResult `json:"result"`
 }
 
 type LoginResult struct {
-	MetadataServerUrl string `xml:"metadataServerUrl"`
-	PasswordExpired   bool   `xml:"passwordExpired"`
-	Sandbox           bool   `xml:"sandbox`
-	ServerUrl         string `xml:"serverUrl"`
-	SessionId         string `xml:"sessionId"`
-	UserId            ID    `xml:"userId"`
-	//	UserInfo *UserInfo `xml:"userInfo"`
+	MetadataServerUrl string `json:"metadataServerUrl"`
+	PasswordExpired   bool   `json:"passwordExpired"`
+	Sandbox           bool   `json:"sandbox`
+	ServerUrl         string `json:"serverUrl"`
+	SessionId         string `json:"sessionId"`
+	UserId            ID    `json:"userId"`
+	//	UserInfo *UserInfo `json:"userInfo"`
 }
 
 type MetadataPortType struct {
