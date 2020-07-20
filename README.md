@@ -168,4 +168,4 @@ res, err := client.UpsertMetadata(request)
 
 
 
-referer: https://github.com/tzmfreedom/go-objforce
+referer: https://github.com/tzmfreedom/go-metaforce
