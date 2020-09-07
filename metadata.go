@@ -1,7 +1,7 @@
 package apiforce
 
 import (
-	"encoding/json"
+	"encoding/xml"
 	"github.com/tzmfreedom/go-soapforce"
 	"io"
 	"net"
@@ -4784,8 +4784,6 @@ type Metadata struct {
 }
 
 type AccountSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AccountSettings"`
-
 	*Metadata
 
 	EnableAccountOwnerReport bool `json:"enableAccountOwnerReport,omitempty"`
@@ -4796,8 +4794,6 @@ type AccountSettings struct {
 }
 
 type ActionLinkGroupTemplate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ActionLinkGroupTemplate"`
-
 	*Metadata
 
 	ActionLinkTemplates []*ActionLinkTemplate `json:"actionLinkTemplates,omitempty"`
@@ -4814,8 +4810,6 @@ type ActionLinkGroupTemplate struct {
 }
 
 type ActionLinkTemplate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ActionLinkTemplate"`
-
 	ActionUrl string `json:"actionUrl,omitempty"`
 
 	Headers string `json:"headers,omitempty"`
@@ -4842,8 +4836,6 @@ type ActionLinkTemplate struct {
 }
 
 type ActivitiesSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ActivitiesSettings"`
-
 	*Metadata
 
 	AllowUsersToRelateMultipleContactsToTasksAndEvents bool `json:"allowUsersToRelateMultipleContactsToTasksAndEvents,omitempty"`
@@ -4888,22 +4880,16 @@ type ActivitiesSettings struct {
 }
 
 type AddressSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AddressSettings"`
-
 	*Metadata
 
 	CountriesAndStates *CountriesAndStates `json:"countriesAndStates,omitempty"`
 }
 
 type CountriesAndStates struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CountriesAndStates"`
-
 	Countries []*Country `json:"countries,omitempty"`
 }
 
 type Country struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Country"`
-
 	Active bool `json:"active,omitempty"`
 
 	IntegrationValue string `json:"integrationValue,omitempty"`
@@ -4922,8 +4908,6 @@ type Country struct {
 }
 
 type State struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata State"`
-
 	Active bool `json:"active,omitempty"`
 
 	IntegrationValue string `json:"integrationValue,omitempty"`
@@ -4938,8 +4922,6 @@ type State struct {
 }
 
 type AnalyticSnapshot struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AnalyticSnapshot"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -4958,8 +4940,6 @@ type AnalyticSnapshot struct {
 }
 
 type AnalyticSnapshotMapping struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AnalyticSnapshotMapping"`
-
 	AggregateType *ReportSummaryType `json:"aggregateType,omitempty"`
 
 	SourceField string `json:"sourceField,omitempty"`
@@ -4970,32 +4950,24 @@ type AnalyticSnapshotMapping struct {
 }
 
 type ApexTestSuite struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApexTestSuite"`
-
 	*Metadata
 
 	TestClassName []string `json:"testClassName,omitempty"`
 }
 
 type AppMenu struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AppMenu"`
-
 	*Metadata
 
 	AppMenuItems []*AppMenuItem `json:"appMenuItems,omitempty"`
 }
 
 type AppMenuItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AppMenuItem"`
-
 	Name string `json:"name,omitempty"`
 
 	Type_ string `json:"type,omitempty"`
 }
 
 type ApprovalProcess struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalProcess"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -5040,22 +5012,16 @@ type ApprovalProcess struct {
 }
 
 type ApprovalSubmitter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalSubmitter"`
-
 	Submitter string `json:"submitter,omitempty"`
 
 	Type_ *ProcessSubmitterType `json:"type,omitempty"`
 }
 
 type ApprovalPageField struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalPageField"`
-
 	Field []string `json:"field,omitempty"`
 }
 
 type ApprovalStep struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalStep"`
-
 	AllowDelegate bool `json:"allowDelegate,omitempty"`
 
 	ApprovalActions *ApprovalAction `json:"approvalActions,omitempty"`
@@ -5092,24 +5058,18 @@ type WorkflowActionReference struct {
 }
 
 type ApprovalStepApprover struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalStepApprover"`
-
 	Approver []*Approver `json:"approver,omitempty"`
 
 	WhenMultipleApprovers *RoutingType `json:"whenMultipleApprovers,omitempty"`
 }
 
 type Approver struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Approver"`
-
 	Name string `json:"name,omitempty"`
 
 	Type_ *NextOwnerType `json:"type,omitempty"`
 }
 
 type ApprovalEntryCriteria struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalEntryCriteria"`
-
 	BooleanFilter string `json:"booleanFilter,omitempty"`
 
 	CriteriaItems []*FilterItem `json:"criteriaItems,omitempty"`
@@ -5128,8 +5088,6 @@ type FilterItem struct {
 }
 
 type DuplicateRuleFilterItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DuplicateRuleFilterItem"`
-
 	*FilterItem
 
 	SortOrder int32 `json:"sortOrder,omitempty"`
@@ -5138,22 +5096,16 @@ type DuplicateRuleFilterItem struct {
 }
 
 type ApprovalStepRejectBehavior struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApprovalStepRejectBehavior"`
-
 	Type_ *StepRejectBehaviorType `json:"type,omitempty"`
 }
 
 type NextAutomatedApprover struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NextAutomatedApprover"`
-
 	UseApproverFieldOfRecordOwner bool `json:"useApproverFieldOfRecordOwner,omitempty"`
 
 	UserHierarchyField string `json:"userHierarchyField,omitempty"`
 }
 
 type AssignmentRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AssignmentRule"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -5162,8 +5114,6 @@ type AssignmentRule struct {
 }
 
 type RuleEntry struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RuleEntry"`
-
 	AssignedTo string `json:"assignedTo,omitempty"`
 
 	AssignedToType *AssignToLookupValueType `json:"assignedToType,omitempty"`
@@ -5200,8 +5150,6 @@ type RuleEntry struct {
 }
 
 type EscalationAction struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EscalationAction"`
-
 	AssignedTo string `json:"assignedTo,omitempty"`
 
 	AssignedToTemplate string `json:"assignedToTemplate,omitempty"`
@@ -5220,16 +5168,12 @@ type EscalationAction struct {
 }
 
 type AssignmentRules struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AssignmentRules"`
-
 	*Metadata
 
 	AssignmentRule []*AssignmentRule `json:"assignmentRule,omitempty"`
 }
 
 type AssistantRecommendationType struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AssistantRecommendationType"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -5244,8 +5188,6 @@ type AssistantRecommendationType struct {
 }
 
 type PlatformActionList struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PlatformActionList"`
-
 	*Metadata
 
 	ActionListContext *PlatformActionListContext `json:"actionListContext,omitempty"`
@@ -5256,8 +5198,6 @@ type PlatformActionList struct {
 }
 
 type PlatformActionListItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PlatformActionListItem"`
-
 	ActionName string `json:"actionName,omitempty"`
 
 	ActionType *PlatformActionType `json:"actionType,omitempty"`
@@ -5268,8 +5208,6 @@ type PlatformActionListItem struct {
 }
 
 type AuraDefinitionBundle struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AuraDefinitionBundle"`
-
 	*Metadata
 
 	SVGContent []byte `json:"SVGContent,omitempty"`
@@ -5302,8 +5240,6 @@ type AuraDefinitionBundle struct {
 }
 
 type PackageVersion struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PackageVersion"`
-
 	MajorNumber int32 `json:"majorNumber,omitempty"`
 
 	MinorNumber int32 `json:"minorNumber,omitempty"`
@@ -5312,8 +5248,6 @@ type PackageVersion struct {
 }
 
 type AuthProvider struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AuthProvider"`
-
 	*Metadata
 
 	AuthorizeUrl string `json:"authorizeUrl,omitempty"`
@@ -5358,8 +5292,6 @@ type AuthProvider struct {
 }
 
 type AutoResponseRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AutoResponseRule"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -5368,16 +5300,12 @@ type AutoResponseRule struct {
 }
 
 type AutoResponseRules struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AutoResponseRules"`
-
 	*Metadata
 
 	AutoResponseRule []*AutoResponseRule `json:"autoResponseRule,omitempty"`
 }
 
 type BusinessHoursEntry struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata BusinessHoursEntry"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -5418,8 +5346,6 @@ type BusinessHoursEntry struct {
 }
 
 type BusinessHoursSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata BusinessHoursSettings"`
-
 	*Metadata
 
 	BusinessHours []*BusinessHoursEntry `json:"businessHours,omitempty"`
@@ -5428,8 +5354,6 @@ type BusinessHoursSettings struct {
 }
 
 type Holiday struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Holiday"`
-
 	ActivityDate time.Time `json:"activityDate,omitempty"`
 
 	BusinessHours []string `json:"businessHours,omitempty"`
@@ -5464,8 +5388,6 @@ type Holiday struct {
 }
 
 type BusinessProcess struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata BusinessProcess"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -5476,8 +5398,6 @@ type BusinessProcess struct {
 }
 
 type PicklistValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PicklistValue"`
-
 	*GlobalPicklistValue
 
 	AllowEmail bool `json:"allowEmail,omitempty"`
@@ -5504,8 +5424,6 @@ type PicklistValue struct {
 }
 
 type GlobalPicklistValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata GlobalPicklistValue"`
-
 	*Metadata
 
 	Color string `json:"color,omitempty"`
@@ -5518,8 +5436,6 @@ type GlobalPicklistValue struct {
 }
 
 type CallCenter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CallCenter"`
-
 	*Metadata
 
 	AdapterUrl string `json:"adapterUrl,omitempty"`
@@ -5538,8 +5454,6 @@ type CallCenter struct {
 }
 
 type CallCenterSection struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CallCenterSection"`
-
 	Items []*CallCenterItem `json:"items,omitempty"`
 
 	Label string `json:"label,omitempty"`
@@ -5548,8 +5462,6 @@ type CallCenterSection struct {
 }
 
 type CallCenterItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CallCenterItem"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
@@ -5558,8 +5470,6 @@ type CallCenterItem struct {
 }
 
 type CampaignInfluenceModel struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CampaignInfluenceModel"`
-
 	*Metadata
 
 	IsDefaultModel bool `json:"isDefaultModel,omitempty"`
@@ -5572,8 +5482,6 @@ type CampaignInfluenceModel struct {
 }
 
 type CaseSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CaseSettings"`
-
 	*Metadata
 
 	CaseAssignNotificationTemplate string `json:"caseAssignNotificationTemplate,omitempty"`
@@ -5644,8 +5552,6 @@ type FeedItemSettings struct {
 }
 
 type EmailToCaseSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmailToCaseSettings"`
-
 	EnableEmailToCase bool `json:"enableEmailToCase,omitempty"`
 
 	EnableHtmlEmail bool `json:"enableHtmlEmail,omitempty"`
@@ -5668,8 +5574,6 @@ type EmailToCaseSettings struct {
 }
 
 type EmailToCaseRoutingAddress struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmailToCaseRoutingAddress"`
-
 	AddressType *EmailToCaseRoutingAddressType `json:"addressType,omitempty"`
 
 	AuthorizedSenders string `json:"authorizedSenders,omitempty"`
@@ -5698,8 +5602,6 @@ type EmailToCaseRoutingAddress struct {
 }
 
 type WebToCaseSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WebToCaseSettings"`
-
 	CaseOrigin string `json:"caseOrigin,omitempty"`
 
 	DefaultResponseTemplate string `json:"defaultResponseTemplate,omitempty"`
@@ -5708,8 +5610,6 @@ type WebToCaseSettings struct {
 }
 
 type ChannelLayout struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ChannelLayout"`
-
 	*Metadata
 
 	EnabledChannels []string `json:"enabledChannels,omitempty"`
@@ -5720,14 +5620,10 @@ type ChannelLayout struct {
 }
 
 type ChannelLayoutItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ChannelLayoutItem"`
-
 	Field string `json:"field,omitempty"`
 }
 
 type ChatterAnswersSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ChatterAnswersSettings"`
-
 	*Metadata
 
 	EmailFollowersOnBestAnswer bool `json:"emailFollowersOnBestAnswer,omitempty"`
@@ -5756,8 +5652,6 @@ type ChatterAnswersSettings struct {
 }
 
 type CleanDataService struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CleanDataService"`
-
 	*Metadata
 
 	CleanRules []*CleanRule `json:"cleanRules,omitempty"`
@@ -5770,8 +5664,6 @@ type CleanDataService struct {
 }
 
 type CleanRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CleanRule"`
-
 	BulkEnabled bool `json:"bulkEnabled,omitempty"`
 
 	BypassTriggers bool `json:"bypassTriggers,omitempty"`
@@ -5796,8 +5688,6 @@ type CleanRule struct {
 }
 
 type FieldMapping struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldMapping"`
-
 	SObjectType string `json:"SObjectType,omitempty"`
 
 	DeveloperName string `json:"developerName,omitempty"`
@@ -5808,8 +5698,6 @@ type FieldMapping struct {
 }
 
 type FieldMappingRow struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldMappingRow"`
-
 	SObjectType string `json:"SObjectType,omitempty"`
 
 	FieldMappingFields []*FieldMappingField `json:"fieldMappingFields,omitempty"`
@@ -5820,8 +5708,6 @@ type FieldMappingRow struct {
 }
 
 type FieldMappingField struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldMappingField"`
-
 	DataServiceField string `json:"dataServiceField,omitempty"`
 
 	DataServiceObjectName string `json:"dataServiceObjectName,omitempty"`
@@ -5830,8 +5716,6 @@ type FieldMappingField struct {
 }
 
 type Community struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Community"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -5866,32 +5750,24 @@ type Community struct {
 }
 
 type ReputationLevels struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationLevels"`
-
 	ChatterAnswersReputationLevels []*ChatterAnswersReputationLevel `json:"chatterAnswersReputationLevels,omitempty"`
 
 	IdeaReputationLevels []*IdeaReputationLevel `json:"ideaReputationLevels,omitempty"`
 }
 
 type ChatterAnswersReputationLevel struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ChatterAnswersReputationLevel"`
-
 	Name string `json:"name,omitempty"`
 
 	Value int32 `json:"value,omitempty"`
 }
 
 type IdeaReputationLevel struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata IdeaReputationLevel"`
-
 	Name string `json:"name,omitempty"`
 
 	Value int32 `json:"value,omitempty"`
 }
 
 type CommunityTemplateDefinition struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CommunityTemplateDefinition"`
-
 	*Metadata
 
 	BundlesInfo []*CommunityTemplateBundleInfo `json:"bundlesInfo,omitempty"`
@@ -5910,8 +5786,6 @@ type CommunityTemplateDefinition struct {
 }
 
 type CommunityTemplateBundleInfo struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CommunityTemplateBundleInfo"`
-
 	Description string `json:"description,omitempty"`
 
 	Image string `json:"image,omitempty"`
@@ -5924,14 +5798,10 @@ type CommunityTemplateBundleInfo struct {
 }
 
 type CommunityTemplatePageSetting struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CommunityTemplatePageSetting"`
-
 	Page string `json:"page,omitempty"`
 }
 
 type CommunityThemeDefinition struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CommunityThemeDefinition"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -5944,16 +5814,12 @@ type CommunityThemeDefinition struct {
 }
 
 type CommunityThemeSetting struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CommunityThemeSetting"`
-
 	ThemeLayout string `json:"themeLayout,omitempty"`
 
 	ThemeLayoutType *CommunityThemeLayoutType `json:"themeLayoutType,omitempty"`
 }
 
 type CompactLayout struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CompactLayout"`
-
 	*Metadata
 
 	Fields []string `json:"fields,omitempty"`
@@ -5962,24 +5828,18 @@ type CompactLayout struct {
 }
 
 type CompanySettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CompanySettings"`
-
 	*Metadata
 
 	FiscalYear *FiscalYearSettings `json:"fiscalYear,omitempty"`
 }
 
 type FiscalYearSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FiscalYearSettings"`
-
 	FiscalYearNameBasedOn string `json:"fiscalYearNameBasedOn,omitempty"`
 
 	StartMonth string `json:"startMonth,omitempty"`
 }
 
 type ConnectedApp struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedApp"`
-
 	*Metadata
 
 	Attributes []*ConnectedAppAttribute `json:"attributes,omitempty"`
@@ -6016,16 +5876,12 @@ type ConnectedApp struct {
 }
 
 type ConnectedAppAttribute struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppAttribute"`
-
 	Formula string `json:"formula,omitempty"`
 
 	Key string `json:"key,omitempty"`
 }
 
 type ConnectedAppCanvasConfig struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppCanvasConfig"`
-
 	AccessMethod *AccessMethod `json:"accessMethod,omitempty"`
 
 	CanvasUrl string `json:"canvasUrl,omitempty"`
@@ -6040,8 +5896,6 @@ type ConnectedAppCanvasConfig struct {
 }
 
 type ConnectedAppIpRange struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppIpRange"`
-
 	Description string `json:"description,omitempty"`
 
 	End string `json:"end,omitempty"`
@@ -6050,8 +5904,6 @@ type ConnectedAppIpRange struct {
 }
 
 type ConnectedAppMobileDetailConfig struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppMobileDetailConfig"`
-
 	ApplicationBinaryFile []byte `json:"applicationBinaryFile,omitempty"`
 
 	ApplicationBinaryFileName string `json:"applicationBinaryFileName,omitempty"`
@@ -6078,8 +5930,6 @@ type ConnectedAppMobileDetailConfig struct {
 }
 
 type ConnectedAppOauthConfig struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppOauthConfig"`
-
 	CallbackUrl string `json:"callbackUrl,omitempty"`
 
 	Certificate string `json:"certificate,omitempty"`
@@ -6092,8 +5942,6 @@ type ConnectedAppOauthConfig struct {
 }
 
 type ConnectedAppSamlConfig struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ConnectedAppSamlConfig"`
-
 	AcsUrl string `json:"acsUrl,omitempty"`
 
 	Certificate string `json:"certificate,omitempty"`
@@ -6114,8 +5962,6 @@ type ConnectedAppSamlConfig struct {
 }
 
 type ContractSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContractSettings"`
-
 	*Metadata
 
 	AutoCalculateEndDate bool `json:"autoCalculateEndDate,omitempty"`
@@ -6132,16 +5978,12 @@ type ContractSettings struct {
 }
 
 type CorsWhitelistOrigin struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CorsWhitelistOrigin"`
-
 	*Metadata
 
 	UrlPattern string `json:"urlPattern,omitempty"`
 }
 
 type CustomApplication struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomApplication"`
-
 	*Metadata
 
 	ActionOverrides []*AppActionOverride `json:"actionOverrides,omitempty"`
@@ -6214,16 +6056,12 @@ type CustomApplication struct {
 }
 
 type AppActionOverride struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AppActionOverride"`
-
 	*ActionOverride
 
 	PageOrSobjectType string `json:"pageOrSobjectType,omitempty"`
 }
 
 type ActionOverride struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ActionOverride"`
-
 	ActionName string `json:"actionName,omitempty"`
 
 	Comment string `json:"comment,omitempty"`
@@ -6238,8 +6076,6 @@ type ActionOverride struct {
 }
 
 type AppBrand struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AppBrand"`
-
 	FooterColor string `json:"footerColor,omitempty"`
 
 	HeaderColor string `json:"headerColor,omitempty"`
@@ -6250,30 +6086,22 @@ type AppBrand struct {
 }
 
 type CustomApplicationComponents struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomApplicationComponents"`
-
 	Alignment string `json:"alignment,omitempty"`
 
 	CustomApplicationComponent []string `json:"customApplicationComponent,omitempty"`
 }
 
 type DomainWhitelist struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DomainWhitelist"`
-
 	Domain []string `json:"domain,omitempty"`
 }
 
 type KeyboardShortcuts struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KeyboardShortcuts"`
-
 	CustomShortcut []*CustomShortcut `json:"customShortcut,omitempty"`
 
 	DefaultShortcut []*DefaultShortcut `json:"defaultShortcut,omitempty"`
 }
 
 type CustomShortcut struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomShortcut"`
-
 	*DefaultShortcut
 
 	Description string `json:"description,omitempty"`
@@ -6282,8 +6110,6 @@ type CustomShortcut struct {
 }
 
 type DefaultShortcut struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DefaultShortcut"`
-
 	Action string `json:"action,omitempty"`
 
 	Active bool `json:"active,omitempty"`
@@ -6292,8 +6118,6 @@ type DefaultShortcut struct {
 }
 
 type ListPlacement struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ListPlacement"`
-
 	Height int32 `json:"height,omitempty"`
 
 	Location string `json:"location,omitempty"`
@@ -6304,8 +6128,6 @@ type ListPlacement struct {
 }
 
 type LiveAgentConfig struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveAgentConfig"`
-
 	EnableLiveChat bool `json:"enableLiveChat,omitempty"`
 
 	OpenNewAccountSubtab bool `json:"openNewAccountSubtab,omitempty"`
@@ -6324,50 +6146,36 @@ type LiveAgentConfig struct {
 }
 
 type PagesToOpen struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PagesToOpen"`
-
 	PageToOpen []string `json:"pageToOpen,omitempty"`
 }
 
 type PushNotifications struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PushNotifications"`
-
 	PushNotification []*PushNotification `json:"pushNotification,omitempty"`
 }
 
 type PushNotification struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PushNotification"`
-
 	FieldNames []string `json:"fieldNames,omitempty"`
 
 	ObjectName string `json:"objectName,omitempty"`
 }
 
 type TabLimitConfig struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata TabLimitConfig"`
-
 	MaxNumberOfPrimaryTabs string `json:"maxNumberOfPrimaryTabs,omitempty"`
 
 	MaxNumberOfSubTabs string `json:"maxNumberOfSubTabs,omitempty"`
 }
 
 type WorkspaceMappings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkspaceMappings"`
-
 	Mapping []*WorkspaceMapping `json:"mapping,omitempty"`
 }
 
 type WorkspaceMapping struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkspaceMapping"`
-
 	FieldName string `json:"fieldName,omitempty"`
 
 	Tab string `json:"tab,omitempty"`
 }
 
 type CustomApplicationComponent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomApplicationComponent"`
-
 	*Metadata
 
 	ButtonIconUrl string `json:"buttonIconUrl,omitempty"`
@@ -6392,8 +6200,6 @@ type CustomApplicationComponent struct {
 }
 
 type CustomDataType struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomDataType"`
-
 	*Metadata
 
 	CustomDataTypeComponents []*CustomDataTypeComponent `json:"customDataTypeComponents,omitempty"`
@@ -6412,8 +6218,6 @@ type CustomDataType struct {
 }
 
 type CustomDataTypeComponent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomDataTypeComponent"`
-
 	DeveloperSuffix string `json:"developerSuffix,omitempty"`
 
 	EnforceFieldRequiredness bool `json:"enforceFieldRequiredness,omitempty"`
@@ -6434,8 +6238,6 @@ type CustomDataTypeComponent struct {
 }
 
 type CustomExperience struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomExperience"`
-
 	*Metadata
 
 	AllowInternalUserLogin bool `json:"allowInternalUserLogin,omitempty"`
@@ -6474,8 +6276,6 @@ type CustomExperience struct {
 }
 
 type CustomExperienceBranding struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomExperienceBranding"`
-
 	LoginFooterText string `json:"loginFooterText,omitempty"`
 
 	LoginLogo string `json:"loginLogo,omitempty"`
@@ -6504,8 +6304,6 @@ type CustomExperienceBranding struct {
 }
 
 type CustomExperienceTabSet struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomExperienceTabSet"`
-
 	CustomTab []string `json:"customTab,omitempty"`
 
 	DefaultTab string `json:"defaultTab,omitempty"`
@@ -6514,8 +6312,6 @@ type CustomExperienceTabSet struct {
 }
 
 type CustomFeedFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomFeedFilter"`
-
 	*Metadata
 
 	Criteria []*FeedFilterCriterion `json:"criteria,omitempty"`
@@ -6528,8 +6324,6 @@ type CustomFeedFilter struct {
 }
 
 type FeedFilterCriterion struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FeedFilterCriterion"`
-
 	FeedItemType *FeedItemType `json:"feedItemType,omitempty"`
 
 	FeedItemVisibility *FeedItemVisibility `json:"feedItemVisibility,omitempty"`
@@ -6680,16 +6474,12 @@ type ValueSet struct {
 }
 
 type ValueSetValuesDefinition struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ValueSetValuesDefinition"`
-
 	Sorted bool `json:"sorted,omitempty"`
 
 	Value []*CustomValue `json:"value,omitempty"`
 }
 
 type CustomValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomValue"`
-
 	*Metadata
 
 	Color string `json:"color,omitempty"`
@@ -6702,8 +6492,6 @@ type CustomValue struct {
 }
 
 type StandardValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata StandardValue"`
-
 	*CustomValue
 
 	AllowEmail bool `json:"allowEmail,omitempty"`
@@ -6728,16 +6516,12 @@ type StandardValue struct {
 }
 
 type ValueSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ValueSettings"`
-
 	ControllingFieldValue []string `json:"controllingFieldValue,omitempty"`
 
 	ValueName string `json:"valueName,omitempty"`
 }
 
 type CustomLabel struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomLabel"`
-
 	*Metadata
 
 	Categories string `json:"categories,omitempty"`
@@ -6752,16 +6536,12 @@ type CustomLabel struct {
 }
 
 type CustomLabels struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomLabels"`
-
 	*Metadata
 
 	Labels []*CustomLabel `json:"labels,omitempty"`
 }
 
 type CustomMetadata struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomMetadata"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -6774,16 +6554,12 @@ type CustomMetadata struct {
 }
 
 type CustomMetadataValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomMetadataValue"`
-
 	Field string `json:"field,omitempty"`
 
 	Value interface{} `json:"value,omitempty"`
 }
 
 type CustomObject struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata metadata"`
-
 	Type string `json:"http://www.w3.org/2001/XMLSchema-instance type,attr"`
 
 	FullName string `json:"fullName"`
@@ -6886,8 +6662,6 @@ type ArticleTypeChannelDisplay struct {
 }
 
 type ArticleTypeTemplate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ArticleTypeTemplate"`
-
 	Channel *Channel `json:"channel,omitempty"`
 
 	Page string `json:"page,omitempty"`
@@ -6896,8 +6670,6 @@ type ArticleTypeTemplate struct {
 }
 
 type FieldSet struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldSet"`
-
 	*Metadata
 
 	AvailableFields []*FieldSetItem `json:"availableFields,omitempty"`
@@ -6910,8 +6682,6 @@ type FieldSet struct {
 }
 
 type FieldSetItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldSetItem"`
-
 	Field string `json:"field,omitempty"`
 
 	IsFieldManaged bool `json:"isFieldManaged,omitempty"`
@@ -6928,8 +6698,6 @@ type HistoryRetentionPolicy struct {
 }
 
 type ListView struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ListView"`
-
 	*Metadata
 
 	BooleanFilter string `json:"booleanFilter,omitempty"`
@@ -6952,8 +6720,6 @@ type ListView struct {
 }
 
 type ListViewFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ListViewFilter"`
-
 	Field string `json:"field,omitempty"`
 
 	Operation *FilterOperation `json:"operation,omitempty"`
@@ -6962,8 +6728,6 @@ type ListViewFilter struct {
 }
 
 type SharedTo struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharedTo"`
-
 	AllCustomerPortalUsers string `json:"allCustomerPortalUsers,omitempty"`
 
 	AllInternalUsers string `json:"allInternalUsers,omitempty"`
@@ -7004,8 +6768,6 @@ type SharedTo struct {
 }
 
 type RecordType struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RecordType"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -7022,8 +6784,6 @@ type RecordType struct {
 }
 
 type RecordTypePicklistValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RecordTypePicklistValue"`
-
 	Picklist string `json:"picklist,omitempty"`
 
 	Values []*PicklistValue `json:"values,omitempty"`
@@ -7120,8 +6880,6 @@ type WebLink struct {
 }
 
 type CustomObjectTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomObjectTranslation"`
-
 	*Metadata
 
 	CaseValues []*ObjectNameCaseValue `json:"caseValues,omitempty"`
@@ -7152,8 +6910,6 @@ type CustomObjectTranslation struct {
 }
 
 type ObjectNameCaseValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectNameCaseValue"`
-
 	Article *Article `json:"article,omitempty"`
 
 	CaseType *CaseType `json:"caseType,omitempty"`
@@ -7166,8 +6922,6 @@ type ObjectNameCaseValue struct {
 }
 
 type CustomFieldTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomFieldTranslation"`
-
 	CaseValues []*ObjectNameCaseValue `json:"caseValues,omitempty"`
 
 	Gender *Gender `json:"gender,omitempty"`
@@ -7200,8 +6954,6 @@ type PicklistValueTranslation struct {
 }
 
 type LayoutTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LayoutTranslation"`
-
 	Layout string `json:"layout,omitempty"`
 
 	LayoutType string `json:"layoutType,omitempty"`
@@ -7210,64 +6962,48 @@ type LayoutTranslation struct {
 }
 
 type LayoutSectionTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LayoutSectionTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Section string `json:"section,omitempty"`
 }
 
 type QuickActionTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type RecordTypeTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RecordTypeTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type SharingReasonTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingReasonTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type StandardFieldTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata StandardFieldTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type ValidationRuleTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ValidationRuleTranslation"`
-
 	ErrorMessage string `json:"errorMessage,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type WebLinkTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WebLinkTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type WorkflowTaskTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowTaskTranslation"`
-
 	Description string `json:"description,omitempty"`
 
 	Name string `json:"name,omitempty"`
@@ -7276,8 +7012,6 @@ type WorkflowTaskTranslation struct {
 }
 
 type CustomPageWebLink struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomPageWebLink"`
-
 	*Metadata
 
 	Availability *WebLinkAvailability `json:"availability,omitempty"`
@@ -7324,8 +7058,6 @@ type CustomPageWebLink struct {
 }
 
 type CustomPermission struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomPermission"`
-
 	*Metadata
 
 	ConnectedApp string `json:"connectedApp,omitempty"`
@@ -7338,16 +7070,12 @@ type CustomPermission struct {
 }
 
 type CustomPermissionDependencyRequired struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomPermissionDependencyRequired"`
-
 	CustomPermission string `json:"customPermission,omitempty"`
 
 	Dependency bool `json:"dependency,omitempty"`
 }
 
 type CustomSite struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomSite"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -7434,8 +7162,6 @@ type CustomSite struct {
 }
 
 type SiteWebAddress struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SiteWebAddress"`
-
 	Certificate string `json:"certificate,omitempty"`
 
 	DomainName string `json:"domainName,omitempty"`
@@ -7444,8 +7170,6 @@ type SiteWebAddress struct {
 }
 
 type SiteRedirectMapping struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SiteRedirectMapping"`
-
 	Action *SiteRedirect `json:"action,omitempty"`
 
 	IsActive bool `json:"isActive,omitempty"`
@@ -7456,8 +7180,6 @@ type SiteRedirectMapping struct {
 }
 
 type CustomTab struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomTab"`
-
 	*Metadata
 
 	ActionOverrides []*ActionOverride `json:"actionOverrides,omitempty"`
@@ -7494,8 +7216,6 @@ type CustomTab struct {
 }
 
 type Dashboard struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Dashboard"`
-
 	*Metadata
 
 	BackgroundEndColor string `json:"backgroundEndColor,omitempty"`
@@ -7538,24 +7258,18 @@ type Dashboard struct {
 }
 
 type DashboardFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardFilter"`
-
 	DashboardFilterOptions []*DashboardFilterOption `json:"dashboardFilterOptions,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type DashboardFilterOption struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardFilterOption"`
-
 	Operator *DashboardFilterOperation `json:"operator,omitempty"`
 
 	Values []string `json:"values,omitempty"`
 }
 
 type DashboardGridLayout struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardGridLayout"`
-
 	DashboardGridComponents []*DashboardGridComponent `json:"dashboardGridComponents,omitempty"`
 
 	NumberOfColumns int32 `json:"numberOfColumns,omitempty"`
@@ -7564,8 +7278,6 @@ type DashboardGridLayout struct {
 }
 
 type DashboardGridComponent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardGridComponent"`
-
 	ColSpan int32 `json:"colSpan,omitempty"`
 
 	ColumnIndex int32 `json:"columnIndex,omitempty"`
@@ -7578,8 +7290,6 @@ type DashboardGridComponent struct {
 }
 
 type DashboardComponent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardComponent"`
-
 	AutoselectColumnsFromReport bool `json:"autoselectColumnsFromReport,omitempty"`
 
 	ChartAxisRange *ChartRangeType `json:"chartAxisRange,omitempty"`
@@ -7672,14 +7382,10 @@ type ChartSummary struct {
 }
 
 type DashboardFilterColumn struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardFilterColumn"`
-
 	Column string `json:"column,omitempty"`
 }
 
 type DashboardTableColumn struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardTableColumn"`
-
 	AggregateType *ReportSummaryType `json:"aggregateType,omitempty"`
 
 	CalculatePercent bool `json:"calculatePercent,omitempty"`
@@ -7694,16 +7400,12 @@ type DashboardTableColumn struct {
 }
 
 type DashboardComponentSection struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardComponentSection"`
-
 	ColumnSize *DashboardComponentSize `json:"columnSize,omitempty"`
 
 	Components []*DashboardComponent `json:"components,omitempty"`
 }
 
 type DataCategoryGroup struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DataCategoryGroup"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -7718,8 +7420,6 @@ type DataCategoryGroup struct {
 }
 
 type DataCategory struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DataCategory"`
-
 	DataCategory []*DataCategory `json:"dataCategory,omitempty"`
 
 	Label string `json:"label,omitempty"`
@@ -7728,14 +7428,10 @@ type DataCategory struct {
 }
 
 type ObjectUsage struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectUsage"`
-
 	Object []string `json:"object,omitempty"`
 }
 
 type DelegateGroup struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DelegateGroup"`
-
 	*Metadata
 
 	CustomObjects []string `json:"customObjects,omitempty"`
@@ -7754,8 +7450,6 @@ type DelegateGroup struct {
 }
 
 type DuplicateRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DuplicateRule"`
-
 	*Metadata
 
 	ActionOnInsert *DupeActionType `json:"actionOnInsert,omitempty"`
@@ -7784,16 +7478,12 @@ type DuplicateRule struct {
 }
 
 type DuplicateRuleFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DuplicateRuleFilter"`
-
 	BooleanFilter string `json:"booleanFilter,omitempty"`
 
 	DuplicateRuleFilterItems []*DuplicateRuleFilterItem `json:"duplicateRuleFilterItems,omitempty"`
 }
 
 type DuplicateRuleMatchRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DuplicateRuleMatchRule"`
-
 	MatchRuleSObjectType string `json:"matchRuleSObjectType,omitempty"`
 
 	MatchingRule string `json:"matchingRule,omitempty"`
@@ -7802,8 +7492,6 @@ type DuplicateRuleMatchRule struct {
 }
 
 type ObjectMapping struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectMapping"`
-
 	InputObject string `json:"inputObject,omitempty"`
 
 	MappingFields []*ObjectMappingField `json:"mappingFields,omitempty"`
@@ -7812,16 +7500,12 @@ type ObjectMapping struct {
 }
 
 type ObjectMappingField struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectMappingField"`
-
 	InputField string `json:"inputField,omitempty"`
 
 	OutputField string `json:"outputField,omitempty"`
 }
 
 type EmbeddedServiceConfig struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmbeddedServiceConfig"`
-
 	*Metadata
 
 	MasterLabel string `json:"masterLabel,omitempty"`
@@ -7830,8 +7514,6 @@ type EmbeddedServiceConfig struct {
 }
 
 type EmbeddedServiceLiveAgent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmbeddedServiceLiveAgent"`
-
 	*Metadata
 
 	EmbeddedServiceConfig string `json:"embeddedServiceConfig,omitempty"`
@@ -7848,8 +7530,6 @@ type EmbeddedServiceLiveAgent struct {
 }
 
 type EntitlementProcess struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EntitlementProcess"`
-
 	*Metadata
 
 	SObjectType string `json:"SObjectType,omitempty"`
@@ -7882,8 +7562,6 @@ type EntitlementProcess struct {
 }
 
 type EntitlementProcessMilestoneItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EntitlementProcessMilestoneItem"`
-
 	BusinessHours string `json:"businessHours,omitempty"`
 
 	CriteriaBooleanFilter string `json:"criteriaBooleanFilter,omitempty"`
@@ -7906,8 +7584,6 @@ type EntitlementProcessMilestoneItem struct {
 }
 
 type EntitlementProcessMilestoneTimeTrigger struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EntitlementProcessMilestoneTimeTrigger"`
-
 	Actions []*WorkflowActionReference `json:"actions,omitempty"`
 
 	TimeLength int32 `json:"timeLength,omitempty"`
@@ -7916,8 +7592,6 @@ type EntitlementProcessMilestoneTimeTrigger struct {
 }
 
 type EntitlementSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EntitlementSettings"`
-
 	*Metadata
 
 	AssetLookupLimitedToActiveEntitlementsOnAccount bool `json:"assetLookupLimitedToActiveEntitlementsOnAccount,omitempty"`
@@ -7942,8 +7616,6 @@ type EntitlementSettings struct {
 }
 
 type EntitlementTemplate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EntitlementTemplate"`
-
 	*Metadata
 
 	BusinessHours string `json:"businessHours,omitempty"`
@@ -7960,8 +7632,6 @@ type EntitlementTemplate struct {
 }
 
 type EscalationRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EscalationRule"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -7970,16 +7640,12 @@ type EscalationRule struct {
 }
 
 type EscalationRules struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EscalationRules"`
-
 	*Metadata
 
 	EscalationRule []*EscalationRule `json:"escalationRule,omitempty"`
 }
 
 type EventDelivery struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EventDelivery"`
-
 	*Metadata
 
 	EventParameters []*EventParameterMap `json:"eventParameters,omitempty"`
@@ -7992,16 +7658,12 @@ type EventDelivery struct {
 }
 
 type EventParameterMap struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EventParameterMap"`
-
 	ParameterName string `json:"parameterName,omitempty"`
 
 	ParameterValue string `json:"parameterValue,omitempty"`
 }
 
 type EventSubscription struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EventSubscription"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -8014,8 +7676,6 @@ type EventSubscription struct {
 }
 
 type EventType struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EventType"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -8026,8 +7686,6 @@ type EventType struct {
 }
 
 type EventTypeParameter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EventTypeParameter"`
-
 	DefaultValue string `json:"defaultValue,omitempty"`
 
 	Description string `json:"description,omitempty"`
@@ -8046,8 +7704,6 @@ type EventTypeParameter struct {
 }
 
 type ExternalDataSource struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ExternalDataSource"`
-
 	*Metadata
 
 	AuthProvider string `json:"authProvider,omitempty"`
@@ -8084,8 +7740,6 @@ type ExternalDataSource struct {
 }
 
 type ExternalServiceRegistration struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ExternalServiceRegistration"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -8104,8 +7758,6 @@ type ExternalServiceRegistration struct {
 }
 
 type FlexiPage struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlexiPage"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -8128,8 +7780,6 @@ type FlexiPage struct {
 }
 
 type FlexiPageRegion struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlexiPageRegion"`
-
 	Appendable *RegionFlagStatus `json:"appendable,omitempty"`
 
 	ComponentInstances []*ComponentInstance `json:"componentInstances,omitempty"`
@@ -8146,16 +7796,12 @@ type FlexiPageRegion struct {
 }
 
 type ComponentInstance struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ComponentInstance"`
-
 	ComponentInstanceProperties []*ComponentInstanceProperty `json:"componentInstanceProperties,omitempty"`
 
 	ComponentName string `json:"componentName,omitempty"`
 }
 
 type ComponentInstanceProperty struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ComponentInstanceProperty"`
-
 	Name string `json:"name,omitempty"`
 
 	Type_ *ComponentInstancePropertyTypeEnum `json:"type,omitempty"`
@@ -8164,20 +7810,14 @@ type ComponentInstanceProperty struct {
 }
 
 type QuickActionList struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionList"`
-
 	QuickActionListItems []*QuickActionListItem `json:"quickActionListItems,omitempty"`
 }
 
 type QuickActionListItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionListItem"`
-
 	QuickActionName string `json:"quickActionName,omitempty"`
 }
 
 type Flow struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Flow"`
-
 	*Metadata
 
 	ActionCalls []*FlowActionCall `json:"actionCalls,omitempty"`
@@ -8232,8 +7872,6 @@ type Flow struct {
 }
 
 type FlowActionCall struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowActionCall"`
-
 	*FlowNode
 
 	ActionName string `json:"actionName,omitempty"`
@@ -8250,8 +7888,6 @@ type FlowActionCall struct {
 }
 
 type FlowNode struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowNode"`
-
 	*FlowElement
 
 	Label string `json:"label,omitempty"`
@@ -8262,8 +7898,6 @@ type FlowNode struct {
 }
 
 type FlowElement struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowElement"`
-
 	*FlowBaseElement
 
 	Description string `json:"description,omitempty"`
@@ -8272,22 +7906,16 @@ type FlowElement struct {
 }
 
 type FlowBaseElement struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowBaseElement"`
-
 	ProcessMetadataValues []*FlowMetadataValue `json:"processMetadataValues,omitempty"`
 }
 
 type FlowMetadataValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowMetadataValue"`
-
 	Name string `json:"name,omitempty"`
 
 	Value *FlowElementReferenceOrValue `json:"value,omitempty"`
 }
 
 type FlowElementReferenceOrValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowElementReferenceOrValue"`
-
 	BooleanValue bool `json:"booleanValue,omitempty"`
 
 	DateTimeValue time.Time `json:"dateTimeValue,omitempty"`
@@ -8302,8 +7930,6 @@ type FlowElementReferenceOrValue struct {
 }
 
 type FlowActionCallInputParameter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowActionCallInputParameter"`
-
 	*FlowBaseElement
 
 	Name string `json:"name,omitempty"`
@@ -8312,8 +7938,6 @@ type FlowActionCallInputParameter struct {
 }
 
 type FlowActionCallOutputParameter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowActionCallOutputParameter"`
-
 	*FlowBaseElement
 
 	AssignToReference string `json:"assignToReference,omitempty"`
@@ -8322,8 +7946,6 @@ type FlowActionCallOutputParameter struct {
 }
 
 type FlowApexPluginCallInputParameter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowApexPluginCallInputParameter"`
-
 	*FlowBaseElement
 
 	Name string `json:"name,omitempty"`
@@ -8332,8 +7954,6 @@ type FlowApexPluginCallInputParameter struct {
 }
 
 type FlowApexPluginCallOutputParameter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowApexPluginCallOutputParameter"`
-
 	*FlowBaseElement
 
 	AssignToReference string `json:"assignToReference,omitempty"`
@@ -8342,8 +7962,6 @@ type FlowApexPluginCallOutputParameter struct {
 }
 
 type FlowAssignmentItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowAssignmentItem"`
-
 	*FlowBaseElement
 
 	AssignToReference string `json:"assignToReference,omitempty"`
@@ -8354,8 +7972,6 @@ type FlowAssignmentItem struct {
 }
 
 type FlowChoiceUserInput struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowChoiceUserInput"`
-
 	*FlowBaseElement
 
 	IsRequired bool `json:"isRequired,omitempty"`
@@ -8366,16 +7982,12 @@ type FlowChoiceUserInput struct {
 }
 
 type FlowInputValidationRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowInputValidationRule"`
-
 	ErrorMessage string `json:"errorMessage,omitempty"`
 
 	FormulaExpression string `json:"formulaExpression,omitempty"`
 }
 
 type FlowCondition struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowCondition"`
-
 	*FlowBaseElement
 
 	LeftValueReference string `json:"leftValueReference,omitempty"`
@@ -8386,16 +7998,12 @@ type FlowCondition struct {
 }
 
 type FlowConnector struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowConnector"`
-
 	*FlowBaseElement
 
 	TargetReference string `json:"targetReference,omitempty"`
 }
 
 type FlowInputFieldAssignment struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowInputFieldAssignment"`
-
 	*FlowBaseElement
 
 	Field string `json:"field,omitempty"`
@@ -8404,8 +8012,6 @@ type FlowInputFieldAssignment struct {
 }
 
 type FlowOutputFieldAssignment struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowOutputFieldAssignment"`
-
 	*FlowBaseElement
 
 	AssignToReference string `json:"assignToReference,omitempty"`
@@ -8414,8 +8020,6 @@ type FlowOutputFieldAssignment struct {
 }
 
 type FlowRecordFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRecordFilter"`
-
 	*FlowBaseElement
 
 	Field string `json:"field,omitempty"`
@@ -8426,8 +8030,6 @@ type FlowRecordFilter struct {
 }
 
 type FlowScreenRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowScreenRule"`
-
 	*FlowBaseElement
 
 	ConditionLogic string `json:"conditionLogic,omitempty"`
@@ -8440,8 +8042,6 @@ type FlowScreenRule struct {
 }
 
 type FlowScreenRuleAction struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowScreenRuleAction"`
-
 	*FlowBaseElement
 
 	Attribute string `json:"attribute,omitempty"`
@@ -8452,8 +8052,6 @@ type FlowScreenRuleAction struct {
 }
 
 type FlowSubflowInputAssignment struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowSubflowInputAssignment"`
-
 	*FlowBaseElement
 
 	Name string `json:"name,omitempty"`
@@ -8462,8 +8060,6 @@ type FlowSubflowInputAssignment struct {
 }
 
 type FlowSubflowOutputAssignment struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowSubflowOutputAssignment"`
-
 	*FlowBaseElement
 
 	AssignToReference string `json:"assignToReference,omitempty"`
@@ -8472,8 +8068,6 @@ type FlowSubflowOutputAssignment struct {
 }
 
 type FlowWaitEventInputParameter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowWaitEventInputParameter"`
-
 	*FlowBaseElement
 
 	Name string `json:"name,omitempty"`
@@ -8482,8 +8076,6 @@ type FlowWaitEventInputParameter struct {
 }
 
 type FlowWaitEventOutputParameter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowWaitEventOutputParameter"`
-
 	*FlowBaseElement
 
 	AssignToReference string `json:"assignToReference,omitempty"`
@@ -8492,8 +8084,6 @@ type FlowWaitEventOutputParameter struct {
 }
 
 type FlowChoice struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowChoice"`
-
 	*FlowElement
 
 	ChoiceText string `json:"choiceText,omitempty"`
@@ -8506,8 +8096,6 @@ type FlowChoice struct {
 }
 
 type FlowConstant struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowConstant"`
-
 	*FlowElement
 
 	DataType *FlowDataType `json:"dataType,omitempty"`
@@ -8516,8 +8104,6 @@ type FlowConstant struct {
 }
 
 type FlowDynamicChoiceSet struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowDynamicChoiceSet"`
-
 	*FlowElement
 
 	DataType *FlowDataType `json:"dataType,omitempty"`
@@ -8544,8 +8130,6 @@ type FlowDynamicChoiceSet struct {
 }
 
 type FlowFormula struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowFormula"`
-
 	*FlowElement
 
 	DataType *FlowDataType `json:"dataType,omitempty"`
@@ -8556,8 +8140,6 @@ type FlowFormula struct {
 }
 
 type FlowRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRule"`
-
 	*FlowElement
 
 	ConditionLogic string `json:"conditionLogic,omitempty"`
@@ -8570,8 +8152,6 @@ type FlowRule struct {
 }
 
 type FlowScreenField struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowScreenField"`
-
 	*FlowElement
 
 	ChoiceReferences []string `json:"choiceReferences,omitempty"`
@@ -8596,16 +8176,12 @@ type FlowScreenField struct {
 }
 
 type FlowTextTemplate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowTextTemplate"`
-
 	*FlowElement
 
 	Text string `json:"text,omitempty"`
 }
 
 type FlowVariable struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowVariable"`
-
 	*FlowElement
 
 	DataType *FlowDataType `json:"dataType,omitempty"`
@@ -8624,8 +8200,6 @@ type FlowVariable struct {
 }
 
 type FlowWaitEvent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowWaitEvent"`
-
 	*FlowElement
 
 	ConditionLogic string `json:"conditionLogic,omitempty"`
@@ -8644,8 +8218,6 @@ type FlowWaitEvent struct {
 }
 
 type FlowApexPluginCall struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowApexPluginCall"`
-
 	*FlowNode
 
 	ApexClass string `json:"apexClass,omitempty"`
@@ -8660,8 +8232,6 @@ type FlowApexPluginCall struct {
 }
 
 type FlowAssignment struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowAssignment"`
-
 	*FlowNode
 
 	AssignmentItems []*FlowAssignmentItem `json:"assignmentItems,omitempty"`
@@ -8670,8 +8240,6 @@ type FlowAssignment struct {
 }
 
 type FlowDecision struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowDecision"`
-
 	*FlowNode
 
 	DefaultConnector *FlowConnector `json:"defaultConnector,omitempty"`
@@ -8682,8 +8250,6 @@ type FlowDecision struct {
 }
 
 type FlowLoop struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowLoop"`
-
 	*FlowNode
 
 	AssignNextValueToReference string `json:"assignNextValueToReference,omitempty"`
@@ -8698,8 +8264,6 @@ type FlowLoop struct {
 }
 
 type FlowRecordCreate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRecordCreate"`
-
 	*FlowNode
 
 	AssignRecordIdToReference string `json:"assignRecordIdToReference,omitempty"`
@@ -8716,8 +8280,6 @@ type FlowRecordCreate struct {
 }
 
 type FlowRecordDelete struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRecordDelete"`
-
 	*FlowNode
 
 	Connector *FlowConnector `json:"connector,omitempty"`
@@ -8732,8 +8294,6 @@ type FlowRecordDelete struct {
 }
 
 type FlowRecordLookup struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRecordLookup"`
-
 	*FlowNode
 
 	AssignNullValuesIfNoRecordsFound bool `json:"assignNullValuesIfNoRecordsFound,omitempty"`
@@ -8758,8 +8318,6 @@ type FlowRecordLookup struct {
 }
 
 type FlowRecordUpdate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowRecordUpdate"`
-
 	*FlowNode
 
 	Connector *FlowConnector `json:"connector,omitempty"`
@@ -8776,8 +8334,6 @@ type FlowRecordUpdate struct {
 }
 
 type FlowScreen struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowScreen"`
-
 	*FlowNode
 
 	AllowBack bool `json:"allowBack,omitempty"`
@@ -8798,16 +8354,12 @@ type FlowScreen struct {
 }
 
 type FlowStep struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowStep"`
-
 	*FlowNode
 
 	Connectors []*FlowConnector `json:"connectors,omitempty"`
 }
 
 type FlowSubflow struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowSubflow"`
-
 	*FlowNode
 
 	Connector *FlowConnector `json:"connector,omitempty"`
@@ -8820,8 +8372,6 @@ type FlowSubflow struct {
 }
 
 type FlowWait struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowWait"`
-
 	*FlowNode
 
 	DefaultConnector *FlowConnector `json:"defaultConnector,omitempty"`
@@ -8834,8 +8384,6 @@ type FlowWait struct {
 }
 
 type FlowDefinition struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FlowDefinition"`
-
 	*Metadata
 
 	ActiveVersionNumber int32 `json:"activeVersionNumber,omitempty"`
@@ -8846,8 +8394,6 @@ type FlowDefinition struct {
 }
 
 type Folder struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Folder"`
-
 	*Metadata
 
 	AccessType *FolderAccessTypes `json:"accessType,omitempty"`
@@ -8862,8 +8408,6 @@ type Folder struct {
 }
 
 type FolderShare struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FolderShare"`
-
 	AccessLevel *FolderShareAccessLevel `json:"accessLevel,omitempty"`
 
 	SharedTo string `json:"sharedTo,omitempty"`
@@ -8872,32 +8416,22 @@ type FolderShare struct {
 }
 
 type DashboardFolder struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardFolder"`
-
 	*Folder
 }
 
 type DocumentFolder struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DocumentFolder"`
-
 	*Folder
 }
 
 type EmailFolder struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmailFolder"`
-
 	*Folder
 }
 
 type ReportFolder struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportFolder"`
-
 	*Folder
 }
 
 type ForecastingSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ForecastingSettings"`
-
 	*Metadata
 
 	DisplayCurrency *DisplayCurrency `json:"displayCurrency,omitempty"`
@@ -8910,24 +8444,18 @@ type ForecastingSettings struct {
 }
 
 type ForecastingCategoryMapping struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ForecastingCategoryMapping"`
-
 	ForecastingItemCategoryApiName string `json:"forecastingItemCategoryApiName,omitempty"`
 
 	WeightedSourceCategories []*WeightedSourceCategory `json:"weightedSourceCategories,omitempty"`
 }
 
 type WeightedSourceCategory struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WeightedSourceCategory"`
-
 	SourceCategoryApiName string `json:"sourceCategoryApiName,omitempty"`
 
 	Weight float64 `json:"weight,omitempty"`
 }
 
 type ForecastingTypeSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ForecastingTypeSettings"`
-
 	Active bool `json:"active,omitempty"`
 
 	AdjustmentsSettings *AdjustmentsSettings `json:"adjustmentsSettings,omitempty"`
@@ -8962,16 +8490,12 @@ type ForecastingTypeSettings struct {
 }
 
 type AdjustmentsSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AdjustmentsSettings"`
-
 	EnableAdjustments bool `json:"enableAdjustments,omitempty"`
 
 	EnableOwnerAdjustments bool `json:"enableOwnerAdjustments,omitempty"`
 }
 
 type ForecastRangeSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ForecastRangeSettings"`
-
 	Beginning int32 `json:"beginning,omitempty"`
 
 	Displaying int32 `json:"displaying,omitempty"`
@@ -8980,34 +8504,24 @@ type ForecastRangeSettings struct {
 }
 
 type OpportunityListFieldsLabelMapping struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OpportunityListFieldsLabelMapping"`
-
 	Field string `json:"field,omitempty"`
 
 	Label string `json:"label,omitempty"`
 }
 
 type OpportunityListFieldsSelectedSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OpportunityListFieldsSelectedSettings"`
-
 	Field []string `json:"field,omitempty"`
 }
 
 type OpportunityListFieldsUnselectedSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OpportunityListFieldsUnselectedSettings"`
-
 	Field []string `json:"field,omitempty"`
 }
 
 type QuotasSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuotasSettings"`
-
 	ShowQuotas bool `json:"showQuotas,omitempty"`
 }
 
 type GlobalValueSet struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata GlobalValueSet"`
-
 	*Metadata
 
 	CustomValue []*CustomValue `json:"customValue,omitempty"`
@@ -9020,24 +8534,18 @@ type GlobalValueSet struct {
 }
 
 type GlobalValueSetTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata GlobalValueSetTranslation"`
-
 	*Metadata
 
 	ValueTranslation []*ValueTranslation `json:"valueTranslation,omitempty"`
 }
 
 type ValueTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ValueTranslation"`
-
 	MasterLabel string `json:"masterLabel,omitempty"`
 
 	Translation string `json:"translation,omitempty"`
 }
 
 type Group struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Group"`
-
 	*Metadata
 
 	DoesIncludeBosses bool `json:"doesIncludeBosses,omitempty"`
@@ -9046,8 +8554,6 @@ type Group struct {
 }
 
 type HomePageComponent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata HomePageComponent"`
-
 	*Metadata
 
 	Body string `json:"body,omitempty"`
@@ -9068,8 +8574,6 @@ type HomePageComponent struct {
 }
 
 type HomePageLayout struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata HomePageLayout"`
-
 	*Metadata
 
 	NarrowComponents []string `json:"narrowComponents,omitempty"`
@@ -9078,8 +8582,6 @@ type HomePageLayout struct {
 }
 
 type IdeasSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata IdeasSettings"`
-
 	*Metadata
 
 	EnableChatterProfile bool `json:"enableChatterProfile,omitempty"`
@@ -9096,8 +8598,6 @@ type IdeasSettings struct {
 }
 
 type InstalledPackage struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata InstalledPackage"`
-
 	*Metadata
 
 	Password string `json:"password,omitempty"`
@@ -9106,8 +8606,6 @@ type InstalledPackage struct {
 }
 
 type KeywordList struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KeywordList"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -9118,14 +8616,10 @@ type KeywordList struct {
 }
 
 type Keyword struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Keyword"`
-
 	Keyword string `json:"keyword,omitempty"`
 }
 
 type KnowledgeSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeSettings"`
-
 	*Metadata
 
 	Answers *KnowledgeAnswerSettings `json:"answers,omitempty"`
@@ -9156,8 +8650,6 @@ type KnowledgeSettings struct {
 }
 
 type KnowledgeAnswerSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeAnswerSettings"`
-
 	AssignTo string `json:"assignTo,omitempty"`
 
 	DefaultArticleType string `json:"defaultArticleType,omitempty"`
@@ -9166,8 +8658,6 @@ type KnowledgeAnswerSettings struct {
 }
 
 type KnowledgeCaseSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeCaseSettings"`
-
 	ArticlePDFCreationProfile string `json:"articlePDFCreationProfile,omitempty"`
 
 	ArticlePublicSharingCommunities *KnowledgeCommunitiesSettings `json:"articlePublicSharingCommunities,omitempty"`
@@ -9192,26 +8682,18 @@ type KnowledgeCaseSettings struct {
 }
 
 type KnowledgeCommunitiesSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeCommunitiesSettings"`
-
 	Community []string `json:"community,omitempty"`
 }
 
 type KnowledgeSitesSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeSitesSettings"`
-
 	Site []string `json:"site,omitempty"`
 }
 
 type KnowledgeLanguageSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeLanguageSettings"`
-
 	Language []*KnowledgeLanguage `json:"language,omitempty"`
 }
 
 type KnowledgeLanguage struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeLanguage"`
-
 	Active bool `json:"active,omitempty"`
 
 	DefaultAssignee string `json:"defaultAssignee,omitempty"`
@@ -9226,28 +8708,20 @@ type KnowledgeLanguage struct {
 }
 
 type KnowledgeSuggestedArticlesSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeSuggestedArticlesSettings"`
-
 	CaseFields *KnowledgeCaseFieldsSettings `json:"caseFields,omitempty"`
 
 	UseSuggestedArticlesForCase bool `json:"useSuggestedArticlesForCase,omitempty"`
 }
 
 type KnowledgeCaseFieldsSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeCaseFieldsSettings"`
-
 	Field []*KnowledgeCaseField `json:"field,omitempty"`
 }
 
 type KnowledgeCaseField struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata KnowledgeCaseField"`
-
 	Name string `json:"name,omitempty"`
 }
 
 type Layout struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Layout"`
-
 	*Metadata
 
 	CustomButtons []string `json:"customButtons,omitempty"`
@@ -9298,22 +8772,16 @@ type Layout struct {
 }
 
 type CustomConsoleComponents struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomConsoleComponents"`
-
 	PrimaryTabComponents *PrimaryTabComponents `json:"primaryTabComponents,omitempty"`
 
 	SubtabComponents *SubtabComponents `json:"subtabComponents,omitempty"`
 }
 
 type PrimaryTabComponents struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PrimaryTabComponents"`
-
 	Containers []*Container `json:"containers,omitempty"`
 }
 
 type Container struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Container"`
-
 	Height int32 `json:"height,omitempty"`
 
 	IsContainerAutoSizeEnabled bool `json:"isContainerAutoSizeEnabled,omitempty"`
@@ -9330,8 +8798,6 @@ type Container struct {
 }
 
 type SidebarComponent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SidebarComponent"`
-
 	ComponentType string `json:"componentType,omitempty"`
 
 	Height int32 `json:"height,omitempty"`
@@ -9350,22 +8816,16 @@ type SidebarComponent struct {
 }
 
 type RelatedList struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RelatedList"`
-
 	HideOnDetail bool `json:"hideOnDetail,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type SubtabComponents struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SubtabComponents"`
-
 	Containers []*Container `json:"containers,omitempty"`
 }
 
 type FeedLayout struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FeedLayout"`
-
 	AutocollapsePublisher bool `json:"autocollapsePublisher,omitempty"`
 
 	CompactFeed bool `json:"compactFeed,omitempty"`
@@ -9388,8 +8848,6 @@ type FeedLayout struct {
 }
 
 type FeedLayoutFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FeedLayoutFilter"`
-
 	FeedFilterName string `json:"feedFilterName,omitempty"`
 
 	FeedFilterType *FeedLayoutFilterType `json:"feedFilterType,omitempty"`
@@ -9398,8 +8856,6 @@ type FeedLayoutFilter struct {
 }
 
 type FeedLayoutComponent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FeedLayoutComponent"`
-
 	ComponentType *FeedLayoutComponentType `json:"componentType,omitempty"`
 
 	Height int32 `json:"height,omitempty"`
@@ -9408,8 +8864,6 @@ type FeedLayoutComponent struct {
 }
 
 type LayoutSection struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LayoutSection"`
-
 	CustomLabel bool `json:"customLabel,omitempty"`
 
 	DetailHeading bool `json:"detailHeading,omitempty"`
@@ -9424,16 +8878,12 @@ type LayoutSection struct {
 }
 
 type LayoutColumn struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LayoutColumn"`
-
 	LayoutItems []*LayoutItem `json:"layoutItems,omitempty"`
 
 	Reserved string `json:"reserved,omitempty"`
 }
 
 type LayoutItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LayoutItem"`
-
 	AnalyticsCloudComponent *AnalyticsCloudComponentLayoutItem `json:"analyticsCloudComponent,omitempty"`
 
 	Behavior *UiBehavior `json:"behavior,omitempty"`
@@ -9464,8 +8914,6 @@ type LayoutItem struct {
 }
 
 type AnalyticsCloudComponentLayoutItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AnalyticsCloudComponentLayoutItem"`
-
 	AssetType string `json:"assetType,omitempty"`
 
 	DevName string `json:"devName,omitempty"`
@@ -9486,8 +8934,6 @@ type AnalyticsCloudComponentLayoutItem struct {
 }
 
 type ReportChartComponentLayoutItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportChartComponentLayoutItem"`
-
 	CacheData bool `json:"cacheData,omitempty"`
 
 	ContextFilterableField string `json:"contextFilterableField,omitempty"`
@@ -9506,16 +8952,12 @@ type ReportChartComponentLayoutItem struct {
 }
 
 type MiniLayout struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MiniLayout"`
-
 	Fields []string `json:"fields,omitempty"`
 
 	RelatedLists []*RelatedListItem `json:"relatedLists,omitempty"`
 }
 
 type RelatedListItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RelatedListItem"`
-
 	CustomButtons []string `json:"customButtons,omitempty"`
 
 	ExcludeButtons []string `json:"excludeButtons,omitempty"`
@@ -9530,20 +8972,14 @@ type RelatedListItem struct {
 }
 
 type RelatedContent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RelatedContent"`
-
 	RelatedContentItems []*RelatedContentItem `json:"relatedContentItems,omitempty"`
 }
 
 type RelatedContentItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RelatedContentItem"`
-
 	LayoutItem *LayoutItem `json:"layoutItem,omitempty"`
 }
 
 type SummaryLayout struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SummaryLayout"`
-
 	MasterLabel string `json:"masterLabel,omitempty"`
 
 	SizeX int32 `json:"sizeX,omitempty"`
@@ -9558,8 +8994,6 @@ type SummaryLayout struct {
 }
 
 type SummaryLayoutItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SummaryLayoutItem"`
-
 	CustomLink string `json:"customLink,omitempty"`
 
 	Field string `json:"field,omitempty"`
@@ -9572,8 +9006,6 @@ type SummaryLayoutItem struct {
 }
 
 type LeadConvertSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LeadConvertSettings"`
-
 	*Metadata
 
 	AllowOwnerChange bool `json:"allowOwnerChange,omitempty"`
@@ -9582,8 +9014,6 @@ type LeadConvertSettings struct {
 }
 
 type Letterhead struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Letterhead"`
-
 	*Metadata
 
 	Available bool `json:"available,omitempty"`
@@ -9608,16 +9038,12 @@ type Letterhead struct {
 }
 
 type LetterheadLine struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LetterheadLine"`
-
 	Color string `json:"color,omitempty"`
 
 	Height int32 `json:"height,omitempty"`
 }
 
 type LetterheadHeaderFooter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LetterheadHeaderFooter"`
-
 	BackgroundColor string `json:"backgroundColor,omitempty"`
 
 	Height int32 `json:"height,omitempty"`
@@ -9630,8 +9056,6 @@ type LetterheadHeaderFooter struct {
 }
 
 type LicenseDefinition struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LicenseDefinition"`
-
 	*Metadata
 
 	AggregationGroup string `json:"aggregationGroup,omitempty"`
@@ -9660,24 +9084,18 @@ type LicenseDefinition struct {
 }
 
 type LicensedCustomPermissions struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LicensedCustomPermissions"`
-
 	CustomPermission string `json:"customPermission,omitempty"`
 
 	LicenseDefinition string `json:"licenseDefinition,omitempty"`
 }
 
 type LiveAgentSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveAgentSettings"`
-
 	*Metadata
 
 	EnableLiveAgent bool `json:"enableLiveAgent,omitempty"`
 }
 
 type LiveChatAgentConfig struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatAgentConfig"`
-
 	*Metadata
 
 	Assignments *AgentConfigAssignments `json:"assignments,omitempty"`
@@ -9738,46 +9156,32 @@ type LiveChatAgentConfig struct {
 }
 
 type AgentConfigAssignments struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AgentConfigAssignments"`
-
 	Profiles *AgentConfigProfileAssignments `json:"profiles,omitempty"`
 
 	Users *AgentConfigUserAssignments `json:"users,omitempty"`
 }
 
 type AgentConfigProfileAssignments struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AgentConfigProfileAssignments"`
-
 	Profile []string `json:"profile,omitempty"`
 }
 
 type AgentConfigUserAssignments struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AgentConfigUserAssignments"`
-
 	User []string `json:"user,omitempty"`
 }
 
 type SupervisorAgentConfigSkills struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SupervisorAgentConfigSkills"`
-
 	Skill []string `json:"skill,omitempty"`
 }
 
 type AgentConfigButtons struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AgentConfigButtons"`
-
 	Button []string `json:"button,omitempty"`
 }
 
 type AgentConfigSkills struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AgentConfigSkills"`
-
 	Skill []string `json:"skill,omitempty"`
 }
 
 type LiveChatButton struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatButton"`
-
 	*Metadata
 
 	Animation *LiveChatButtonPresentation `json:"animation,omitempty"`
@@ -9854,20 +9258,14 @@ type LiveChatButton struct {
 }
 
 type LiveChatButtonDeployments struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatButtonDeployments"`
-
 	Deployment []string `json:"deployment,omitempty"`
 }
 
 type LiveChatButtonSkills struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatButtonSkills"`
-
 	Skill []string `json:"skill,omitempty"`
 }
 
 type LiveChatDeployment struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatDeployment"`
-
 	*Metadata
 
 	BrandingImage string `json:"brandingImage,omitempty"`
@@ -9894,14 +9292,10 @@ type LiveChatDeployment struct {
 }
 
 type LiveChatDeploymentDomainWhitelist struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatDeploymentDomainWhitelist"`
-
 	Domain []string `json:"domain,omitempty"`
 }
 
 type LiveChatSensitiveDataRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LiveChatSensitiveDataRule"`
-
 	*Metadata
 
 	ActionType *SensitiveDataActionType `json:"actionType,omitempty"`
@@ -9918,8 +9312,6 @@ type LiveChatSensitiveDataRule struct {
 }
 
 type ManagedTopic struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ManagedTopic"`
-
 	*Metadata
 
 	ManagedTopicType string `json:"managedTopicType,omitempty"`
@@ -9934,24 +9326,18 @@ type ManagedTopic struct {
 }
 
 type ManagedTopics struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ManagedTopics"`
-
 	*Metadata
 
 	ManagedTopic []*ManagedTopic `json:"managedTopic,omitempty"`
 }
 
 type MarketingActionSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MarketingActionSettings"`
-
 	*Metadata
 
 	EnableMarketingAction bool `json:"enableMarketingAction,omitempty"`
 }
 
 type MarketingResourceType struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MarketingResourceType"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -9964,8 +9350,6 @@ type MarketingResourceType struct {
 }
 
 type MatchingRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MatchingRule"`
-
 	*Metadata
 
 	BooleanFilter string `json:"booleanFilter,omitempty"`
@@ -9980,8 +9364,6 @@ type MatchingRule struct {
 }
 
 type MatchingRuleItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MatchingRuleItem"`
-
 	BlankValueBehavior *BlankValueBehavior `json:"blankValueBehavior,omitempty"`
 
 	FieldName string `json:"fieldName,omitempty"`
@@ -9990,24 +9372,18 @@ type MatchingRuleItem struct {
 }
 
 type MatchingRules struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MatchingRules"`
-
 	*Metadata
 
 	MatchingRules []*MatchingRule `json:"matchingRules,omitempty"`
 }
 
 type MetadataWithContent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MetadataWithContent"`
-
 	*Metadata
 
 	Content []byte `json:"content,omitempty"`
 }
 
 type ApexClass struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApexClass"`
-
 	*MetadataWithContent
 
 	ApiVersion float64 `json:"apiVersion,omitempty"`
@@ -10018,8 +9394,6 @@ type ApexClass struct {
 }
 
 type ApexComponent struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApexComponent"`
-
 	*MetadataWithContent
 
 	ApiVersion float64 `json:"apiVersion,omitempty"`
@@ -10032,8 +9406,6 @@ type ApexComponent struct {
 }
 
 type ApexPage struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApexPage"`
-
 	*MetadataWithContent
 
 	ApiVersion float64 `json:"apiVersion,omitempty"`
@@ -10050,8 +9422,6 @@ type ApexPage struct {
 }
 
 type ApexTrigger struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ApexTrigger"`
-
 	*MetadataWithContent
 
 	ApiVersion float64 `json:"apiVersion,omitempty"`
@@ -10062,8 +9432,6 @@ type ApexTrigger struct {
 }
 
 type Certificate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Certificate"`
-
 	*MetadataWithContent
 
 	CaSigned bool `json:"caSigned,omitempty"`
@@ -10080,8 +9448,6 @@ type Certificate struct {
 }
 
 type ContentAsset struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContentAsset"`
-
 	*MetadataWithContent
 
 	Format *ContentAssetFormat `json:"format,omitempty"`
@@ -10098,28 +9464,20 @@ type ContentAsset struct {
 }
 
 type ContentAssetRelationships struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContentAssetRelationships"`
-
 	Organization *ContentAssetLink `json:"organization,omitempty"`
 }
 
 type ContentAssetLink struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContentAssetLink"`
-
 	Access *ContentAssetAccess `json:"access,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type ContentAssetVersions struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContentAssetVersions"`
-
 	Version []*ContentAssetVersion `json:"version,omitempty"`
 }
 
 type ContentAssetVersion struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ContentAssetVersion"`
-
 	Number string `json:"number,omitempty"`
 
 	PathOnClient string `json:"pathOnClient,omitempty"`
@@ -10128,8 +9486,6 @@ type ContentAssetVersion struct {
 }
 
 type DataPipeline struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DataPipeline"`
-
 	*MetadataWithContent
 
 	ApiVersion float64 `json:"apiVersion,omitempty"`
@@ -10140,8 +9496,6 @@ type DataPipeline struct {
 }
 
 type Document struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Document"`
-
 	*MetadataWithContent
 
 	Description string `json:"description,omitempty"`
@@ -10156,8 +9510,6 @@ type Document struct {
 }
 
 type EmailTemplate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata EmailTemplate"`
-
 	*MetadataWithContent
 
 	ApiVersion float64 `json:"apiVersion,omitempty"`
@@ -10188,16 +9540,12 @@ type EmailTemplate struct {
 }
 
 type Attachment struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Attachment"`
-
 	Content []byte `json:"content,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type Scontrol struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Scontrol"`
-
 	*MetadataWithContent
 
 	ContentSource *SControlContentSource `json:"contentSource,omitempty"`
@@ -10216,8 +9564,6 @@ type Scontrol struct {
 }
 
 type SiteDotCom struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SiteDotCom"`
-
 	*MetadataWithContent
 
 	Label string `json:"label,omitempty"`
@@ -10226,8 +9572,6 @@ type SiteDotCom struct {
 }
 
 type StaticResource struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata StaticResource"`
-
 	*MetadataWithContent
 
 	CacheControl *StaticResourceCacheControl `json:"cacheControl,omitempty"`
@@ -10238,8 +9582,6 @@ type StaticResource struct {
 }
 
 type UiPlugin struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata UiPlugin"`
-
 	*MetadataWithContent
 
 	Description string `json:"description,omitempty"`
@@ -10254,8 +9596,6 @@ type UiPlugin struct {
 }
 
 type WaveDashboard struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveDashboard"`
-
 	*MetadataWithContent
 
 	Application string `json:"application,omitempty"`
@@ -10268,8 +9608,6 @@ type WaveDashboard struct {
 }
 
 type WaveDataflow struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveDataflow"`
-
 	*MetadataWithContent
 
 	Description string `json:"description,omitempty"`
@@ -10278,8 +9616,6 @@ type WaveDataflow struct {
 }
 
 type WaveLens struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveLens"`
-
 	*MetadataWithContent
 
 	Application string `json:"application,omitempty"`
@@ -10296,8 +9632,6 @@ type WaveLens struct {
 }
 
 type MilestoneType struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MilestoneType"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -10306,8 +9640,6 @@ type MilestoneType struct {
 }
 
 type MobileSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata MobileSettings"`
-
 	*Metadata
 
 	ChatterMobile *ChatterMobileSettings `json:"chatterMobile,omitempty"`
@@ -10320,28 +9652,20 @@ type MobileSettings struct {
 }
 
 type ChatterMobileSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ChatterMobileSettings"`
-
 	EnablePushNotifications bool `json:"enablePushNotifications,omitempty"`
 }
 
 type DashboardMobileSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DashboardMobileSettings"`
-
 	EnableDashboardIPadApp bool `json:"enableDashboardIPadApp,omitempty"`
 }
 
 type SFDCMobileSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SFDCMobileSettings"`
-
 	EnableMobileLite bool `json:"enableMobileLite,omitempty"`
 
 	EnableUserToDeviceLinking bool `json:"enableUserToDeviceLinking,omitempty"`
 }
 
 type TouchMobileSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata TouchMobileSettings"`
-
 	EnableTouchAppIPad bool `json:"enableTouchAppIPad,omitempty"`
 
 	EnableTouchAppIPhone bool `json:"enableTouchAppIPhone,omitempty"`
@@ -10354,8 +9678,6 @@ type TouchMobileSettings struct {
 }
 
 type ModerationRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ModerationRule"`
-
 	*Metadata
 
 	Action *ModerationRuleAction `json:"action,omitempty"`
@@ -10372,8 +9694,6 @@ type ModerationRule struct {
 }
 
 type ModeratedEntityField struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ModeratedEntityField"`
-
 	EntityName string `json:"entityName,omitempty"`
 
 	FieldName string `json:"fieldName,omitempty"`
@@ -10382,8 +9702,6 @@ type ModeratedEntityField struct {
 }
 
 type NameSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NameSettings"`
-
 	*Metadata
 
 	EnableMiddleName bool `json:"enableMiddleName,omitempty"`
@@ -10392,8 +9710,6 @@ type NameSettings struct {
 }
 
 type NamedCredential struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NamedCredential"`
-
 	*Metadata
 
 	AuthProvider string `json:"authProvider,omitempty"`
@@ -10420,8 +9736,6 @@ type NamedCredential struct {
 }
 
 type Network struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Network"`
-
 	*Metadata
 
 	AllowMembersToFlag bool `json:"allowMembersToFlag,omitempty"`
@@ -10492,8 +9806,6 @@ type Network struct {
 }
 
 type Branding struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Branding"`
-
 	LoginFooterText string `json:"loginFooterText,omitempty"`
 
 	LoginLogo string `json:"loginLogo,omitempty"`
@@ -10522,14 +9834,10 @@ type Branding struct {
 }
 
 type NavigationLinkSet struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NavigationLinkSet"`
-
 	NavigationMenuItem []*NavigationMenuItem `json:"navigationMenuItem,omitempty"`
 }
 
 type NavigationMenuItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NavigationMenuItem"`
-
 	DefaultListViewId string `json:"defaultListViewId,omitempty"`
 
 	Label string `json:"label,omitempty"`
@@ -10546,22 +9854,16 @@ type NavigationMenuItem struct {
 }
 
 type NetworkMemberGroup struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NetworkMemberGroup"`
-
 	PermissionSet []string `json:"permissionSet,omitempty"`
 
 	Profile []string `json:"profile,omitempty"`
 }
 
 type ReputationLevelDefinitions struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationLevelDefinitions"`
-
 	Level []*ReputationLevel `json:"level,omitempty"`
 }
 
 type ReputationLevel struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationLevel"`
-
 	Branding *ReputationBranding `json:"branding,omitempty"`
 
 	Label string `json:"label,omitempty"`
@@ -10570,28 +9872,20 @@ type ReputationLevel struct {
 }
 
 type ReputationBranding struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationBranding"`
-
 	SmallImage string `json:"smallImage,omitempty"`
 }
 
 type ReputationPointsRules struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationPointsRules"`
-
 	PointsRule []*ReputationPointsRule `json:"pointsRule,omitempty"`
 }
 
 type ReputationPointsRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReputationPointsRule"`
-
 	EventType string `json:"eventType,omitempty"`
 
 	Points int32 `json:"points,omitempty"`
 }
 
 type NetworkTabSet struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NetworkTabSet"`
-
 	CustomTab []string `json:"customTab,omitempty"`
 
 	DefaultTab string `json:"defaultTab,omitempty"`
@@ -10600,8 +9894,6 @@ type NetworkTabSet struct {
 }
 
 type OpportunitySettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OpportunitySettings"`
-
 	*Metadata
 
 	AutoActivateNewReminders bool `json:"autoActivateNewReminders,omitempty"`
@@ -10618,16 +9910,12 @@ type OpportunitySettings struct {
 }
 
 type FindSimilarOppFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FindSimilarOppFilter"`
-
 	SimilarOpportunitiesDisplayColumns []string `json:"similarOpportunitiesDisplayColumns,omitempty"`
 
 	SimilarOpportunitiesMatchFields []string `json:"similarOpportunitiesMatchFields,omitempty"`
 }
 
 type OrderSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OrderSettings"`
-
 	*Metadata
 
 	EnableNegativeQuantity bool `json:"enableNegativeQuantity,omitempty"`
@@ -10638,16 +9926,12 @@ type OrderSettings struct {
 }
 
 type OrgPreferenceSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OrgPreferenceSettings"`
-
 	*Metadata
 
 	Preferences []*OrganizationSettingsDetail `json:"preferences,omitempty"`
 }
 
 type OrganizationSettingsDetail struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata OrganizationSettingsDetail"`
-
 	SettingName string `json:"settingName,omitempty"`
 
 	SettingValue bool `json:"settingValue,omitempty"`
@@ -10678,8 +9962,6 @@ type Package struct {
 }
 
 type ProfileObjectPermissions struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileObjectPermissions"`
-
 	AllowCreate bool `json:"allowCreate,omitempty"`
 
 	AllowDelete bool `json:"allowDelete,omitempty"`
@@ -10696,16 +9978,12 @@ type ProfileObjectPermissions struct {
 }
 
 type PackageTypeMembers struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PackageTypeMembers"`
-
 	Members []string `json:"members,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type PathAssistant struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PathAssistant"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -10722,8 +10000,6 @@ type PathAssistant struct {
 }
 
 type PathAssistantStep struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PathAssistantStep"`
-
 	FieldNames []string `json:"fieldNames,omitempty"`
 
 	Info string `json:"info,omitempty"`
@@ -10732,16 +10008,12 @@ type PathAssistantStep struct {
 }
 
 type PathAssistantSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PathAssistantSettings"`
-
 	*Metadata
 
 	PathAssistantEnabled bool `json:"pathAssistantEnabled,omitempty"`
 }
 
 type PermissionSet struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSet"`
-
 	*Metadata
 
 	ApplicationVisibilities []*PermissionSetApplicationVisibility `json:"applicationVisibilities,omitempty"`
@@ -10774,40 +10046,30 @@ type PermissionSet struct {
 }
 
 type PermissionSetApplicationVisibility struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetApplicationVisibility"`
-
 	Application string `json:"application,omitempty"`
 
 	Visible bool `json:"visible,omitempty"`
 }
 
 type PermissionSetApexClassAccess struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetApexClassAccess"`
-
 	ApexClass string `json:"apexClass,omitempty"`
 
 	Enabled bool `json:"enabled,omitempty"`
 }
 
 type PermissionSetCustomPermissions struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetCustomPermissions"`
-
 	Enabled bool `json:"enabled,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type PermissionSetExternalDataSourceAccess struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetExternalDataSourceAccess"`
-
 	Enabled bool `json:"enabled,omitempty"`
 
 	ExternalDataSource string `json:"externalDataSource,omitempty"`
 }
 
 type PermissionSetFieldPermissions struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetFieldPermissions"`
-
 	Editable bool `json:"editable,omitempty"`
 
 	Field string `json:"field,omitempty"`
@@ -10816,8 +10078,6 @@ type PermissionSetFieldPermissions struct {
 }
 
 type PermissionSetObjectPermissions struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetObjectPermissions"`
-
 	AllowCreate bool `json:"allowCreate,omitempty"`
 
 	AllowDelete bool `json:"allowDelete,omitempty"`
@@ -10834,56 +10094,42 @@ type PermissionSetObjectPermissions struct {
 }
 
 type PermissionSetApexPageAccess struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetApexPageAccess"`
-
 	ApexPage string `json:"apexPage,omitempty"`
 
 	Enabled bool `json:"enabled,omitempty"`
 }
 
 type PermissionSetRecordTypeVisibility struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetRecordTypeVisibility"`
-
 	RecordType string `json:"recordType,omitempty"`
 
 	Visible bool `json:"visible,omitempty"`
 }
 
 type PermissionSetTabSetting struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetTabSetting"`
-
 	Tab string `json:"tab,omitempty"`
 
 	Visibility *PermissionSetTabVisibility `json:"visibility,omitempty"`
 }
 
 type PermissionSetUserPermission struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PermissionSetUserPermission"`
-
 	Enabled bool `json:"enabled,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type PersonListSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PersonListSettings"`
-
 	*Metadata
 
 	EnablePersonList bool `json:"enablePersonList,omitempty"`
 }
 
 type PersonalJourneySettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PersonalJourneySettings"`
-
 	*Metadata
 
 	EnableExactTargetForObjforceApps bool `json:"enableExactTargetForObjforceApps,omitempty"`
 }
 
 type PlatformCachePartition struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PlatformCachePartition"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -10896,8 +10142,6 @@ type PlatformCachePartition struct {
 }
 
 type PlatformCachePartitionType struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PlatformCachePartitionType"`
-
 	AllocatedCapacity int32 `json:"allocatedCapacity,omitempty"`
 
 	AllocatedPurchasedCapacity int32 `json:"allocatedPurchasedCapacity,omitempty"`
@@ -10908,8 +10152,6 @@ type PlatformCachePartitionType struct {
 }
 
 type Portal struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Portal"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -10964,8 +10206,6 @@ type Portal struct {
 }
 
 type PostTemplate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PostTemplate"`
-
 	*Metadata
 
 	Default_ bool `json:"default,omitempty"`
@@ -10990,8 +10230,6 @@ type ProductSettings struct {
 }
 
 type Profile struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Profile"`
-
 	*Metadata
 
 	ApplicationVisibilities []*ProfileApplicationVisibility `json:"applicationVisibilities,omitempty"`
@@ -11030,8 +10268,6 @@ type Profile struct {
 }
 
 type ProfileApplicationVisibility struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileApplicationVisibility"`
-
 	Application string `json:"application,omitempty"`
 
 	Default_ bool `json:"default,omitempty"`
@@ -11040,32 +10276,24 @@ type ProfileApplicationVisibility struct {
 }
 
 type ProfileApexClassAccess struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileApexClassAccess"`
-
 	ApexClass string `json:"apexClass,omitempty"`
 
 	Enabled bool `json:"enabled,omitempty"`
 }
 
 type ProfileCustomPermissions struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileCustomPermissions"`
-
 	Enabled bool `json:"enabled,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type ProfileExternalDataSourceAccess struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileExternalDataSourceAccess"`
-
 	Enabled bool `json:"enabled,omitempty"`
 
 	ExternalDataSource string `json:"externalDataSource,omitempty"`
 }
 
 type ProfileFieldLevelSecurity struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileFieldLevelSecurity"`
-
 	Editable bool `json:"editable,omitempty"`
 
 	Field string `json:"field,omitempty"`
@@ -11074,16 +10302,12 @@ type ProfileFieldLevelSecurity struct {
 }
 
 type ProfileLayoutAssignment struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileLayoutAssignment"`
-
 	Layout string `json:"layout,omitempty"`
 
 	RecordType string `json:"recordType,omitempty"`
 }
 
 type ProfileLoginHours struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileLoginHours"`
-
 	FridayEnd string `json:"fridayEnd,omitempty"`
 
 	FridayStart string `json:"fridayStart,omitempty"`
@@ -11114,8 +10338,6 @@ type ProfileLoginHours struct {
 }
 
 type ProfileLoginIpRange struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileLoginIpRange"`
-
 	Description string `json:"description,omitempty"`
 
 	EndAddress string `json:"endAddress,omitempty"`
@@ -11124,16 +10346,12 @@ type ProfileLoginIpRange struct {
 }
 
 type ProfileApexPageAccess struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileApexPageAccess"`
-
 	ApexPage string `json:"apexPage,omitempty"`
 
 	Enabled bool `json:"enabled,omitempty"`
 }
 
 type ProfileActionOverride struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileActionOverride"`
-
 	ActionName string `json:"actionName,omitempty"`
 
 	Content string `json:"content,omitempty"`
@@ -11148,8 +10366,6 @@ type ProfileActionOverride struct {
 }
 
 type ProfileRecordTypeVisibility struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileRecordTypeVisibility"`
-
 	Default_ bool `json:"default,omitempty"`
 
 	PersonAccountDefault bool `json:"personAccountDefault,omitempty"`
@@ -11160,24 +10376,18 @@ type ProfileRecordTypeVisibility struct {
 }
 
 type ProfileTabVisibility struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileTabVisibility"`
-
 	Tab string `json:"tab,omitempty"`
 
 	Visibility *TabVisibility `json:"visibility,omitempty"`
 }
 
 type ProfileUserPermission struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ProfileUserPermission"`
-
 	Enabled bool `json:"enabled,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type Queue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Queue"`
-
 	*Metadata
 
 	DoesSendEmailToMembers bool `json:"doesSendEmailToMembers,omitempty"`
@@ -11190,14 +10400,10 @@ type Queue struct {
 }
 
 type QueueSobject struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QueueSobject"`
-
 	SobjectType string `json:"sobjectType,omitempty"`
 }
 
 type QuickAction struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickAction"`
-
 	*Metadata
 
 	Canvas string `json:"canvas,omitempty"`
@@ -11240,8 +10446,6 @@ type QuickAction struct {
 }
 
 type FieldOverride struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldOverride"`
-
 	Field string `json:"field,omitempty"`
 
 	Formula string `json:"formula,omitempty"`
@@ -11250,22 +10454,16 @@ type FieldOverride struct {
 }
 
 type QuickActionLayout struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionLayout"`
-
 	LayoutSectionStyle *LayoutSectionStyle `json:"layoutSectionStyle,omitempty"`
 
 	QuickActionLayoutColumns []*QuickActionLayoutColumn `json:"quickActionLayoutColumns,omitempty"`
 }
 
 type QuickActionLayoutColumn struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionLayoutColumn"`
-
 	QuickActionLayoutItems []*QuickActionLayoutItem `json:"quickActionLayoutItems,omitempty"`
 }
 
 type QuickActionLayoutItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionLayoutItem"`
-
 	EmptySpace bool `json:"emptySpace,omitempty"`
 
 	Field string `json:"field,omitempty"`
@@ -11274,24 +10472,18 @@ type QuickActionLayoutItem struct {
 }
 
 type QuickActionSendEmailOptions struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuickActionSendEmailOptions"`
-
 	DefaultEmailTemplateName string `json:"defaultEmailTemplateName,omitempty"`
 
 	IgnoreDefaultEmailTemplateSubject bool `json:"ignoreDefaultEmailTemplateSubject,omitempty"`
 }
 
 type QuoteSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata QuoteSettings"`
-
 	*Metadata
 
 	EnableQuote bool `json:"enableQuote,omitempty"`
 }
 
 type RemoteSiteSetting struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RemoteSiteSetting"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -11304,8 +10496,6 @@ type RemoteSiteSetting struct {
 }
 
 type Report struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Report"`
-
 	*Metadata
 
 	Aggregates []*ReportAggregate `json:"aggregates,omitempty"`
@@ -11374,8 +10564,6 @@ type Report struct {
 }
 
 type ReportAggregate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportAggregate"`
-
 	AcrossGroupingContext string `json:"acrossGroupingContext,omitempty"`
 
 	CalculatedFormula string `json:"calculatedFormula,omitempty"`
@@ -11400,8 +10588,6 @@ type ReportAggregate struct {
 }
 
 type ReportBlockInfo struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportBlockInfo"`
-
 	AggregateReferences []*ReportAggregateReference `json:"aggregateReferences,omitempty"`
 
 	BlockId string `json:"blockId,omitempty"`
@@ -11410,14 +10596,10 @@ type ReportBlockInfo struct {
 }
 
 type ReportAggregateReference struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportAggregateReference"`
-
 	Aggregate string `json:"aggregate,omitempty"`
 }
 
 type ReportBucketField struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportBucketField"`
-
 	BucketType *ReportBucketFieldType `json:"bucketType,omitempty"`
 
 	DeveloperName string `json:"developerName,omitempty"`
@@ -11436,16 +10618,12 @@ type ReportBucketField struct {
 }
 
 type ReportBucketFieldValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportBucketFieldValue"`
-
 	SourceValues []*ReportBucketFieldSourceValue `json:"sourceValues,omitempty"`
 
 	Value string `json:"value,omitempty"`
 }
 
 type ReportBucketFieldSourceValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportBucketFieldSourceValue"`
-
 	From string `json:"from,omitempty"`
 
 	SourceValue string `json:"sourceValue,omitempty"`
@@ -11454,8 +10632,6 @@ type ReportBucketFieldSourceValue struct {
 }
 
 type ReportChart struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportChart"`
-
 	BackgroundColor1 string `json:"backgroundColor1,omitempty"`
 
 	BackgroundColor2 string `json:"backgroundColor2,omitempty"`
@@ -11506,8 +10682,6 @@ type ReportChart struct {
 }
 
 type ReportColorRange struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportColorRange"`
-
 	Aggregate *ReportSummaryType `json:"aggregate,omitempty"`
 
 	ColumnName string `json:"columnName,omitempty"`
@@ -11524,8 +10698,6 @@ type ReportColorRange struct {
 }
 
 type ReportColumn struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportColumn"`
-
 	AggregateTypes []*ReportSummaryType `json:"aggregateTypes,omitempty"`
 
 	Field string `json:"field,omitempty"`
@@ -11536,8 +10708,6 @@ type ReportColumn struct {
 }
 
 type ReportCrossFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportCrossFilter"`
-
 	CriteriaItems []*ReportFilterItem `json:"criteriaItems,omitempty"`
 
 	Operation *ObjectFilterOperator `json:"operation,omitempty"`
@@ -11550,8 +10720,6 @@ type ReportCrossFilter struct {
 }
 
 type ReportFilterItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportFilterItem"`
-
 	Column string `json:"column,omitempty"`
 
 	ColumnToColumn bool `json:"columnToColumn,omitempty"`
@@ -11566,8 +10734,6 @@ type ReportFilterItem struct {
 }
 
 type ReportDataCategoryFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportDataCategoryFilter"`
-
 	DataCategory string `json:"dataCategory,omitempty"`
 
 	DataCategoryGroup string `json:"dataCategoryGroup,omitempty"`
@@ -11576,8 +10742,6 @@ type ReportDataCategoryFilter struct {
 }
 
 type ReportFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportFilter"`
-
 	BooleanFilter string `json:"booleanFilter,omitempty"`
 
 	CriteriaItems []*ReportFilterItem `json:"criteriaItems,omitempty"`
@@ -11586,8 +10750,6 @@ type ReportFilter struct {
 }
 
 type ReportGrouping struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportGrouping"`
-
 	AggregateType *ReportAggrType `json:"aggregateType,omitempty"`
 
 	DateGranularity *UserDateGranularity `json:"dateGranularity,omitempty"`
@@ -11602,22 +10764,16 @@ type ReportGrouping struct {
 }
 
 type ReportHistoricalSelector struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportHistoricalSelector"`
-
 	Snapshot []string `json:"snapshot,omitempty"`
 }
 
 type ReportParam struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportParam"`
-
 	Name string `json:"name,omitempty"`
 
 	Value string `json:"value,omitempty"`
 }
 
 type ReportTimeFrameFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportTimeFrameFilter"`
-
 	DateColumn string `json:"dateColumn,omitempty"`
 
 	EndDate time.Time `json:"endDate,omitempty"`
@@ -11628,8 +10784,6 @@ type ReportTimeFrameFilter struct {
 }
 
 type ReportType struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportType"`
-
 	*Metadata
 
 	Autogenerated bool `json:"autogenerated,omitempty"`
@@ -11650,8 +10804,6 @@ type ReportType struct {
 }
 
 type ObjectRelationship struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectRelationship"`
-
 	Join *ObjectRelationship `json:"join,omitempty"`
 
 	OuterJoin bool `json:"outerJoin,omitempty"`
@@ -11660,16 +10812,12 @@ type ObjectRelationship struct {
 }
 
 type ReportLayoutSection struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportLayoutSection"`
-
 	Columns []*ReportTypeColumn `json:"columns,omitempty"`
 
 	MasterLabel string `json:"masterLabel,omitempty"`
 }
 
 type ReportTypeColumn struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportTypeColumn"`
-
 	CheckedByDefault bool `json:"checkedByDefault,omitempty"`
 
 	DisplayNameOverride string `json:"displayNameOverride,omitempty"`
@@ -11680,8 +10828,6 @@ type ReportTypeColumn struct {
 }
 
 type RoleOrTerritory struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata RoleOrTerritory"`
-
 	*Metadata
 
 	CaseAccessLevel string `json:"caseAccessLevel,omitempty"`
@@ -11698,16 +10844,12 @@ type RoleOrTerritory struct {
 }
 
 type Role struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Role"`
-
 	*RoleOrTerritory
 
 	ParentRole string `json:"parentRole,omitempty"`
 }
 
 type Territory struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory"`
-
 	*RoleOrTerritory
 
 	AccountAccessLevel string `json:"accountAccessLevel,omitempty"`
@@ -11716,8 +10858,6 @@ type Territory struct {
 }
 
 type SamlSsoConfig struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SamlSsoConfig"`
-
 	*Metadata
 
 	AttributeName string `json:"attributeName,omitempty"`
@@ -11762,8 +10902,6 @@ type SamlSsoConfig struct {
 }
 
 type SearchSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SearchSettings"`
-
 	*Metadata
 
 	DocumentContentSearchEnabled bool `json:"documentContentSearchEnabled,omitempty"`
@@ -11786,14 +10924,10 @@ type SearchSettings struct {
 }
 
 type SearchSettingsByObject struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SearchSettingsByObject"`
-
 	SearchSettingsByObject []*ObjectSearchSetting `json:"searchSettingsByObject,omitempty"`
 }
 
 type ObjectSearchSetting struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ObjectSearchSetting"`
-
 	EnhancedLookupEnabled bool `json:"enhancedLookupEnabled,omitempty"`
 
 	LookupAutoCompleteEnabled bool `json:"lookupAutoCompleteEnabled,omitempty"`
@@ -11804,8 +10938,6 @@ type ObjectSearchSetting struct {
 }
 
 type SecuritySettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SecuritySettings"`
-
 	*Metadata
 
 	NetworkAccess *NetworkAccess `json:"networkAccess,omitempty"`
@@ -11816,14 +10948,10 @@ type SecuritySettings struct {
 }
 
 type NetworkAccess struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata NetworkAccess"`
-
 	IpRanges []*IpRange `json:"ipRanges,omitempty"`
 }
 
 type IpRange struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata IpRange"`
-
 	Description string `json:"description,omitempty"`
 
 	End string `json:"end,omitempty"`
@@ -11832,8 +10960,6 @@ type IpRange struct {
 }
 
 type PasswordPolicies struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata PasswordPolicies"`
-
 	ApiOnlyUserHomePageURL string `json:"apiOnlyUserHomePageURL,omitempty"`
 
 	Complexity *Complexity `json:"complexity,omitempty"`
@@ -11860,8 +10986,6 @@ type PasswordPolicies struct {
 }
 
 type SessionSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SessionSettings"`
-
 	DisableTimeoutWarning bool `json:"disableTimeoutWarning,omitempty"`
 
 	EnableCSPOnEmail bool `json:"enableCSPOnEmail,omitempty"`
@@ -11902,8 +11026,6 @@ type SessionSettings struct {
 }
 
 type SharingBaseRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingBaseRule"`
-
 	*Metadata
 
 	AccessLevel string `json:"accessLevel,omitempty"`
@@ -11918,8 +11040,6 @@ type SharingBaseRule struct {
 }
 
 type AccountSharingRuleSettings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AccountSharingRuleSettings"`
-
 	CaseAccessLevel string `json:"caseAccessLevel,omitempty"`
 
 	ContactAccessLevel string `json:"contactAccessLevel,omitempty"`
@@ -11928,8 +11048,6 @@ type AccountSharingRuleSettings struct {
 }
 
 type SharingCriteriaRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingCriteriaRule"`
-
 	*SharingBaseRule
 
 	BooleanFilter string `json:"booleanFilter,omitempty"`
@@ -11938,22 +11056,16 @@ type SharingCriteriaRule struct {
 }
 
 type SharingOwnerRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingOwnerRule"`
-
 	*SharingBaseRule
 
 	SharedFrom *SharedTo `json:"sharedFrom,omitempty"`
 }
 
 type SharingTerritoryRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingTerritoryRule"`
-
 	*SharingOwnerRule
 }
 
 type SharingRules struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingRules"`
-
 	*Metadata
 
 	SharingCriteriaRules []*SharingCriteriaRule `json:"sharingCriteriaRules,omitempty"`
@@ -11964,8 +11076,6 @@ type SharingRules struct {
 }
 
 type SharingSet struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SharingSet"`
-
 	*Metadata
 
 	AccessMappings []*AccessMapping `json:"accessMappings,omitempty"`
@@ -11978,8 +11088,6 @@ type SharingSet struct {
 }
 
 type AccessMapping struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata AccessMapping"`
-
 	AccessLevel string `json:"accessLevel,omitempty"`
 
 	Object string `json:"object,omitempty"`
@@ -11990,8 +11098,6 @@ type AccessMapping struct {
 }
 
 type Skill struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Skill"`
-
 	*Metadata
 
 	Assignments *SkillAssignments `json:"assignments,omitempty"`
@@ -12002,28 +11108,20 @@ type Skill struct {
 }
 
 type SkillAssignments struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SkillAssignments"`
-
 	Profiles *SkillProfileAssignments `json:"profiles,omitempty"`
 
 	Users *SkillUserAssignments `json:"users,omitempty"`
 }
 
 type SkillProfileAssignments struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SkillProfileAssignments"`
-
 	Profile []string `json:"profile,omitempty"`
 }
 
 type SkillUserAssignments struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SkillUserAssignments"`
-
 	User []string `json:"user,omitempty"`
 }
 
 type StandardValueSet struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata StandardValueSet"`
-
 	*Metadata
 
 	Sorted bool `json:"sorted,omitempty"`
@@ -12032,16 +11130,12 @@ type StandardValueSet struct {
 }
 
 type StandardValueSetTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata StandardValueSetTranslation"`
-
 	*Metadata
 
 	ValueTranslation []*ValueTranslation `json:"valueTranslation,omitempty"`
 }
 
 type SynonymDictionary struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SynonymDictionary"`
-
 	*Metadata
 
 	Groups []*SynonymGroup `json:"groups,omitempty"`
@@ -12052,16 +11146,12 @@ type SynonymDictionary struct {
 }
 
 type SynonymGroup struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata SynonymGroup"`
-
 	Languages []*Language `json:"languages,omitempty"`
 
 	Terms []string `json:"terms,omitempty"`
 }
 
 type Territory2 struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2"`
-
 	*Metadata
 
 	AccountAccessLevel string `json:"accountAccessLevel,omitempty"`
@@ -12086,24 +11176,18 @@ type Territory2 struct {
 }
 
 type FieldValue struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata FieldValue"`
-
 	Name string `json:"name,omitempty"`
 
 	Value interface{} `json:"value,omitempty"`
 }
 
 type Territory2RuleAssociation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2RuleAssociation"`
-
 	Inherited bool `json:"inherited,omitempty"`
 
 	RuleName string `json:"ruleName,omitempty"`
 }
 
 type Territory2Model struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2Model"`
-
 	*Metadata
 
 	CustomFields []*FieldValue `json:"customFields,omitempty"`
@@ -12114,8 +11198,6 @@ type Territory2Model struct {
 }
 
 type Territory2Rule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2Rule"`
-
 	*Metadata
 
 	Active bool `json:"active,omitempty"`
@@ -12130,8 +11212,6 @@ type Territory2Rule struct {
 }
 
 type Territory2RuleItem struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2RuleItem"`
-
 	Field string `json:"field,omitempty"`
 
 	Operation *FilterOperation `json:"operation,omitempty"`
@@ -12140,8 +11220,6 @@ type Territory2RuleItem struct {
 }
 
 type Territory2Settings struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2Settings"`
-
 	*Metadata
 
 	DefaultAccountAccessLevel string `json:"defaultAccountAccessLevel,omitempty"`
@@ -12156,8 +11234,6 @@ type Territory2Settings struct {
 }
 
 type Territory2SettingsOpportunityFilter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2SettingsOpportunityFilter"`
-
 	ApexClassName string `json:"apexClassName,omitempty"`
 
 	EnableFilter bool `json:"enableFilter,omitempty"`
@@ -12166,8 +11242,6 @@ type Territory2SettingsOpportunityFilter struct {
 }
 
 type Territory2Type struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Territory2Type"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -12178,8 +11252,6 @@ type Territory2Type struct {
 }
 
 type TransactionSecurityPolicy struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata TransactionSecurityPolicy"`
-
 	*Metadata
 
 	Action *TransactionSecurityAction `json:"action,omitempty"`
@@ -12196,8 +11268,6 @@ type TransactionSecurityPolicy struct {
 }
 
 type TransactionSecurityAction struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata TransactionSecurityAction"`
-
 	Block bool `json:"block,omitempty"`
 
 	EndSession bool `json:"endSession,omitempty"`
@@ -12208,8 +11278,6 @@ type TransactionSecurityAction struct {
 }
 
 type TransactionSecurityNotification struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata TransactionSecurityNotification"`
-
 	InApp bool `json:"inApp,omitempty"`
 
 	SendEmail bool `json:"sendEmail,omitempty"`
@@ -12218,8 +11286,6 @@ type TransactionSecurityNotification struct {
 }
 
 type Translations struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Translations"`
-
 	*Metadata
 
 	CustomApplications []*CustomApplicationTranslation `json:"customApplications,omitempty"`
@@ -12240,16 +11306,12 @@ type Translations struct {
 }
 
 type CustomApplicationTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomApplicationTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type CustomDataTypeTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomDataTypeTranslation"`
-
 	Components []*CustomDataTypeComponentTranslation `json:"components,omitempty"`
 
 	CustomDataTypeName string `json:"customDataTypeName,omitempty"`
@@ -12260,24 +11322,18 @@ type CustomDataTypeTranslation struct {
 }
 
 type CustomDataTypeComponentTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomDataTypeComponentTranslation"`
-
 	DeveloperSuffix string `json:"developerSuffix,omitempty"`
 
 	Label string `json:"label,omitempty"`
 }
 
 type CustomLabelTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomLabelTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type CustomPageWebLinkTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata CustomPageWebLinkTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
@@ -12292,16 +11348,12 @@ type CustomTabTranslation struct {
 }
 
 type GlobalQuickActionTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata GlobalQuickActionTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type ReportTypeTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportTypeTranslation"`
-
 	Description string `json:"description,omitempty"`
 
 	Label string `json:"label,omitempty"`
@@ -12312,8 +11364,6 @@ type ReportTypeTranslation struct {
 }
 
 type ReportTypeSectionTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportTypeSectionTranslation"`
-
 	Columns []*ReportTypeColumnTranslation `json:"columns,omitempty"`
 
 	Label string `json:"label,omitempty"`
@@ -12322,24 +11372,18 @@ type ReportTypeSectionTranslation struct {
 }
 
 type ReportTypeColumnTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ReportTypeColumnTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type ScontrolTranslation struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata ScontrolTranslation"`
-
 	Label string `json:"label,omitempty"`
 
 	Name string `json:"name,omitempty"`
 }
 
 type VisualizationPlugin struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata VisualizationPlugin"`
-
 	*Metadata
 
 	Description string `json:"description,omitempty"`
@@ -12356,8 +11400,6 @@ type VisualizationPlugin struct {
 }
 
 type VisualizationResource struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata VisualizationResource"`
-
 	Description string `json:"description,omitempty"`
 
 	File string `json:"file,omitempty"`
@@ -12368,8 +11410,6 @@ type VisualizationResource struct {
 }
 
 type VisualizationType struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata VisualizationType"`
-
 	Description string `json:"description,omitempty"`
 
 	DeveloperName string `json:"developerName,omitempty"`
@@ -12382,8 +11422,6 @@ type VisualizationType struct {
 }
 
 type WaveApplication struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveApplication"`
-
 	*Metadata
 
 	AssetIcon string `json:"assetIcon,omitempty"`
@@ -12402,8 +11440,6 @@ type WaveApplication struct {
 }
 
 type WaveDataset struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveDataset"`
-
 	*Metadata
 
 	Application string `json:"application,omitempty"`
@@ -12416,8 +11452,6 @@ type WaveDataset struct {
 }
 
 type WaveTemplateBundle struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WaveTemplateBundle"`
-
 	*Metadata
 
 	AssetIcon string `json:"assetIcon,omitempty"`
@@ -12432,8 +11466,6 @@ type WaveTemplateBundle struct {
 }
 
 type Workflow struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata Workflow"`
-
 	*Metadata
 
 	Alerts []*WorkflowAlert `json:"alerts,omitempty"`
@@ -12454,8 +11486,6 @@ type Workflow struct {
 }
 
 type WorkflowAlert struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowAlert"`
-
 	*WorkflowAction
 
 	CcEmails []string `json:"ccEmails,omitempty"`
@@ -12474,14 +11504,10 @@ type WorkflowAlert struct {
 }
 
 type WorkflowAction struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowAction"`
-
 	*Metadata
 }
 
 type WorkflowFieldUpdate struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowFieldUpdate"`
-
 	*WorkflowAction
 
 	Description string `json:"description,omitempty"`
@@ -12510,8 +11536,6 @@ type WorkflowFieldUpdate struct {
 }
 
 type WorkflowFlowAction struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowFlowAction"`
-
 	*WorkflowAction
 
 	Description string `json:"description,omitempty"`
@@ -12528,16 +11552,12 @@ type WorkflowFlowAction struct {
 }
 
 type WorkflowFlowActionParameter struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowFlowActionParameter"`
-
 	Name string `json:"name,omitempty"`
 
 	Value string `json:"value,omitempty"`
 }
 
 type WorkflowKnowledgePublish struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowKnowledgePublish"`
-
 	*WorkflowAction
 
 	Action *KnowledgeWorkflowAction `json:"action,omitempty"`
@@ -12552,8 +11572,6 @@ type WorkflowKnowledgePublish struct {
 }
 
 type WorkflowOutboundMessage struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowOutboundMessage"`
-
 	*WorkflowAction
 
 	ApiVersion float64 `json:"apiVersion,omitempty"`
@@ -12576,8 +11594,6 @@ type WorkflowOutboundMessage struct {
 }
 
 type WorkflowSend struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowSend"`
-
 	*WorkflowAction
 
 	Action *SendAction `json:"action,omitempty"`
@@ -12592,8 +11608,6 @@ type WorkflowSend struct {
 }
 
 type WorkflowTask struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowTask"`
-
 	*WorkflowAction
 
 	AssignedTo string `json:"assignedTo,omitempty"`
@@ -12618,8 +11632,6 @@ type WorkflowTask struct {
 }
 
 type WorkflowEmailRecipient struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowEmailRecipient"`
-
 	Field string `json:"field,omitempty"`
 
 	Recipient string `json:"recipient,omitempty"`
@@ -12628,8 +11640,6 @@ type WorkflowEmailRecipient struct {
 }
 
 type WorkflowRule struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowRule"`
-
 	*Metadata
 
 	Actions []*WorkflowActionReference `json:"actions,omitempty"`
@@ -12650,8 +11660,6 @@ type WorkflowRule struct {
 }
 
 type WorkflowTimeTrigger struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata WorkflowTimeTrigger"`
-
 	Actions []*WorkflowActionReference `json:"actions,omitempty"`
 
 	OffsetFromField string `json:"offsetFromField,omitempty"`
@@ -12662,8 +11670,6 @@ type WorkflowTimeTrigger struct {
 }
 
 type XOrgHub struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata XOrgHub"`
-
 	*Metadata
 
 	Label string `json:"label,omitempty"`
@@ -12676,8 +11682,6 @@ type XOrgHub struct {
 }
 
 type XOrgHubSharedObject struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata XOrgHubSharedObject"`
-
 	Fields []string `json:"fields,omitempty"`
 
 	Name string `json:"name,omitempty"`
@@ -12714,8 +11718,6 @@ type DeleteResult struct {
 }
 
 type DeployOptions struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata DeployOptions"`
-
 	AllowMissingFiles bool `json:"allowMissingFiles,omitempty"`
 
 	AutoUpdatePackage bool `json:"autoUpdatePackage,omitempty"`
@@ -12854,15 +11856,12 @@ type UpsertResult struct {
 }
 
 type LogInfo struct {
-	XMLName xml.Name `json:"http://soap.sforce.com/2006/04/metadata LogInfo"`
-
 	Category *LogCategory `json:"category,omitempty"`
 
 	Level *LogCategoryLevel `json:"level,omitempty"`
 }
 
 type LoginRequest struct {
-	XMLName  xml.Name `json:"urn:partner.soap.sforce.com login"`
 	Username string   `json:"username"`
 	Password string   `json:"password"`
 }
